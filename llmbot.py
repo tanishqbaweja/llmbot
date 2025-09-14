@@ -1362,6 +1362,23 @@ async def delete_command(ctx):
 
 @bot.command(name='oss')
 async def oss_command(ctx, *, prompt):
+    # Check for attachments in user's message
+    if ctx.message.attachments:
+        await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)")
+        return
+    
+    # Handle reply context
+    if ctx.message.reference:
+        try:
+            referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+            # Check for attachments in referenced message
+            if referenced_message.attachments:
+                await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)")
+                return
+            prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
+        except Exception:
+            pass  # Use original prompt if can't fetch referenced message
+    
     prompt = sanitize_input(prompt)
     if len(prompt) > MAX_INPUT_LENGTH:
         await ctx.reply("⚠️ Input too long.")
