@@ -8909,3 +8909,4 @@ TypeError: Messageable.send() got an unexpected keyword argument 'ephemeral'
 2025-09-15 00:20:08,649 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 8837e82d317a3ed7972920869320be93.
 2025-09-15 00:30:32,821 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
 2025-09-15 00:30:32,823 - discord.client - INFO - logging in using static token
+2025-09-15 00:30:34,708 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2fe1463332cddaa286ae3f2fdfb5a01a).
