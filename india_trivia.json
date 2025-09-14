@@ -1,652 +1,262 @@
 [
   {
-    "ID": "IND001",
-    "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "India is renowned as the 'Spice Capital of the World'. What percentage of the world's spices does it produce?",
-    "correct_answer": "70%",
-    "wrong_answers": [
-      "50%",
-      "30%",
-      "90%"
-    ],
-    "explanation": "India produces an estimated 70% of the world's spices, making it the largest producer. This is due to its diverse climate, which is suitable for growing a wide variety of spices. The other options are incorrect as they underestimate or overestimate India's significant contribution to the global spice trade."
-  },
-  {
-    "ID": "IND002",
-    "category": "Culture",
-    "difficulty": "easy",
-    "question_text": "India has the largest population of vegetarians in the world. What is the approximate percentage of vegetarians in India?",
-    "correct_answer": "39%",
-    "wrong_answers": [
-      "15%",
-      "55%",
-      "25%"
-    ],
-    "explanation": "Approximately 39% of India's population is vegetarian, making it the country with the highest number of vegetarians globally. This is deeply rooted in cultural and religious beliefs, particularly Hinduism. The other percentages are incorrect."
-  },
-  {
-    "ID": "IND003",
-    "category": "Nature",
-    "difficulty": "medium",
-    "question_text": "India is a crucial habitat for the world's wild tiger population. What percentage of the world's wild tigers live in India?",
-    "correct_answer": "60%",
-    "wrong_answers": [
-      "40%",
-      "80%",
-      "20%"
-    ],
-    "explanation": "India is home to about 60% of the world's wild tiger population, a testament to its successful conservation efforts through projects like 'Project Tiger'. The other figures are inaccurate representations of India's significant role in tiger conservation."
-  },
-  {
-    "ID": "IND004",
-    "category": "Culture",
-    "difficulty": "hard",
-    "question_text": "India is a land of incredible linguistic diversity. How many official languages are recognized by the Indian Constitution?",
-    "correct_answer": "22",
-    "wrong_answers": [
-      "1",
-      "10",
-      "50"
-    ],
-    "explanation": "The Indian Constitution recognizes 22 official languages, listed in the 8th Schedule. While Hindi is the official language of the central government, there is no single national language, reflecting the country's rich linguistic tapestry. The other options are incorrect."
-  },
-  {
-    "ID": "IND005",
-    "category": "Science & Technology",
-    "difficulty": "medium",
-    "question_text": "In 2014, India's space agency, ISRO, achieved a remarkable feat by successfully placing a satellite into Mars' orbit on its first attempt. What was the name of this mission?",
-    "correct_answer": "Mangalyaan (Mars Orbiter Mission)",
-    "wrong_answers": [
-      "Chandrayaan-1",
-      "Gaganyaan",
-      "Aditya-L1"
-    ],
-    "explanation": "The Mars Orbiter Mission, informally known as Mangalyaan, made India the first nation to succeed on its maiden attempt and the fourth space agency to reach Mars. Chandrayaan-1 was a lunar mission, Gaganyaan is a planned crewed mission, and Aditya-L1 is a solar mission."
-  },
-  {
-    "ID": "IND006",
+    "ID": "IND1",
     "category": "History",
-    "difficulty": "easy",
-    "question_text": "The popular board game of Chess is believed to have originated in India during the Gupta Empire. What was its original name?",
-    "correct_answer": "Chaturanga",
-    "wrong_answers": [
-      "Pachisi",
-      "Ludo",
-      "Snakes and Ladders"
-    ],
-    "explanation": "Chess originated in India around the 6th century AD as 'Chaturanga', which translates to 'four divisions of the military' (infantry, cavalry, elephants, and chariotry). Pachisi, Ludo, and Snakes and Ladders are other ancient Indian board games, but they are not the ancestor of Chess."
-  },
-  {
-    "ID": "IND007",
-    "category": "Science & Technology",
-    "difficulty": "easy",
-    "question_text": "The concept of 'zero' as a number and its use in calculations was a groundbreaking contribution to mathematics. In which ancient civilization did this concept originate?",
-    "correct_answer": "India",
-    "wrong_answers": [
-      "Greece",
-      "Egypt",
-      "Rome"
-    ],
-    "explanation": "The concept of zero (Shunya) as a number, along with the decimal system, was invented in India around the 5th century AD by mathematicians like Aryabhata and Brahmagupta. This was a revolutionary development that transformed mathematics. The other ancient civilizations did not develop the concept of zero in the same way."
-  },
-  {
-    "ID": "IND008",
-    "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "India has the largest postal network in the world, with over 155,000 post offices. One unique post office is floating on water. In which city is it located?",
-    "correct_answer": "Srinagar",
-    "wrong_answers": [
-      "Varanasi",
-      "Kochi",
-      "Jaipur"
-    ],
-    "explanation": "The floating post office is located on Dal Lake in Srinagar, Kashmir. It is a popular tourist attraction and a fully functional post office, serving the local community. The other cities are known for their own unique features, but not a floating post office."
-  },
-  {
-    "ID": "IND009",
-    "category": "Entertainment",
-    "difficulty": "easy",
-    "question_text": "India's film industry, popularly known as Bollywood, is the largest in the world in terms of the number of films produced annually. Which city is the center of Bollywood?",
-    "correct_answer": "Mumbai",
-    "wrong_answers": [
-      "New Delhi",
-      "Kolkata",
-      "Chennai"
-    ],
-    "explanation": "Mumbai (formerly Bombay) is the heart of the Hindi film industry, hence the name 'Bollywood' (a portmanteau of Bombay and Hollywood). While Kolkata and Chennai have their own thriving film industries (Tollywood and Kollywood respectively), Bollywood is the largest."
-  },
-  {
-    "ID": "IND010",
-    "category": "Politics",
-    "difficulty": "easy",
-    "question_text": "India is recognized as the world's largest democracy. How often are general elections held for the Lok Sabha (the lower house of Parliament)?",
-    "correct_answer": "Every 5 years",
-    "wrong_answers": [
-      "Every 4 years",
-      "Every 6 years",
-      "Every 10 years"
-    ],
-    "explanation": "General elections in India are held every 5 years to elect members of the Lok Sabha, the lower house of the Indian Parliament. This regular electoral process is a cornerstone of India's vibrant democracy. The other options are incorrect."
-  },
-  {
-    "ID": "IND011",
-    "category": "Science & Technology",
-    "difficulty": "medium",
-    "question_text": "In 2024, India achieved a significant milestone in the Global Innovation Index. What was its rank?",
-    "correct_answer": "39th",
-    "wrong_answers": [
-      "51st",
-      "25th",
-      "72nd"
-    ],
-    "explanation": "India ranked 39th in the Global Innovation Index (GII) 2024, a significant jump from its previous rankings. This reflects the country's growing focus on innovation, research, and development. The other ranks are incorrect."
-  },
-  {
-    "ID": "IND012",
-    "category": "Science & Technology",
-    "difficulty": "hard",
-    "question_text": "ISRO has launched India's first analog space mission to simulate interplanetary habitat conditions. In which region of India is this mission located?",
-    "correct_answer": "Leh, Ladakh",
-    "wrong_answers": [
-      "Thar Desert, Rajasthan",
-      "Rann of Kutch, Gujarat",
-      "Sundarbans, West Bengal"
-    ],
-    "explanation": "The analog space mission is located in Leh, Ladakh, a region known for its extreme cold desert climate, which is similar to the conditions on Mars and the Moon. This mission is crucial for preparing for future human spaceflights. The other locations, while unique, do not offer the same Mars-like environment."
-  },
-  {
-    "ID": "IND013",
-    "category": "Science & Technology",
-    "difficulty": "medium",
-    "question_text": "India has developed a series of indigenous ballistic missiles. Which of the following is a surface-to-air missile developed by India?",
-    "correct_answer": "Akash",
-    "wrong_answers": [
-      "Agni",
-      "Prithvi",
-      "BrahMos"
-    ],
-    "explanation": "The Akash is a medium-range surface-to-air missile developed by the DRDO. The Agni and Prithvi are surface-to-surface ballistic missiles, and BrahMos is a supersonic cruise missile developed in collaboration with Russia."
-  },
-  {
-    "ID": "IND014",
-    "category": "Science & Technology",
-    "difficulty": "hard",
-    "question_text": "India is making significant strides in fusion energy research with its own experimental fusion reactor. What is this type of device called?",
-    "correct_answer": "Tokamak",
-    "wrong_answers": [
-      "Stellarator",
-      "Hadron Collider",
-      "Cyclotron"
-    ],
-    "explanation": "India's Aditya is a tokamak, a device that uses a powerful magnetic field to confine plasma in the shape of a torus. It is a key part of India's research into fusion energy. A stellarator is another type of fusion device, while a Hadron Collider and Cyclotron are particle accelerators."
-  },
-  {
-    "ID": "IND015",
-    "category": "Science & Technology",
-    "difficulty": "medium",
-    "question_text": "India's Chandrayaan-1 mission made a groundbreaking discovery in 2008. What did it find on the Moon?",
-    "correct_answer": "Water molecules",
-    "wrong_answers": [
-      "Helium-3 deposits",
-      "Microbial life",
-      "A secret alien base"
-    ],
-    "explanation": "Chandrayaan-1's Moon Mineralogy Mapper (M3) instrument confirmed the presence of water molecules on the lunar surface, a major discovery that has significant implications for future lunar missions. The other options are incorrect."
-  },
-  {
-    "ID": "IND016",
-    "category": "History",
-    "difficulty": "medium",
-    "question_text": "The Gupta Empire is often referred to as the 'Golden Age of India' for its remarkable achievements. Which of the following was a major contribution of this era?",
-    "correct_answer": "The development of the decimal system and the concept of zero",
-    "wrong_answers": [
-      "The construction of the Taj Mahal",
-      "The discovery of the sea route to India",
-      "The establishment of the British Raj"
-    ],
-    "explanation": "The Gupta period (4th to 6th century AD) was a time of great progress in mathematics, science, and art. The development of the decimal system and the concept of zero were among its most significant contributions. The Taj Mahal was built during the Mughal era, the sea route was discovered by Europeans, and the British Raj was established much later."
-  },
-  {
-    "ID": "IND017",
-    "category": "History",
-    "difficulty": "easy",
-    "question_text": "Who is known as the 'Father of the Nation' in India for his pivotal role in the country's independence movement?",
+    "difficulty": "Easy",
+    "question_text": "Who is known as the 'Father of the Nation' in India?",
     "correct_answer": "Mahatma Gandhi",
     "wrong_answers": [
       "Jawaharlal Nehru",
       "Sardar Vallabhbhai Patel",
-      "Subhas Chandra Bose"
+      "B. R. Ambedkar"
     ],
-    "explanation": "Mahatma Gandhi is revered as the 'Father of the Nation' for his leadership in the non-violent struggle for India's independence. Jawaharlal Nehru was the first Prime Minister, Sardar Patel was a key figure in integrating the princely states, and Subhas Chandra Bose was another prominent freedom fighter."
+    "explanation": "Mahatma Gandhi, born Mohandas Karamchand Gandhi, is revered in India as the 'Father of the Nation' for his leadership in the non-violent independence movement against British rule. Jawaharlal Nehru was the first Prime Minister, Sardar Patel was a key statesman, and B. R. Ambedkar was the architect of the Indian Constitution."
   },
   {
-    "ID": "IND018",
+    "ID": "IND2",
     "category": "Geography",
-    "difficulty": "medium",
-    "question_text": "The Taj Mahal is a UNESCO World Heritage site and one of the New7Wonders of the World. On the bank of which river is it located?",
-    "correct_answer": "Yamuna",
+    "difficulty": "Easy",
+    "question_text": "Which iconic white marble mausoleum is located in Agra, India?",
+    "correct_answer": "The Taj Mahal",
     "wrong_answers": [
-      "Ganges",
-      "Brahmaputra",
-      "Godavari"
+      "Hawa Mahal",
+      "Qutub Minar",
+      "Red Fort"
     ],
-    "explanation": "The Taj Mahal is situated on the right bank of the Yamuna river in the city of Agra. The serene river provides a beautiful backdrop to this iconic monument of love. The other rivers are major rivers in India but are not associated with the Taj Mahal."
+    "explanation": "The Taj Mahal, a UNESCO World Heritage Site, is a world-renowned mausoleum in Agra, built by Mughal emperor Shah Jahan in memory of his wife Mumtaz Mahal. Hawa Mahal is in Jaipur, while Qutub Minar and the Red Fort are in Delhi."
   },
   {
-    "ID": "IND019",
+    "ID": "IND3",
     "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "Holi, the 'Festival of Colors', is a vibrant Hindu festival celebrated in India and by the Indian diaspora worldwide. What does it celebrate?",
-    "correct_answer": "The victory of good over evil and the arrival of spring",
+    "difficulty": "Medium",
+    "question_text": "What is the name of the traditional Indian system of medicine that emphasizes a holistic approach to health?",
+    "correct_answer": "Ayurveda",
     "wrong_answers": [
-      "The new year",
-      "The harvest season",
-      "The birthday of Lord Krishna"
+      "Yoga",
+      "Unani",
+      "Siddha"
     ],
-    "explanation": "Holi celebrates the eternal and divine love of Radha and Krishna, and also signifies the triumph of good over evil. It marks the end of winter and the arrival of spring, a season of hope and new beginnings. While other festivals celebrate the new year, harvest, or Lord Krishna's birthday, Holi is unique in its celebration of color, love, and the victory of good."
+    "explanation": "Ayurveda is an ancient system of medicine with historical roots in the Indian subcontinent. It focuses on balance in bodily systems and uses diet, herbal treatment, and yogic breathing. While Yoga is a related practice, Ayurveda is the comprehensive medical system. Unani and Siddha are other traditional medicine systems in India."
   },
   {
-    "ID": "IND020",
-    "category": "Culture",
-    "difficulty": "hard",
-    "question_text": "Kathak, Bharatanatyam, and Odissi are famous classical dance forms of India. Which of these originated in the state of Kerala and is known for its elaborate costumes and makeup?",
-    "correct_answer": "Kathakali",
+    "ID": "IND4",
+    "category": "Film",
+    "difficulty": "Easy",
+    "question_text": "What is the informal name for the Hindi-language film industry based in Mumbai?",
+    "correct_answer": "Bollywood",
     "wrong_answers": [
-      "Kathak",
-      "Bharatanatyam",
-      "Odissi"
+      "Tollywood",
+      "Kollywood",
+      "Sandalwood"
     ],
-    "explanation": "Kathakali is a classical Indian dance form that originated in Kerala. It is characterized by its elaborate makeup, costumes, and intricate gestures and facial expressions. Kathak is from Uttar Pradesh, Bharatanatyam from Tamil Nadu, and Odissi from Odisha."
+    "explanation": "Bollywood is a portmanteau of 'Bombay' (the former name for Mumbai) and 'Hollywood'. It is the world's largest film industry in terms of the number of films produced. Tollywood, Kollywood, and Sandalwood refer to the Telugu, Tamil, and Kannada film industries, respectively."
   },
   {
-    "ID": "IND021",
+    "ID": "IND5",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which leavened, oven-baked flatbread is a staple in Indian cuisine?",
+    "correct_answer": "Naan",
+    "wrong_answers": [
+      "Roti",
+      "Paratha",
+      "Dosa"
+    ],
+    "explanation": "Naan is a popular flatbread traditionally cooked in a tandoor (clay oven). Roti and Paratha are typically unleavened and cooked on a flat pan (tava). Dosa is a thin, crispy pancake made from fermented rice and lentil batter, popular in South India."
+  },
+  {
+    "ID": "IND6",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which mountain range forms the northern border of India?",
+    "correct_answer": "The Himalayas",
+    "wrong_answers": [
+      "The Western Ghats",
+      "The Eastern Ghats",
+      "The Aravalli Range"
+    ],
+    "explanation": "The Himalayas, the world's highest mountain range, form a massive barrier along India's northern frontier. The Western and Eastern Ghats are mountain ranges along the western and eastern coasts, respectively, and the Aravalli Range is in western India."
+  },
+  {
+    "ID": "IND7",
     "category": "History",
-    "difficulty": "medium",
-    "question_text": "The Indus Valley Civilization, one of the world's oldest urban civilizations, was known for its advanced city planning. Which of the following was a key feature of their cities?",
-    "correct_answer": "Sophisticated drainage and sewer systems",
-    "wrong_answers": [
-      "Massive pyramids and tombs",
-      "Horse-drawn chariots and iron weapons",
-      "A system of hieroglyphic writing"
-    ],
-    "explanation": "The cities of the Indus Valley Civilization, such as Mohenjo-daro and Harappa, had remarkably advanced drainage and sewer systems, showcasing their sophisticated understanding of urban planning and hygiene. Pyramids are characteristic of ancient Egypt, chariots and iron were from a later period, and their writing system, the Indus script, remains undeciphered and is not hieroglyphic."
-  },
-  {
-    "ID": "IND022",
-    "category": "Health & Wellness",
-    "difficulty": "easy",
-    "question_text": "Ayurveda, a traditional system of medicine with a history of over 3,000 years, originated in India. What is the primary principle of Ayurveda?",
-    "correct_answer": "Balancing the body's three doshas (Vata, Pitta, Kapha)",
-    "wrong_answers": [
-      "The use of synthetic drugs and surgery",
-      "Focusing solely on treating symptoms, not causes",
-      "A belief in the healing power of crystals"
-    ],
-    "explanation": "Ayurveda is based on the principle of maintaining a balance between the three doshas (elemental life forces) - Vata, Pitta, and Kapha - for good health. It emphasizes a holistic approach, focusing on the root cause of illness, not just the symptoms. It primarily uses natural remedies, not synthetic drugs, and is not related to crystal healing."
-  },
-  {
-    "ID": "IND023",
-    "category": "Science & Technology",
-    "difficulty": "hard",
-    "question_text": "The ancient Indian physician Sushruta is considered the 'Father of Surgery'. Which complex surgical procedure is he credited with pioneering?",
-    "correct_answer": "Rhinoplasty (plastic surgery of the nose)",
-    "wrong_answers": [
-      "Heart transplantation",
-      "Laser eye surgery",
-      "Robotic surgery"
-    ],
-    "explanation": "Sushruta, in his text 'Sushruta Samhita', described over 300 surgical procedures and 120 surgical instruments. He is most famous for his pioneering work in rhinoplasty. The other surgical procedures are modern inventions."
-  },
-  {
-    "ID": "IND024",
-    "category": "Science & Technology",
-    "difficulty": "hard",
-    "question_text": "The Fibonacci sequence, a series of numbers where each number is the sum of the two preceding ones, has applications in various fields. Which ancient Indian mathematicians are credited with its discovery?",
-    "correct_answer": "Pingala, Virahanka, and Hemachandra",
-    "wrong_answers": [
-      "Pythagoras and Euclid",
-      "Archimedes and Plato",
-      "Leonardo da Vinci"
-    ],
-    "explanation": "Long before Fibonacci introduced the sequence to the Western world, Indian mathematicians like Pingala (c. 3rd/2nd century BC), Virahanka (c. 6th century AD), and Hemachandra (c. 1150 AD) had described it in their works on Sanskrit prosody. The other mathematicians are from different regions and time periods."
-  },
-  {
-    "ID": "IND025",
-    "category": "History",
-    "difficulty": "medium",
-    "question_text": "India was one of the first civilizations to cultivate and use cotton for textiles. When did cotton cultivation begin in India?",
-    "correct_answer": "Around 5000 BC",
-    "wrong_answers": [
-      "Around 1000 AD",
-      "Around 500 AD",
-      "Around 1500 AD"
-    ],
-    "explanation": "Archaeological evidence suggests that cotton was cultivated in the Indian subcontinent as early as 5000 BC. The ancient Greeks and Romans were known to import fine cotton textiles from India. The other dates are too recent."
-  },
-  {
-    "ID": "IND026",
-    "category": "History",
-    "difficulty": "medium",
-    "question_text": "The Iron Pillar of Delhi, a 7-meter-tall pillar, is a testament to the advanced metallurgical skills of ancient Indians. What is its most remarkable feature?",
-    "correct_answer": "Its high resistance to rust",
-    "wrong_answers": [
-      "It is made of pure gold",
-      "It is hollow and contains a secret chamber",
-      "It is magnetic"
-    ],
-    "explanation": "The Iron Pillar of Delhi, dating back to the 4th century AD, is famous for its remarkable resistance to rust, despite being exposed to the elements for over 1600 years. This is due to its unique composition of iron, phosphorus, and other elements. It is not made of gold, hollow, or magnetic."
-  },
-  {
-    "ID": "IND027",
-    "category": "Health & Wellness",
-    "difficulty": "easy",
-    "question_text": "Yoga, a practice of physical, mental, and spiritual disciplines, has gained global popularity. In which country did Yoga originate?",
-    "correct_answer": "India",
-    "wrong_answers": [
-      "China",
-      "Japan",
-      "Tibet"
-    ],
-    "explanation": "Yoga originated in ancient India and is mentioned in the Rigveda, one of the oldest sacred texts. It has since evolved into various schools and practices, but its roots are firmly in Indian philosophy and spirituality. While other countries have their own ancient wellness practices, Yoga is uniquely Indian."
-  },
-  {
-    "ID": "IND028",
-    "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "The principle of 'Ahimsa' or non-violence is a central tenet of several Indian religions. Which major world religion is most strongly associated with this principle?",
-    "correct_answer": "Jainism",
-    "wrong_answers": [
-      "Sikhism",
-      "Buddhism",
-      "Hinduism"
-    ],
-    "explanation": "While Ahimsa is important in Hinduism and Buddhism, it is the most fundamental principle of Jainism, where it is practiced with utmost rigor, extending to all forms of life. Jains take great care to avoid harming any living being, however small."
-  },
-  {
-    "ID": "IND029",
-    "category": "History",
-    "difficulty": "hard",
-    "question_text": "The ancient city of Takshashila, located in present-day Pakistan, was a renowned center of learning in ancient India, often considered the world's first university. When was it established?",
-    "correct_answer": "Around 1000 BC",
-    "wrong_answers": [
-      "Around 500 AD",
-      "Around 100 AD",
-      "Around 1500 AD"
-    ],
-    "explanation": "Takshashila was established around 1000 BC and flourished for centuries, attracting students and scholars from all over the world. It was a major center for the study of various subjects, including philosophy, medicine, and mathematics. The other dates are too recent."
-  },
-  {
-    "ID": "IND030",
-    "category": "History",
-    "difficulty": "medium",
-    "question_text": "India was the first country in the world to mine diamonds. Which famous diamond is believed to have been mined in India?",
-    "correct_answer": "The Koh-i-Noor",
-    "wrong_answers": [
-      "The Cullinan Diamond",
-      "The Hope Diamond",
-      "The Golden Jubilee Diamond"
-    ],
-    "explanation": "The Koh-i-Noor, one of the largest cut diamonds in the world, was mined in the Golconda region of India. It has a long and storied history and is now part of the British Crown Jewels. The Cullinan and Golden Jubilee diamonds were mined in South Africa, and the Hope Diamond is also believed to have originated in India, but the Koh-i-Noor is more famously associated with India."
-  },
-  {
-    "ID": "IND031",
-    "category": "Economy",
-    "difficulty": "medium",
-    "question_text": "India has emerged as a global economic powerhouse. As of 2024, what is its ranking as the world's largest economy by nominal GDP?",
-    "correct_answer": "5th",
-    "wrong_answers": [
-      "3rd",
-      "7th",
-      "10th"
-    ],
-    "explanation": "India has overtaken the UK to become the world's 5th largest economy by nominal GDP. It is projected to become the 3rd largest by 2030. This growth is driven by a combination of factors, including a large and young workforce, a growing middle class, and a focus on technology and innovation."
-  },
-  {
-    "ID": "IND032",
-    "category": "Economy",
-    "difficulty": "hard",
-    "question_text": "The Indian government has set an ambitious goal to transform the country into a developed economy by 2047, the 100th anniversary of its independence. What is this vision called?",
-    "correct_answer": "Viksit Bharat 2047",
-    "wrong_answers": [
-      "Make in India",
-      "Digital India",
-      "Swachh Bharat Abhiyan"
-    ],
-    "explanation": "'Viksit Bharat 2047' (Developed India 2047) is the Indian government's vision for the country's future. It encompasses economic growth, social progress, environmental sustainability, and good governance. The other options are important government initiatives but are not the overarching vision for 2047."
-  },
-  {
-    "ID": "IND033",
-    "category": "Economy",
-    "difficulty": "medium",
-    "question_text": "The services sector is a major driver of India's economic growth and exports. Which of the following is a key component of India's services exports?",
-    "correct_answer": "Information Technology (IT) services",
-    "wrong_answers": [
-      "Agricultural products",
-      "Textiles and garments",
-      "Automobiles and auto parts"
-    ],
-    "explanation": "India is a global hub for IT services, with companies like TCS, Infosys, and Wipro providing software development, outsourcing, and consulting services to clients worldwide. While the other sectors are also important for India's economy, IT services are a dominant force in its service exports."
-  },
-  {
-    "ID": "IND034",
-    "category": "History",
-    "difficulty": "medium",
-    "question_text": "For several decades after independence, India's economy was characterized by a system of extensive state control and regulation. What was this system popularly known as?",
-    "correct_answer": "The Licence Raj",
-    "wrong_answers": [
-      "The Permit Raj",
-      "The Quota Raj",
-      "The Control Raj"
-    ],
-    "explanation": "The 'Licence Raj' refers to the system of licenses, regulations, and red tape that hindered business and economic growth in India from the 1950s to the 1980s. This system was largely dismantled by the economic liberalization of 1991."
-  },
-  {
-    "ID": "IND035",
-    "category": "History",
-    "difficulty": "easy",
-    "question_text": "In 1991, India initiated a series of major economic reforms that opened up its economy to international competition. What was this process called?",
-    "correct_answer": "Economic liberalization",
-    "wrong_answers": [
-      "Nationalization",
-      "Protectionism",
-      "Socialism"
-    ],
-    "explanation": "The economic liberalization of 1991, led by then Finance Minister Manmohan Singh, was a landmark event in India's economic history. It involved a series of reforms that reduced tariffs, deregulated industries, and encouraged foreign investment, leading to a period of rapid economic growth. The other options represent the opposite of liberalization."
-  },
-  {
-    "ID": "IND036",
-    "category": "History",
-    "difficulty": "hard",
-    "question_text": "For most of the period between the 1st and 18th centuries, the Indian subcontinent had the largest economy in the world. Which empire's reign in the 17th century is considered a peak of this economic dominance?",
-    "correct_answer": "The Mughal Empire",
-    "wrong_answers": [
-      "The Mauryan Empire",
-      "The Gupta Empire",
-      "The Maratha Empire"
-    ],
-    "explanation": "The Mughal Empire, at its peak in the 17th century, was one of the largest and richest empires in the world, accounting for about a quarter of global GDP. It was a major center for manufacturing and trade. While the other empires were also powerful, the Mughal era is particularly noted for its economic prosperity."
-  },
-  {
-    "ID": "IND037",
-    "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "The 'Navaratri' festival is a vibrant nine-night celebration in India. What does it primarily celebrate?",
-    "correct_answer": "The victory of the goddess Durga over the demon Mahishasura",
-    "wrong_answers": [
-      "The birth of Lord Rama",
-      "The marriage of Shiva and Parvati",
-      "The return of Rama to Ayodhya"
-    ],
-    "explanation": "Navaratri is a major Hindu festival that celebrates the victory of the goddess Durga over the demon Mahishasura, symbolizing the triumph of good over evil. The festival is celebrated with music, dance (especially Garba in Gujarat), and religious ceremonies. The other options are associated with different Hindu festivals."
-  },
-  {
-    "ID": "IND038",
-    "category": "Culture",
-    "difficulty": "hard",
-    "question_text": "The 'Kumbh Mela' is a massive Hindu pilgrimage and festival, considered the largest peaceful gathering in the world. How often is it held at each of the four sacred locations?",
-    "correct_answer": "Every 12 years",
-    "wrong_answers": [
-      "Every 6 years",
-      "Every 10 years",
-      "Every year"
-    ],
-    "explanation": "The Kumbh Mela is held every 12 years at each of the four sacred locations: Prayagraj, Haridwar, Nashik, and Ujjain. The festival attracts millions of pilgrims who bathe in the sacred rivers to cleanse their sins. There is also an 'Ardh' (half) Kumbh Mela every 6 years."
-  },
-  {
-    "ID": "IND039",
-    "category": "Personalities",
-    "difficulty": "medium",
+    "difficulty": "Hard",
     "question_text": "Who was the first Indian to win a Nobel Prize?",
     "correct_answer": "Rabindranath Tagore",
     "wrong_answers": [
-      "C.V. Raman",
+      "C. V. Raman",
       "Mother Teresa",
       "Amartya Sen"
     ],
-    "explanation": "Rabindranath Tagore, a poet, writer, and philosopher, was the first Indian and the first non-European to win the Nobel Prize in Literature in 1913 for his collection of poems, 'Gitanjali'. C.V. Raman was the first Indian to win the Nobel Prize in Physics, Mother Teresa in Peace, and Amartya Sen in Economic Sciences."
+    "explanation": "The poet and philosopher Rabindranath Tagore was the first Indian and the first non-European to win the Nobel Prize in Literature in 1913 for his collection 'Gitanjali'. C. V. Raman won for Physics in 1930. Mother Teresa and Amartya Sen won their Nobel Prizes later."
   },
   {
-    "ID": "IND040",
-    "category": "Personalities",
-    "difficulty": "medium",
-    "question_text": "Who is known as the 'Milkman of India' for his role in the 'White Revolution', which made India the world's largest milk producer?",
-    "correct_answer": "Verghese Kurien",
+    "ID": "IND8",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "What is the name of India's first successful mission to Mars?",
+    "correct_answer": "Mangalyaan (Mars Orbiter Mission)",
     "wrong_answers": [
-      "M.S. Swaminathan",
-      "J.R.D. Tata",
-      "Dhirubhai Ambani"
+      "Chandrayaan-1",
+      "Aryabhata",
+      "Gaganyaan"
     ],
-    "explanation": "Verghese Kurien is celebrated as the 'Father of the White Revolution' in India. His 'billion-litre idea' created the brand Amul and transformed India from a milk-deficient nation to the world's largest milk producer. M.S. Swaminathan is known for the 'Green Revolution' in agriculture, while J.R.D. Tata and Dhirubhai Ambani were pioneering industrialists."
+    "explanation": "The Mars Orbiter Mission, informally known as Mangalyaan, was India's first interplanetary mission. Launched in 2013, it made India the first Asian nation to reach Martian orbit and the first nation in the world to do so on its first attempt. Chandrayaan-1 was a lunar mission, Aryabhata was India's first satellite, and Gaganyaan is the planned crewed orbital spacecraft."
   },
   {
-    "ID": "IND041",
-    "category": "Personalities",
-    "difficulty": "medium",
-    "question_text": "Who was the first woman of Indian origin to go to space?",
-    "correct_answer": "Kalpana Chawla",
+    "ID": "IND9",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "Which vibrant festival, also known as the 'Festival of Lights', is one of the most important festivals in India?",
+    "correct_answer": "Diwali",
     "wrong_answers": [
-      "Sunita Williams",
-      "Ritu Karidhal",
-      "Tessy Thomas"
+      "Holi",
+      "Navratri",
+      "Eid"
     ],
-    "explanation": "Kalpana Chawla was an American astronaut and the first woman of Indian origin to go to space. She first flew on Space Shuttle Columbia in 1997 as a mission specialist and primary robotic arm operator. Sunita Williams is another American astronaut of Indian origin. Ritu Karidhal and Tessy Thomas are renowned scientists at ISRO."
+    "explanation": "Diwali, or Deepavali, is the Hindu festival of lights, which symbolizes the spiritual 'victory of light over darkness, good over evil, and knowledge over ignorance'. Holi is the festival of colors, Navratri is a nine-night festival, and Eid is an important Islamic festival."
   },
   {
-    "ID": "IND042",
-    "category": "Personalities",
-    "difficulty": "medium",
-    "question_text": "Who is the first and only Indian woman to win six-time world amateur boxing championships?",
-    "correct_answer": "Mary Kom",
+    "ID": "IND10",
+    "category": "Sports",
+    "difficulty": "Easy",
+    "question_text": "What is the most popular sport in India?",
+    "correct_answer": "Cricket",
     "wrong_answers": [
-      "Saina Nehwal",
-      "P.V. Sindhu",
-      "Sakshi Malik"
+      "Football (Soccer)",
+      "Hockey",
+      "Kabaddi"
     ],
-    "explanation": "Mary Kom is a celebrated Indian boxer who has won the World Amateur Boxing Championships six times, the only woman to do so. She is also a Member of Parliament, Rajya Sabha. The other options are also famous Indian sportswomen, but in different sports."
+    "explanation": "Cricket is by far the most popular sport in India, enjoying widespread viewership and participation. While football, hockey (India's national sport), and Kabaddi are also popular, they do not match the level of passion and following that cricket commands."
   },
   {
-    "ID": "IND043",
-    "category": "Nature",
-    "difficulty": "hard",
-    "question_text": "In the state of Meghalaya, there are unique bridges made from the roots of living trees. What are these bridges called?",
-    "correct_answer": "Living Root Bridges",
-    "wrong_answers": [
-      "Suspension Bridges",
-      "Cantilever Bridges",
-      "Arch Bridges"
-    ],
-    "explanation": "The Living Root Bridges of Meghalaya are a unique example of bio-engineering. They are made by training the roots of the Ficus elastica tree across a river, which then grow and strengthen over time. These bridges are a sustainable and beautiful solution to crossing rivers in the region."
-  },
-  {
-    "ID": "IND044",
+    "ID": "IND11",
     "category": "Geography",
-    "difficulty": "hard",
-    "question_text": "The Siachen Glacier, the world's highest battlefield, is located in which mountain range?",
-    "correct_answer": "The Karakoram Range",
+    "difficulty": "Easy",
+    "question_text": "What is the capital city of India?",
+    "correct_answer": "New Delhi",
     "wrong_answers": [
-      "The Himalayas",
-      "The Western Ghats",
-      "The Eastern Ghats"
-    ],
-    "explanation": "The Siachen Glacier is located in the eastern Karakoram range in the Himalayas. It is the highest battlefield in the world, where the Indian Army maintains a permanent military presence despite the extreme weather conditions. The other mountain ranges are also in India but are not home to the Siachen Glacier."
-  },
-  {
-    "ID": "IND045",
-    "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "In India, the term 'Jugaad' is often used to describe a creative and frugal approach to problem-solving. What does it essentially mean?",
-    "correct_answer": "A flexible approach to problem-solving that uses limited resources in an innovative way",
-    "wrong_answers": [
-      "A traditional form of meditation",
-      "A type of spicy street food",
-      "A form of classical music"
-    ],
-    "explanation": "'Jugaad' is a Hindi word that refers to a non-conventional, frugal innovation, often termed as a 'hack'. It is a testament to the ingenuity and resourcefulness of the Indian people. The other options are incorrect."
-  },
-  {
-    "ID": "IND046",
-    "category": "Culture",
-    "difficulty": "easy",
-    "question_text": "Indian cuisine is known for its incredible diversity and use of spices. Which of the following is a popular bread, traditionally cooked in a tandoor (clay oven)?",
-    "correct_answer": "Naan",
-    "wrong_answers": [
-      "Dosa",
-      "Idli",
-      "Puri"
-    ],
-    "explanation": "Naan is a leavened, oven-baked flatbread that is a staple in Indian cuisine. It is traditionally cooked in a tandoor. Dosa is a thin pancake made from a fermented batter, Idli is a steamed rice cake, and Puri is a deep-fried bread."
-  },
-  {
-    "ID": "IND047",
-    "category": "Culture",
-    "difficulty": "medium",
-    "question_text": "The concept of 'Seva' is a core tenet of many Indian religions and philosophies. What does it mean?",
-    "correct_answer": "Selfless service",
-    "wrong_answers": [
-      "Spiritual enlightenment",
-      "Material wealth",
-      "Personal happiness"
-    ],
-    "explanation": "'Seva' is a Sanskrit word that means 'selfless service'. It is the act of serving others without any expectation of reward or recognition. It is a fundamental concept in many Indian traditions and is seen as a path to spiritual growth. The other options are incorrect."
-  },
-  {
-    "ID": "IND048",
-    "category": "History",
-    "difficulty": "medium",
-    "question_text": "Sarojini Naidu, a prominent figure in India's independence movement, was also a celebrated poet. What was her nickname?",
-    "correct_answer": "The Nightingale of India",
-    "wrong_answers": [
-      "The Iron Lady of India",
-      "The Mother of the Nation",
-      "The Queen of Jhansi"
-    ],
-    "explanation": "Sarojini Naidu was given the nickname 'The Nightingale of India' (Bharat Kokila) by Mahatma Gandhi for her beautiful and lyrical poetry. 'The Iron Lady of India' refers to Indira Gandhi, 'The Mother of the Nation' is a title sometimes used for Mahatma Gandhi's wife Kasturba Gandhi, and 'The Queen of Jhansi' refers to Rani Lakshmibai."
-  },
-  {
-    "ID": "IND049",
-    "category": "Entertainment",
-    "difficulty": "medium",
-    "question_text": "While Bollywood is the most well-known film industry in India, there are several other regional film industries. Which city is the center of the Telugu film industry, also known as 'Tollywood'?",
-    "correct_answer": "Hyderabad",
-    "wrong_answers": [
-      "Chennai",
+      "Mumbai",
       "Kolkata",
-      "Bengaluru"
+      "Chennai"
     ],
-    "explanation": "Hyderabad is the center of the Telugu film industry, which is one of the largest in India. Chennai is the center of the Tamil film industry (Kollywood), Kolkata for the Bengali film industry (also sometimes called Tollywood), and Bengaluru for the Kannada film industry (Sandalwood)."
+    "explanation": "New Delhi is the capital of India and the seat of the executive, legislative, and judiciary branches of the Government of India. Mumbai is the financial capital, while Kolkata and Chennai are other major metropolitan cities."
   },
   {
-    "ID": "IND050",
-    "category": "Culture",
-    "difficulty": "easy",
-    "question_text": "The Sanskrit phrase 'Atithi Devo Bhava' is a cornerstone of Indian hospitality. What does it mean?",
-    "correct_answer": "The guest is God",
+    "ID": "IND12",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "Which great emperor of the Mauryan Dynasty is known for his conversion to Buddhism after the Kalinga War?",
+    "correct_answer": "Ashoka the Great",
     "wrong_answers": [
-      "Family is everything",
-      "Truth always triumphs",
-      "Work is worship"
+      "Chandragupta Maurya",
+      "Samudragupta",
+      "Harshavardhana"
     ],
-    "explanation": "'Atithi Devo Bhava' is a traditional Indian value that emphasizes treating guests with the utmost respect and honor, as if they were divine. It is a reflection of the warmth and hospitality of Indian culture. The other options are also important Indian values but have different meanings."
+    "explanation": "Ashoka the Great, the third emperor of the Mauryan dynasty, renounced violence and embraced Buddhism after witnessing the immense bloodshed of the Kalinga War. He then dedicated his reign to spreading Buddhist principles. Chandragupta Maurya was his grandfather, and the other rulers belonged to different dynasties."
+  },
+  {
+    "ID": "IND13",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "Which classical dance form originated in the southern Indian state of Tamil Nadu?",
+    "correct_answer": "Bharatanatyam",
+    "wrong_answers": [
+      "Kathak",
+      "Kathakali",
+      "Odissi"
+    ],
+    "explanation": "Bharatanatyam is a major genre of Indian classical dance that originated in the Hindu temples of Tamil Nadu. Kathak is from northern India, Kathakali from Kerala, and Odissi from Odisha."
+  },
+  {
+    "ID": "IND14",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "What is a 'tandoor' in the context of Indian cooking?",
+    "correct_answer": "A cylindrical clay oven",
+    "wrong_answers": [
+      "A type of spice blend",
+      "A deep-frying pan",
+      "A flat griddle"
+    ],
+    "explanation": "A tandoor is a traditional cylindrical clay or metal oven used in cooking and baking in Southern, Central, and Western Asia, as well as in the Caucasus. It is used to bake flatbreads like naan and to cook marinated meats like tandoori chicken."
+  },
+  {
+    "ID": "IND15",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which sacred river is considered the holiest river to Hindus?",
+    "correct_answer": "The Ganges (Ganga)",
+    "wrong_answers": [
+      "The Yamuna",
+      "The Godavari",
+      "The Brahmaputra"
+    ],
+    "explanation": "The Ganges, or Ganga, is personified as a goddess and holds immense religious significance for Hindus. It is a lifeline to millions of Indians who live along its course and depend on it for their daily needs. The other rivers are also important but the Ganges is considered the holiest."
+  },
+  {
+    "ID": "IND16",
+    "category": "Science & Technology",
+    "difficulty": "Hard",
+    "question_text": "Who is known as the 'Father of the Indian space program'?",
+    "correct_answer": "Vikram Sarabhai",
+    "wrong_answers": [
+      "A. P. J. Abdul Kalam",
+      "Homi J. Bhabha",
+      "Satish Dhawan"
+    ],
+    "explanation": "Dr. Vikram Sarabhai is internationally regarded as the Father of the Indian Space Program. He was instrumental in establishing the Indian Space Research Organisation (ISRO). A. P. J. Abdul Kalam was a later president and scientist, Homi J. Bhabha was the father of the nuclear program, and Satish Dhawan was a later chairman of ISRO."
+  },
+  {
+    "ID": "IND17",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The 'Quit India Movement' against British rule was launched in which year?",
+    "correct_answer": "1942",
+    "wrong_answers": [
+      "1930",
+      "1920",
+      "1947"
+    ],
+    "explanation": "The Quit India Movement was a movement launched at the Bombay session of the All-India Congress Committee by Mahatma Gandhi on 8 August 1942, during World War II, demanding an end to British Rule in India."
+  },
+  {
+    "ID": "IND18",
+    "category": "Culture",
+    "difficulty": "Easy",
+    "question_text": "What is the traditional garment worn by women in India, consisting of a long piece of cloth draped over the body?",
+    "correct_answer": "Sari (or Saree)",
+    "wrong_answers": [
+      "Salwar Kameez",
+      "Lehenga",
+      "Kurti"
+    ],
+    "explanation": "The sari or saree is a female garment from the Indian subcontinent that consists of a drape varying from 4.5 to 9 metres in length and 60 to 120 centimetres in breadth that is typically wrapped around the waist, with one end draped over the shoulder. Salwar Kameez, Lehenga, and Kurti are other types of traditional Indian attire."
+  },
+  {
+    "ID": "IND19",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Which Indian film was the first to be nominated for the Academy Award for Best Foreign Language Film?",
+    "correct_answer": "Mother India",
+    "wrong_answers": [
+      "Lagaan",
+      "Salaam Bombay!",
+      "Water"
+    ],
+    "explanation": "The 1957 epic drama 'Mother India' was India's first submission for the Academy Award for Best Foreign Language Film and was one of the five nominees. 'Lagaan' and 'Salaam Bombay!' were also nominated in later years. 'Water' was a Canadian submission, though set in India."
+  },
+  {
+    "ID": "IND20",
+    "category": "Cuisine",
+    "difficulty": "Easy",
+    "question_text": "What is the main ingredient in the popular Indian dish 'dal'?",
+    "correct_answer": "Lentils",
+    "wrong_answers": [
+      "Chickpeas",
+      "Kidney beans",
+      "Potatoes"
+    ],
+    "explanation": "Dal (also spelled daal or dhal) is a term originating in the Indian subcontinent for dried, split pulses (that is, lentils, peas, and beans). The term is also used for various soups prepared from these pulses. Chickpeas are used in chana masala, and kidney beans in rajma."
   }
 ]
