@@ -258,5 +258,2241 @@
       "Potatoes"
     ],
     "explanation": "Dal (also spelled daal or dhal) is a term originating in the Indian subcontinent for dried, split pulses (that is, lentils, peas, and beans). The term is also used for various soups prepared from these pulses. Chickpeas are used in chana masala, and kidney beans in rajma."
+  },
+  {
+    "ID": "IND21",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which Indian state is known as the 'Land of the Gods' (Devbhumi)?",
+    "correct_answer": "Uttarakhand",
+    "wrong_answers": [
+      "Himachal Pradesh",
+      "Sikkim",
+      "Jammu and Kashmir"
+    ],
+    "explanation": "Uttarakhand is known as 'Devbhumi' or 'Land of the Gods' due to its numerous Hindu temples and pilgrimage centers. Himachal Pradesh is also known for its temples, but Uttarakhand holds the specific title."
+  },
+  {
+    "ID": "IND22",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE."
+  },
+  {
+    "ID": "IND23",
+    "category": "Culture",
+    "difficulty": "Hard",
+    "question_text": "What is the name of the traditional martial art form that originated in Kerala?",
+    "correct_answer": "Kalaripayattu",
+    "wrong_answers": [
+      "Silambam",
+      "Thang-Ta",
+      "Gatka"
+    ],
+    "explanation": "Kalaripayattu is a martial art which originated as a style in Kerala. It is considered to be one of the oldest surviving martial arts in India. Silambam is from Tamil Nadu, Thang-Ta from Manipur, and Gatka from Punjab."
+  },
+  {
+    "ID": "IND24",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Who directed the critically acclaimed 2001 film 'Lagaan', which was nominated for an Academy Award?",
+    "correct_answer": "Ashutosh Gowariker",
+    "wrong_answers": [
+      "Sanjay Leela Bhansali",
+      "Karan Johar",
+      "Yash Chopra"
+    ],
+    "explanation": "'Lagaan' was directed by Ashutosh Gowariker and was the third Indian film to be nominated for the Academy Award for Best Foreign Language Film. The other individuals are also famous Bollywood directors."
+  },
+  {
+    "ID": "IND25",
+    "category": "Cuisine",
+    "difficulty": "Easy",
+    "question_text": "Which city is famous for its 'Hyderabadi Biryani'?",
+    "correct_answer": "Hyderabad",
+    "wrong_answers": [
+      "Lucknow",
+      "Kolkata",
+      "Delhi"
+    ],
+    "explanation": "Hyderabadi Biryani is a style of biryani originating from Hyderabad, India. It is prepared from rice using the dum method of cooking and is a staple of Hyderabadi cuisine. Lucknow, Kolkata, and Delhi are famous for their own styles of biryani."
+  },
+  {
+    "ID": "IND26",
+    "category": "Geography",
+    "difficulty": "Hard",
+    "question_text": "What is the largest saline water lake in India?",
+    "correct_answer": "Chilika Lake",
+    "wrong_answers": [
+      "Wular Lake",
+      "Dal Lake",
+      "Vembanad Lake"
+    ],
+    "explanation": "Chilika Lake in Odisha is the largest coastal lagoon in India and the second largest brackish water lagoon in the world. Wular Lake and Dal Lake are freshwater lakes in Jammu and Kashmir. Vembanad Lake is the longest lake in India, located in Kerala."
+  },
+  {
+    "ID": "IND27",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The first war of Indian Independence, also known as the Sepoy Mutiny, took place in which year?",
+    "correct_answer": "1857",
+    "wrong_answers": [
+      "1757",
+      "1885",
+      "1905"
+    ],
+    "explanation": "The Indian Rebellion of 1857 was a major, but ultimately unsuccessful, uprising in India in 1857\u201358 against the rule of the British East India Company, which functioned as a sovereign power on behalf of the British Crown."
+  },
+  {
+    "ID": "IND28",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "India's first satellite was named after which ancient Indian mathematician?",
+    "correct_answer": "Aryabhata",
+    "wrong_answers": [
+      "Brahmagupta",
+      "Bhaskara II",
+      "Varahamihira"
+    ],
+    "explanation": "India's first satellite, Aryabhata, was launched in 1975. It was named after the famous Indian astronomer and mathematician Aryabhata. The other individuals were also great mathematicians and astronomers from ancient India."
+  },
+  {
+    "ID": "IND29",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The 'Konark Sun Temple', a UNESCO World Heritage site, is located in which Indian state?",
+    "correct_answer": "Odisha",
+    "wrong_answers": [
+      "West Bengal",
+      "Andhra Pradesh",
+      "Telangana"
+    ],
+    "explanation": "The Konark Sun Temple is a 13th-century CE Sun temple at Konark about 35 kilometres northeast from Puri on the coastline of Odisha, India. The temple is attributed to king Narasimhadeva I of the Eastern Ganga Dynasty about 1250 CE."
+  },
+  {
+    "ID": "IND30",
+    "category": "Sports",
+    "difficulty": "Medium",
+    "question_text": "Who was the first Indian to win an individual Olympic gold medal?",
+    "correct_answer": "Abhinav Bindra",
+    "wrong_answers": [
+      "Leander Paes",
+      "Karnam Malleswari",
+      "Rajyavardhan Singh Rathore"
+    ],
+    "explanation": "Abhinav Bindra won the gold medal in the 10-meter air rifle event at the 2008 Beijing Olympics, becoming the first Indian to win an individual Olympic gold medal. The other athletes won medals in different years and events."
+  },
+  {
+    "ID": "IND31",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which Indian city is known as the 'Silicon Valley of India'?",
+    "correct_answer": "Bengaluru (Bangalore)",
+    "wrong_answers": [
+      "Hyderabad",
+      "Pune",
+      "Chennai"
+    ],
+    "explanation": "Bengaluru, the capital of Karnataka, is known as the 'Silicon Valley of India' because of its role as the nation's leading information technology (IT) exporter. Hyderabad, Pune, and Chennai are also major IT hubs."
+  },
+  {
+    "ID": "IND32",
+    "category": "History",
+    "difficulty": "Easy",
+    "question_text": "Who was the first Prime Minister of India?",
+    "correct_answer": "Jawaharlal Nehru",
+    "wrong_answers": [
+      "Sardar Vallabhbhai Patel",
+      "Mahatma Gandhi",
+      "Lal Bahadur Shastri"
+    ],
+    "explanation": "Jawaharlal Nehru was India's first prime minister, serving from India's independence in 1947 until his death in 1964. Sardar Patel was the first Deputy Prime Minister, Mahatma Gandhi was a leader of the independence movement, and Lal Bahadur Shastri was a later Prime Minister."
+  },
+  {
+    "ID": "IND33",
+    "category": "Culture",
+    "difficulty": "Easy",
+    "question_text": "Which of these is a famous festival of colors celebrated in India?",
+    "correct_answer": "Holi",
+    "wrong_answers": [
+      "Diwali",
+      "Dussehra",
+      "Onam"
+    ],
+    "explanation": "Holi is a popular ancient Hindu festival, also known as the 'Festival of Colors'. It celebrates the eternal and divine love of Radha and Krishna. Diwali is the festival of lights, Dussehra celebrates the victory of good over evil, and Onam is a harvest festival of Kerala."
+  },
+  {
+    "ID": "IND34",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "What is the name of the popular Indian street food that consists of a hollow, crispy-fried puffed ball filled with a mixture of flavored water, tamarind chutney, chili, chaat masala, potato, onion or chickpeas?",
+    "correct_answer": "Pani Puri (or Golgappa)",
+    "wrong_answers": [
+      "Samosa",
+      "Vada Pav",
+      "Bhel Puri"
+    ],
+    "explanation": "Pani Puri, also known as Golgappa or Phuchka, is a popular street snack in India. Samosa is a fried pastry, Vada Pav is a potato fritter sandwich, and Bhel Puri is a type of chaat made from puffed rice."
+  },
+  {
+    "ID": "IND35",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The 'Valley of Flowers' National Park, known for its meadows of endemic alpine flowers, is located in which state?",
+    "correct_answer": "Uttarakhand",
+    "wrong_answers": [
+      "Himachal Pradesh",
+      "Sikkim",
+      "Arunachal Pradesh"
+    ],
+    "explanation": "The Valley of Flowers National Park is an Indian national park, located in North Chamoli, in the state of Uttarakhand and is known for its meadows of endemic alpine flowers and the variety of flora."
+  },
+  {
+    "ID": "IND36",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "Which Indian-born physicist won the Nobel Prize in Physics in 1983 for his theoretical studies of the physical processes of importance to the structure and evolution of the stars?",
+    "correct_answer": "Subrahmanyan Chandrasekhar",
+    "wrong_answers": [
+      "C. V. Raman",
+      "Homi J. Bhabha",
+      "Satyendra Nath Bose"
+    ],
+    "explanation": "Subrahmanyan Chandrasekhar was an Indian-American astrophysicist who spent his professional life in the United States. He was awarded the 1983 Nobel Prize for Physics for his theoretical studies of the physical processes of importance to the structure and evolution of the stars. C.V. Raman won in 1930, while Bhabha and Bose are other renowned Indian physicists."
+  },
+  {
+    "ID": "IND37",
+    "category": "History",
+    "difficulty": "Hard",
+    "question_text": "Who founded the Mughal Empire in India in 1526?",
+    "correct_answer": "Babur",
+    "wrong_answers": [
+      "Akbar",
+      "Humayun",
+      "Shah Jahan"
+    ],
+    "explanation": "Babur, a descendant of Timur and Genghis Khan, founded the Mughal Empire in 1526 after defeating the last Delhi Sultan, Ibrahim Lodi, at the First Battle of Panipat. Akbar was his grandson, Humayun his son, and Shah Jahan his great-great-grandson."
+  },
+  {
+    "ID": "IND38",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The Ajanta and Ellora Caves, famous for their rock-cut Buddhist, Hindu, and Jain monuments, are located in which state?",
+    "correct_answer": "Maharashtra",
+    "wrong_answers": [
+      "Madhya Pradesh",
+      "Gujarat",
+      "Karnataka"
+    ],
+    "explanation": "The Ajanta and Ellora caves are UNESCO World Heritage sites located in the Aurangabad district of Maharashtra, India. They are renowned for their monumental caves, which feature intricate carvings and paintings."
+  },
+  {
+    "ID": "IND39",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Which legendary Indian actor is popularly known as the 'Shahenshah' of Bollywood?",
+    "correct_answer": "Amitabh Bachchan",
+    "wrong_answers": [
+      "Shah Rukh Khan",
+      "Dilip Kumar",
+      "Rajinikanth"
+    ],
+    "explanation": "Amitabh Bachchan is one of the most influential actors in the history of Indian cinema and is often referred to as 'Shahenshah' (Emperor) after his 1988 film of the same name. Shah Rukh Khan is known as the 'King of Bollywood', Dilip Kumar as the 'Tragedy King', and Rajinikanth as 'Thalaivar' (Leader)."
+  },
+  {
+    "ID": "IND40",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which Indian bread is made from a fermented batter of rice and black lentils?",
+    "correct_answer": "Dosa",
+    "wrong_answers": [
+      "Naan",
+      "Roti",
+      "Paratha"
+    ],
+    "explanation": "Dosa is a thin, crispy pancake or crepe, originating from South India, made from a fermented batter predominantly consisting of lentils and rice. Naan is a leavened flatbread, while Roti and Paratha are unleavened flatbreads made from wheat flour."
+  },
+  {
+    "ID": "IND41",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which is the highest peak in India?",
+    "correct_answer": "Kangchenjunga",
+    "wrong_answers": [
+      "Nanda Devi",
+      "K2",
+      "Mount Everest"
+    ],
+    "explanation": "Kangchenjunga, located in the Himalayas on the border of Nepal and the Indian state of Sikkim, is the highest peak in India and the third highest in the world. While K2 is higher, it is located in Pakistan-occupied Kashmir. Mount Everest is in Nepal."
+  },
+  {
+    "ID": "IND42",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The Jallianwala Bagh massacre took place in which Indian city in 1919?",
+    "correct_answer": "Amritsar",
+    "wrong_answers": [
+      "Lahore",
+      "Delhi",
+      "Jalandhar"
+    ],
+    "explanation": "The Jallianwala Bagh massacre occurred in Amritsar, Punjab, on 13 April 1919, when troops of the British Indian Army under the command of Colonel Reginald Dyer fired rifles into a crowd of unarmed Indian civilians who had gathered in a public garden."
+  },
+  {
+    "ID": "IND43",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "Which Indian state is famous for its 'Pattachitra' style of cloth-based scroll painting?",
+    "correct_answer": "Odisha",
+    "wrong_answers": [
+      "West Bengal",
+      "Bihar",
+      "Rajasthan"
+    ],
+    "explanation": "Pattachitra is a traditional, cloth-based scroll painting based in the eastern Indian states of Odisha and West Bengal. In the Sanskrit language, 'Patta' means 'cloth' and 'Chitra' means 'picture'. It is known for its intricate details as well as mythological narratives and folktales."
+  },
+  {
+    "ID": "IND44",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Who is often called the 'First Lady of Indian Cinema'?",
+    "correct_answer": "Devika Rani",
+    "wrong_answers": [
+      "Nargis",
+      "Madhubala",
+      "Meena Kumari"
+    ],
+    "explanation": "Devika Rani was a pioneering actress in Indian cinema who was active during the 1930s and 1940s. Widely acknowledged as the 'First Lady of Indian Cinema', she was a co-founder of the Bombay Talkies studio. Nargis, Madhubala, and Meena Kumari were other legendary actresses from a later era."
+  },
+  {
+    "ID": "IND45",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "What is the key ingredient in the sweet dish 'Gajar ka Halwa'?",
+    "correct_answer": "Carrots",
+    "wrong_answers": [
+      "Semolina",
+      "Lentils",
+      "Bottle Gourd"
+    ],
+    "explanation": "'Gajar ka Halwa' is a carrot-based sweet dessert pudding from the Indian subcontinent. 'Gajar' is the Hindi word for carrot. Semolina is used for 'Sooji Halwa', and bottle gourd for 'Dudhi Halwa'."
+  },
+  {
+    "ID": "IND46",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The city of Mumbai is located on which coast of India?",
+    "correct_answer": "West Coast",
+    "wrong_answers": [
+      "East Coast",
+      "South Coast",
+      "North Coast"
+    ],
+    "explanation": "Mumbai, the financial capital of India, is a major port city located on the west coast of India, along the Arabian Sea."
+  },
+  {
+    "ID": "IND47",
+    "category": "History",
+    "difficulty": "Hard",
+    "question_text": "Who was the last Mughal emperor of India?",
+    "correct_answer": "Bahadur Shah Zafar",
+    "wrong_answers": [
+      "Aurangzeb",
+      "Shah Jahan",
+      "Akbar II"
+    ],
+    "explanation": "Bahadur Shah Zafar was the last Mughal emperor. He was a nominal ruler, as the Mughal Empire existed in name only and his authority was limited only to the city of Delhi. He was deposed by the British and exiled to Burma following the Indian Rebellion of 1857."
+  },
+  {
+    "ID": "IND48",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "India's first nuclear test was conducted in 1974 under what code name?",
+    "correct_answer": "Smiling Buddha",
+    "wrong_answers": [
+      "Operation Shakti",
+      "Project 596",
+      "Trinity"
+    ],
+    "explanation": "Smiling Buddha was the assigned code name of India's first successful nuclear bomb test on 18 May 1974. Operation Shakti was the code name for the second series of tests in 1998. Trinity was the code name for the first US nuclear test."
+  },
+  {
+    "ID": "IND49",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The 'Golden Temple', the holiest shrine in Sikhism, is located in which city?",
+    "correct_answer": "Amritsar",
+    "wrong_answers": [
+      "Anandpur Sahib",
+      "Ludhiana",
+      "Patna"
+    ],
+    "explanation": "The Golden Temple, also known as Harmandir Sahib, is a gurdwara located in the city of Amritsar, Punjab, India. It is the preeminent spiritual site of Sikhism."
+  },
+  {
+    "ID": "IND50",
+    "category": "Sports",
+    "difficulty": "Medium",
+    "question_text": "Who is the first Indian woman to win a medal at the Olympics?",
+    "correct_answer": "Karnam Malleswari",
+    "wrong_answers": [
+      "P. T. Usha",
+      "Mary Kom",
+      "Saina Nehwal"
+    ],
+    "explanation": "Karnam Malleswari won a bronze medal in weightlifting at the 2000 Sydney Olympics, making her the first Indian woman to win an Olympic medal. Mary Kom and Saina Nehwal won medals in later Olympics, and P.T. Usha narrowly missed a medal in 1984."
+  },
+  {
+    "ID": "IND51",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The 'Sundarbans', the world's largest mangrove forest, is located in which Indian state?",
+    "correct_answer": "West Bengal",
+    "wrong_answers": [
+      "Odisha",
+      "Andhra Pradesh",
+      "Gujarat"
+    ],
+    "explanation": "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh."
+  },
+  {
+    "ID": "IND52",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "Who was the first President of India?",
+    "correct_answer": "Rajendra Prasad",
+    "wrong_answers": [
+      "Sarvepalli Radhakrishnan",
+      "Zakir Husain",
+      "V. V. Giri"
+    ],
+    "explanation": "Rajendra Prasad was an Indian independence activist, lawyer, scholar and subsequently, the first president of India, in office from 1950 to 1962. The other individuals were also presidents of India who served in later years."
+  },
+  {
+    "ID": "IND53",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The festival of 'Onam' is predominantly celebrated in which Indian state?",
+    "correct_answer": "Kerala",
+    "wrong_answers": [
+      "Tamil Nadu",
+      "Karnataka",
+      "Andhra Pradesh"
+    ],
+    "explanation": "Onam is an annual harvest festival celebrated in the Indian state of Kerala. It is a major annual event for Keralites and is the official festival of the state."
+  },
+  {
+    "ID": "IND54",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which Indian city is famous for its sweet, spongy, cheese-based dessert called 'Rasgulla'?",
+    "correct_answer": "Kolkata",
+    "wrong_answers": [
+      "Delhi",
+      "Mumbai",
+      "Chennai"
+    ],
+    "explanation": "Rasgulla is a syrupy dessert popular in the Indian subcontinent and regions with South Asian diaspora. It is made from ball-shaped dumplings of chhena and semolina dough, cooked in light syrup made of sugar. It is strongly associated with the city of Kolkata in West Bengal."
+  },
+  {
+    "ID": "IND55",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which union territory of India is a former French colony?",
+    "correct_answer": "Puducherry",
+    "wrong_answers": [
+      "Goa",
+      "Daman and Diu",
+      "Andaman and Nicobar Islands"
+    ],
+    "explanation": "Puducherry (formerly Pondicherry) is a union territory of India. It was formed out of four territories of former French India, namely Pondich\u00e9ry, Karikal, Mah\u00e9 and Yanaon. Goa, Daman and Diu were former Portuguese colonies."
+  },
+  {
+    "ID": "IND56",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "Who is known as the 'Missile Man of India' for his work on the development of ballistic missile and launch vehicle technology?",
+    "correct_answer": "A. P. J. Abdul Kalam",
+    "wrong_answers": [
+      "Vikram Sarabhai",
+      "Homi J. Bhabha",
+      "C. V. Raman"
+    ],
+    "explanation": "Dr. A. P. J. Abdul Kalam, who served as the 11th President of India, was an aerospace scientist who played a leading role in the development of India's missile and nuclear weapons programs. He is affectionately known as the 'Missile Man of India'."
+  },
+  {
+    "ID": "IND57",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The 'Green Revolution' in India, which led to a significant increase in food grain production, was primarily led by which scientist?",
+    "correct_answer": "M. S. Swaminathan",
+    "wrong_answers": [
+      "Verghese Kurien",
+      "Norman Borlaug",
+      "C. Subramaniam"
+    ],
+    "explanation": "M. S. Swaminathan is an Indian geneticist and administrator, known for his leadership and success in introducing and further developing high-yielding varieties of wheat in India. He is known as the 'Father of the Green Revolution in India'. Verghese Kurien led the 'White Revolution' (milk production)."
+  },
+  {
+    "ID": "IND58",
+    "category": "Culture",
+    "difficulty": "Hard",
+    "question_text": "Which of these is a form of traditional shadow puppetry from the state of Andhra Pradesh?",
+    "correct_answer": "Tholu Bommalata",
+    "wrong_answers": [
+      "Yakshagana",
+      "Kathputli",
+      "Pavakoothu"
+    ],
+    "explanation": "Tholu Bommalata is the shadow puppet theatre tradition of the state of Andhra Pradesh. Its performers are part of a group of wandering entertainers and peddlers who pass through villages for a few weeks in a year. Yakshagana is a theatre form from Karnataka, Kathputli is a string puppet tradition from Rajasthan, and Pavakoothu is a glove puppet tradition from Kerala."
+  },
+  {
+    "ID": "IND59",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Who composed the acclaimed soundtrack for the film 'Slumdog Millionaire', winning two Academy Awards?",
+    "correct_answer": "A. R. Rahman",
+    "wrong_answers": [
+      "Anu Malik",
+      "Pritam",
+      "Shankar-Ehsaan-Loy"
+    ],
+    "explanation": "A. R. Rahman, a renowned Indian music composer, won two Academy Awards for the 2008 film 'Slumdog Millionaire' - one for Best Original Score and another for Best Original Song ('Jai Ho'). The other individuals are also popular Bollywood music composers."
+  },
+  {
+    "ID": "IND60",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which spice is a key ingredient in the Indian dish 'Vindaloo'?",
+    "correct_answer": "Chili Peppers",
+    "wrong_answers": [
+      "Turmeric",
+      "Cardamom",
+      "Cloves"
+    ],
+    "explanation": "Vindaloo is an Indian curry dish, popular in the region of Goa. The defining characteristic of a vindaloo is its fiery heat, which comes from the generous use of chili peppers, often combined with vinegar. While other spices are used, the chili is paramount."
+  },
+  {
+    "ID": "IND61",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri (literally 'the city of caves') in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai in the Indian state of Maharashtra."
+  },
+  {
+    "ID": "IND62",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "Who was the first Indian woman in space?",
+    "correct_answer": "Kalpana Chawla",
+    "wrong_answers": [
+      "Sunita Williams",
+      "Rakesh Sharma",
+      "Peggy Whitson"
+    ],
+    "explanation": "Kalpana Chawla was an American astronaut and the first woman of Indian origin to go to space. She first flew on Space Shuttle Columbia in 1997. Sunita Williams is another American astronaut of Indian descent. Rakesh Sharma was the first Indian citizen in space."
+  },
+  {
+    "ID": "IND63",
+    "category": "Culture",
+    "difficulty": "Easy",
+    "question_text": "What is the national animal of India?",
+    "correct_answer": "The Bengal Tiger",
+    "wrong_answers": [
+      "The Lion",
+      "The Elephant",
+      "The Peacock"
+    ],
+    "explanation": "The Bengal tiger is the national animal of India. The lion is the national animal of several other countries, the elephant is the national heritage animal of India, and the peacock is the national bird of India."
+  },
+  {
+    "ID": "IND64",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which Indian dish consists of roasted marinated chicken chunks in a spiced curry sauce?",
+    "correct_answer": "Chicken Tikka Masala",
+    "wrong_answers": [
+      "Butter Chicken",
+      "Chicken Korma",
+      "Kadai Chicken"
+    ],
+    "explanation": "Chicken tikka masala is a popular dish of chunks of roasted marinated chicken (chicken tikka) in a spiced curry sauce. The sauce is usually creamy and orange-coloured. Butter chicken is similar but usually milder, while Korma and Kadai are different preparations."
+  },
+  {
+    "ID": "IND65",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Khasi, Garo, and Jaintia hills are located in which Indian state?",
+    "correct_answer": "Meghalaya",
+    "wrong_answers": [
+      "Assam",
+      "Mizoram",
+      "Nagaland"
+    ],
+    "explanation": "The Khasi, Garo, and Jaintia Hills are a mountainous region in the state of Meghalaya. The region is known for its unique culture, language, and matrilineal society. The state of Meghalaya was created from these hill districts of Assam in 1972."
+  },
+  {
+    "ID": "IND66",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "What is the name of India's first indigenously built aircraft carrier?",
+    "correct_answer": "INS Vikrant",
+    "wrong_answers": [
+      "INS Vikramaditya",
+      "INS Viraat",
+      "INS Arihant"
+    ],
+    "explanation": "INS Vikrant is the first aircraft carrier to be built in India. It was commissioned in 2022. INS Vikramaditya is a modified Kiev-class aircraft carrier which was purchased from Russia. INS Viraat was a former British carrier. INS Arihant is a nuclear-powered ballistic missile submarine."
+  },
+  {
+    "ID": "IND67",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The 'White Revolution' in India was a movement to increase the production of what commodity?",
+    "correct_answer": "Milk",
+    "wrong_answers": [
+      "Cotton",
+      "Rice",
+      "Sugar"
+    ],
+    "explanation": "The White Revolution, also known as Operation Flood, was a rural development program started by India's National Dairy Development Board in 1970. It created a national milk grid, making India one of the largest producers of milk and milk products."
+  },
+  {
+    "ID": "IND68",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The 'Hawa Mahal' or 'Palace of Winds', known for its intricate facade with 953 windows, is located in which city?",
+    "correct_answer": "Jaipur",
+    "wrong_answers": [
+      "Udaipur",
+      "Jodhpur",
+      "Agra"
+    ],
+    "explanation": "Hawa Mahal is a palace in Jaipur, India. Made with the red and pink sandstone, the palace sits on the edge of the City Palace, Jaipur, and extends to the Zenana, or women's chambers. It is a prominent landmark of the 'Pink City'."
+  },
+  {
+    "ID": "IND69",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Which Indian director is known for his epic historical and period dramas like 'Padmaavat' and 'Bajirao Mastani'?",
+    "correct_answer": "Sanjay Leela Bhansali",
+    "wrong_answers": [
+      "Karan Johar",
+      "Rajkumar Hirani",
+      "Anurag Kashyap"
+    ],
+    "explanation": "Sanjay Leela Bhansali is a renowned Indian filmmaker, known for his grand and opulent films, often based on historical or literary sources. Karan Johar is known for romantic dramas, Rajkumar Hirani for social comedies, and Anurag Kashyap for gritty, realistic cinema."
+  },
+  {
+    "ID": "IND70",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "What is 'ghee', a common ingredient in Indian cooking?",
+    "correct_answer": "Clarified butter",
+    "wrong_answers": [
+      "Yogurt",
+      "Coconut oil",
+      "Tamarind paste"
+    ],
+    "explanation": "Ghee is a class of clarified butter that originated in ancient India. It is commonly used in Indian cooking. Yogurt is 'dahi', coconut oil is 'nariyal tel', and tamarind paste is 'imli paste'."
+  },
+  {
+    "ID": "IND71",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which is the largest state in India by area?",
+    "correct_answer": "Rajasthan",
+    "wrong_answers": [
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Uttar Pradesh"
+    ],
+    "explanation": "Rajasthan is India's largest state by area, covering 10.4% of India's total geographical area. It is located on the northwestern side of the country, where it comprises most of the wide and inhospitable Thar Desert."
+  },
+  {
+    "ID": "IND72",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "Who was the first woman to rule as the Sultan of Delhi?",
+    "correct_answer": "Razia Sultana",
+    "wrong_answers": [
+      "Nur Jahan",
+      "Chand Bibi",
+      "Mumtaz Mahal"
+    ],
+    "explanation": "Razia Sultana was the ruler of the Delhi Sultanate in the northern part of the Indian subcontinent. She was the first female Muslim ruler of the subcontinent, and the only female ruler of Delhi Sultanate. Nur Jahan, Chand Bibi, and Mumtaz Mahal were influential figures during the Mughal era."
+  },
+  {
+    "ID": "IND73",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The 'Kathak' classical dance form originated in which region of India?",
+    "correct_answer": "Northern India",
+    "wrong_answers": [
+      "Southern India",
+      "Eastern India",
+      "Western India"
+    ],
+    "explanation": "Kathak is one of the ten major forms of Indian classical dance. The origin of Kathak is traditionally attributed to the traveling bards of ancient northern India known as Kathakars or storytellers."
+  },
+  {
+    "ID": "IND74",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which Indian snack is a triangular savory pastry fried in ghee or oil, containing spiced vegetables or meat?",
+    "correct_answer": "Samosa",
+    "wrong_answers": [
+      "Kachori",
+      "Pakora",
+      "Vada"
+    ],
+    "explanation": "A samosa is a fried or baked pastry with a savory filling, such as spiced potatoes, onions, peas, cheese, beef and other meats, or lentils. It may take different forms, including triangular, cone, or half-moon shapes, depending on the region."
+  },
+  {
+    "ID": "IND75",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The city of Varanasi, one of the oldest continuously inhabited cities in the world, is situated on the banks of which river?",
+    "correct_answer": "The Ganges (Ganga)",
+    "wrong_answers": [
+      "The Yamuna",
+      "The Gomti",
+      "The Sarayu"
+    ],
+    "explanation": "Varanasi is a major religious hub in India, and the city is situated on the banks of the holy river Ganges. It is a major pilgrimage site for Hindus."
+  },
+  {
+    "ID": "IND76",
+    "category": "Science & Technology",
+    "difficulty": "Hard",
+    "question_text": "Who was the Indian mathematician who gave the value of 'pi' correct to four decimal places in the 5th century?",
+    "correct_answer": "Aryabhata",
+    "wrong_answers": [
+      "Brahmagupta",
+      "Bhaskara I",
+      "Madhava of Sangamagrama"
+    ],
+    "explanation": "Aryabhata was an Indian mathematician and astronomer who in his work '\u0100ryabha\u1e6d\u012bya' gave an accurate approximation for pi (\u03c0). He wrote that the circumference of a circle with a diameter of 20000 is 62832, which gives a value of pi as 3.1416. Madhava of Sangamagrama later found the value of pi to 11 decimal places."
+  },
+  {
+    "ID": "IND77",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The 'Dandi March' or 'Salt March' was an act of nonviolent civil disobedience led by whom?",
+    "correct_answer": "Mahatma Gandhi",
+    "wrong_answers": [
+      "Jawaharlal Nehru",
+      "Sardar Vallabhbhai Patel",
+      "Subhas Chandra Bose"
+    ],
+    "explanation": "The Salt March was an act of nonviolent civil disobedience in colonial India led by Mahatma Gandhi. The 24-day march lasting from 12 March to 6 April 1930 was a direct action campaign of tax resistance and nonviolent protest against the British salt monopoly."
+  },
+  {
+    "ID": "IND78",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The 'Meenakshi Temple', a historic Hindu temple, is located in which city in Tamil Nadu?",
+    "correct_answer": "Madurai",
+    "wrong_answers": [
+      "Chennai",
+      "Coimbatore",
+      "Tiruchirappalli"
+    ],
+    "explanation": "Meenakshi Temple is a historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai, Tamil Nadu, India. It is dedicated to the goddess Meenakshi, a form of Parvati, and her consort, Sundareshwar, a form of Shiva."
+  },
+  {
+    "ID": "IND79",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Who is considered the 'Father of Indian cinema'?",
+    "correct_answer": "Dadasaheb Phalke",
+    "wrong_answers": [
+      "Satyajit Ray",
+      "Raj Kapoor",
+      "Guru Dutt"
+    ],
+    "explanation": "Dhundiraj Govind Phalke, popularly known as Dadasaheb Phalke, was an Indian film producer-director-screenwriter, known as the 'Father of Indian cinema'. His debut film, Raja Harishchandra, was the first Indian movie in 1913. Satyajit Ray, Raj Kapoor, and Guru Dutt were other legendary Indian filmmakers."
+  },
+  {
+    "ID": "IND80",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "What is the main ingredient in the South Indian dish 'Idli'?",
+    "correct_answer": "Fermented rice and lentil batter",
+    "wrong_answers": [
+      "Semolina",
+      "Wheat flour",
+      "Chickpea flour"
+    ],
+    "explanation": "Idli or idly are a type of savoury rice cake, originating from the Indian subcontinent, popular as breakfast foods in Southern India and in Sri Lanka. The cakes are made by steaming a batter consisting of fermented black lentils (de-husked) and rice."
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND81"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND82"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND101"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND102"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND121"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND122"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND141"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND142"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND161"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND162"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND181"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND182"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND201"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND202"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND221"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND222"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND241"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND242"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND261"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND262"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND281"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND282"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND301"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND302"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND321"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND322"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND341"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND342"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND361"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND362"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND381"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND382"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND401"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND402"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND421"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND422"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND441"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND442"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND461"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND462"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND481"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND482"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND501"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND502"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND521"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND522"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND541"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND542"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND561"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND562"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND581"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND582"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND601"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND602"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND621"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND622"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND641"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND642"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND661"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND662"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND681"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND682"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND701"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND702"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND721"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND722"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND741"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND742"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND761"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND762"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND781"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND782"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND801"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND802"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND821"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND822"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND841"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND842"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND861"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND862"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND881"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND882"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND901"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND902"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND921"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND922"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND941"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND942"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND961"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND962"
+  },
+  {
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The Elephanta Caves, a UNESCO World Heritage Site, are located on an island near which major Indian city?",
+    "correct_answer": "Mumbai",
+    "wrong_answers": [
+      "Chennai",
+      "Kolkata",
+      "Kochi"
+    ],
+    "explanation": "The Elephanta Caves are a network of sculpted caves located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres to the east of the city of Mumbai.",
+    "ID": "IND981"
+  },
+  {
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The ancient university of Nalanda, a renowned center of learning, was located in which present-day Indian state?",
+    "correct_answer": "Bihar",
+    "wrong_answers": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Odisha"
+    ],
+    "explanation": "Nalanda was an ancient Mahavihara, a large Buddhist monastery, in the ancient kingdom of Magadha (modern-day Bihar) in India. It was a celebrated center of learning from the 5th century CE to c. 1200 CE.",
+    "ID": "IND982"
+  },
+  {
+    "ID": "IND1001",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which is the highest peak in India?",
+    "correct_answer": "Kangchenjunga",
+    "wrong_answers": [
+      "Nanda Devi",
+      "K2",
+      "Mount Everest"
+    ],
+    "explanation": "Kangchenjunga, located in the Himalayas on the border of Nepal and the Indian state of Sikkim, is the highest peak in India and the third highest in the world. While K2 is higher, it is located in Pakistan-occupied Kashmir. Mount Everest is in Nepal."
+  },
+  {
+    "ID": "IND1002",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The Jallianwala Bagh massacre took place in which Indian city in 1919?",
+    "correct_answer": "Amritsar",
+    "wrong_answers": [
+      "Lahore",
+      "Delhi",
+      "Jalandhar"
+    ],
+    "explanation": "The Jallianwala Bagh massacre occurred in Amritsar, Punjab, on 13 April 1919, when troops of the British Indian Army under the command of Colonel Reginald Dyer fired rifles into a crowd of unarmed Indian civilians who had gathered in a public garden."
+  },
+  {
+    "ID": "IND1003",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "Which Indian state is famous for its 'Pattachitra' style of cloth-based scroll painting?",
+    "correct_answer": "Odisha",
+    "wrong_answers": [
+      "West Bengal",
+      "Bihar",
+      "Rajasthan"
+    ],
+    "explanation": "Pattachitra is a traditional, cloth-based scroll painting based in the eastern Indian states of Odisha and West Bengal. In the Sanskrit language, 'Patta' means 'cloth' and 'Chitra' means 'picture'. It is known for its intricate details as well as mythological narratives and folktales."
+  },
+  {
+    "ID": "IND1004",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Who is often called the 'First Lady of Indian Cinema'?",
+    "correct_answer": "Devika Rani",
+    "wrong_answers": [
+      "Nargis",
+      "Madhubala",
+      "Meena Kumari"
+    ],
+    "explanation": "Devika Rani was a pioneering actress in Indian cinema who was active during the 1930s and 1940s. Widely acknowledged as the 'First Lady of Indian Cinema', she was a co-founder of the Bombay Talkies studio. Nargis, Madhubala, and Meena Kumari were other legendary actresses from a later era."
+  },
+  {
+    "ID": "IND1005",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "What is the key ingredient in the sweet dish 'Gajar ka Halwa'?",
+    "correct_answer": "Carrots",
+    "wrong_answers": [
+      "Semolina",
+      "Lentils",
+      "Bottle Gourd"
+    ],
+    "explanation": "'Gajar ka Halwa' is a carrot-based sweet dessert pudding from the Indian subcontinent. 'Gajar' is the Hindi word for carrot. Semolina is used for 'Sooji Halwa', and bottle gourd for 'Dudhi Halwa'."
+  },
+  {
+    "ID": "IND1006",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The city of Mumbai is located on which coast of India?",
+    "correct_answer": "West Coast",
+    "wrong_answers": [
+      "East Coast",
+      "South Coast",
+      "North Coast"
+    ],
+    "explanation": "Mumbai, the financial capital of India, is a major port city located on the west coast of India, along the Arabian Sea."
+  },
+  {
+    "ID": "IND1007",
+    "category": "History",
+    "difficulty": "Hard",
+    "question_text": "Who was the last Mughal emperor of India?",
+    "correct_answer": "Bahadur Shah Zafar",
+    "wrong_answers": [
+      "Aurangzeb",
+      "Shah Jahan",
+      "Akbar II"
+    ],
+    "explanation": "Bahadur Shah Zafar was the last Mughal emperor. He was a nominal ruler, as the Mughal Empire existed in name only and his authority was limited only to the city of Delhi. He was deposed by the British and exiled to Burma following the Indian Rebellion of 1857."
+  },
+  {
+    "ID": "IND1008",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "India's first nuclear test was conducted in 1974 under what code name?",
+    "correct_answer": "Smiling Buddha",
+    "wrong_answers": [
+      "Operation Shakti",
+      "Project 596",
+      "Trinity"
+    ],
+    "explanation": "Smiling Buddha was the assigned code name of India's first successful nuclear bomb test on 18 May 1974. Operation Shakti was the code name for the second series of tests in 1998. Trinity was the code name for the first US nuclear test."
+  },
+  {
+    "ID": "IND1009",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The 'Golden Temple', the holiest shrine in Sikhism, is located in which city?",
+    "correct_answer": "Amritsar",
+    "wrong_answers": [
+      "Anandpur Sahib",
+      "Ludhiana",
+      "Patna"
+    ],
+    "explanation": "The Golden Temple, also known as Harmandir Sahib, is a gurdwara located in the city of Amritsar, Punjab, India. It is the preeminent spiritual site of Sikhism."
+  },
+  {
+    "ID": "IND1010",
+    "category": "Sports",
+    "difficulty": "Medium",
+    "question_text": "Who is the first Indian woman to win a medal at the Olympics?",
+    "correct_answer": "Karnam Malleswari",
+    "wrong_answers": [
+      "P. T. Usha",
+      "Mary Kom",
+      "Saina Nehwal"
+    ],
+    "explanation": "Karnam Malleswari won a bronze medal in weightlifting at the 2000 Sydney Olympics, making her the first Indian woman to win an Olympic medal. Mary Kom and Saina Nehwal won medals in later Olympics, and P.T. Usha narrowly missed a medal in 1984."
+  },
+  {
+    "ID": "IND1011",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "The 'Sundarbans', the world's largest mangrove forest, is located in which Indian state?",
+    "correct_answer": "West Bengal",
+    "wrong_answers": [
+      "Odisha",
+      "Andhra Pradesh",
+      "Gujarat"
+    ],
+    "explanation": "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh."
+  },
+  {
+    "ID": "IND1012",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "Who was the first President of India?",
+    "correct_answer": "Rajendra Prasad",
+    "wrong_answers": [
+      "Sarvepalli Radhakrishnan",
+      "Zakir Husain",
+      "V. V. Giri"
+    ],
+    "explanation": "Rajendra Prasad was an Indian independence activist, lawyer, scholar and subsequently, the first president of India, in office from 1950 to 1962. The other individuals were also presidents of India who served in later years."
+  },
+  {
+    "ID": "IND1013",
+    "category": "Culture",
+    "difficulty": "Medium",
+    "question_text": "The festival of 'Onam' is predominantly celebrated in which Indian state?",
+    "correct_answer": "Kerala",
+    "wrong_answers": [
+      "Tamil Nadu",
+      "Karnataka",
+      "Andhra Pradesh"
+    ],
+    "explanation": "Onam is an annual harvest festival celebrated in the Indian state of Kerala. It is a major annual event for Keralites and is the official festival of the state."
+  },
+  {
+    "ID": "IND1014",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which Indian city is famous for its sweet, spongy, cheese-based dessert called 'Rasgulla'?",
+    "correct_answer": "Kolkata",
+    "wrong_answers": [
+      "Delhi",
+      "Mumbai",
+      "Chennai"
+    ],
+    "explanation": "Rasgulla is a syrupy dessert popular in the Indian subcontinent and regions with South Asian diaspora. It is made from ball-shaped dumplings of chhena and semolina dough, cooked in light syrup made of sugar. It is strongly associated with the city of Kolkata in West Bengal."
+  },
+  {
+    "ID": "IND1015",
+    "category": "Geography",
+    "difficulty": "Medium",
+    "question_text": "Which union territory of India is a former French colony?",
+    "correct_answer": "Puducherry",
+    "wrong_answers": [
+      "Goa",
+      "Daman and Diu",
+      "Andaman and Nicobar Islands"
+    ],
+    "explanation": "Puducherry (formerly Pondicherry) is a union territory of India. It was formed out of four territories of former French India, namely Pondich\u00e9ry, Karikal, Mah\u00e9 and Yanaon. Goa, Daman and Diu were former Portuguese colonies."
+  },
+  {
+    "ID": "IND1016",
+    "category": "Science & Technology",
+    "difficulty": "Medium",
+    "question_text": "Who is known as the 'Missile Man of India' for his work on the development of ballistic missile and launch vehicle technology?",
+    "correct_answer": "A. P. J. Abdul Kalam",
+    "wrong_answers": [
+      "Vikram Sarabhai",
+      "Homi J. Bhabha",
+      "C. V. Raman"
+    ],
+    "explanation": "Dr. A. P. J. Abdul Kalam, who served as the 11th President of India, was an aerospace scientist who played a leading role in the development of India's missile and nuclear weapons programs. He is affectionately known as the 'Missile Man of India'."
+  },
+  {
+    "ID": "IND1017",
+    "category": "History",
+    "difficulty": "Medium",
+    "question_text": "The 'Green Revolution' in India, which led to a significant increase in food grain production, was primarily led by which scientist?",
+    "correct_answer": "M. S. Swaminathan",
+    "wrong_answers": [
+      "Verghese Kurien",
+      "Norman Borlaug",
+      "C. Subramaniam"
+    ],
+    "explanation": "M. S. Swaminathan is an Indian geneticist and administrator, known for his leadership and success in introducing and further developing high-yielding varieties of wheat in India. He is known as the 'Father of the Green Revolution in India'. Verghese Kurien led the 'White Revolution' (milk production)."
+  },
+  {
+    "ID": "IND1018",
+    "category": "Culture",
+    "difficulty": "Hard",
+    "question_text": "Which of these is a form of traditional shadow puppetry from the state of Andhra Pradesh?",
+    "correct_answer": "Tholu Bommalata",
+    "wrong_answers": [
+      "Yakshagana",
+      "Kathputli",
+      "Pavakoothu"
+    ],
+    "explanation": "Tholu Bommalata is the shadow puppet theatre tradition of the state of Andhra Pradesh. Its performers are part of a group of wandering entertainers and peddlers who pass through villages for a few weeks in a year. Yakshagana is a theatre form from Karnataka, Kathputli is a string puppet tradition from Rajasthan, and Pavakoothu is a glove puppet tradition from Kerala."
+  },
+  {
+    "ID": "IND1019",
+    "category": "Film",
+    "difficulty": "Medium",
+    "question_text": "Who composed the acclaimed soundtrack for the film 'Slumdog Millionaire', winning two Academy Awards?",
+    "correct_answer": "A. R. Rahman",
+    "wrong_answers": [
+      "Anu Malik",
+      "Pritam",
+      "Shankar-Ehsaan-Loy"
+    ],
+    "explanation": "A. R. Rahman, a renowned Indian music composer, won two Academy Awards for the 2008 film 'Slumdog Millionaire' - one for Best Original Score and another for Best Original Song ('Jai Ho'). The other individuals are also popular Bollywood music composers."
+  },
+  {
+    "ID": "IND1020",
+    "category": "Cuisine",
+    "difficulty": "Medium",
+    "question_text": "Which spice is a key ingredient in the Indian dish 'Vindaloo'?",
+    "correct_answer": "Chili Peppers",
+    "wrong_answers": [
+      "Turmeric",
+      "Cardamom",
+      "Cloves"
+    ],
+    "explanation": "Vindaloo is an Indian curry dish, popular in the region of Goa. The defining characteristic of a vindaloo is its fiery heat, which comes from the generous use of chili peppers, often combined with vinegar. While other spices are used, the chili is paramount."
   }
 ]
