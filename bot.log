@@ -9570,3 +9570,4 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-u
 2025-09-16 23:05:30,278 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
 2025-09-16 23:05:30,280 - discord.client - INFO - logging in using static token
 2025-09-16 23:05:32,400 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8a5e2e23de559297654c7edf900bcf77).
+2025-09-16 23:09:26,771 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
