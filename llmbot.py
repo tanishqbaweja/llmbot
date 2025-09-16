@@ -725,18 +725,18 @@ async def slash_help_command(ctx):
             value="`@DBZClanker <message>` - Mention bot to chat\n"
                   "`!ai <prompt>` - Use AI models (no files)\n"
                   "`!oss <prompt>` - Enhanced AI with reply context (no files)\n"
-                  "`!gemini <prompt>` - Google AI with web search (image files allowed)\n\u200b",
+                  "`!gemini <prompt>` - Google AI with web search (image files allowed)",
             inline=False
         )
         embed.add_field(
             name="🎨 Creative Commands",
-            value="`!image <prompt>` - Generate images (image files allowed)\n\u200b",
+            value="`!image <prompt>` - Generate images (image files allowed)",
             inline=False
         )
         embed.add_field(
             name="⚙️ Personalization",
             value="`!setpersonality <text>` - Customize bot personality\n"
-                  "`!removepersonality` - Reset to default personality\n\u200b",
+                  "`!removepersonality` - Reset to default personality",
             inline=False
         )
         embed.add_field(
