@@ -9559,3 +9559,10 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-u
 2025-09-16 19:42:26,519 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
 2025-09-16 19:42:26,520 - discord.client - INFO - logging in using static token
 2025-09-16 19:42:28,319 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: faf52ee2884d57b4d89e57e50056f868).
+2025-09-16 19:44:21,483 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-16 19:44:21,484 - discord.client - INFO - logging in using static token
+2025-09-16 19:44:23,454 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f9747b53bb6ea40b7e5a2a65ebbf998a).
+2025-09-16 21:02:29,476 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f9747b53bb6ea40b7e5a2a65ebbf998a.
+2025-09-16 22:58:00,748 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 22:58:06,763 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 22:58:06,782 - google_genai.models - INFO - AFC remote call 1 is done.
