@@ -75,7 +75,7 @@ if not OPENROUTER_API_KEYS:
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
 # API Keys from environment with numbers
 API_KEYS_WITH_NUMBERS = [(os.getenv(f'GROQ_API_KEY_{i}'), i) for i in range(1, 17)]
@@ -1539,9 +1539,9 @@ async def help_command(ctx):
     
     await ctx.reply(embed=embed)
 
-# Slash command version
-@bot.slash_command(name='help', description='Show available commands')
-async def slash_help_command(ctx):
+# Alternative help command
+@bot.command(name='commands')
+async def commands_command(ctx):
     await help_command(ctx)
 
 @bot.command(name='mistralapicheck')
