@@ -780,7 +780,7 @@ async def on_message(message):
         if clean_content:
             # Block attachments for regular API calls
             if message.attachments:
-                await message.reply("Files are currently not supported!")
+                await message.reply("Files are currently not supported in OSS. Use Gemini (!gemini)!")
                 return
                 
             # Check cooldown for direct mention
@@ -1026,7 +1026,7 @@ async def ai_command(ctx, *, prompt):
         return
     
     if ctx.message.attachments:
-        await ctx.reply("Files are currently not supported!")
+        await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)!")
         return
     
     prompt = sanitize_input(prompt)
@@ -1364,7 +1364,7 @@ async def delete_command(ctx):
 async def oss_command(ctx, *, prompt):
     # Check for attachments in user's message
     if ctx.message.attachments:
-        await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)")
+        await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)!")
         return
     
     # Handle reply context
@@ -1373,7 +1373,7 @@ async def oss_command(ctx, *, prompt):
             referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
             # Check for attachments in referenced message
             if referenced_message.attachments:
-                await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)")
+                await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)!")
                 return
             prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
         except Exception:
