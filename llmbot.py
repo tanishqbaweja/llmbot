@@ -722,10 +722,10 @@ async def slash_help_command(ctx):
         )
         embed.add_field(
             name="💬 Chat Commands",
-            value="`@DBZClanker <message>` - Mention bot to chat\n"
-                  "`!ai <prompt>` - Use AI models (no files)\n"
-                  "`!oss <prompt>` - Enhanced AI with reply context (no files)\n"
-                  "`!gemini <prompt>` - Google AI with web search (image files allowed)",
+            value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
+                  "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
+                  "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
+                  "`!gemini <prompt>` - Uses Google AI with web search (image files allowed)",
             inline=False
         )
         embed.add_field(
@@ -1580,10 +1580,10 @@ async def help_command(ctx):
         
         embed.add_field(
             name="💬 Chat Commands",
-            value="`@DBZClanker <message>` - Mention bot to chat\n"
-                  "`!ai <prompt>` - Use AI models (no files)\n"
-                  "`!oss <prompt>` - Enhanced AI with reply context (no files)\n"
-                  "`!gemini <prompt>` - Google AI with web search (image files allowed)",
+            value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
+                  "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
+                  "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
+                  "`!gemini <prompt>` - Uses Google AI with web search (image files allowed)",
             inline=False
         )
         
