@@ -1268,6 +1268,7 @@ async def check_if_should_reply(bot_message, user_reply):
             
             # Extract YES/NO from response
             response_clean = full_response.strip().upper()
+            print(f"Reply check using Gemma (key {key_num}): {response_clean}")
             if "YES" in response_clean:
                 return True
             elif "NO" in response_clean:
