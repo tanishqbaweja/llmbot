@@ -8913,3 +8913,71 @@ TypeError: Messageable.send() got an unexpected keyword argument 'ephemeral'
 2025-09-15 00:33:30,148 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
 2025-09-15 00:33:30,150 - discord.client - INFO - logging in using static token
 2025-09-15 00:33:32,076 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d30602fe472bf4a392b498c982be8010).
+2025-09-15 00:52:13,363 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-15 00:52:13,365 - discord.client - INFO - logging in using static token
+2025-09-15 00:52:15,226 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9d875140285f5a3e46ea91c0ab2368a3).
+2025-09-15 02:19:43,493 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 03:51:35,688 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 04:33:55,853 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 08:13:21,184 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 09:38:01,052 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 09:44:25,292 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 09:47:06,621 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 09:55:24,284 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 10:00:54,083 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 11:12:54,356 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 11:22:32,814 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 12:23:51,969 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 14:12:07,899 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-15 14:12:13,981 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-15 14:12:15,569 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-15 14:23:49,733 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:23:53,168 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:23:57,094 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:24:00,692 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:24:04,890 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:24:08,842 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:24:12,946 - root - ERROR - OpenRouter API error: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:24:16,747 - root - ERROR - Command error: Command raised an exception: Forbidden: 403 Forbidden (error code: 50013): Missing Permissions
+2025-09-15 14:28:28,160 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 14:29:29,991 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-15 14:29:33,656 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-15 14:29:33,660 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-15 15:14:56,192 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 15:16:42,650 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 15:29:10,783 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 16:07:05,874 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-15 16:07:09,746 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-15 16:07:09,750 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-15 16:18:46,305 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 16:26:08,893 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-15 16:26:15,976 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-15 16:26:15,978 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-15 16:54:46,960 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 15.5s behind.
+2025-09-15 17:41:47,170 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 21:03:04,895 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 21:29:56,117 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-15 22:09:49,417 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-16 00:28:41,393 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-16 02:20:48,176 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 02:20:56,319 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 02:20:56,345 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 02:27:00,471 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 02:27:05,801 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-16 02:27:07,935 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 02:28:23,853 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 02:28:26,380 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 02:28:26,383 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 03:24:49,389 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-16 05:41:02,416 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 05:41:07,401 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-16 05:41:09,182 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 05:45:04,794 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 05:45:11,986 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-16 05:45:13,829 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 06:53:32,448 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-16 09:09:29,927 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-16 10:03:05,257 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d875140285f5a3e46ea91c0ab2368a3.
+2025-09-16 10:35:09,788 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 10:35:15,033 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-16 10:35:17,026 - google_genai.models - INFO - AFC remote call 1 is done.
