@@ -734,6 +734,11 @@ async def on_message(message):
                         if img_msg in msg_content:
                             return
                 
+                # Check cooldown first before any API calls
+                can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
+                if not can_proceed:
+                    return  # Silently ignore if on cooldown
+                
                 # Smart reply filtering for bot messages
                 if referenced_message.author == bot.user:
                     # Use Gemma to decide if reply deserves a response
@@ -743,34 +748,10 @@ async def on_message(message):
                     
                     # Check if replying to bot with one word
                     if len(clean_content.split()) == 1:
-                        # Check cooldown for one-word clarification too
-                        can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
-                        if not can_proceed:
-                            minutes = int(remaining // 60)
-                            seconds = int(remaining % 60)
-                            if minutes > 0:
-                                cooldown_msg = await message.reply(f"On cooldown! Please wait {minutes}m {seconds}s")
-                            else:
-                                cooldown_msg = await message.reply(f"On cooldown! Please wait {seconds}s")
-                            await asyncio.sleep(5)
-                            await cooldown_msg.delete()
-                            return
                         update_user_request_time(message.author.id, message.channel.id)
                         await message.reply(f"Could you clarify what you mean by: {clean_content}")
                         return
                 
-                # Check cooldown for reply+mention
-                can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
-                if not can_proceed:
-                    minutes = int(remaining // 60)
-                    seconds = int(remaining % 60)
-                    if minutes > 0:
-                        cooldown_msg = await message.reply(f"On cooldown! Please wait {minutes}m {seconds}s")
-                    else:
-                        cooldown_msg = await message.reply(f"On cooldown! Please wait {seconds}s")
-                    await asyncio.sleep(5)
-                    await cooldown_msg.delete()
-                    return
                 update_user_request_time(message.author.id, message.channel.id)
                 
                 combined_prompt = f"User is replying to this message: '{referenced_message.content}' with: '{clean_content}'. Respond appropriately to their reply."
