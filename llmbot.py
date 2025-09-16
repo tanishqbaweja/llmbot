@@ -734,23 +734,30 @@ async def on_message(message):
                         if img_msg in msg_content:
                             return
                 
-                # Check if replying to bot with one word
-                if referenced_message.author == bot.user and len(clean_content.split()) == 1:
-                    # Check cooldown for one-word clarification too
-                    can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
-                    if not can_proceed:
-                        minutes = int(remaining // 60)
-                        seconds = int(remaining % 60)
-                        if minutes > 0:
-                            cooldown_msg = await message.reply(f"On cooldown! Please wait {minutes}m {seconds}s")
-                        else:
-                            cooldown_msg = await message.reply(f"On cooldown! Please wait {seconds}s")
-                        await asyncio.sleep(5)
-                        await cooldown_msg.delete()
+                # Smart reply filtering for bot messages
+                if referenced_message.author == bot.user:
+                    # Use Gemma to decide if reply deserves a response
+                    should_reply = await check_if_should_reply(referenced_message.content, clean_content)
+                    if not should_reply:
+                        return  # Don't reply
+                    
+                    # Check if replying to bot with one word
+                    if len(clean_content.split()) == 1:
+                        # Check cooldown for one-word clarification too
+                        can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
+                        if not can_proceed:
+                            minutes = int(remaining // 60)
+                            seconds = int(remaining % 60)
+                            if minutes > 0:
+                                cooldown_msg = await message.reply(f"On cooldown! Please wait {minutes}m {seconds}s")
+                            else:
+                                cooldown_msg = await message.reply(f"On cooldown! Please wait {seconds}s")
+                            await asyncio.sleep(5)
+                            await cooldown_msg.delete()
+                            return
+                        update_user_request_time(message.author.id, message.channel.id)
+                        await message.reply(f"Could you clarify what you mean by: {clean_content}")
                         return
-                    update_user_request_time(message.author.id, message.channel.id)
-                    await message.reply(f"Could you clarify what you mean by: {clean_content}")
-                    return
                 
                 # Check cooldown for reply+mention
                 can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
@@ -1246,6 +1253,33 @@ async def get_gemini_response(prompt, message, input_image=None):
     
     # All keys failed due to rate limits
     await status_msg.edit(content="❌ Quota Reached")
+
+async def check_if_should_reply(bot_message, user_reply):
+    prompt = f"Bot said: '{bot_message}' User replied: '{user_reply}' Does this user reply deserve a response from the bot? Answer only YES or NO."
+    
+    for api_key, key_num in API_KEYS_WITH_NUMBERS:
+        if key_num < 11 or key_num > 17:
+            continue
+        
+        try:
+            full_response = ""
+            async for partial_response in call_groq_api(api_key, "gemma2-9b-it", prompt):
+                full_response = partial_response
+            
+            # Extract YES/NO from response
+            response_clean = full_response.strip().upper()
+            if "YES" in response_clean:
+                return True
+            elif "NO" in response_clean:
+                return False
+            
+        except Exception as e:
+            safe_error = sanitize_log_message(str(e)[:100])
+            logging.error(f"Reply check error with key {key_num}: {safe_error}")
+            continue
+    
+    # Default to replying if all API calls fail
+    return True
 
 async def generate_image(prompt, message, input_image=None):
     status_msg = await message.reply("🎨 Generating image...")
