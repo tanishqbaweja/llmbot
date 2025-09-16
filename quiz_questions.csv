@@ -1,261 +1,261 @@
-type,difficulty,category,question,correct_answer,id
-boolean,easy,General Knowledge,The Great Wall of China is visible from the moon.,FALSE,CSV001
-boolean,easy,General Knowledge,Jingle Bells was originally meant for Thanksgiving,TRUE,CSV002
-boolean,easy,General Knowledge,Nutella is produced by the German company Ferrero.,FALSE,CSV003
-boolean,medium,General Knowledge,"The bikini is named after the &quot;Bikini Atoll&quot;, an island where the United States conducted tests on atomic bombs.",TRUE,CSV004
-boolean,easy,General Knowledge,French is an official language in Canada.,TRUE,CSV005
-boolean,hard,General Knowledge,"In Scandinavian languages, the letter &Aring; means river.",TRUE,CSV006
-boolean,hard,General Knowledge,This is the correct spelling of &quot;Supercalifragilisticexpialidocious&quot;.,TRUE,CSV007
-boolean,easy,General Knowledge,The mitochondria is the powerhouse of the cell.,TRUE,CSV008
-boolean,easy,General Knowledge,The Lego Group was founded in 1932.,TRUE,CSV009
-boolean,medium,General Knowledge,&quot;Typewriter&quot; is the longest word that can be typed using only the first row on a QWERTY keyboard.,TRUE,CSV010
-boolean,medium,General Knowledge,The term &quot;Spam&quot; came before the food product &quot;Spam&quot;.,FALSE,CSV011
-boolean,easy,General Knowledge,Video streaming website YouTube was purchased in it&#039;s entirety by Facebook for US$1.65 billion in stock.,FALSE,CSV012
-boolean,medium,General Knowledge,Popcorn was invented in 1871 by Frederick W. Rueckheim in the USA where he sold the snack on the streets of Chicago.,FALSE,CSV013
-boolean,hard,General Knowledge,Stagecoach owned &quot;South West Trains&quot; before losing the rights to FirstGroup and MTR in March of 2017.,TRUE,CSV014
-boolean,easy,General Knowledge,"On average, at least 1 person is killed by a drunk driver in the United States every hour.",TRUE,CSV015
-boolean,medium,General Knowledge,Kissing someone for one minute burns about 2 calories.,TRUE,CSV016
-boolean,medium,General Knowledge,&quot;Santa Claus&quot; is a variety of melon.,TRUE,CSV017
-boolean,easy,General Knowledge,You can legally drink alcohol while driving in Mississippi.,TRUE,CSV018
-boolean,medium,General Knowledge,The scientific name for the Southern Lights is Aurora Australis?,TRUE,CSV019
-boolean,medium,General Knowledge,&quot;Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.&quot; is a grammatically correct sentence.,TRUE,CSV020
-boolean,medium,General Knowledge,Fast food restaurant chains Carl&#039;s Jr. and Hardee&#039;s are owned by the same company.,TRUE,CSV021
-boolean,easy,General Knowledge,&quot;Ananas&quot; is mostly used as the word for Pineapple in other languages.,TRUE,CSV022
-boolean,medium,General Knowledge,The vapor produced by e-cigarettes is actually water.,FALSE,CSV023
-boolean,easy,General Knowledge,Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.,FALSE,CSV024
-boolean,easy,General Knowledge,It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.,FALSE,CSV025
-boolean,hard,General Knowledge,&quot;Number 16 Bus Shelter&quot; was a child&#039;s name that was approved by the New Zealand government.,TRUE,CSV026
-boolean,easy,General Knowledge,The color orange is named after the fruit.,TRUE,CSV027
-boolean,easy,General Knowledge,A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.,FALSE,CSV028
-boolean,medium,General Knowledge,"The word &quot;news&quot; originates from the first letters of the 4 main directions on a compass (North, East, West, South).",FALSE,CSV029
-boolean,medium,General Knowledge,Sitting for more than three hours a day can cut two years off a person&#039;s life expectancy.,TRUE,CSV030
-boolean,easy,General Knowledge,"When you cry in space, your tears stick to your face.",TRUE,CSV031
-boolean,medium,General Knowledge,The British organisation CAMRA stands for The Campaign for Real Ale.,TRUE,CSV032
-boolean,medium,General Knowledge,Cucumbers are usually more than 90% water.,TRUE,CSV033
-boolean,medium,General Knowledge,The average woman is 5 inches / 13 centimeters shorter than the average man.,TRUE,CSV034
-boolean,medium,General Knowledge,There are 86400 seconds in a day.,TRUE,CSV035
-boolean,medium,General Knowledge,Haggis is traditionally ate on Burns Night.,TRUE,CSV036
-boolean,easy,General Knowledge,"Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian. ",TRUE,CSV037
-boolean,medium,General Knowledge,The French word for &quot;glass&quot; is &quot;glace&quot;.,FALSE,CSV038
-boolean,medium,General Knowledge,The US emergency hotline is 911 because of the September 11th terrorist attacks.,FALSE,CSV039
-boolean,medium,General Knowledge,Francis Bacon died from a fatal case of pneumonia while he was attempting to preserve meat by stuffing a chicken with snow.,TRUE,CSV040
-boolean,easy,General Knowledge,The Sun rises from the North.,FALSE,CSV041
-boolean,easy,General Knowledge,"In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.",TRUE,CSV042
-boolean,hard,General Knowledge,NCIS stands for &quot;Navy Corps Investigative Service&quot;,FALSE,CSV043
-boolean,easy,General Knowledge,"&quot;27 Club&quot; is a term used to refer to a list of famous actors, musicians, and artists who died at the age of 27.",TRUE,CSV044
-boolean,easy,General Knowledge,Bulls are attracted to the color red.,FALSE,CSV045
-boolean,medium,General Knowledge,Instant mashed potatoes were invented by Canadian Edward Asselbergs in 1962.,TRUE,CSV046
-boolean,medium,General Knowledge,The pickled gherkin was first added to hamburgers because a US health law required all fast-food to include a source of Vitamin C.,FALSE,CSV047
-boolean,easy,General Knowledge,Adolf Hitler was born in Australia. ,FALSE,CSV048
-boolean,easy,General Knowledge,The National Animal of Scotland is the Unicorn.,TRUE,CSV049
-boolean,medium,General Knowledge,The French word to travel is &quot;Travail&quot;,FALSE,CSV050
-boolean,hard,Entertainment: Books,"In Harry Potter and the Deathly Hallows, Hermione destroyed the fourth Horcrux by stabbing it with the Sword of Gryffindor.",FALSE,CSV051
-boolean,hard,Entertainment: Books,"Harry Potter was born on July 31st, 1980.",TRUE,CSV052
-boolean,easy,Entertainment: Books,The &quot;Berenstein Bears&quot; is the correct spelling of the educational children&#039;s book series&#039; name.,FALSE,CSV053
-boolean,easy,Entertainment: Books,&quot;Green Eggs and Ham&quot; consists of only 50 different words.,TRUE,CSV054
-boolean,easy,Entertainment: Books,Stephen Chbosky wrote the book &#039;The Perks of Being A Wallflower&#039;.,TRUE,CSV055
-boolean,easy,Entertainment: Books,"&quot;Elementary, my dear Watson&quot; is a phrase that is never truly said within the Conan Doyle books of Sherlock Holmes.",TRUE,CSV056
-boolean,easy,Entertainment: Books,"Shub-Niggurath is a creature that was created by 	J. R. R. Tolkien in his novel &quot;The Lord of The Rings&quot;.",FALSE,CSV057
-boolean,medium,Entertainment: Books,"Originally, the character Charlie from Charlie and the Chocolate Factory was going to be black.",TRUE,CSV058
-boolean,easy,Entertainment: Books,The book 1984 was published in 1949.,TRUE,CSV059
-boolean,easy,Entertainment: Books,"The Harry Potter series of books, combined, are over 1,000,000 words in length.",TRUE,CSV060
-boolean,medium,Entertainment: Film,The movie &quot;Tron&quot; received an Oscar nomination for Best Visual Effects.,FALSE,CSV061
-boolean,easy,Entertainment: Film,"In the original Star Wars trilogy, Alec Guinness provided the voice for Darth Vader.",FALSE,CSV062
-boolean,easy,Entertainment: Film,"Samuel L. Jackson had the words, &#039;Bad Motherf*cker&#039; in-scripted on his lightsaber during the filming of Star Wars.",TRUE,CSV063
-boolean,easy,Entertainment: Film,Brandon Routh plays the titular character in the movie &quot;John Wick&quot;.,FALSE,CSV064
-boolean,hard,Entertainment: Film,The weapon Clint Eastwood uses in &quot;Dirty Harry&quot; was a .44 Automag.,FALSE,CSV065
-boolean,easy,Entertainment: Film,Ewan McGregor did not know the name of the second prequel film of Star Wars during and after filming.,TRUE,CSV066
-boolean,easy,Entertainment: Film,Leonardo DiCaprio won an Oscar for Best Actor in 2004&#039;s &quot;The Aviator&quot;.,FALSE,CSV067
-boolean,easy,Entertainment: Film,The 2010 film &quot;The Social Network&quot; is a biographical drama film about MySpace founder Tom Anderson.,FALSE,CSV068
-boolean,easy,Entertainment: Film,"In the original script of &quot;The Matrix&quot;, the machines used humans as additional computing power instead of batteries.",TRUE,CSV069
-boolean,hard,Entertainment: Film,"&quot;Cube&quot;, &quot;Cube 2: Hypercube&quot; and &quot;Cube Zero&quot; were directed by the same person.",FALSE,CSV070
-boolean,medium,Entertainment: Film,The color of the pills in the Matrix were Blue and Yellow.,FALSE,CSV071
-boolean,easy,Entertainment: Film,Actor Tommy Chong served prison time.,TRUE,CSV072
-boolean,easy,Entertainment: Film,"&quot;Minions&quot; was released on the June 10th, 2015.",FALSE,CSV073
-boolean,easy,Entertainment: Film,Matt Damon played an astronaut stranded on an extraterrestrial planet in both of the movies Interstellar and The Martian.,TRUE,CSV074
-boolean,easy,Entertainment: Film,"In the original Star Wars trilogy, David Prowse was the actor who physically portrayed Darth Vader.",TRUE,CSV075
-boolean,easy,Entertainment: Film,In Alfred Hitchcock&#039;s film &#039;Psycho&#039; it is said he used chocolate syrup to simulate the blood in the famous shower scene from ,TRUE,CSV076
-boolean,medium,Entertainment: Film,The Xenomorph from the science fiction film &quot;Alien&quot; has acidic blood.,TRUE,CSV077
-boolean,medium,Entertainment: Film,There aren&#039;t any live-action clones in &quot;Star Wars: Episode III - Revenge of the Sith&quot;.,TRUE,CSV078
-boolean,easy,Entertainment: Film,"In the movie The Revenant, DiCaprio&#039;s character hunts down the killer of his son.",TRUE,CSV079
-boolean,easy,Entertainment: Film,The movie &quot;The Nightmare before Christmas&quot; was all done with physical objects.,TRUE,CSV080
-boolean,hard,Entertainment: Music,The song &quot;Mystery Train&quot; was released by artist &quot;Little Junior&#039;s Blue Flames&quot; in 1953.,TRUE,CSV081
-boolean,easy,Entertainment: Music,"In 1993, Prince changed his name to an unpronounceable symbol because he was unhappy with his contract with Warner Bros.",TRUE,CSV082
-boolean,easy,Entertainment: Music,American rapper Dr. Dre actually has a Ph.D. doctorate.,FALSE,CSV083
-boolean,medium,Entertainment: Music,"3 members of 2 Live Crew were arrested for playing songs from their album, As Nasty As They Wanna Be, live.",TRUE,CSV084
-boolean,medium,Entertainment: Music,EDM label Monstercat signs tracks instead of artists.,TRUE,CSV085
-boolean,hard,Entertainment: Music,"Pete Townshend&#039;s solo album, &quot;White City: A Novel&quot;, is set in the metropolitan area of Chicago.",FALSE,CSV086
-boolean,easy,Entertainment: Music,"The alternative rock band, They Might Be Giants, released their album &#039;Flood&#039; in 1990. ",TRUE,CSV087
-boolean,easy,Entertainment: Music,Scatman John&#039;s real name was John Paul Larkin.,TRUE,CSV088
-boolean,easy,Entertainment: Music,Eurobeat is primarily an Italian genre of music.,TRUE,CSV089
-boolean,medium,Entertainment: Music,Ashley Frangipane performs under the stage name Halsey.,TRUE,CSV090
-boolean,medium,Entertainment: Music,&quot;The Division Bell&quot; is the final album of the progressive rock band Pink Floyd.,FALSE,CSV091
-boolean,easy,Entertainment: Music,Stevie Wonder&#039;s real name is Stevland Hardaway Morris.,TRUE,CSV092
-boolean,medium,Entertainment: Music,Arcade Fire&#039;s &#039;The Suburbs&#039; won the Album of the Year award in the 2011 Grammys.,TRUE,CSV093
-boolean,hard,Entertainment: Music,The band STRFKR was also briefly known as Pyramiddd.,TRUE,CSV094
-boolean,easy,Entertainment: Music,A Saxophone is a brass instrument.,FALSE,CSV095
-boolean,medium,Entertainment: Music,Nick Mason is the only member to appear on every Pink Floyd album.,TRUE,CSV096
-boolean,easy,Entertainment: Music,Muse is a British (English) rock band,TRUE,CSV097
-boolean,medium,Entertainment: Music,Metallica collaborated with Rowan Atkinson&#039;s Mr Bean on a 1992 comic relief single.,FALSE,CSV098
-boolean,medium,Entertainment: Music,Soulja Boy&#039;s &#039;Crank That&#039; won a Grammy for Best Rap Song in 2007.,FALSE,CSV099
-boolean,easy,Entertainment: Music,Lead Singer Rivers Cuomo of American rock band Weezer attended Harvard.,TRUE,CSV100
-boolean,medium,Entertainment: Music,"Dave Grohl recorded the Foo Fighters&#039; debut, &quot;Foo Fighters,&quot; by himself.",TRUE,CSV101
-boolean,hard,Entertainment: Music,The singer Billie Holiday was also known as &quot;Lady Day&quot;.,TRUE,CSV102
-boolean,medium,Entertainment: Music,&quot;Neutral Milk Hotel&quot; is a real band.,TRUE,CSV103
-boolean,medium,Entertainment: Music,The cover of The Beatles album &quot;Abbey Road&quot; featured a Volkswagen Beetle in the background.,TRUE,CSV104
-boolean,medium,Entertainment: Music,"Scottish producer Calvin Harris is from the town of Dumfries, Scotland.",TRUE,CSV105
-boolean,easy,Entertainment: Music,The music group Daft Punk got their name from a negative review they recieved.,TRUE,CSV106
-boolean,easy,Entertainment: Music,The music video to The Buggle&#039;s &quot;Video Killed the Radio Star&quot; was the first music video to broadcast on MTV.,TRUE,CSV107
-boolean,medium,Entertainment: Music,Pink Guy&#039;s debut album was &quot;Pink Season&quot;.,FALSE,CSV108
-boolean,medium,Entertainment: Music,Green Day&#039;s album &#039;American Idiot&#039; is considered a &quot;punk rock opera.&quot;,TRUE,CSV109
-boolean,medium,Entertainment: Music,"For his performance at ComplexCon 2016 in Long Beach, California, Skrillex revived his &quot;Mothership&quot; set piece for one night only.",TRUE,CSV110
-boolean,easy,Entertainment: Video Games,Big the Cat is a playable character in &quot;Sonic Generations&quot;.,FALSE,CSV111
-boolean,medium,Entertainment: Video Games,Metal Gear Solid V: The Phantom Pain runs on the Fox Engine.,TRUE,CSV112
-boolean,easy,Entertainment: Video Games,"In &quot;Super Mario Bros.&quot;, the clouds and bushes have the same artwork and are just different colors.",TRUE,CSV113
-boolean,easy,Entertainment: Video Games,Pac-Man was invented by the designer Toru Iwatani while he was eating pizza.,TRUE,CSV114
-boolean,medium,Entertainment: Video Games,"In Rocket League, you can play Basketball.",TRUE,CSV115
-boolean,easy,Entertainment: Video Games,"In Terraria, you can craft the Cell Phone pre-hardmode.",TRUE,CSV116
-boolean,easy,Entertainment: Video Games,Nintendo&#039;s Luigi was originally just called Green Mario?,FALSE,CSV117
-boolean,easy,Entertainment: Video Games,The game &quot;Jetpack Joyride&quot; was created by &quot;Redbrick Studios&quot;.,FALSE,CSV118
-boolean,easy,Entertainment: Video Games,"In Until Dawn, both characters Sam and Mike cannot be killed under any means until the final chapter of the game.",TRUE,CSV119
-boolean,medium,Entertainment: Video Games,Amazon acquired Twitch in August 2014 for $970 million dollars.,TRUE,CSV120
-boolean,hard,Entertainment: Video Games,"In &quot;Minecraft&quot;, gold tools are faster than diamond tools.",TRUE,CSV121
-boolean,easy,Entertainment: Video Games,&quot;Half-Life 2&quot; runs on the Source Engine.,TRUE,CSV122
-boolean,medium,Entertainment: Video Games,"In Monster Hunter Generations, guild style is a type of hunting style.",TRUE,CSV123
-boolean,easy,Entertainment: Video Games,"In RuneScape, one must complete the &quot;Dragon Slayer&quot; quest before equipping Rune Platelegs.",FALSE,CSV124
-boolean,medium,Entertainment: Video Games,In the game &quot;Until Dawn&quot; Emily is the only playable character who can be killed by another playable character directly.,TRUE,CSV125
-boolean,easy,Entertainment: Video Games,The ghosts in &quot;Pac-Man&quot; and &quot;Ms. Pac-Man&quot; have completely different behavior.,TRUE,CSV126
-boolean,medium,Entertainment: Video Games,"In &quot;League of Legends&quot;, there exists four different types of Dragon.",FALSE,CSV127
-boolean,medium,Entertainment: Video Games,"TF2: The Heavy&#039;s voice actor, Gary Schwartz, voices the Demoman as well ",TRUE,CSV128
-boolean,medium,Entertainment: Video Games,"During pre-production of &quot;Super Mario Bros.&quot;, Mario originally was meant to shoot bullets.",TRUE,CSV129
-boolean,easy,Entertainment: Video Games,The song &quot;Megalovania&quot; by Toby Fox made its third appearence in the 2015 RPG &quot;Undertale&quot;.,TRUE,CSV130
-boolean,easy,Entertainment: Video Games,The ultimate phrase used by Pharah from Overwatch is: &quot;Justice rains from above!&quot;,TRUE,CSV131
-boolean,easy,Entertainment: Video Games,"In Sonic the Hedgehog universe, Tails&#039; real name is Miles Prower.",TRUE,CSV132
-boolean,easy,Entertainment: Video Games,The game &quot;Pocket Morty&quot; has a Morty called &quot;Pocket Mortys Morty&quot;?,TRUE,CSV133
-boolean,easy,Entertainment: Video Games,There are 6 legendary cards in &quot;Clash Royale&quot;.,FALSE,CSV134
-boolean,easy,Entertainment: Video Games,"In &quot;Super Mario 64&quot;, collecting 100 coins on a level will give you a 1-UP.",FALSE,CSV135
-boolean,easy,Entertainment: Video Games,"In &quot;Super Mario 3D World&quot;, the Double Cherry power-up originated from a developer accidentally making two characters controllable.",TRUE,CSV136
-boolean,easy,Entertainment: Video Games,The names of Tom Nook&#039;s cousins in the Animal Crossing franchise are named &quot;Timmy&quot; and &quot;Jimmy&quot;.,FALSE,CSV137
-boolean,medium,Entertainment: Video Games,Resident Evil 4 was originally meant to be a Nintendo GameCube exclusive.,TRUE,CSV138
-boolean,easy,Entertainment: Video Games,Luigi is taller than Mario?,TRUE,CSV139
-boolean,easy,Entertainment: Video Games,"In the video game &quot;Splatoon&quot;, the playable characters were originally going to be rabbits instead of squids.",TRUE,CSV140
-boolean,hard,Entertainment: Video Games,Unturned originally started as a Roblox game.,TRUE,CSV141
-boolean,easy,Entertainment: Video Games,"In Resident Evil 4, the Chicago Typewriter has infinite ammo.",TRUE,CSV142
-boolean,medium,Entertainment: Video Games,"In &quot;Overwatch,&quot; an allied McCree will say &quot;Step right up&quot; upon using his ultimate ability Deadeye.",TRUE,CSV143
-boolean,easy,Entertainment: Video Games,"In the Monster Hunter Series, it is possible to capture Elder Dragons.",FALSE,CSV144
-boolean,easy,Entertainment: Video Games,"In &quot;Undertale&quot;, the main character of the game is Sans.",FALSE,CSV145
-boolean,hard,Entertainment: Video Games,"In &quot;Call Of Duty: World At War&quot;, the first appearance of the &quot;PPSH-41&quot; in &quot;Zombies&quot; was in the map &quot;Der Riese&quot;.",FALSE,CSV146
-boolean,easy,Entertainment: Video Games,The Mann Co. Store from Team Fortress 2 has the slogan &quot;We hire mercenaries and get in fights&quot;.,FALSE,CSV147
-boolean,easy,Entertainment: Video Games,"In Team Fortress 2, being disguised as a scout or medic results in a speed boost.",FALSE,CSV148
-boolean,hard,Entertainment: Video Games,"In Undertale, having a &quot;Fun Value&quot; set to 56-57 will play the &quot;Wrong Number Song Call&quot;.",FALSE,CSV149
-boolean,hard,Entertainment: Video Games,"All of these maps were in &quot;Tom Clancy&#039;s Rainbow Six Siege&quot; on its initial release: House, Clubhouse, Border, Consulate.",FALSE,CSV150
-boolean,medium,Entertainment: Video Games,Pistons were added to Minecraft in Beta 1.5.,FALSE,CSV151
-boolean,easy,Entertainment: Video Games,Solid Snake is actually a clone from the DNA of Big Boss in the Metal Gear Solid series&#039; history.,TRUE,CSV152
-boolean,medium,Entertainment: Video Games,The ADAM collecters in the Bioshock series are known as Little Sisters.,TRUE,CSV153
-boolean,medium,Entertainment: Video Games,"In the game &quot;Subnautica&quot;, a &quot;Cave Crawler&quot; will attack you.",TRUE,CSV154
-boolean,medium,Entertainment: Video Games,"In &quot;Starbound&quot;, the track played by the Decorated Music Box is named &quot;Atlas&quot;.",TRUE,CSV155
-boolean,easy,Entertainment: Video Games,"In Pok&eacute;mon Sun and Moon, a male Salandit can evolve to a Salazzle.",FALSE,CSV156
-boolean,easy,Entertainment: Video Games,"In &quot;Sonic Adventure&quot;, you are able to transform into Super Sonic at will after completing the main story.",FALSE,CSV157
-boolean,easy,Entertainment: Video Games,"The Konami Code is known as Up, Up, Down, Down, Left, Right, Right, Left, B, A, Start.",FALSE,CSV158
-boolean,easy,Entertainment: Video Games,The main character in the &quot;Half-Life&quot; franchise is named Morgan Freeman.,FALSE,CSV159
-boolean,easy,Entertainment: Video Games,&quot;Resident Evil 7&quot; is the first first-person Resident Evil game.,FALSE,CSV160
-boolean,medium,Science &amp; Nature,&quot;Tachycardia&quot; or &quot;Tachyarrhythmia&quot; refers to a resting heart-rate near or over 100 BPM.,TRUE,CSV161
-boolean,medium,Science &amp; Nature,The planet Mars has two moons orbiting it.,TRUE,CSV162
-boolean,medium,Science &amp; Nature,Type 1 diabetes is a result of the liver working improperly.,FALSE,CSV163
-boolean,medium,Science &amp; Nature,Pneumonoultramicroscopicsilicovolcanoconiosis is a synonym for the disease known as silicosis.,TRUE,CSV164
-boolean,medium,Science &amp; Nature,Anatomy considers the forms of macroscopic structures such as organs and organ systems.,TRUE,CSV165
-boolean,medium,Science &amp; Nature,"Like with the Neanderthals, Homo sapiens sapiens also interbred with the Denisovans.",TRUE,CSV166
-boolean,easy,Science &amp; Nature,Igneous rocks are formed by excessive heat and pressure.,FALSE,CSV167
-boolean,easy,Science &amp; Nature,"Water always boils at 100&deg;C, 212&deg;F, 373.15K, no matter where you are.",FALSE,CSV168
-boolean,medium,Science &amp; Nature,A person can get sunburned on a cloudy day.,TRUE,CSV169
-boolean,medium,Science &amp; Nature,The &quot;Gympie Stinger&quot; is the deadliest plant in the world.,FALSE,CSV170
-boolean,hard,Science &amp; Nature,The value of one Calorie is different than the value of one calorie.,TRUE,CSV171
-boolean,medium,Science &amp; Nature,"In the periodic table, Potassium&#039;s symbol is the letter K.",TRUE,CSV172
-boolean,hard,Science &amp; Nature,It was once believed that injecting shark cartilage into people would prevent them from contracting cancer.,TRUE,CSV173
-boolean,medium,Science &amp; Nature,"Scientists accidentally killed the once known world&#039;s oldest living creature, a mollusc, known to be aged as 507 years old.",TRUE,CSV174
-boolean,medium,Science &amp; Nature,A defibrillator is used to start up a heartbeat once a heart has stopped beating.,FALSE,CSV175
-boolean,medium,Science &amp; Nature,Steel is an alloy of Iron and Carbon.,TRUE,CSV176
-boolean,easy,Science &amp; Nature,An atom contains a nucleus.,TRUE,CSV177
-boolean,medium,Science &amp; Nature,The Doppler effect applies to light.,TRUE,CSV178
-boolean,easy,Science &amp; Nature,A plant that has a life cycle for more than a year is known as an annual.,FALSE,CSV179
-boolean,easy,Science &amp; Nature,An Astronomical Unit is the distance between Earth and the Moon.,FALSE,CSV180
-boolean,medium,Science: Computers,All program codes have to be compiled into an executable file in order to be run. This file can then be executed on any machine.,FALSE,CSV181
-boolean,easy,Science: Computers,&quot;HTML&quot; stands for Hypertext Markup Language.,TRUE,CSV182
-boolean,medium,Science: Computers,FLAC stands for &quot;Free Lossless Audio Condenser&quot;&#039;,FALSE,CSV183
-boolean,easy,Science: Computers,Linux was first created as an alternative to Windows XP.,FALSE,CSV184
-boolean,easy,Science: Computers,Ada Lovelace is often considered the first computer programmer.,TRUE,CSV185
-boolean,medium,Science: Computers,The common software-programming acronym &quot;I18N&quot; comes from the term &quot;Interlocalization&quot;.,FALSE,CSV186
-boolean,medium,Science: Computers,The last Windows operating system to be based on the Windows 9x kernel was Windows 98.,FALSE,CSV187
-boolean,hard,Science: Computers,DHCP stands for Dynamic Host Configuration Port.,FALSE,CSV188
-boolean,medium,Science: Computers,The very first recorded computer &quot;bug&quot; was a moth found inside a Harvard Mark II computer.,TRUE,CSV189
-boolean,easy,Science: Computers,Pointers were not used in the original C programming language; they were added later on in C++.,FALSE,CSV190
-boolean,easy,Science: Computers,The Windows ME operating system was released in the year 2000.,TRUE,CSV191
-boolean,easy,Science: Computers,RAM stands for Random Access Memory.,TRUE,CSV192
-boolean,medium,Science: Computers,A Boolean value of &quot;0&quot; represents which of these words?,FALSE,CSV193
-boolean,medium,Science: Computers,It&#039;s not possible to format a write-protected DVD-R Hard Disk.,TRUE,CSV194
-boolean,easy,Science: Computers,The Python programming language gets its name from the British comedy group &quot;Monty Python.&quot;,TRUE,CSV195
-boolean,easy,Science: Computers,Linus Torvalds created Linux and Git.,TRUE,CSV196
-boolean,medium,Science: Computers,"Linus Sebastian is the creator of the Linux kernel, which went on to be used in Linux, Android, and Chrome OS.",FALSE,CSV197
-boolean,medium,Science: Computers,The HTML5 standard was published in 2014.,TRUE,CSV198
-boolean,easy,Science: Computers,Time on Computers is measured via the EPOX System.,FALSE,CSV199
-boolean,easy,Science: Computers,The Windows 7 operating system has six main editions.,TRUE,CSV200
-boolean,easy,Geography,Tokyo is the capital of Japan.,TRUE,CSV201
-boolean,medium,Geography,Antarctica is the largest desert in the world.,TRUE,CSV202
-boolean,medium,Geography,The Sonoran Desert is located in eastern Africa.,FALSE,CSV203
-boolean,medium,Geography,The capital of the US State Ohio is the city of Chillicothe.,FALSE,CSV204
-boolean,medium,Geography,Is Tartu the capital of Estonia?,FALSE,CSV205
-boolean,hard,Geography,The two largest ethnic groups of Belgium are Flemish and Walloon. ,TRUE,CSV206
-boolean,easy,Geography,Greenland is covered with grass and Iceland covered with ice.,FALSE,CSV207
-boolean,easy,Geography,Nova Scotia is on the east coast of Canada.,TRUE,CSV208
-boolean,easy,Geography,There are no deserts in Europe.,TRUE,CSV209
-boolean,easy,Geography,"Rhode Island is actually located on the US mainland, despite its name.",TRUE,CSV210
-boolean,easy,Geography,California is larger than Japan.,TRUE,CSV211
-boolean,easy,Geography,St. Louis is the capital of the US State Missouri.,FALSE,CSV212
-boolean,medium,Geography,The Southeast Asian island of Borneo is politically divided among 3 countries.,TRUE,CSV213
-boolean,easy,Geography,New Haven is the capital city of the state of Connecticut in the United States.,FALSE,CSV214
-boolean,hard,Geography,"Switzerland has four national languages, English being one of them.",FALSE,CSV215
-boolean,easy,Geography,Vatican City is a country.,TRUE,CSV216
-boolean,medium,Geography,Gothenburg is the capital of Sweden.,FALSE,CSV217
-boolean,easy,Geography,Hungary is the only country in the world beginning with H.,FALSE,CSV218
-boolean,medium,Geography,There exists an island named &quot;Java&quot;.,TRUE,CSV219
-boolean,medium,Geography,Japan has left-hand side traffic.,TRUE,CSV220
-boolean,easy,Geography,Alaska is the largest state in the United States.,TRUE,CSV221
-boolean,easy,Geography,San Marino is the only country completely surrounded by another country.,FALSE,CSV222
-boolean,medium,Geography,"The title of the 1969 film &quot;Krakatoa, East_of Java&quot; is incorrect, as Krakatoa is in fact west of Java.",TRUE,CSV223
-boolean,medium,Geography,&quot;Mongolia&quot; was a part of the now non-existent U.S.S.R.,FALSE,CSV224
-boolean,medium,Geography,You could walk from Norway to North Korea while only passing through Russia.,TRUE,CSV225
-boolean,easy,Geography,A group of islands is called an &#039;archipelago&#039;.,TRUE,CSV226
-boolean,medium,Geography,Seoul is the capital of North Korea.,FALSE,CSV227
-boolean,medium,Geography,Liechtenstein does not have an airport.,TRUE,CSV228
-boolean,easy,Geography,Ottawa is the capital of Canada.,TRUE,CSV229
-boolean,easy,Geography,"There is an island in Japan called Ōkunoshima, A.K.A. &quot;Rabbit Island&quot;, so named because of it&#039;s huge population of rabbits.",TRUE,CSV230
-boolean,medium,Geography,"There are no roads in/out of Juneau, Alaska.",TRUE,CSV231
-boolean,medium,Geography,The flag of South Africa features 7 colours.,FALSE,CSV232
-boolean,easy,Geography,Greenland is almost as big as Africa.,FALSE,CSV233
-boolean,easy,Geography,Toronto is the capital city of the North American country of Canada.,FALSE,CSV234
-boolean,medium,Geography,"The longest place named in the United States is Lake Chargoggagoggmanchauggagoggchaubunagungamaugg, located near Webster, MA.",TRUE,CSV235
-boolean,medium,Geography,Vietnam is the only country in the world that starts with V. ,FALSE,CSV236
-boolean,easy,Geography,The Republic of Malta is the smallest microstate worldwide.,FALSE,CSV237
-boolean,medium,Geography,The surface area of Russia is slightly larger than that of the dwarf planet Pluto.,TRUE,CSV238
-boolean,hard,Geography,Only one country in the world starts with the letter Q.,TRUE,CSV239
-boolean,easy,Geography,There is a city called Rome in every continent on Earth.,FALSE,CSV240
-boolean,hard,History,The fourth funnel of the RMS Titanic was fake designed to make the ship look more powerful and symmetrical.,TRUE,CSV241
-boolean,medium,History,"Sargon II, a king of the Neo-Assyrian Empire, was a direct descendant of Sargon of Akkad.",FALSE,CSV242
-boolean,easy,History,Former United States Presidents John Adams and Thomas Jefferson died within hours of each other.,TRUE,CSV243
-boolean,hard,History,Japan was part of the Allied Powers during World War I.,TRUE,CSV244
-boolean,easy,History,"In World War ll, Great Britian used inflatable tanks on the ports of Great Britain to divert Hitler away from Normandy/D-day landing.",TRUE,CSV245
-boolean,easy,History,Thomas Crapper was a plumber who invented the flushing toilet.,FALSE,CSV246
-boolean,medium,History,Abraham Lincoln was the first U.S. President to be born outside the borders of the thirteen original states. ,TRUE,CSV247
-boolean,easy,History,Adolf Hitler was tried at the Nuremberg trials.,FALSE,CSV248
-boolean,medium,History,"Sir Issac Newton served as a Member of Parliament, but the only recorded time he spoke was to complain about a draft in the chambers.",TRUE,CSV249
-boolean,medium,History,The M41 Walker Bulldog remains in service in some countries to this day.,TRUE,CSV250
-boolean,hard,History,The Kingdom of Prussia briefly held land in Estonia.,FALSE,CSV251
-boolean,medium,History,"In World War II, Hawker Typhoons served in the Pacific theater.",FALSE,CSV252
-boolean,medium,History,The two atomic bombs dropped on Japan by the United States in August 1945 were named &#039;Little Man&#039; and &#039;Fat Boy&#039;.,FALSE,CSV253
-boolean,easy,History,The Tiananmen Square protests of 1989 were held in Hong Kong.,FALSE,CSV254
-boolean,hard,History,"The Battle of Trafalgar took place on October 23rd, 1805",FALSE,CSV255
-boolean,medium,History,Theodore Roosevelt Jr. was the only General involved in the initial assault on D-Day.,TRUE,CSV256
-boolean,easy,History,The Cold War ended with Joseph Stalin&#039;s death.,FALSE,CSV257
-boolean,medium,History,The first televised presidential debate was between Jimmy Carter and Gerald Ford.,FALSE,CSV258
-boolean,medium,History,The Hundred Years&#039; War was fought for more than a hundred years.,TRUE,CSV259
-boolean,easy,History,The United States Department of Homeland Security was formed in response to the September 11th attacks.,TRUE,CSV260
+type,difficulty,category,question,correct_answer,id,explanation
+boolean,easy,General Knowledge,The Great Wall of China is visible from the moon.,FALSE,CSV001,This is a common myth. The Great Wall of China is not visible from the moon with the naked eye. NASA has confirmed that it is difficult to see even from low Earth orbit without magnification.
+boolean,easy,General Knowledge,Jingle Bells was originally meant for Thanksgiving,TRUE,CSV002,"While it has become a popular Christmas song, 'Jingle Bells' was originally written by James Lord Pierpont for a Thanksgiving Sunday school service. The lyrics, which describe a sleigh ride, do not have any specific Christmas references."
+boolean,easy,General Knowledge,Nutella is produced by the German company Ferrero.,FALSE,CSV003,"Nutella is produced by the Italian company Ferrero, which was founded in Alba, Italy. While Ferrero has a large presence in Germany, the company itself is Italian."
+boolean,medium,General Knowledge,"The bikini is named after the ""Bikini Atoll"", an island where the United States conducted tests on atomic bombs.",TRUE,CSV004,"The bikini was introduced in 1946 by French designer Louis Réard. He named it after the Bikini Atoll in the Pacific Ocean, where the United States had just begun testing atomic bombs. Réard hoped the swimsuit's revealing design would be as shocking and newsworthy as the atomic tests."
+boolean,easy,General Knowledge,French is an official language in Canada.,TRUE,CSV005,"Yes, French is one of the two official languages of Canada, along with English. This is enshrined in the Canadian Charter of Rights and Freedoms."
+boolean,hard,General Knowledge,"In Scandinavian languages, the letter Å means river.",TRUE,CSV006,"In several Scandinavian languages, including Swedish, Danish, and Norwegian, the letter 'Å' is a word that means 'stream' or 'small river'."
+boolean,hard,General Knowledge,"This is the correct spelling of ""Supercalifragilisticexpialidocious"".",TRUE,CSV007,"The spelling in the question is indeed correct. It is a 34-letter word from the movie Mary Poppins, and it means 'fantastically good' or 'wonderful'."
+boolean,easy,General Knowledge,The mitochondria is the powerhouse of the cell.,TRUE,CSV008,"This is a well-known concept in biology. Mitochondria are organelles that generate most of the cell's supply of adenosine triphosphate (ATP), used as a source of chemical energy."
+boolean,easy,General Knowledge,The Lego Group was founded in 1932.,TRUE,CSV009,The Lego Group was founded in 1932 by Ole Kirk Christiansen. The company has been passed down through three generations of his family.
+boolean,medium,General Knowledge,"""Typewriter"" is the longest word that can be typed using only the first row on a QWERTY keyboard.",TRUE,CSV010,"While there are some obscure longer words, 'typewriter' is famously the longest common English word that can be typed using only the top row of a QWERTY keyboard. It's often speculated that this was an intentional demonstration by the inventor."
+boolean,medium,General Knowledge,"The term ""Spam"" came before the food product ""Spam"".",FALSE,CSV011,"The food product 'Spam' was introduced by Hormel Foods in 1937. The term 'spam' for unsolicited electronic messages came much later, and its origin is famously traced to a 1970 Monty Python sketch that joked about the canned meat being inescapable and ubiquitous."
+boolean,easy,General Knowledge,Video streaming website YouTube was purchased in it's entirety by Facebook for US$1.65 billion in stock.,FALSE,CSV012,"YouTube was acquired by Google in November 2006 for $1.65 billion in a stock-for-stock transaction. At the time, it was considered a large and risky purchase, but it has since become one of the most successful acquisitions in tech history."
+boolean,medium,General Knowledge,Popcorn was invented in 1871 by Frederick W. Rueckheim in the USA where he sold the snack on the streets of Chicago.,FALSE,CSV013,"Popcorn has been consumed for thousands of years, with evidence of its existence in Peru dating back to 4700 BC. Frederick W. Rueckheim did not invent popcorn, but he did invent the popular snack 'Cracker Jack' in Chicago in the 1890s, which is a mixture of popcorn, peanuts, and molasses."
+boolean,hard,General Knowledge,"Stagecoach owned ""South West Trains"" before losing the rights to FirstGroup and MTR in March of 2017.",TRUE,CSV014,"Stagecoach Group operated the South West Trains franchise for 21 years, from 1996 until 2017. In August 2017, the franchise was taken over by South Western Railway, a joint venture between FirstGroup and MTR Corporation."
+boolean,easy,General Knowledge,"On average, at least 1 person is killed by a drunk driver in the United States every hour.",TRUE,CSV015,"According to the National Highway Traffic Safety Administration (NHTSA), in 2019, one person was killed every 52 minutes from drunk-driving crashes. This is a shocking statistic that highlights the dangers of drunk driving."
+boolean,medium,General Knowledge,Kissing someone for one minute burns about 2 calories.,TRUE,CSV016,"While the exact number can vary depending on the intensity of the kiss, it is estimated that a passionate kiss can burn between 2 and 26 calories per minute. A simple, gentle kiss burns about 2-3 calories."
+boolean,medium,General Knowledge,"""Santa Claus"" is a variety of melon.",TRUE,CSV017,"The Santa Claus melon, sometimes known as the Christmas melon, is a variety of muskmelon that is available during the winter months. It has a green, striped rind and a pale, sweet flesh."
+boolean,easy,General Knowledge,You can legally drink alcohol while driving in Mississippi.,TRUE,CSV018,"Mississippi is one of the few states that does not have a state-wide law prohibiting the possession of open containers of alcohol in a vehicle. While it is illegal to drive with a blood alcohol concentration (BAC) of .08% or higher, the act of a passenger drinking in a moving vehicle is not explicitly illegal under state law, though local ordinances may apply."
+boolean,medium,General Knowledge,The scientific name for the Southern Lights is Aurora Australis?,TRUE,CSV019,The Southern Lights are indeed known by the scientific name Aurora Australis. The name is derived from the Latin words 'aurora' meaning 'dawn' and 'australis' meaning 'southern'.
+boolean,medium,General Knowledge,"""Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo."" is a grammatically correct sentence.",TRUE,CSV020,"This is a famous example of a grammatically correct sentence that uses homonyms and homophones. The sentence uses three different meanings of the word 'buffalo': the animal, the city of Buffalo, New York, and the verb 'to buffalo' (meaning to bully or intimidate)."
+boolean,medium,General Knowledge,Fast food restaurant chains Carl's Jr. and Hardee's are owned by the same company.,TRUE,CSV021,"Yes, both Carl's Jr. and Hardee's are owned by the parent company CKE Restaurants Holdings, Inc. While they have different regional focuses, they share a common ownership."
+boolean,easy,General Knowledge,"""Ananas"" is mostly used as the word for Pineapple in other languages.",TRUE,CSV022,"The word 'ananas' is used for pineapple in many languages, including German, French, Italian, and Russian. The English word 'pineapple' is an exception, as most other European languages use a variation of 'ananas'."
+boolean,medium,General Knowledge,The vapor produced by e-cigarettes is actually water.,FALSE,CSV023,"The vapor from e-cigarettes is not just water. It is an aerosol that contains nicotine, flavorings, and other chemicals. While it may look like water vapor, it is chemically very different."
+boolean,easy,General Knowledge,Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.,FALSE,CSV024,Dihydrogen Monoxide is the chemical name for water (H2O). The 'ban' is a well-known hoax that plays on people's fear of chemical-sounding names. There has never been a ban on water.
+boolean,easy,General Knowledge,It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.,FALSE,CSV025,"This is a common misconception. Entrapment occurs when police induce a person to commit a crime they would not have otherwise committed. Simply providing an opportunity to commit a crime, such as an undercover officer selling drugs, is not considered entrapment."
+boolean,hard,General Knowledge,"""Number 16 Bus Shelter"" was a child's name that was approved by the New Zealand government.",TRUE,CSV026,"In 1996, the New Zealand government approved the name 'Number 16 Bus Shelter' for a child. This is often cited as an example of unusual names that have been legally registered."
+boolean,easy,General Knowledge,The color orange is named after the fruit.,TRUE,CSV027,"The color orange is indeed named after the fruit. The word 'orange' entered the English language from Old French 'orenge', which was derived from the Arabic 'nāranj', from the Persian 'nārang', from the Sanskrit 'nāraṅga'."
+boolean,easy,General Knowledge,A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.,FALSE,CSV028,"This is a persistent urban legend. While bar peanuts may not be the most hygienic snack, there is no credible scientific study that has found traces of over 100 unique specimens of urine on them. The story is likely an exaggeration of concerns about hygiene in bars."
+boolean,medium,General Knowledge,"The word ""news"" originates from the first letters of the 4 main directions on a compass (North, East, West, South).",FALSE,CSV029,"This is a common folk etymology. The word 'news' actually derives from the plural of the adjective 'new', and it came to mean 'new things' or 'tidings'. It has no connection to the cardinal directions."
+boolean,medium,General Knowledge,Sitting for more than three hours a day can cut two years off a person's life expectancy.,TRUE,CSV030,Several studies have suggested that prolonged sitting can have negative health effects. A 2012 study published in the journal BMJ Open found that limiting sitting time to less than three hours a day could increase life expectancy by two years.
+boolean,easy,General Knowledge,"When you cry in space, your tears stick to your face.",TRUE,CSV031,"Due to the lack of gravity, tears do not fall in space. Instead, they form a liquid ball and stick to the eye and face. Astronauts have confirmed this phenomenon."
+boolean,medium,General Knowledge,The British organisation CAMRA stands for The Campaign for Real Ale.,TRUE,CSV032,"CAMRA is a well-known independent voluntary consumer organization in the UK which promotes real ale, real cider and the traditional British pub. The name is an acronym for the Campaign for Real Ale."
+boolean,medium,General Knowledge,Cucumbers are usually more than 90% water.,TRUE,CSV033,"Cucumbers have a very high water content, typically around 95-96%. This makes them a very hydrating food."
+boolean,medium,General Knowledge,The average woman is 5 inches / 13 centimeters shorter than the average man.,TRUE,CSV034,"Globally, the average height difference between men and women is about 5 inches (13 cm). Men are, on average, taller than women in every country in the world."
+boolean,medium,General Knowledge,There are 86400 seconds in a day.,TRUE,CSV035,"A day has 24 hours, each hour has 60 minutes, and each minute has 60 seconds. Therefore, a day has 24 * 60 * 60 = 86,400 seconds."
+boolean,medium,General Knowledge,Haggis is traditionally ate on Burns Night.,TRUE,CSV036,"Haggis is the centerpiece of a traditional Burns supper, a celebration of the life and poetry of the Scottish poet Robert Burns, which is held on or near his birthday, January 25th."
+boolean,easy,General Knowledge,"Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian. ",TRUE,CSV037,"Romanian is an Eastern Romance language that, like French, Spanish, Portuguese, and Italian, descended from Vulgar Latin."
+boolean,medium,General Knowledge,"The French word for ""glass"" is ""glace"".",FALSE,CSV038,The French word for 'glass' is 'verre'. 'Glace' means 'ice' or 'ice cream'.
+boolean,medium,General Knowledge,The US emergency hotline is 911 because of the September 11th terrorist attacks.,FALSE,CSV039,"The 911 emergency number was established in the United States in 1968, long before the September 11th terrorist attacks. The number was chosen because it was easy to remember and had not been used as an area code or for other purposes."
+boolean,medium,General Knowledge,Francis Bacon died from a fatal case of pneumonia while he was attempting to preserve meat by stuffing a chicken with snow.,TRUE,CSV040,"The story of Francis Bacon's death is that he contracted pneumonia while testing his theories on food preservation by stuffing a chicken with snow. He died on April 9, 1626."
+boolean,easy,General Knowledge,The Sun rises from the North.,FALSE,CSV041,The Sun rises in the east and sets in the west. This is due to the Earth's rotation on its axis.
+boolean,easy,General Knowledge,"In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.",TRUE,CSV042,"In 2010, the Library of Congress announced a partnership with Twitter to archive every public tweet."
+boolean,hard,General Knowledge,"NCIS stands for ""Navy Corps Investigative Service""",FALSE,CSV043,NCIS stands for Naval Criminal Investigative Service.
+boolean,easy,General Knowledge,"""27 Club"" is a term used to refer to a list of famous actors, musicians, and artists who died at the age of 27.",TRUE,CSV044,"The 27 Club is a list of popular musicians, artists, or actors who died at age 27. The 'club' is entirely notional and the causes of death are varied."
+boolean,easy,General Knowledge,Bulls are attracted to the color red.,FALSE,CSV045,"Bulls are colorblind to red. The myth that they are attracted to the color red comes from bullfighting, where the bull is agitated by the movement of the cape, not its color."
+boolean,medium,General Knowledge,Instant mashed potatoes were invented by Canadian Edward Asselbergs in 1962.,TRUE,CSV046,Instant mashed potatoes were invented by Canadian food scientist Edward Asselbergs in 1962. His process for dehydrating and then rehydrating potatoes was a major innovation in the food industry.
+boolean,medium,General Knowledge,The pickled gherkin was first added to hamburgers because a US health law required all fast-food to include a source of Vitamin C.,FALSE,CSV047,This is a myth. Pickles were added to hamburgers for flavor and to add a contrasting texture. There is no evidence of a health law requiring them for their vitamin C content.
+boolean,easy,General Knowledge,Adolf Hitler was born in Australia. ,FALSE,CSV048,"Adolf Hitler was born in Braunau am Inn, Austria, not Australia."
+boolean,easy,General Knowledge,The National Animal of Scotland is the Unicorn.,TRUE,CSV049,The unicorn is the national animal of Scotland. It was first adopted as the country's national animal in the 15th century.
+boolean,medium,General Knowledge,"The French word to travel is ""Travail""",FALSE,CSV050,The French word for 'to travel' is 'voyager'. 'Travail' means 'work'.
+boolean,hard,Entertainment: Books,"In Harry Potter and the Deathly Hallows, Hermione destroyed the fourth Horcrux by stabbing it with the Sword of Gryffindor.",FALSE,CSV051,"In 'Harry Potter and the Deathly Hallows', the fourth Horcrux (Hufflepuff's Cup) was destroyed by Hermione, but she used a basilisk fang, not the Sword of Gryffindor. Ron destroyed the locket with the sword."
+boolean,hard,Entertainment: Books,"Harry Potter was born on July 31st, 1980.",TRUE,CSV052,"According to J.K. Rowling, Harry Potter was born on July 31, 1980."
+boolean,easy,Entertainment: Books,"The ""Berenstein Bears"" is the correct spelling of the educational children's book series' name.",FALSE,CSV053,The correct spelling of the children's book series is 'The Berenstain Bears'. The common misspelling 'Berenstein' is a well-known example of the Mandela Effect.
+boolean,easy,Entertainment: Books,"""Green Eggs and Ham"" consists of only 50 different words.",TRUE,CSV054,"Dr. Seuss's classic children's book 'Green Eggs and Ham' was written using only 50 different words, as a result of a bet with his publisher."
+boolean,easy,Entertainment: Books,Stephen Chbosky wrote the book 'The Perks of Being A Wallflower'.,TRUE,CSV055,"Stephen Chbosky is the author of the young adult novel 'The Perks of Being a Wallflower', which was published in 1999."
+boolean,easy,Entertainment: Books,"""Elementary, my dear Watson"" is a phrase that is never truly said within the Conan Doyle books of Sherlock Holmes.",TRUE,CSV056,"The phrase 'Elementary, my dear Watson' is one of the most famous quotes attributed to Sherlock Holmes, but it never actually appears in any of Sir Arthur Conan Doyle's original stories."
+boolean,easy,Entertainment: Books,"Shub-Niggurath is a creature that was created by 	J. R. R. Tolkien in his novel ""The Lord of The Rings"".",FALSE,CSV057,"Shub-Niggurath is a cosmic entity created by H.P. Lovecraft, not J.R.R. Tolkien. It is part of the Cthulhu Mythos."
+boolean,medium,Entertainment: Books,"Originally, the character Charlie from Charlie and the Chocolate Factory was going to be black.",TRUE,CSV058,"In an early draft of 'Charlie and the Chocolate Factory', Roald Dahl's character Charlie Bucket was a black boy. The change was made at the suggestion of his agent."
+boolean,easy,Entertainment: Books,The book 1984 was published in 1949.,TRUE,CSV059,George Orwell's dystopian novel 'Nineteen Eighty-Four' was published in 1949.
+boolean,easy,Entertainment: Books,"The Harry Potter series of books, combined, are over 1,000,000 words in length.",TRUE,CSV060,"The seven books in the Harry Potter series contain a combined total of over one million words (1,084,170 words, to be exact)."
+boolean,medium,Entertainment: Film,"The movie ""Tron"" received an Oscar nomination for Best Visual Effects.",FALSE,CSV061,"The movie 'Tron' was not nominated for Best Visual Effects. The Academy of Motion Picture Arts and Sciences was hesitant to award a film that used computer-generated imagery, as they felt it was 'cheating'."
+boolean,easy,Entertainment: Film,"In the original Star Wars trilogy, Alec Guinness provided the voice for Darth Vader.",FALSE,CSV062,"In the original Star Wars trilogy, Darth Vader was physically portrayed by David Prowse, and his voice was provided by James Earl Jones. Alec Guinness played the role of Obi-Wan Kenobi."
+boolean,easy,Entertainment: Film,"Samuel L. Jackson had the words, 'Bad Motherf*cker' in-scripted on his lightsaber during the filming of Star Wars.",TRUE,CSV063,"Samuel L. Jackson famously requested that his lightsaber in the Star Wars prequel trilogy have the words 'Bad Motherf*cker' engraved on it, a reference to his role in the film 'Pulp Fiction'."
+boolean,easy,Entertainment: Film,"Brandon Routh plays the titular character in the movie ""John Wick"".",FALSE,CSV064,The titular character in the movie 'John Wick' is played by Keanu Reeves. Brandon Routh is best known for playing Superman in the 2006 film 'Superman Returns'.
+boolean,hard,Entertainment: Film,"The weapon Clint Eastwood uses in ""Dirty Harry"" was a .44 Automag.",FALSE,CSV065,"The weapon Clint Eastwood's character uses in the movie 'Dirty Harry' is a Smith & Wesson Model 29, a .44 Magnum revolver, not a .44 Automag."
+boolean,easy,Entertainment: Film,Ewan McGregor did not know the name of the second prequel film of Star Wars during and after filming.,TRUE,CSV066,"Ewan McGregor has said in interviews that he did not know the title of the second Star Wars prequel, 'Attack of the Clones', until it was publicly announced. He has joked that he thought it was a terrible title."
+boolean,easy,Entertainment: Film,"Leonardo DiCaprio won an Oscar for Best Actor in 2004's ""The Aviator"".",FALSE,CSV067,"Leonardo DiCaprio was nominated for Best Actor for his role in 'The Aviator' at the 2005 Academy Awards, but he did not win. The award went to Jamie Foxx for his portrayal of Ray Charles in the movie 'Ray'."
+boolean,easy,Entertainment: Film,"The 2010 film ""The Social Network"" is a biographical drama film about MySpace founder Tom Anderson.",FALSE,CSV068,"The 2010 film 'The Social Network' is about the founding of Facebook, not MySpace. It tells the story of Mark Zuckerberg and the legal battles he faced."
+boolean,easy,Entertainment: Film,"In the original script of ""The Matrix"", the machines used humans as additional computing power instead of batteries.",TRUE,CSV069,"In the original script for 'The Matrix', the machines used humans as a source of processing power, not as batteries. The Wachowskis changed this to make the concept easier for audiences to understand."
+boolean,hard,Entertainment: Film,"""Cube"", ""Cube 2: Hypercube"" and ""Cube Zero"" were directed by the same person.",FALSE,CSV070,"'Cube' was directed by Vincenzo Natali, 'Cube 2: Hypercube' was directed by Andrzej Sekuła, and 'Cube Zero' was directed by Ernie Barbarash. Therefore, they were not all directed by the same person."
+boolean,medium,Entertainment: Film,The color of the pills in the Matrix were Blue and Yellow.,FALSE,CSV071,"In the movie 'The Matrix', Neo is offered a choice between a red pill and a blue pill. The red pill would allow him to see the truth about the Matrix, while the blue pill would make him forget everything and continue to live in the simulated world."
+boolean,easy,Entertainment: Film,Actor Tommy Chong served prison time.,TRUE,CSV072,"Tommy Chong, one half of the comedy duo Cheech & Chong, served a nine-month prison sentence in 2003 for his role in financing and promoting a company that sold drug paraphernalia."
+boolean,easy,Entertainment: Film,"""Minions"" was released on the June 10th, 2015.",FALSE,CSV073,"The movie 'Minions' was released on July 10, 2015, in the United States, not June 10th."
+boolean,easy,Entertainment: Film,Matt Damon played an astronaut stranded on an extraterrestrial planet in both of the movies Interstellar and The Martian.,TRUE,CSV074,Matt Damon played an astronaut stranded on a distant planet in both 'Interstellar' (Dr. Mann) and 'The Martian' (Mark Watney).
+boolean,easy,Entertainment: Film,"In the original Star Wars trilogy, David Prowse was the actor who physically portrayed Darth Vader.",TRUE,CSV075,"David Prowse was the actor in the Darth Vader suit for the original Star Wars trilogy. However, the character's voice was provided by James Earl Jones."
+boolean,easy,Entertainment: Film,In Alfred Hitchcock's film 'Psycho' it is said he used chocolate syrup to simulate the blood in the famous shower scene from ,TRUE,CSV076,It is a well-known piece of film trivia that Alfred Hitchcock used chocolate syrup for the blood in the famous shower scene in 'Psycho' because it showed up better on black-and-white film.
+boolean,medium,Entertainment: Film,"The Xenomorph from the science fiction film ""Alien"" has acidic blood.",TRUE,CSV077,"The Xenomorph, the creature from the 'Alien' film series, has highly corrosive, acidic blood, which is a significant defense mechanism."
+boolean,medium,Entertainment: Film,"There aren't any live-action clones in ""Star Wars: Episode III - Revenge of the Sith"".",TRUE,CSV078,All of the clone troopers in 'Star Wars: Episode III - Revenge of the Sith' were computer-generated. No live-action actors were used to portray them.
+boolean,easy,Entertainment: Film,"In the movie The Revenant, DiCaprio's character hunts down the killer of his son.",TRUE,CSV079,"In the movie 'The Revenant', the character played by Leonardo DiCaprio, Hugh Glass, is on a quest for revenge against the man who killed his son."
+boolean,easy,Entertainment: Film,"The movie ""The Nightmare before Christmas"" was all done with physical objects.",TRUE,CSV080,"The movie 'The Nightmare Before Christmas' is a stop-motion animation film, which means that all of the characters and sets were physical objects that were moved frame by frame to create the illusion of movement."
+boolean,hard,Entertainment: Music,"The song ""Mystery Train"" was released by artist ""Little Junior's Blue Flames"" in 1953.",TRUE,CSV081,The song 'Mystery Train' was first recorded by Little Junior's Blue Flames in 1953. It was later famously covered by Elvis Presley.
+boolean,easy,Entertainment: Music,"In 1993, Prince changed his name to an unpronounceable symbol because he was unhappy with his contract with Warner Bros.",TRUE,CSV082,"In 1993, Prince changed his name to an unpronounceable 'love symbol' in protest of his contract with Warner Bros. Records."
+boolean,easy,Entertainment: Music,American rapper Dr. Dre actually has a Ph.D. doctorate.,FALSE,CSV083,"Despite his name, Dr. Dre does not hold a doctorate degree."
+boolean,medium,Entertainment: Music,"3 members of 2 Live Crew were arrested for playing songs from their album, As Nasty As They Wanna Be, live.",TRUE,CSV084,"In 1990, three members of the rap group 2 Live Crew were arrested in Florida for performing songs from their album 'As Nasty As They Wanna Be', which had been deemed obscene by a federal judge."
+boolean,medium,Entertainment: Music,EDM label Monstercat signs tracks instead of artists.,TRUE,CSV085,Monstercat is an independent electronic music label that signs individual tracks from artists rather than signing the artists themselves to exclusive contracts.
+boolean,hard,Entertainment: Music,"Pete Townshend's solo album, ""White City: A Novel"", is set in the metropolitan area of Chicago.",FALSE,CSV086,"Pete Townshend's solo album 'White City: A Novel' is set in a housing project in London, not Chicago."
+boolean,easy,Entertainment: Music,"The alternative rock band, They Might Be Giants, released their album 'Flood' in 1990. ",TRUE,CSV087,"The alternative rock band They Might Be Giants released their third studio album, 'Flood', in 1990. It is one of their most popular albums."
+boolean,easy,Entertainment: Music,Scatman John's real name was John Paul Larkin.,TRUE,CSV088,Scatman John's real name was John Paul Larkin. He was a jazz pianist and singer who became famous for his fusion of scat singing and dance music.
+boolean,easy,Entertainment: Music,Eurobeat is primarily an Italian genre of music.,TRUE,CSV089,Eurobeat is a genre of electronic dance music that originated in Italy in the late 1980s.
+boolean,medium,Entertainment: Music,Ashley Frangipane performs under the stage name Halsey.,TRUE,CSV090,Ashley Frangipane is the real name of the American singer and songwriter known professionally as Halsey.
+boolean,medium,Entertainment: Music,"""The Division Bell"" is the final album of the progressive rock band Pink Floyd.",FALSE,CSV091,"'The Division Bell' was the final studio album released by Pink Floyd before their 20-year hiatus. The band released another album, 'The Endless River', in 2014, which was based on material recorded during the 'Division Bell' sessions."
+boolean,easy,Entertainment: Music,Stevie Wonder's real name is Stevland Hardaway Morris.,TRUE,CSV092,"Stevie Wonder was born Stevland Hardaway Judkins, and later changed his name to Stevland Hardaway Morris."
+boolean,medium,Entertainment: Music,Arcade Fire's 'The Suburbs' won the Album of the Year award in the 2011 Grammys.,TRUE,CSV093,The Canadian indie rock band Arcade Fire won the Grammy Award for Album of the Year in 2011 for their album 'The Suburbs'.
+boolean,hard,Entertainment: Music,The band STRFKR was also briefly known as Pyramiddd.,TRUE,CSV094,"The band STRFKR was briefly known as Pyramiddd in 2011, before reverting back to their original name."
+boolean,easy,Entertainment: Music,A Saxophone is a brass instrument.,FALSE,CSV095,"A saxophone is a woodwind instrument, not a brass instrument. Although it is made of brass, the sound is produced by a vibrating reed, which is characteristic of woodwind instruments."
+boolean,medium,Entertainment: Music,Nick Mason is the only member to appear on every Pink Floyd album.,TRUE,CSV096,Nick Mason is the only member of Pink Floyd to have appeared on every one of their albums.
+boolean,easy,Entertainment: Music,Muse is a British (English) rock band,TRUE,CSV097,"Muse is an English rock band that formed in Teignmouth, Devon, in 1994."
+boolean,medium,Entertainment: Music,Metallica collaborated with Rowan Atkinson's Mr Bean on a 1992 comic relief single.,FALSE,CSV098,This is a false rumor. Metallica has never collaborated with Rowan Atkinson's Mr. Bean character.
+boolean,medium,Entertainment: Music,Soulja Boy's 'Crank That' won a Grammy for Best Rap Song in 2007.,FALSE,CSV099,"Soulja Boy's song 'Crank That (Soulja Boy)' was nominated for a Grammy for Best Rap Song in 2008, but it did not win."
+boolean,easy,Entertainment: Music,Lead Singer Rivers Cuomo of American rock band Weezer attended Harvard.,TRUE,CSV100,"Rivers Cuomo, the lead singer of the rock band Weezer, attended Harvard University on and off from 1995 to 2006, eventually graduating with a Bachelor of Arts in English."
+boolean,medium,Entertainment: Music,"Dave Grohl recorded the Foo Fighters' debut, ""Foo Fighters,"" by himself.",TRUE,CSV101,"Dave Grohl wrote and recorded the entire debut album for the Foo Fighters by himself in 1994, playing all the instruments except for a single guitar part on one song."
+boolean,hard,Entertainment: Music,"The singer Billie Holiday was also known as ""Lady Day"".",TRUE,CSV102,Billie Holiday was an American jazz and swing music singer. Her nickname was 'Lady Day'.
+boolean,medium,Entertainment: Music,"""Neutral Milk Hotel"" is a real band.",TRUE,CSV103,"Neutral Milk Hotel is an American indie rock band formed in Ruston, Louisiana, in 1989 by singer, guitarist, and songwriter Jeff Mangum."
+boolean,medium,Entertainment: Music,"The cover of The Beatles album ""Abbey Road"" featured a Volkswagen Beetle in the background.",TRUE,CSV104,The cover of The Beatles' album 'Abbey Road' famously features a white Volkswagen Beetle in the background.
+boolean,medium,Entertainment: Music,"Scottish producer Calvin Harris is from the town of Dumfries, Scotland.",TRUE,CSV105,"Scottish DJ and producer Calvin Harris is from the town of Dumfries, Scotland."
+boolean,easy,Entertainment: Music,The music group Daft Punk got their name from a negative review they recieved.,TRUE,CSV106,"The French electronic music duo Daft Punk got their name from a negative review of their early work in the British music magazine Melody Maker, which called it 'a daft punky thrash.'"
+boolean,easy,Entertainment: Music,"The music video to The Buggle's ""Video Killed the Radio Star"" was the first music video to broadcast on MTV.",TRUE,CSV107,"The music video for 'Video Killed the Radio Star' by The Buggles was the very first music video to be broadcast on MTV when the channel launched on August 1, 1981."
+boolean,medium,Entertainment: Music,"Pink Guy's debut album was ""Pink Season"".",FALSE,CSV108,"Pink Guy's debut album was 'Pink Guy', released in 2014. 'Pink Season' was his second album, released in 2017."
+boolean,medium,Entertainment: Music,"Green Day's album 'American Idiot' is considered a ""punk rock opera.""",TRUE,CSV109,Green Day's 2004 album 'American Idiot' is a rock opera that tells the story of a character named 'Jesus of Suburbia'.
+boolean,medium,Entertainment: Music,"For his performance at ComplexCon 2016 in Long Beach, California, Skrillex revived his ""Mothership"" set piece for one night only.",TRUE,CSV110,Skrillex did revive his 'Mothership' stage setup for his performance at ComplexCon in 2016.
+boolean,easy,Entertainment: Video Games,"Big the Cat is a playable character in ""Sonic Generations"".",FALSE,CSV111,"Big the Cat is not a playable character in the main campaign of 'Sonic Generations', but he does make a cameo appearance."
+boolean,medium,Entertainment: Video Games,Metal Gear Solid V: The Phantom Pain runs on the Fox Engine.,TRUE,CSV112,"Metal Gear Solid V: The Phantom Pain was developed using the Fox Engine, a game engine created by Kojima Productions."
+boolean,easy,Entertainment: Video Games,"In ""Super Mario Bros."", the clouds and bushes have the same artwork and are just different colors.",TRUE,CSV113,"In the original 'Super Mario Bros.' for the Nintendo Entertainment System, the clouds and bushes are the same sprite, just with different colors."
+boolean,easy,Entertainment: Video Games,Pac-Man was invented by the designer Toru Iwatani while he was eating pizza.,TRUE,CSV114,"Pac-Man's creator, Toru Iwatani, has said that the character's shape was inspired by a pizza with a slice missing."
+boolean,medium,Entertainment: Video Games,"In Rocket League, you can play Basketball.",TRUE,CSV115,"In 2016, a free update for the game 'Rocket League' added a 'Hoops' mode, which is a basketball-style game mode."
+boolean,easy,Entertainment: Video Games,"In Terraria, you can craft the Cell Phone pre-hardmode.",TRUE,CSV116,The Cell Phone is a post-hardmode item in the game 'Terraria'. It requires several components that can only be obtained in hardmode.
+boolean,easy,Entertainment: Video Games,Nintendo's Luigi was originally just called Green Mario?,FALSE,CSV117,Luigi has always been named Luigi. The idea that he was originally called 'Green Mario' is a myth.
+boolean,easy,Entertainment: Video Games,"The game ""Jetpack Joyride"" was created by ""Redbrick Studios"".",FALSE,CSV118,"The game 'Jetpack Joyride' was created by Halfbrick Studios, not Redbrick Studios."
+boolean,easy,Entertainment: Video Games,"In Until Dawn, both characters Sam and Mike cannot be killed under any means until the final chapter of the game.",TRUE,CSV119,"In the game 'Until Dawn', the characters Sam and Mike are the only two who cannot be killed until the final chapter of the game, regardless of the player's choices."
+boolean,medium,Entertainment: Video Games,Amazon acquired Twitch in August 2014 for $970 million dollars.,TRUE,CSV120,Amazon acquired the live-streaming video platform Twitch in August 2014 for $970 million.
+boolean,hard,Entertainment: Video Games,"In ""Minecraft"", gold tools are faster than diamond tools.",TRUE,CSV121,"In 'Minecraft', gold tools have the highest mining speed, but they have very low durability."
+boolean,easy,Entertainment: Video Games,"""Half-Life 2"" runs on the Source Engine.",TRUE,CSV122,'Half-Life 2' was developed by Valve and runs on their Source Engine.
+boolean,medium,Entertainment: Video Games,"In Monster Hunter Generations, guild style is a type of hunting style.",TRUE,CSV123,"In 'Monster Hunter Generations', there are four hunting styles: Guild Style, Striker Style, Aerial Style, and Adept Style."
+boolean,easy,Entertainment: Video Games,"In RuneScape, one must complete the ""Dragon Slayer"" quest before equipping Rune Platelegs.",FALSE,CSV124,"In the game 'RuneScape', the 'Dragon Slayer' quest is not a requirement to equip Rune Platelegs."
+boolean,medium,Entertainment: Video Games,"In the game ""Until Dawn"" Emily is the only playable character who can be killed by another playable character directly.",TRUE,CSV125,"In the game 'Until Dawn', Emily can be killed by Mike if he chooses to shoot her after she is bitten by a wendigo."
+boolean,easy,Entertainment: Video Games,"The ghosts in ""Pac-Man"" and ""Ms. Pac-Man"" have completely different behavior.",TRUE,CSV126,"The ghosts in 'Pac-Man' and 'Ms. Pac-Man' have different AI and behavior patterns, making them distinct from each other."
+boolean,medium,Entertainment: Video Games,"In ""League of Legends"", there exists four different types of Dragon.",FALSE,CSV127,"In 'League of Legends', there are five types of elemental dragons: Cloud, Infernal, Mountain, Ocean, and Hextech, plus the Elder Dragon."
+boolean,medium,Entertainment: Video Games,"TF2: The Heavy's voice actor, Gary Schwartz, voices the Demoman as well ",TRUE,CSV128,Gary Schwartz is the voice actor for both the Heavy and the Demoman in the game 'Team Fortress 2'.
+boolean,medium,Entertainment: Video Games,"During pre-production of ""Super Mario Bros."", Mario originally was meant to shoot bullets.",TRUE,CSV129,"In early development, the creators of 'Super Mario Bros.' considered having Mario shoot bullets instead of fireballs."
+boolean,easy,Entertainment: Video Games,"The song ""Megalovania"" by Toby Fox made its third appearence in the 2015 RPG ""Undertale"".",TRUE,CSV130,The song 'Megalovania' by Toby Fox appeared in the webcomic 'Homestuck' and the game 'EarthBound' before being featured in 'Undertale'.
+boolean,easy,Entertainment: Video Games,"The ultimate phrase used by Pharah from Overwatch is: ""Justice rains from above!""",TRUE,CSV131,The ultimate phrase used by the character Pharah in the game 'Overwatch' is 'Justice rains from above!'
+boolean,easy,Entertainment: Video Games,"In Sonic the Hedgehog universe, Tails' real name is Miles Prower.",TRUE,CSV132,"Tails' real name in the 'Sonic the Hedgehog' series is Miles Prower, a pun on 'miles per hour'."
+boolean,easy,Entertainment: Video Games,"The game ""Pocket Morty"" has a Morty called ""Pocket Mortys Morty""?",TRUE,CSV133,The game 'Pocket Mortys' does indeed have a Morty called 'Pocket Mortys Morty'.
+boolean,easy,Entertainment: Video Games,"There are 6 legendary cards in ""Clash Royale"".",FALSE,CSV134,There are currently more than 6 legendary cards in the game 'Clash Royale'.
+boolean,easy,Entertainment: Video Games,"In ""Super Mario 64"", collecting 100 coins on a level will give you a 1-UP.",FALSE,CSV135,"In 'Super Mario 64', collecting 100 coins on a level will give you a star, not a 1-UP."
+boolean,easy,Entertainment: Video Games,"In ""Super Mario 3D World"", the Double Cherry power-up originated from a developer accidentally making two characters controllable.",TRUE,CSV136,"The Double Cherry power-up in 'Super Mario 3D World' was created when a developer accidentally cloned a character, leading to the idea of controlling two characters at once."
+boolean,easy,Entertainment: Video Games,"The names of Tom Nook's cousins in the Animal Crossing franchise are named ""Timmy"" and ""Jimmy"".",FALSE,CSV137,"Tom Nook's apprentices in the 'Animal Crossing' series are his nephews, Timmy and Tommy."
+boolean,medium,Entertainment: Video Games,Resident Evil 4 was originally meant to be a Nintendo GameCube exclusive.,TRUE,CSV138,"'Resident Evil 4' was originally developed as a Nintendo GameCube exclusive, but was later ported to other consoles."
+boolean,easy,Entertainment: Video Games,Luigi is taller than Mario?,TRUE,CSV139,Luigi is canonically taller and thinner than his brother Mario.
+boolean,easy,Entertainment: Video Games,"In the video game ""Splatoon"", the playable characters were originally going to be rabbits instead of squids.",TRUE,CSV140,The developers of 'Splatoon' originally considered using rabbits as the main characters before settling on squids.
+boolean,hard,Entertainment: Video Games,Unturned originally started as a Roblox game.,TRUE,CSV141,The game 'Unturned' started as a browser game on Roblox before being developed into a standalone game.
+boolean,easy,Entertainment: Video Games,"In Resident Evil 4, the Chicago Typewriter has infinite ammo.",TRUE,CSV142,The Chicago Typewriter is a powerful weapon in 'Resident Evil 4' that has infinite ammo.
+boolean,medium,Entertainment: Video Games,"In ""Overwatch,"" an allied McCree will say ""Step right up"" upon using his ultimate ability Deadeye.",TRUE,CSV143,"In 'Overwatch', an allied McCree will say 'Step right up' when he uses his ultimate ability, Deadeye. An enemy McCree will say 'It's high noon.'"
+boolean,easy,Entertainment: Video Games,"In the Monster Hunter Series, it is possible to capture Elder Dragons.",FALSE,CSV144,"In the 'Monster Hunter' series, Elder Dragons cannot be captured, only slain."
+boolean,easy,Entertainment: Video Games,"In ""Undertale"", the main character of the game is Sans.",FALSE,CSV145,The main character of the game 'Undertale' is a human child named Frisk. Sans is a friendly skeleton who acts as a supporting character.
+boolean,hard,Entertainment: Video Games,"In ""Call Of Duty: World At War"", the first appearance of the ""PPSH-41"" in ""Zombies"" was in the map ""Der Riese"".",FALSE,CSV146,"The PPSH-41 first appeared in the 'Zombies' mode of 'Call of Duty: World at War' in the map 'Verruckt', not 'Der Riese'."
+boolean,easy,Entertainment: Video Games,"The Mann Co. Store from Team Fortress 2 has the slogan ""We hire mercenaries and get in fights"".",FALSE,CSV147,The slogan for the Mann Co. Store in 'Team Fortress 2' is 'We sell products and get in fights'.
+boolean,easy,Entertainment: Video Games,"In Team Fortress 2, being disguised as a scout or medic results in a speed boost.",FALSE,CSV148,"In 'Team Fortress 2', being disguised as a Scout does not grant a speed boost. Only the Medic disguise provides a passive healing effect."
+boolean,hard,Entertainment: Video Games,"In Undertale, having a ""Fun Value"" set to 56-57 will play the ""Wrong Number Song Call"".",FALSE,CSV149,"In 'Undertale', a 'Fun Value' of 66 will trigger the 'Wrong Number Song Call'."
+boolean,hard,Entertainment: Video Games,"All of these maps were in ""Tom Clancy's Rainbow Six Siege"" on its initial release: House, Clubhouse, Border, Consulate.",FALSE,CSV150,"The maps 'House', 'Clubhouse', and 'Consulate' were all in 'Tom Clancy's Rainbow Six Siege' on its initial release, but 'Border' was added later."
+boolean,medium,Entertainment: Video Games,Pistons were added to Minecraft in Beta 1.5.,FALSE,CSV151,"Pistons were added to Minecraft in Beta 1.7, not Beta 1.5."
+boolean,easy,Entertainment: Video Games,Solid Snake is actually a clone from the DNA of Big Boss in the Metal Gear Solid series' history.,TRUE,CSV152,"Solid Snake is a clone of the legendary soldier Big Boss, created as part of the 'Les Enfants Terribles' project."
+boolean,medium,Entertainment: Video Games,The ADAM collecters in the Bioshock series are known as Little Sisters.,TRUE,CSV153,The ADAM collectors in the 'BioShock' series are genetically altered little girls known as Little Sisters.
+boolean,medium,Entertainment: Video Games,"In the game ""Subnautica"", a ""Cave Crawler"" will attack you.",TRUE,CSV154,"In the game 'Subnautica', Cave Crawlers are aggressive creatures that will attack the player on sight."
+boolean,medium,Entertainment: Video Games,"In ""Starbound"", the track played by the Decorated Music Box is named ""Atlas"".",TRUE,CSV155,"In the game 'Starbound', the Decorated Music Box plays a track called 'Atlas'."
+boolean,easy,Entertainment: Video Games,"In Pokémon Sun and Moon, a male Salandit can evolve to a Salazzle.",FALSE,CSV156,"In 'Pokémon Sun and Moon', only female Salandit can evolve into Salazzle."
+boolean,easy,Entertainment: Video Games,"In ""Sonic Adventure"", you are able to transform into Super Sonic at will after completing the main story.",FALSE,CSV157,"In 'Sonic Adventure', Super Sonic is only playable during the final boss battle."
+boolean,easy,Entertainment: Video Games,"The Konami Code is known as Up, Up, Down, Down, Left, Right, Right, Left, B, A, Start.",FALSE,CSV158,"The Konami Code is Up, Up, Down, Down, Left, Right, Left, Right, B, A, Start."
+boolean,easy,Entertainment: Video Games,"The main character in the ""Half-Life"" franchise is named Morgan Freeman.",FALSE,CSV159,"The main character in the 'Half-Life' franchise is a theoretical physicist named Gordon Freeman, not Morgan Freeman."
+boolean,easy,Entertainment: Video Games,"""Resident Evil 7"" is the first first-person Resident Evil game.",FALSE,CSV160,"'Resident Evil 7' is not the first first-person Resident Evil game. There have been several spin-off titles that used a first-person perspective, such as 'Resident Evil Survivor'."
+boolean,medium,Science & Nature,"""Tachycardia"" or ""Tachyarrhythmia"" refers to a resting heart-rate near or over 100 BPM.",TRUE,CSV161,Tachycardia is the medical term for a heart rate over 100 beats per minute.
+boolean,medium,Science & Nature,The planet Mars has two moons orbiting it.,TRUE,CSV162,"Mars has two small moons, Phobos and Deimos."
+boolean,medium,Science & Nature,Type 1 diabetes is a result of the liver working improperly.,FALSE,CSV163,Type 1 diabetes is an autoimmune disease in which the immune system attacks the insulin-producing cells in the pancreas.
+boolean,medium,Science & Nature,Pneumonoultramicroscopicsilicovolcanoconiosis is a synonym for the disease known as silicosis.,TRUE,CSV164,Pneumonoultramicroscopicsilicovolcanoconiosis is the longest word in the English language and it refers to a lung disease caused by inhaling very fine silica dust.
+boolean,medium,Science & Nature,Anatomy considers the forms of macroscopic structures such as organs and organ systems.,TRUE,CSV165,Anatomy is the branch of biology concerned with the study of the structure of organisms and their parts.
+boolean,medium,Science & Nature,"Like with the Neanderthals, Homo sapiens sapiens also interbred with the Denisovans.",TRUE,CSV166,Fossil evidence suggests that Homo sapiens interbred with both Neanderthals and Denisovans.
+boolean,easy,Science & Nature,Igneous rocks are formed by excessive heat and pressure.,FALSE,CSV167,Igneous rocks are formed from the cooling and solidification of magma or lava.
+boolean,easy,Science & Nature,"Water always boils at 100°C, 212°F, 373.15K, no matter where you are.",FALSE,CSV168,"Water's boiling point depends on the atmospheric pressure. At sea level, it boils at 100°C (212°F), but at higher altitudes, it boils at a lower temperature."
+boolean,medium,Science & Nature,A person can get sunburned on a cloudy day.,TRUE,CSV169,It is possible to get sunburned on a cloudy day because UV radiation can penetrate through clouds.
+boolean,medium,Science & Nature,"The ""Gympie Stinger"" is the deadliest plant in the world.",FALSE,CSV170,"The Gympie-Gympie stinging tree is one of the most venomous plants in the world, but it is not considered the deadliest."
+boolean,hard,Science & Nature,The value of one Calorie is different than the value of one calorie.,TRUE,CSV171,"A Calorie (with a capital C), also known as a kilocalorie, is equal to 1000 calories (with a lowercase c)."
+boolean,medium,Science & Nature,"In the periodic table, Potassium's symbol is the letter K.",TRUE,CSV172,"The chemical symbol for potassium is K, which comes from the Latin word 'kalium'."
+boolean,hard,Science & Nature,It was once believed that injecting shark cartilage into people would prevent them from contracting cancer.,TRUE,CSV173,"In the 1990s, it was a popular but unfounded belief that shark cartilage could prevent or cure cancer."
+boolean,medium,Science & Nature,"Scientists accidentally killed the once known world's oldest living creature, a mollusc, known to be aged as 507 years old.",TRUE,CSV174,"In 2006, scientists studying a 507-year-old clam, nicknamed Ming, accidentally killed it when they opened its shell."
+boolean,medium,Science & Nature,A defibrillator is used to start up a heartbeat once a heart has stopped beating.,FALSE,CSV175,"A defibrillator is used to restore a normal heartbeat, not to start a heart that has stopped."
+boolean,medium,Science & Nature,Steel is an alloy of Iron and Carbon.,TRUE,CSV176,"Steel is an alloy of iron and carbon, and is one of the most important engineering and construction materials."
+boolean,easy,Science & Nature,An atom contains a nucleus.,TRUE,CSV177,"At the center of every atom is a nucleus, which contains protons and neutrons."
+boolean,medium,Science & Nature,The Doppler effect applies to light.,TRUE,CSV178,"The Doppler effect, which is the change in frequency of a wave in relation to an observer who is moving relative to the wave source, applies to all waves, including light."
+boolean,easy,Science & Nature,A plant that has a life cycle for more than a year is known as an annual.,FALSE,CSV179,A plant with a life cycle of more than two years is a perennial. An annual plant completes its life cycle in one year.
+boolean,easy,Science & Nature,An Astronomical Unit is the distance between Earth and the Moon.,FALSE,CSV180,"An Astronomical Unit (AU) is the average distance between the Earth and the Sun, not the Earth and the Moon."
+boolean,medium,Science: Computers,All program codes have to be compiled into an executable file in order to be run. This file can then be executed on any machine.,FALSE,CSV181,"Not all program codes need to be compiled. Interpreted languages, like Python and JavaScript, are executed directly by an interpreter."
+boolean,easy,Science: Computers,"""HTML"" stands for Hypertext Markup Language.",TRUE,CSV182,"HTML stands for Hypertext Markup Language, and it is the standard markup language for creating web pages."
+boolean,medium,Science: Computers,"FLAC stands for ""Free Lossless Audio Condenser""'",FALSE,CSV183,"FLAC stands for Free Lossless Audio Codec, not Condenser."
+boolean,easy,Science: Computers,Linux was first created as an alternative to Windows XP.,FALSE,CSV184,"Linux was first released in 1991, as a free operating system for personal computers. Windows XP was released in 2001."
+boolean,easy,Science: Computers,Ada Lovelace is often considered the first computer programmer.,TRUE,CSV185,"Ada Lovelace is widely regarded as the first computer programmer for her work on Charles Babbage's proposed mechanical general-purpose computer, the Analytical Engine."
+boolean,medium,Science: Computers,"The common software-programming acronym ""I18N"" comes from the term ""Interlocalization"".",FALSE,CSV186,"The acronym 'I18N' stands for 'Internationalization', where 18 is the number of letters between the 'I' and the 'n'."
+boolean,medium,Science: Computers,The last Windows operating system to be based on the Windows 9x kernel was Windows 98.,FALSE,CSV187,Windows ME (Millennium Edition) was the last Windows operating system to be based on the Windows 9x kernel.
+boolean,hard,Science: Computers,DHCP stands for Dynamic Host Configuration Port.,FALSE,CSV188,DHCP stands for Dynamic Host Configuration Protocol.
+boolean,medium,Science: Computers,"The very first recorded computer ""bug"" was a moth found inside a Harvard Mark II computer.",TRUE,CSV189,The first recorded computer 'bug' was a moth found trapped in a relay of the Harvard Mark II computer in 1947.
+boolean,easy,Science: Computers,Pointers were not used in the original C programming language; they were added later on in C++.,FALSE,CSV190,Pointers were a fundamental part of the C programming language from its inception.
+boolean,easy,Science: Computers,The Windows ME operating system was released in the year 2000.,TRUE,CSV191,"Windows ME was released on September 14, 2000."
+boolean,easy,Science: Computers,RAM stands for Random Access Memory.,TRUE,CSV192,RAM stands for Random Access Memory.
+boolean,medium,Science: Computers,"A Boolean value of ""0"" represents which of these words?",FALSE,CSV193,"In boolean logic, a value of '0' represents 'false'."
+boolean,medium,Science: Computers,It's not possible to format a write-protected DVD-R Hard Disk.,TRUE,CSV194,"It is not possible to format a write-protected DVD-R, as the 'R' stands for 'recordable', meaning it can only be written to once."
+boolean,easy,Science: Computers,"The Python programming language gets its name from the British comedy group ""Monty Python.""",TRUE,CSV195,The Python programming language was named after the British comedy group Monty Python.
+boolean,easy,Science: Computers,Linus Torvalds created Linux and Git.,TRUE,CSV196,Linus Torvalds created the Linux kernel and the Git version control system.
+boolean,medium,Science: Computers,"Linus Sebastian is the creator of the Linux kernel, which went on to be used in Linux, Android, and Chrome OS.",FALSE,CSV197,"Linus Sebastian is a Canadian YouTube personality, not the creator of the Linux kernel."
+boolean,medium,Science: Computers,The HTML5 standard was published in 2014.,TRUE,CSV198,The HTML5 standard was published in October 2014.
+boolean,easy,Science: Computers,Time on Computers is measured via the EPOX System.,FALSE,CSV199,"Time on computers is measured using the Network Time Protocol (NTP), not the EPOX System."
+boolean,easy,Science: Computers,The Windows 7 operating system has six main editions.,TRUE,CSV200,"The Windows 7 operating system has six main editions: Starter, Home Basic, Home Premium, Professional, Enterprise, and Ultimate."
+boolean,easy,Geography,Tokyo is the capital of Japan.,TRUE,CSV201,Tokyo is the capital and largest city of Japan.
+boolean,medium,Geography,Antarctica is the largest desert in the world.,TRUE,CSV202,Antarctica is the largest desert in the world. A desert is defined as a region that receives very little precipitation.
+boolean,medium,Geography,The Sonoran Desert is located in eastern Africa.,FALSE,CSV203,"The Sonoran Desert is located in the Southwestern United States and Northwestern Mexico, not in Africa."
+boolean,medium,Geography,The capital of the US State Ohio is the city of Chillicothe.,FALSE,CSV204,The capital of the US state of Ohio is Columbus. Chillicothe was the original capital.
+boolean,medium,Geography,Is Tartu the capital of Estonia?,FALSE,CSV205,"The capital of Estonia is Tallinn, not Tartu."
+boolean,hard,Geography,The two largest ethnic groups of Belgium are Flemish and Walloon. ,TRUE,CSV206,The two largest ethnic groups in Belgium are the Flemish (Dutch-speaking) and the Walloons (French-speaking).
+boolean,easy,Geography,Greenland is covered with grass and Iceland covered with ice.,FALSE,CSV207,"Greenland is mostly covered in ice, while Iceland has a milder climate and more green landscapes."
+boolean,easy,Geography,Nova Scotia is on the east coast of Canada.,TRUE,CSV208,"Nova Scotia is a province in Eastern Canada, on the Atlantic coast."
+boolean,easy,Geography,There are no deserts in Europe.,TRUE,CSV209,"There are no deserts in Europe in the traditional sense, although some areas in Spain and Italy have semi-arid climates."
+boolean,easy,Geography,"Rhode Island is actually located on the US mainland, despite its name.",TRUE,CSV210,"Rhode Island is a state in the New England region of the United States, and it is located on the mainland."
+boolean,easy,Geography,California is larger than Japan.,TRUE,CSV211,The state of California is larger in area than the country of Japan.
+boolean,easy,Geography,St. Louis is the capital of the US State Missouri.,FALSE,CSV212,"The capital of the US state of Missouri is Jefferson City, not St. Louis."
+boolean,medium,Geography,The Southeast Asian island of Borneo is politically divided among 3 countries.,TRUE,CSV213,"The island of Borneo is politically divided among three countries: Malaysia, Brunei, and Indonesia."
+boolean,easy,Geography,New Haven is the capital city of the state of Connecticut in the United States.,FALSE,CSV214,"The capital of the US state of Connecticut is Hartford, not New Haven."
+boolean,hard,Geography,"Switzerland has four national languages, English being one of them.",FALSE,CSV215,"Switzerland has four national languages: German, French, Italian, and Romansh. English is not one of them."
+boolean,easy,Geography,Vatican City is a country.,TRUE,CSV216,"Vatican City is the smallest independent state in the world, both in terms of area and population."
+boolean,medium,Geography,Gothenburg is the capital of Sweden.,FALSE,CSV217,"The capital of Sweden is Stockholm, not Gothenburg."
+boolean,easy,Geography,Hungary is the only country in the world beginning with H.,FALSE,CSV218,Honduras and Hungary are two countries that begin with the letter H.
+boolean,medium,Geography,"There exists an island named ""Java"".",TRUE,CSV219,Java is a large island in Indonesia.
+boolean,medium,Geography,Japan has left-hand side traffic.,TRUE,CSV220,Japan is one of the few countries in the world where traffic drives on the left-hand side of the road.
+boolean,easy,Geography,Alaska is the largest state in the United States.,TRUE,CSV221,Alaska is the largest state in the United States by area.
+boolean,easy,Geography,San Marino is the only country completely surrounded by another country.,FALSE,CSV222,"San Marino is completely surrounded by Italy, but Lesotho is completely surrounded by South Africa, and Vatican City is completely surrounded by Rome, Italy."
+boolean,medium,Geography,"The title of the 1969 film ""Krakatoa, East_of Java"" is incorrect, as Krakatoa is in fact west of Java.",TRUE,CSV223,"The volcano Krakatoa is located in the Sunda Strait, which is west of the island of Java."
+boolean,medium,Geography,"""Mongolia"" was a part of the now non-existent U.S.S.R.",FALSE,CSV224,Mongolia was never part of the Soviet Union. It was a sovereign country that was closely allied with the USSR.
+boolean,medium,Geography,You could walk from Norway to North Korea while only passing through Russia.,TRUE,CSV225,It is possible to walk from Norway to North Korea by only passing through Russia.
+boolean,easy,Geography,A group of islands is called an 'archipelago'.,TRUE,CSV226,"An archipelago is a chain, cluster or collection of islands."
+boolean,medium,Geography,Seoul is the capital of North Korea.,FALSE,CSV227,The capital of North Korea is Pyongyang. Seoul is the capital of South Korea.
+boolean,medium,Geography,Liechtenstein does not have an airport.,TRUE,CSV228,Liechtenstein is a doubly landlocked country in Central Europe that does not have an airport.
+boolean,easy,Geography,Ottawa is the capital of Canada.,TRUE,CSV229,Ottawa is the capital of Canada.
+boolean,easy,Geography,"There is an island in Japan called Ōkunoshima, A.K.A. ""Rabbit Island"", so named because of it's huge population of rabbits.",TRUE,CSV230,Ōkunoshima is a small island in the Inland Sea of Japan that is famous for its large population of rabbits.
+boolean,medium,Geography,"There are no roads in/out of Juneau, Alaska.",TRUE,CSV231,"Juneau, the capital of Alaska, is not accessible by road. It can only be reached by plane or boat."
+boolean,medium,Geography,The flag of South Africa features 7 colours.,FALSE,CSV232,"The flag of South Africa has six colors: red, white, blue, green, yellow, and black."
+boolean,easy,Geography,Greenland is almost as big as Africa.,FALSE,CSV233,"Greenland is the world's largest island, but Africa is a continent and is much larger."
+boolean,easy,Geography,Toronto is the capital city of the North American country of Canada.,FALSE,CSV234,"The capital of Canada is Ottawa, not Toronto."
+boolean,medium,Geography,"The longest place named in the United States is Lake Chargoggagoggmanchauggagoggchaubunagungamaugg, located near Webster, MA.",TRUE,CSV235,Lake Chargoggagoggmanchauggagoggchaubunagungamaugg is the longest place name in the United States.
+boolean,medium,Geography,Vietnam is the only country in the world that starts with V. ,FALSE,CSV236,Vanuatu and Venezuela are two other countries that start with the letter V.
+boolean,easy,Geography,The Republic of Malta is the smallest microstate worldwide.,FALSE,CSV237,"The Republic of Malta is a small island country in the Mediterranean Sea, but Vatican City is the smallest microstate in the world."
+boolean,medium,Geography,The surface area of Russia is slightly larger than that of the dwarf planet Pluto.,TRUE,CSV238,The surface area of Russia is slightly larger than that of the dwarf planet Pluto.
+boolean,hard,Geography,Only one country in the world starts with the letter Q.,TRUE,CSV239,Qatar is the only country in the world that starts with the letter Q.
+boolean,easy,Geography,There is a city called Rome in every continent on Earth.,FALSE,CSV240,"There are many cities named Rome in the United States, but there is not a city named Rome on every continent."
+boolean,hard,History,The fourth funnel of the RMS Titanic was fake designed to make the ship look more powerful and symmetrical.,TRUE,CSV241,"The fourth funnel of the RMS Titanic was a dummy, added to make the ship look more impressive and symmetrical."
+boolean,medium,History,"Sargon II, a king of the Neo-Assyrian Empire, was a direct descendant of Sargon of Akkad.",FALSE,CSV242,"Sargon II was a king of the Neo-Assyrian Empire, but he was not a direct descendant of Sargon of Akkad, who lived more than a thousand years earlier."
+boolean,easy,History,Former United States Presidents John Adams and Thomas Jefferson died within hours of each other.,TRUE,CSV243,"John Adams and Thomas Jefferson, the second and third presidents of the United States, both died on July 4, 1826, the 50th anniversary of the Declaration of Independence."
+boolean,hard,History,Japan was part of the Allied Powers during World War I.,TRUE,CSV244,"Japan was one of the Allied Powers during World War I, fighting against the Central Powers."
+boolean,easy,History,"In World War ll, Great Britian used inflatable tanks on the ports of Great Britain to divert Hitler away from Normandy/D-day landing.",TRUE,CSV245,"During World War II, the Allies used a variety of deception tactics, including inflatable tanks, to mislead the Germans about their invasion plans."
+boolean,easy,History,Thomas Crapper was a plumber who invented the flushing toilet.,FALSE,CSV246,"Thomas Crapper was a plumber who improved the flushing toilet, but he did not invent it."
+boolean,medium,History,Abraham Lincoln was the first U.S. President to be born outside the borders of the thirteen original states. ,TRUE,CSV247,Abraham Lincoln was the first US president to be born outside of the original thirteen states. He was born in Kentucky.
+boolean,easy,History,Adolf Hitler was tried at the Nuremberg trials.,FALSE,CSV248,"Adolf Hitler committed suicide on April 30, 1945, and was not tried at the Nuremberg trials."
+boolean,medium,History,"Sir Issac Newton served as a Member of Parliament, but the only recorded time he spoke was to complain about a draft in the chambers.",TRUE,CSV249,"Sir Isaac Newton was a Member of Parliament for the University of Cambridge, and it is said that the only time he spoke was to complain about a draft and ask for a window to be closed."
+boolean,medium,History,The M41 Walker Bulldog remains in service in some countries to this day.,TRUE,CSV250,"The M41 Walker Bulldog tank is still in service in some countries, including Uruguay."
+boolean,hard,History,The Kingdom of Prussia briefly held land in Estonia.,FALSE,CSV251,The Kingdom of Prussia never held land in Estonia.
+boolean,medium,History,"In World War II, Hawker Typhoons served in the Pacific theater.",FALSE,CSV252,"The Hawker Typhoon was a British fighter-bomber that served in the European theater during World War II, not the Pacific theater."
+boolean,medium,History,The two atomic bombs dropped on Japan by the United States in August 1945 were named 'Little Man' and 'Fat Boy'.,FALSE,CSV253,"The two atomic bombs dropped on Japan were named 'Little Boy' and 'Fat Man', not 'Little Man' and 'Fat Boy'."
+boolean,easy,History,The Tiananmen Square protests of 1989 were held in Hong Kong.,FALSE,CSV254,"The Tiananmen Square protests of 1989 took place in Beijing, not Hong Kong."
+boolean,hard,History,"The Battle of Trafalgar took place on October 23rd, 1805",FALSE,CSV255,"The Battle of Trafalgar took place on October 21, 1805, not October 23rd."
+boolean,medium,History,Theodore Roosevelt Jr. was the only General involved in the initial assault on D-Day.,TRUE,CSV256,"Theodore Roosevelt Jr., the son of President Theodore Roosevelt, was the only general to land in the first wave of the D-Day landings."
+boolean,easy,History,The Cold War ended with Joseph Stalin's death.,FALSE,CSV257,The Cold War continued for many years after Joseph Stalin's death in 1953.
+boolean,medium,History,The first televised presidential debate was between Jimmy Carter and Gerald Ford.,FALSE,CSV258,The first televised presidential debate was between John F. Kennedy and Richard Nixon in 1960.
+boolean,medium,History,The Hundred Years' War was fought for more than a hundred years.,TRUE,CSV259,"The Hundred Years' War was a series of conflicts between England and France that lasted from 1337 to 1453, a total of 116 years."
+boolean,easy,History,The United States Department of Homeland Security was formed in response to the September 11th attacks.,TRUE,CSV260,The United States Department of Homeland Security was created in response to the September 11th terrorist attacks in 2001.
