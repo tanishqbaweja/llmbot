@@ -1582,15 +1582,14 @@ async def help_command(ctx):
             name="💬 Chat Commands",
             value="`@DBZClanker <message>` - Mention bot to chat\n"
                   "`!ai <prompt>` - Use AI models (no files)\n"
-                  "`!oss <prompt>` - Enhanced AI with reply context\n"
-                  "`!gemini <prompt>` - Google AI with web search",
+                  "`!oss <prompt>` - Enhanced AI with reply context (no files)\n"
+                  "`!gemini <prompt>` - Google AI with web search (image files allowed)",
             inline=False
         )
         
         embed.add_field(
             name="🎨 Creative Commands",
-            value="`!image <prompt>` - Generate images (3min cooldown)\n"
-                  "Reply to messages while mentioning bot for context",
+            value="`!image <prompt>` - Generate images (image files allowed)",
             inline=False
         )
         
@@ -1603,9 +1602,8 @@ async def help_command(ctx):
         
         embed.add_field(
             name="📝 Usage Tips",
-            value="• Attach images to `!gemini` and `!image` commands\n"
+            value="• Attach images to !gemini and !image commands\n"
                   "• Reply to messages + mention bot for context\n"
-                  "• Use `!oss` for enhanced conversations\n"
                   "• Rate limits apply to prevent spam",
             inline=False
         )
