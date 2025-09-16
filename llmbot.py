@@ -1223,7 +1223,7 @@ async def get_gemini_response(prompt, message, input_image=None):
                     config=config
                 )
                 
-                response_text = response.text.strip()
+                response_text = response.text.strip() if response.text else ""
                 if not response_text:
                     response_text = "I'm having trouble generating a response. Please try again."
                 
