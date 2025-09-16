@@ -673,8 +673,11 @@ async def get_ai_response(prompt, message):
 @bot.event
 async def on_ready():
     init_db()
-    await bot.sync_commands()
     print(f'{bot.user} has connected to Discord!')
+
+@bot.slash_command(name='help', description='Show available commands')
+async def slash_help_command(ctx):
+    await help_command(ctx)
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -1540,24 +1543,7 @@ async def help_command(ctx):
     
     await ctx.reply(embed=embed)
 
-# Slash command version  
-@bot.slash_command(name='help', description='Show available commands')
-async def slash_help_command(interaction):
-    if is_admin(interaction.user.id):
-        embed = discord.Embed(title="🤖 DBZClanker AI - Admin Commands", description="Complete command reference for administrators", color=0x00ff00)
-        embed.add_field(name="👤 User Commands", value="`@DBZClanker <message>` - Chat with AI\n`!ai <prompt>` - Use Groq models\n`!oss <prompt>` - Use Groq with reply context\n`!gemini <prompt>` - Use Gemini with web search\n`!image <prompt>` - Generate images\n`!setpersonality <text>` - Set custom personality\n`!removepersonality` - Remove custom personality", inline=False)
-        embed.add_field(name="⚙️ Admin Commands", value="`!servers` - List connected servers\n`!check` - Check bot message details\n`!model <name> <prompt>` - Force specific model\n`!status <text>` - Set bot status\n`!setcooldown <minutes>` - Set channel cooldown\n`!delete` - Delete bot messages\n`!mistral <prompt>` - Use Mistral (uncensored)", inline=False)
-        embed.add_field(name="🔧 Debug Commands", value="`!checkinput <prompt>` - Show API message structure\n`!apicheck [prompt]` - Test Groq API keys\n`!geminicheck` - Test Gemini API keys\n`!mistralapicheck [prompt]` - Test OpenRouter keys", inline=False)
-        embed.set_footer(text="Admin access detected - showing all commands")
-    else:
-        embed = discord.Embed(title="🤖 DBZClanker AI - User Commands", description="Available commands for users", color=0x0099ff)
-        embed.add_field(name="💬 Chat Commands", value="`@DBZClanker <message>` - Mention bot to chat\n`!ai <prompt>` - Use AI models (no files)\n`!oss <prompt>` - Enhanced AI with reply context\n`!gemini <prompt>` - Google AI with web search", inline=False)
-        embed.add_field(name="🎨 Creative Commands", value="`!image <prompt>` - Generate images (3min cooldown)\nReply to messages while mentioning bot for context", inline=False)
-        embed.add_field(name="⚙️ Personalization", value="`!setpersonality <text>` - Customize bot personality\n`!removepersonality` - Reset to default personality", inline=False)
-        embed.add_field(name="📝 Usage Tips", value="• Attach images to `!gemini` and `!image` commands\n• Reply to messages + mention bot for context\n• Use `!oss` for enhanced conversations\n• Rate limits apply to prevent spam", inline=False)
-        embed.set_footer(text="Created by DBZ Clasher")
-    
-    await interaction.response.send_message(embed=embed)
+
 
 @bot.command(name='mistralapicheck')
 async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
