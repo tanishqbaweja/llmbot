@@ -8981,3 +8981,67 @@ TypeError: Messageable.send() got an unexpected keyword argument 'ephemeral'
 2025-09-16 10:35:09,788 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
 2025-09-16 10:35:15,033 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
 2025-09-16 10:35:17,026 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:01:06,950 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-16 17:01:06,952 - discord.client - INFO - logging in using static token
+2025-09-16 17:01:08,775 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6a0f051a51d1da9adc41fde9c14e003b).
+2025-09-16 17:59:10,727 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:11,299 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:11,302 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:11,303 - root - ERROR - Gemini API error with Gemini API Key 1: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:12,017 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:13,748 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:13,750 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:13,750 - root - ERROR - Gemini API error with Gemini API Key 2: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:14,438 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:16,304 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:16,305 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:16,306 - root - ERROR - Gemini API error with Gemini API Key 3: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:16,951 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:18,728 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:18,729 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:18,730 - root - ERROR - Gemini API error with Gemini API Key 4: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:19,409 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:21,264 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:21,266 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:21,266 - root - ERROR - Gemini API error with Gemini API Key 5: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:21,940 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:22,410 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:22,412 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:22,413 - root - ERROR - Gemini API error with Gemini API Key 6: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:23,107 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:24,950 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:24,954 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:24,955 - root - ERROR - Gemini API error with Gemini API Key 7: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:25,730 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:26,203 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:26,206 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:26,206 - root - ERROR - Gemini API error with Gemini API Key 8: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:26,889 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:28,787 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:28,789 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:28,790 - root - ERROR - Gemini API error with Gemini API Key 9: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:29,470 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:31,209 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:31,214 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:31,215 - root - ERROR - Gemini API error with Gemini API Key 10: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:31,886 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:33,626 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:33,629 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:33,629 - root - ERROR - Gemini API error with Gemini API Key 11: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:34,299 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:36,136 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:36,138 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:36,139 - root - ERROR - Gemini API error with Gemini API Key 12: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:36,579 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:38,380 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:38,381 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:38,383 - root - ERROR - Gemini API error with Gemini API Key 13: 'NoneType' object has no attribute 'strip'
+2025-09-16 17:59:38,845 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 17:59:40,646 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 17:59:40,648 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-16 17:59:40,648 - root - ERROR - Gemini API error with Gemini API Key: 'NoneType' object has no attribute 'strip'
+2025-09-16 18:01:01,555 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 18:01:40,575 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2025-09-16 18:01:42,110 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-16 18:01:43,244 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-16 18:01:43,245 - google_genai.models - INFO - AFC remote call 1 is done.
