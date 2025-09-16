@@ -9542,3 +9542,5 @@ Traceback (most recent call last):
   File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
     raise ClientConnectorError(req.connection_key, exc) from exc
 aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-09-16 19:02:07,539 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-16 19:02:07,540 - discord.client - INFO - logging in using static token
