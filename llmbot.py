@@ -1817,17 +1817,17 @@ class TriviaButton(discord.ui.Button):
             with get_db_connection() as conn:
                 c = conn.cursor()
                 
-                # Mark question as completed
-                if self.view.question_type == 'genshin':
-                    c.execute('INSERT OR IGNORE INTO genshin_completed (user_id, question_id) VALUES (?, ?)', 
-                             (self.view.user_id, str(question.get('id', ''))))
-                else:
-                    file_name = question.get('_file', '')
-                    c.execute('INSERT OR IGNORE INTO trivia_completed (user_id, file_name, question_id) VALUES (?, ?, ?)', 
-                             (self.view.user_id, file_name, str(question.get('id', ''))))
-                
-                # Update score if correct
+                # Only mark question as completed if answered correctly
                 if is_correct:
+                    if self.view.question_type == 'genshin':
+                        c.execute('INSERT OR IGNORE INTO genshin_completed (user_id, question_id) VALUES (?, ?)', 
+                                 (self.view.user_id, str(question.get('id', ''))))
+                    else:
+                        file_name = question.get('_file', '')
+                        c.execute('INSERT OR IGNORE INTO trivia_completed (user_id, file_name, question_id) VALUES (?, ?, ?)', 
+                                 (self.view.user_id, file_name, str(question.get('id', ''))))
+                    
+                    # Update score
                     points = 10 if question.get('difficulty') == 'easy' else 20 if question.get('difficulty') == 'medium' else 30
                     c.execute('INSERT OR IGNORE INTO trivia_scores (user_id, server_id, points, last_question_date, daily_count) VALUES (?, ?, 0, ?, 0)', 
                              (self.view.user_id, self.view.server_id, date.today().isoformat()))
@@ -1930,6 +1930,67 @@ async def genshin_command(ctx):
     message = await ctx.reply(embed=embed, view=view)
     view.message = message
 
+class LeaderboardView(discord.ui.View):
+    def __init__(self, results, title, color, page=0):
+        super().__init__(timeout=60)
+        self.results = results
+        self.title = title
+        self.color = color
+        self.page = page
+        self.max_pages = (len(results) - 1) // 10
+        
+        # Update button states
+        self.first_page.disabled = (page == 0)
+        self.prev_page.disabled = (page == 0)
+        self.next_page.disabled = (page >= self.max_pages)
+        self.last_page.disabled = (page >= self.max_pages)
+    
+    def get_embed(self):
+        start = self.page * 10
+        end = start + 10
+        page_results = self.results[start:end]
+        
+        embed = discord.Embed(title=self.title, color=self.color)
+        
+        leaderboard_text = ""
+        for i, (user_id, points) in enumerate(page_results, start + 1):
+            try:
+                user = bot.get_user(user_id)
+                username = user.display_name if user else f"User {user_id}"
+            except:
+                username = f"User {user_id}"
+            
+            medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else f"{i}."
+            leaderboard_text += f"{medal} **{username}** - {points} points\n"
+        
+        embed.description = leaderboard_text
+        embed.set_footer(text=f"Page {self.page + 1}/{self.max_pages + 1}")
+        return embed
+    
+    @discord.ui.button(label="|<", style=discord.ButtonStyle.secondary)
+    async def first_page(self, interaction, button):
+        self.page = 0
+        self.__init__(self.results, self.title, self.color, self.page)
+        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+    
+    @discord.ui.button(label="<", style=discord.ButtonStyle.secondary)
+    async def prev_page(self, interaction, button):
+        self.page = max(0, self.page - 1)
+        self.__init__(self.results, self.title, self.color, self.page)
+        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+    
+    @discord.ui.button(label=">", style=discord.ButtonStyle.secondary)
+    async def next_page(self, interaction, button):
+        self.page = min(self.max_pages, self.page + 1)
+        self.__init__(self.results, self.title, self.color, self.page)
+        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+    
+    @discord.ui.button(label=">|", style=discord.ButtonStyle.secondary)
+    async def last_page(self, interaction, button):
+        self.page = self.max_pages
+        self.__init__(self.results, self.title, self.color, self.page)
+        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+
 @bot.command(name='leaderboard')
 async def leaderboard_command(ctx):
     server_id = ctx.guild.id if ctx.guild else 0
@@ -1937,28 +1998,15 @@ async def leaderboard_command(ctx):
     try:
         with get_db_connection() as conn:
             c = conn.cursor()
-            c.execute('SELECT user_id, points FROM trivia_scores WHERE server_id = ? ORDER BY points DESC LIMIT 10', (server_id,))
+            c.execute('SELECT user_id, points FROM trivia_scores WHERE server_id = ? ORDER BY points DESC', (server_id,))
             results = c.fetchall()
             
             if not results:
                 await ctx.reply("📊 No trivia scores yet in this server!")
                 return
             
-            embed = discord.Embed(title="🏆 Server Trivia Leaderboard", color=0xffd700)
-            
-            leaderboard_text = ""
-            for i, (user_id, points) in enumerate(results, 1):
-                try:
-                    user = bot.get_user(user_id) or await bot.fetch_user(user_id)
-                    username = user.display_name if user else f"User {user_id}"
-                except:
-                    username = f"User {user_id}"
-                
-                medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else f"{i}."
-                leaderboard_text += f"{medal} **{username}** - {points} points\n"
-            
-            embed.description = leaderboard_text
-            await ctx.reply(embed=embed)
+            view = LeaderboardView(results, "🏆 Server Trivia Leaderboard", 0xffd700)
+            await ctx.reply(embed=view.get_embed(), view=view)
     
     except Exception as e:
         logging.error(f"Error in leaderboard: {e}")
@@ -1969,28 +2017,15 @@ async def leaderboard_global_command(ctx):
     try:
         with get_db_connection() as conn:
             c = conn.cursor()
-            c.execute('SELECT user_id, SUM(points) as total_points FROM trivia_scores GROUP BY user_id ORDER BY total_points DESC LIMIT 10')
+            c.execute('SELECT user_id, SUM(points) as total_points FROM trivia_scores GROUP BY user_id ORDER BY total_points DESC')
             results = c.fetchall()
             
             if not results:
                 await ctx.reply("📊 No trivia scores yet globally!")
                 return
             
-            embed = discord.Embed(title="🌍 Global Trivia Leaderboard", color=0x00ff00)
-            
-            leaderboard_text = ""
-            for i, (user_id, points) in enumerate(results, 1):
-                try:
-                    user = bot.get_user(user_id) or await bot.fetch_user(user_id)
-                    username = user.display_name if user else f"User {user_id}"
-                except:
-                    username = f"User {user_id}"
-                
-                medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else f"{i}."
-                leaderboard_text += f"{medal} **{username}** - {points} points\n"
-            
-            embed.description = leaderboard_text
-            await ctx.reply(embed=embed)
+            view = LeaderboardView(results, "🌍 Global Trivia Leaderboard", 0x00ff00)
+            await ctx.reply(embed=view.get_embed(), view=view)
     
     except Exception as e:
         logging.error(f"Error in global leaderboard: {e}")
