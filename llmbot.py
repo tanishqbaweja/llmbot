@@ -1861,7 +1861,7 @@ async def trivia_command(ctx):
     # Create embed
     embed = discord.Embed(
         title=f"🧠 Trivia Question for {ctx.author.display_name}",
-        description=question['question'],
+        description=f"{ctx.author.mention}\n\n{question['question']}",
         color=0x0099ff
     )
     
@@ -1901,7 +1901,7 @@ async def genshin_command(ctx):
     # Create embed
     embed = discord.Embed(
         title=f"⚔️ Genshin Impact Trivia for {ctx.author.display_name}",
-        description=question['question'],
+        description=f"{ctx.author.mention}\n\n{question['question']}",
         color=0x9966cc
     )
     
