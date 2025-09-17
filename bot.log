@@ -10363,3 +10363,7 @@ Traceback (most recent call last):
   File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
     raise client_error(req.connection_key, exc) from exc
 aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.com:443 ssl:default [The format of the specified network name is invalid]
+2025-09-17 18:55:11,606 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-17 18:55:11,607 - discord.client - INFO - logging in using static token
+2025-09-17 18:55:11,713 - discord.client - INFO - Cleaning up tasks.
+2025-09-17 18:55:11,713 - discord.client - INFO - Closing the event loop.
