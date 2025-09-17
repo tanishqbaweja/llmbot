@@ -1945,7 +1945,7 @@ class LeaderboardView(discord.ui.View):
         self.next_page.disabled = (page >= self.max_pages)
         self.last_page.disabled = (page >= self.max_pages)
     
-    def get_embed(self):
+    async def get_embed(self):
         start = self.page * 10
         end = start + 10
         page_results = self.results[start:end]
@@ -1971,25 +1971,29 @@ class LeaderboardView(discord.ui.View):
     async def first_page(self, interaction, button):
         self.page = 0
         self.__init__(self.results, self.title, self.color, self.page)
-        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+        embed = await self.get_embed()
+        await interaction.response.edit_message(embed=embed, view=self)
     
     @discord.ui.button(label="<", style=discord.ButtonStyle.secondary)
     async def prev_page(self, interaction, button):
         self.page = max(0, self.page - 1)
         self.__init__(self.results, self.title, self.color, self.page)
-        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+        embed = await self.get_embed()
+        await interaction.response.edit_message(embed=embed, view=self)
     
     @discord.ui.button(label=">", style=discord.ButtonStyle.secondary)
     async def next_page(self, interaction, button):
         self.page = min(self.max_pages, self.page + 1)
         self.__init__(self.results, self.title, self.color, self.page)
-        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+        embed = await self.get_embed()
+        await interaction.response.edit_message(embed=embed, view=self)
     
     @discord.ui.button(label=">|", style=discord.ButtonStyle.secondary)
     async def last_page(self, interaction, button):
         self.page = self.max_pages
         self.__init__(self.results, self.title, self.color, self.page)
-        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+        embed = await self.get_embed()
+        await interaction.response.edit_message(embed=embed, view=self)
 
 @bot.command(name='leaderboard')
 async def leaderboard_command(ctx):
@@ -2006,7 +2010,8 @@ async def leaderboard_command(ctx):
                 return
             
             view = LeaderboardView(results, "🏆 Server Trivia Leaderboard", 0xffd700)
-            await ctx.reply(embed=view.get_embed(), view=view)
+            embed = await view.get_embed()
+            await ctx.reply(embed=embed, view=view)
     
     except Exception as e:
         logging.error(f"Error in leaderboard: {e}")
@@ -2025,7 +2030,8 @@ async def leaderboard_global_command(ctx):
                 return
             
             view = LeaderboardView(results, "🌍 Global Trivia Leaderboard", 0x00ff00)
-            await ctx.reply(embed=view.get_embed(), view=view)
+            embed = await view.get_embed()
+            await ctx.reply(embed=embed, view=view)
     
     except Exception as e:
         logging.error(f"Error in global leaderboard: {e}")
