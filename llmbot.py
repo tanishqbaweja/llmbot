@@ -1755,10 +1755,8 @@ class TriviaView(discord.ui.View):
             options = [question_data['correct_answer']] + question_data['wrong_answers']
             random.shuffle(options)
             
-            styles = [discord.ButtonStyle.primary, discord.ButtonStyle.secondary, discord.ButtonStyle.blurple, discord.ButtonStyle.danger]
-            for i, option in enumerate(options[:4]):
-                style = styles[i % len(styles)]
-                self.add_item(TriviaButton(option[:80], option, style))
+            for option in options[:4]:
+                self.add_item(TriviaButton(option[:80], option, discord.ButtonStyle.primary))
     
     async def on_timeout(self):
         if not self.answered:
@@ -1790,10 +1788,20 @@ class TriviaButton(discord.ui.Button):
         # Update button colors and disable all buttons
         for item in self.view.children:
             item.disabled = True
-            if item.value == self.view.question_data['correct_answer']:
-                item.style = discord.ButtonStyle.success  # Green for correct
+            if is_correct:
+                # User answered correctly
+                if item.value == self.view.question_data['correct_answer']:
+                    item.style = discord.ButtonStyle.success  # Green for correct answer
+                else:
+                    item.style = discord.ButtonStyle.secondary  # Gray for others
             else:
-                item.style = discord.ButtonStyle.secondary  # Gray for others
+                # User answered incorrectly
+                if item.value == self.view.question_data['correct_answer']:
+                    item.style = discord.ButtonStyle.primary  # Blue for correct answer
+                elif item.value == self.value:
+                    item.style = discord.ButtonStyle.danger  # Red for user's wrong choice
+                else:
+                    item.style = discord.ButtonStyle.secondary  # Gray for others
         
         question = self.view.question_data
         correct_answer = question['correct_answer']
