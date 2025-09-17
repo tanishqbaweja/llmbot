@@ -9594,3 +9594,151 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-u
 2025-09-17 01:54:52,915 - discord.client - INFO - logging in using static token
 2025-09-17 01:54:53,863 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
 2025-09-17 01:54:54,239 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-f3xv",{"micros":76979,"calls":["id_created",{"micros":459,"calls":[]},"session_lookup_time",{"micros":919,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-prd-2-95",{"micros":74390,"calls":["start_session",{"micros":70083,"calls":["discord-api-rpc-776b6b7875-rfq22",{"micros":41662,"calls":["get_user",{"micros":5766},"get_guilds",{"micros":2501},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":1087},"authorized_ip_coro",{"micros":7},"pending_payments",{"micros":20638},"apex_experiments",{"micros":1994},"user_activities",{"micros":9},"played_application_ids",{"micros":2}]}]},"starting_guild_connect",{"micros":28,"calls":[]},"presence_started",{"micros":271,"calls":[]},"guilds_started",{"micros":89,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":3897,"calls":[]},"connect_finished",{"micros":3901,"calls":[]},"build_ready",{"micros":14,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: acad9fc3258b3e02917fc0ce94014f92).
+2025-09-17 02:20:18,537 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-17 02:20:18,538 - discord.client - INFO - logging in using static token
+2025-09-17 02:20:19,639 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-17 02:20:20,090 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-d3n9",{"micros":153636,"calls":["id_created",{"micros":431,"calls":[]},"session_lookup_time",{"micros":903,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-prd-2-29",{"micros":151741,"calls":["start_session",{"micros":138637,"calls":["discord-api-rpc-776b6b7875-rgzf9",{"micros":108328,"calls":["get_user",{"micros":8188},"get_guilds",{"micros":20613},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":11},"pending_payments",{"micros":17757},"apex_experiments",{"micros":3602},"user_activities",{"micros":3},"played_application_ids",{"micros":1}]}]},"starting_guild_connect",{"micros":49,"calls":[]},"presence_started",{"micros":12194,"calls":[]},"guilds_started",{"micros":84,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":748,"calls":[]},"connect_finished",{"micros":752,"calls":[]},"build_ready",{"micros":16,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: c3289c87ac837ab13cf8588813d8bcf8).
+2025-09-17 03:06:38,941 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 03:06:39,656 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 03:06:39,999 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-c-cxlr",{"micros":460,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":207,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-29",{"micros":23}]}].
+2025-09-17 03:45:18,345 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-17 03:45:18,347 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 03:45:19,126 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 03:45:19,427 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-d-2q0m",{"micros":612,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":320,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-29",{"micros":26}]}].
+2025-09-17 07:14:00,613 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 07:14:01,227 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 07:14:01,534 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-b-bdzk",{"micros":585,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":264,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-29",{"micros":20}]}].
+2025-09-17 07:14:30,211 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:14:49,392 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:14:49,401 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:14:49,402 - root - ERROR - Image generation error with Gemini API Key 1: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:14:49,931 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:15:00,906 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:15:00,907 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:15:00,907 - root - ERROR - Image generation error with Gemini API Key 2: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:15:01,434 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:15:20,771 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:15:20,775 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:15:20,775 - root - ERROR - Image generation error with Gemini API Key 3: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:15:21,308 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:15:40,602 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:15:40,603 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:15:40,603 - root - ERROR - Image generation error with Gemini API Key 4: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:15:41,144 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:15:58,851 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:15:58,852 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:15:58,853 - root - ERROR - Image generation error with Gemini API Key 5: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:15:59,382 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:16:16,666 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:16:16,667 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:16:16,667 - root - ERROR - Image generation error with Gemini API Key 6: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:16:17,207 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:16:36,451 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:16:36,454 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:16:36,455 - root - ERROR - Image generation error with Gemini API Key 7: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:16:36,982 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:16:52,087 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:16:52,088 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:16:52,088 - root - ERROR - Image generation error with Gemini API Key 8: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:16:52,616 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:17:14,460 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:17:14,461 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:17:14,462 - root - ERROR - Image generation error with Gemini API Key 9: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:17:15,020 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:17:18,209 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:17:18,209 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:17:18,210 - root - ERROR - Image generation error with Gemini API Key 10: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:17:18,737 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:17:35,112 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:17:35,113 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:17:35,114 - root - ERROR - Image generation error with Gemini API Key 11: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:17:35,648 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:17:54,149 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:17:54,150 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:17:54,150 - root - ERROR - Image generation error with Gemini API Key 12: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:17:54,671 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:18:12,010 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:18:12,011 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:18:12,011 - root - ERROR - Image generation error with Gemini API Key 13: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:18:12,537 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 07:18:32,081 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-17 07:18:32,082 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 07:18:32,082 - root - ERROR - Image generation error with Gemini API Key: 'NoneType' object has no attribute 'parts'
+2025-09-17 07:52:00,555 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-17 07:52:00,556 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 07:52:01,597 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 07:52:01,901 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-b-2t33",{"micros":601,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":323,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-29",{"micros":26}]}].
+2025-09-17 08:24:30,678 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 08:24:31,608 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 08:24:31,910 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-c-6ccb",{"micros":555,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":287,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-29",{"micros":20}]}].
+2025-09-17 08:45:10,652 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 08:45:11,267 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 08:45:11,572 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-d-kd18",{"micros":537,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":221,"calls":[]},"session_lookup_finished",{"micros":7,"calls":[]},"discord-sessions-prd-2-29",{"micros":24}]}].
+2025-09-17 09:12:12,171 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 09:12:12,767 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 09:12:13,072 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-d-v7rq",{"micros":614,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":257,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-29",{"micros":20}]}].
+2025-09-17 09:57:59,342 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-17 09:57:59,343 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 09:58:00,005 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 09:58:00,322 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-d-fvlf",{"micros":501,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":200,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-29",{"micros":24}]}].
+2025-09-17 10:15:48,478 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-17 10:15:48,479 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 10:15:49,098 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 10:15:49,413 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-c-s6vv",{"micros":3118,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":2912,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-29",{"micros":23}]}].
+2025-09-17 12:04:19,217 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 12:04:19,838 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 12:04:20,148 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-d-kpmr",{"micros":490,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":208,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-29",{"micros":22}]}].
+2025-09-17 12:51:25,439 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-17 12:51:26,168 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-17 12:51:26,470 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c3289c87ac837ab13cf8588813d8bcf8 under trace ["gateway-prd-arm-us-east1-c-trdn",{"micros":5739,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":5420,"calls":[]},"session_lookup_finished",{"micros":7,"calls":[]},"discord-sessions-prd-2-29",{"micros":20}]}].
+2025-09-17 13:15:55,453 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:15:58,769 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:15:58,772 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:00,115 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:02,094 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:02,096 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:03,310 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:05,151 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:05,154 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:06,328 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:07,908 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:07,910 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:08,916 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:10,466 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:10,467 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:11,576 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:13,154 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:13,155 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:14,254 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:19,892 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:19,893 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:23,101 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:24,470 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:24,472 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:25,483 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:27,010 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:27,011 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:28,003 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:29,465 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:29,466 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:30,510 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:34,807 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:34,808 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:36,052 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:41,901 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:41,907 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:43,083 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:45,338 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:45,340 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:16:46,350 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:16:48,093 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:16:48,094 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:19:03,294 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:19:06,041 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:19:06,045 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:19:59,797 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:20:05,958 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:20:05,959 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-17 13:20:52,963 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-17 13:20:57,853 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-17 13:20:57,857 - google_genai.models - INFO - AFC remote call 1 is done.
