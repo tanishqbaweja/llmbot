@@ -1,0 +1,2500 @@
+[
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What name is the main character Chihiro given in the 2001 movie \"Spirited Away\"?",
+        "correct_answer": "Sen (Thousand)",
+        "wrong_answers": [
+            "Hyaku (Hundred)",
+            "Ichiman (Ten thousand)",
+            "Juu (Ten)"
+        ],
+        "explanation": "In the world of Spirited Away, names hold power. The sorceress Yubaba steals the name of her workers to bind them to her service. Chihiro's name (\u5343\u5c0b) means 'a thousand fathoms.' Yubaba removes the second character (\u5c0b), leaving only the first character (\u5343), which can be read as 'Sen.' This act symbolizes Chihiro's loss of identity and her struggle to remember her past.",
+        "id": 1
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"Jewelpet Sunshine\", what is the song that plays when Kanon and her friends bust out of prison?",
+        "correct_answer": "I Don't Want to Miss a Thing",
+        "wrong_answers": [
+            "Eye Of The Tiger",
+            "Born to be Wild",
+            "Ruby Ring"
+        ],
+        "explanation": "This is likely a comedic reference to the 1998 film Armageddon, which famously features the Aerosmith song 'I Don't Want to Miss a Thing.' The incongruity of a dramatic American rock ballad in a chaotic prison break scene in a children's anime creates a memorable and humorous moment.",
+        "id": 2
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In Digimon, what is the Japanese name for the final evolutionary stage?",
+        "correct_answer": "Ultimate",
+        "wrong_answers": [
+            "Mega",
+            "Adult",
+            "Champion"
+        ],
+        "explanation": "In the original Japanese version of Digimon, the final natural evolutionary stage is called 'Ultimate' (\u7a76\u6975\u4f53, Kyuukyokutai). However, in the English dub, this stage was renamed 'Mega' to avoid confusion with the previous stage, 'Perfect' (\u5b8c\u5168\u4f53, Kanzentai), which was renamed 'Ultimate' in the dub.",
+        "id": 3
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the first episode of Yu-Gi-Oh: Duel Monsters, what book is Seto Kaiba seen reading at Domino High School?",
+        "correct_answer": "Thus Spoke Zarathustra",
+        "wrong_answers": [
+            "Beyond Good and Evil",
+            "The Republic",
+            "Meditations"
+        ],
+        "explanation": "The book Seto Kaiba is reading is 'Thus Spoke Zarathustra' by Friedrich Nietzsche. This is a deliberate character detail, as the book's themes of the '\u00dcbermensch' (Overman), the will to power, and the rejection of traditional morality perfectly reflect Kaiba's arrogant, individualistic personality and his relentless drive to become the world's greatest duelist.",
+        "id": 4
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What anime studio was in charge of the hit anime \"Made in Abyss\"?",
+        "correct_answer": "Kinema Citrus",
+        "wrong_answers": [
+            "Trigger",
+            "Studio 3hz",
+            "8bit"
+        ],
+        "explanation": "Kinema Citrus is an animation studio founded in 2008 by former members of Production I.G and Bones. Besides the critically acclaimed 'Made in Abyss', the studio is also known for producing other popular anime series such as 'The Rising of the Shield Hero', 'Barakamon', and 'Tokyo Magnitude 8.0'.",
+        "id": 5
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the 9th Pokemon movie, who is the Prince of the Sea?",
+        "correct_answer": "Manaphy",
+        "wrong_answers": [
+            "Ash",
+            "May",
+            "Phantom"
+        ],
+        "explanation": "In the 9th Pok\u00e9mon movie, 'Pok\u00e9mon Ranger and the Temple of the Sea', the mythical Pok\u00e9mon Manaphy is known as the 'Prince of the Sea'. The plot revolves around Ash and his friends protecting the Manaphy egg from the pirate Phantom, who seeks to use Manaphy to find the legendary Sea Crown and the hidden Sea Temple of Samiya.",
+        "id": 6
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Gosho Aoyama Made This Series: (Detective Conan / Case Closed!)",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. Gosho Aoyama is the celebrated manga artist who created 'Detective Conan' (also known as 'Case Closed'). His other major works include the samurai-themed adventure 'Yaiba' and the phantom thief series 'Magic Kaito', whose protagonist, Kaito Kid, frequently appears in 'Detective Conan'.",
+        "id": 7
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The main protagonist of the fifth part of JoJo's Bizarre Adventure is which of the following?",
+        "correct_answer": "Giorno Giovanna",
+        "wrong_answers": [
+            "Guido Mista",
+            "Jonathan Joestar",
+            "Joey JoJo"
+        ],
+        "explanation": "Giorno Giovanna is the protagonist of 'Golden Wind', the fifth part of JoJo's Bizarre Adventure. He is the illegitimate son of the series' main antagonist, DIO, who had stolen the body of Jonathan Joestar. This unique parentage makes Giorno a member of the Joestar bloodline and a 'JoJo'. His dream is to become a 'Gang-Star' and reform the Italian mafia from within.",
+        "id": 8
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which Japanese music group was formed to produce theme music for the anime \"Guilty Crown\"?",
+        "correct_answer": "Egoist",
+        "wrong_answers": [
+            "Goose house",
+            "Babymetal",
+            "Garnidelia"
+        ],
+        "explanation": "Egoist is a Japanese pop duo that was formed specifically to produce theme music for the 2011 anime series 'Guilty Crown'. The group consists of composer Ryo of Supercell and vocalist Chelly. In the world of the anime, Egoist is a popular band fronted by the main heroine, Inori Yuzuriha.",
+        "id": 9
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "The \"To Love-Ru\" Manga was started in what year?",
+        "correct_answer": "2006",
+        "wrong_answers": [
+            "2007",
+            "2004",
+            "2005"
+        ],
+        "explanation": "The original 'To Love-Ru' manga, written by Saki Hasemi and illustrated by Kentaro Yabuki, was serialized in Shueisha's Weekly Sh\u014dnen Jump magazine from April 24, 2006, to August 31, 2009. The series was followed by a sequel, 'To Love-Ru Darkness', which ran from 2010 to 2017.",
+        "id": 10
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"Inuyasha\", what are the heros are looking to collect?",
+        "correct_answer": "Jewel Shards",
+        "wrong_answers": [
+            "Dragon Balls",
+            "Rave Stones",
+            "Sacred Stones"
+        ],
+        "explanation": "The main characters in 'Inuyasha' are searching for the scattered shards of the Shikon no Tama, or the Jewel of Four Souls. This powerful, magical jewel, born from the battle between a priestess and demons, can grant immense power to whoever possesses it. The quest to reassemble the jewel and prevent it from falling into the hands of the evil demon Naraku drives the plot of the series.",
+        "id": 11
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In Kill La Kill, the weapon of the main protagonist is a katana. ",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. The main protagonist of Kill La Kill, Ryuko Matoi, wields a giant, single-bladed red scissor blade. It is one half of a pair of 'Rending Scissors' designed to cut Life Fibers, the sentient threads that make up the superpowered Goku Uniforms in the series.",
+        "id": 12
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What year did \"Bishoujo Senshi Sailor Moon\" air in Japan?",
+        "correct_answer": "1992",
+        "wrong_answers": [
+            "1989",
+            "1990",
+            "1994"
+        ],
+        "explanation": "'Bishoujo Senshi Sailor Moon' first aired on TV Asahi in Japan on March 7, 1992. The series became a global phenomenon, credited with revitalizing and popularizing the 'magical girl' genre of anime and manga worldwide.",
+        "id": 13
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who is the main heroine of the anime, Full Metal Panic!",
+        "correct_answer": "Kaname Chidori",
+        "wrong_answers": [
+            "Teletha Testarossa",
+            "Melissa Mao",
+            "Kyoko Tokiwa"
+        ],
+        "explanation": "Kaname Chidori is the main heroine of 'Full Metal Panic!'. She is a high school student who is also one of the 'Whispered,' a select group of individuals who possess innate, advanced scientific and technological knowledge. This makes her a target for various organizations, and the series' protagonist, the young soldier Sousuke Sagara, is tasked with protecting her.",
+        "id": 14
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Which of the following originated as a manga?",
+        "correct_answer": "Akira",
+        "wrong_answers": [
+            "Cowboy Bebop",
+            "High School DxD",
+            "Gurren Lagann"
+        ],
+        "explanation": "'Akira' originated as a manga series written and illustrated by Katsuhiro Otomo. It was serialized from 1982 to 1990. The iconic 1988 anime film of the same name, also directed by Otomo, is an adaptation of the manga, though it only covers the first half of the manga's story.",
+        "id": 15
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the \"To Love-Ru\" series, how many Trans-weapons were created?",
+        "correct_answer": "3",
+        "wrong_answers": [
+            "1",
+            "2",
+            "4"
+        ],
+        "explanation": "There are three known Trans-weapons in the 'To Love-Ru' series. These are living weapons with incredible transformation abilities. The first is Golden Darkness (Yami), the second is her 'sister' Mea Kurosaki, and the third is the master of the 'Darkness' ability, Nemesis.",
+        "id": 16
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "On what medium was \"Clannad\" first created?",
+        "correct_answer": "Visual novel",
+        "wrong_answers": [
+            "Anime",
+            "Manga",
+            "Light novel"
+        ],
+        "explanation": "'Clannad' was originally a visual novel developed by the company Key, released in 2004. It was later adapted into a highly acclaimed anime series by Kyoto Animation, as well as a manga and a film.",
+        "id": 17
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In 2013, virtual pop-star Hatsune Miku had a sponsorship with which pizza chain?",
+        "correct_answer": "Domino's",
+        "wrong_answers": [
+            "Papa John's",
+            "Pizza Hut",
+            "Sabarro's"
+        ],
+        "explanation": "In 2013, the virtual pop star Hatsune Miku was featured in a major advertising campaign with Domino's Pizza in Japan. The collaboration included special pizza boxes with Miku's image, a Miku-themed pizza delivery scooter, and a mobile app that allowed users to take pictures with an augmented reality version of Miku.",
+        "id": 18
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Highschool DxD\", Koneko Toujou is from what race?",
+        "correct_answer": "Nekomata",
+        "wrong_answers": [
+            "Kitsune",
+            "Human",
+            "Kappa"
+        ],
+        "explanation": "In 'Highschool DxD', Koneko Toujou is a Nekomata, a type of cat-like y\u014dkai from Japanese folklore. Nekomata are said to be cats that have lived long enough to develop supernatural powers, including shapeshifting into human form and commanding the spirits of the dead.",
+        "id": 19
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Who is the main character in One Piece?",
+        "correct_answer": "Luffy",
+        "wrong_answers": [
+            "Shanks",
+            "Zoro",
+            "Smoker"
+        ],
+        "explanation": "The main character of 'One Piece' is Monkey D. Luffy, a young man who gains the properties of rubber after unintentionally eating a Devil Fruit. His lifelong dream is to become the Pirate King by finding the legendary treasure left behind by the late Pirate King, Gol D. Roger.",
+        "id": 20
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Satella in \"Re:Zero\" is the witch of what?",
+        "correct_answer": "Envy",
+        "wrong_answers": [
+            "Pride",
+            "Sloth",
+            "Wrath"
+        ],
+        "explanation": "Satella is the infamous Witch of Envy, one of the seven Witches of Sin in the world of 'Re:Zero'. She is a mysterious and powerful silver-haired half-elf who is responsible for giving the protagonist, Subaru Natsuki, his 'Return by Death' ability. Her striking resemblance to the main heroine, Emilia, is a central mystery of the series.",
+        "id": 21
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"A Certain Scientific Railgun\", how many \"sisters\" did Accelerator have to kill to achieve the rumored level 6?",
+        "correct_answer": "20,000",
+        "wrong_answers": [
+            "128",
+            "10,000",
+            "5,000"
+        ],
+        "explanation": "In 'A Certain Scientific Railgun', the 'Level 6 Shift Project' was a secret experiment designed to force an esper to evolve to Level 6, a theoretical level of power. The experiment required Accelerator, the most powerful Level 5 esper, to kill 20,000 clones of the third-ranked Level 5, Mikoto Misaka. The clones, known as the 'Sisters', were created for this purpose. The project was ultimately stopped by the efforts of Mikoto and Touma Kamijou.",
+        "id": 22
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "What year was \"JoJo's Bizarre Adventure: Phantom Blood\" first released?",
+        "correct_answer": "1987",
+        "wrong_answers": [
+            "2013",
+            "1983",
+            "1995"
+        ],
+        "explanation": "'Phantom Blood' is the first story arc of the long-running and highly influential manga series 'JoJo's Bizarre Adventure', created by Hirohiko Araki. It was first serialized in Shueisha's Weekly Sh\u014dnen Jump magazine from January 1, 1987, to October 26, 1987.",
+        "id": 23
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which studio animated Soul Eater?",
+        "correct_answer": "Bones",
+        "wrong_answers": [
+            "Kyoto Animation",
+            "xebec",
+            "Production I.G"
+        ],
+        "explanation": "Studio Bones is a highly acclaimed animation studio known for its high-quality animation and dynamic action sequences. In addition to 'Soul Eater', Bones has produced many other popular and critically successful anime, including 'Fullmetal Alchemist: Brotherhood', 'My Hero Academia', 'Mob Psycho 100', and 'Eureka Seven'.",
+        "id": 24
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who is the main character with yellow hair in the anime Naruto?",
+        "correct_answer": "Naruto",
+        "wrong_answers": [
+            "Ten Ten",
+            "Sasuke",
+            "Kakashi"
+        ],
+        "explanation": "The main character of the 'Naruto' series is Naruto Uzumaki, a young ninja with a cheerful and boisterous personality. He is known for his signature orange jumpsuit, yellow spiky hair, and his verbal tic, 'dattebayo!' (believe it!). His lifelong dream is to become the Hokage, the leader of his village.",
+        "id": 25
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What is the name of the protagonist of the 2017 anime \"Land of the Lustrous\"?",
+        "correct_answer": "Phosphophyllite",
+        "wrong_answers": [
+            "Watermelon Tourmaline",
+            "Cinnabar",
+            "Padparadscha"
+        ],
+        "explanation": "The protagonist of 'Land of the Lustrous' is Phosphophyllite, often called Phos. They are the youngest of the gem-like beings known as the Lustrous. Initially, Phos is brittle and considered too weak for combat, so they are assigned the task of creating a natural history encyclopedia. The story follows their journey of self-discovery and transformation.",
+        "id": 26
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "When was the first episode of Soul Eater released?",
+        "correct_answer": "2008",
+        "wrong_answers": [
+            "2003",
+            "2005",
+            "2011"
+        ],
+        "explanation": "The first episode of the 'Soul Eater' anime, titled 'Resonance of the Soul - Will Soul Eater Become a Death Scythe?', first aired in Japan on April 7, 2008.",
+        "id": 27
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the \"To Love-Ru\" series, Peke is considered a female robot.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. Peke is Lala Satalin Deviluke's robotic companion in 'To Love-Ru'. Peke's primary function is to transform into Lala's various outfits. While Peke has a male voice actor in the anime and is sometimes referred to with male pronouns, the character is officially considered a female robot.",
+        "id": 28
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which band name isn't a Stand in \"JoJo's Bizarre Adventure\"?",
+        "correct_answer": "AC/DC",
+        "wrong_answers": [
+            "Green Day",
+            "Survivor",
+            "Red Hot Chili Peppers"
+        ],
+        "explanation": "In 'JoJo's Bizarre Adventure', many of the superpowered abilities known as 'Stands' are named after famous musicians, bands, and songs. 'Red Hot Chili Pepper' (Part 4), 'Green Day' (Part 5), and 'Survivor' (Part 6) are all Stands in the series. While the character Esidisi from Part 2 is a localization of 'AC/DC', he is a Pillar Man, not a Stand user, and there is no Stand named AC/DC.",
+        "id": 29
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Who was the Author of the manga Uzumaki?",
+        "correct_answer": "Junji Ito",
+        "wrong_answers": [
+            "\tNoboru Takahashi",
+            "Akira Toriyama",
+            "Masashi Kishimoto"
+        ],
+        "explanation": "'Uzumaki' is a classic horror manga written and illustrated by the master of the genre, Junji Ito. Ito is renowned for his unique brand of body horror and cosmic horror. His other most famous works include 'Tomie', a story about a beautiful, immortal girl who drives her admirers to madness, and 'Gyo', a tale of fish controlled by a sentient bacteria.",
+        "id": 30
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the \"Sailor Moon\" series, what is Sailor Jupiter's civilian name?",
+        "correct_answer": "Makoto Kino",
+        "wrong_answers": [
+            "Minako Aino",
+            "Usagi Tsukino",
+            "Rei Hino"
+        ],
+        "explanation": "In 'Sailor Moon', Sailor Jupiter's civilian name is Makoto Kino. She is a tall, physically strong, and seemingly tomboyish transfer student who is also a skilled cook and gardener. Her powers as a Sailor Guardian are associated with lightning and plants, reflecting the dual nature of the Roman god Jupiter (king of the gods and god of the sky) and the Japanese name for the planet, Mokusei (\u6728\u661f, 'Wood Star').",
+        "id": 31
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Black Lagoon\", what colour is Rock's tie?",
+        "correct_answer": "Teal",
+        "wrong_answers": [
+            "Crimson",
+            "Dark Brown",
+            "Black"
+        ],
+        "explanation": "Rock, the everyman salaryman who gets swept up in the world of pirates and mercenaries in 'Black Lagoon', is known for his distinctive business attire, which he continues to wear even after joining the Lagoon Company. His tie is a dark teal color, a subtle but memorable detail of his character design.",
+        "id": 32
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which animation studio animated \"Hidamari Sketch\"?",
+        "correct_answer": "Shaft",
+        "wrong_answers": [
+            "Trigger",
+            "Kyoto Animation",
+            "Production I.G"
+        ],
+        "explanation": "Studio Shaft is an animation studio famous for its unique and highly stylized visual aesthetic, often referred to as 'Shaft-isms'. This style includes distinctive head tilts, surreal backgrounds, and abstract imagery. Besides 'Hidamari Sketch', Shaft is responsible for many other critically acclaimed and visually innovative anime, such as the 'Monogatari' series, 'Puella Magi Madoka Magica', and 'Sayonara, Zetsubou-Sensei'.",
+        "id": 33
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which person from \"JoJo's Bizarre Adventure\" does NOT house a reference to a band, artist, or song earlier than 1980?",
+        "correct_answer": "Giorno Giovanna",
+        "wrong_answers": [
+            "Josuke Higashikata",
+            "Jolyne Cujoh",
+            "Johnny Joestar"
+        ],
+        "explanation": "Many characters and Stands in 'JoJo's Bizarre Adventure' are named after musical artists. Josuke Higashikata's Stand, 'Crazy Diamond', is named after a 1975 Pink Floyd song. Jolyne Cujoh's 'Stone Free' is named after a 1966 Jimi Hendrix song. Johnny Joestar's 'Tusk' is named after a 1979 Fleetwood Mac album. Giorno Giovanna's Stand, 'Gold Experience', is named after a 1995 Prince album, making him the only one of the four whose primary musical reference is from after 1980.",
+        "id": 34
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the \"Kagerou Daze\" series, Shintaro Kisaragi is prominently shown with the color red.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. Shintaro Kisaragi, the protagonist of the 'Kagerou Project' series, is almost always depicted wearing a red jersey over a black shirt. This has become his signature look across the various media adaptations of the series, including the manga, light novels, and anime.",
+        "id": 35
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Aoi Miyamori is the production manager of what anime in \"Shirobako\"?",
+        "correct_answer": "The Third Aerial Girls Squad",
+        "wrong_answers": [
+            "Exodus!",
+            "Andes Chucky",
+            "Angel Beats!"
+        ],
+        "explanation": "In the anime 'Shirobako', which provides a detailed look into the world of anime production, the main character Aoi Miyamori works as a production assistant at Musashino Animation. In the second half of the series, she is promoted to production manager for the studio's adaptation of the manga 'The Third Aerial Girls Squad'.",
+        "id": 36
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the anime, \"Super Sonico\", what is Super Sonico's favorite food?",
+        "correct_answer": "Macroons",
+        "wrong_answers": [
+            "Ice Cream",
+            "Pizza",
+            "Chips"
+        ],
+        "explanation": "Super Sonico, the mascot character for the Japanese software company Nitroplus, is known for her love of macarons. This is often mentioned in her character profiles and depicted in various media, including the 'Super Sonico' anime series.",
+        "id": 37
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Who wrote and directed the animated movie \"Spirited Away\" (2001)?",
+        "correct_answer": "Hayao Miyazaki",
+        "wrong_answers": [
+            "Isao Takahata",
+            "Mamoru Hosoda",
+            "Hidetaka Miyazaki"
+        ],
+        "explanation": "'Spirited Away' (2001) was written and directed by the legendary Hayao Miyazaki, a co-founder of the renowned animation powerhouse Studio Ghibli. Miyazaki is one of the most celebrated and influential animators of all time, with a filmography that includes such classics as 'My Neighbor Totoro', 'Princess Mononoke', and 'Howl's Moving Castle'.",
+        "id": 38
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the ADV (English) Dub of the anime \"Ghost Stories\", which character is portrayed as a Pentacostal Christian?",
+        "correct_answer": "Momoko Koigakubo",
+        "wrong_answers": [
+            "Hajime Aoyama",
+            "Satsuki Miyanoshita",
+            "Mio Itai"
+        ],
+        "explanation": "The English dub of the anime 'Ghost Stories', produced by ADV Films, is infamous for its comedic, ad-libbed script that bears little resemblance to the original Japanese version. The voice actors were given free rein to improvise, resulting in a show filled with pop culture references, fourth-wall breaks, and often-offensive humor. As part of this comedic reimagining, the character of Momoko Koigakubo was portrayed as a devout, born-again Pentecostal Christian, a complete fabrication for the English dub.",
+        "id": 39
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who was given the title \"Full Metal\" in the anime series \"Full Metal Alchemist\"?",
+        "correct_answer": "Edward Elric",
+        "wrong_answers": [
+            "Alphonse Elric",
+            "Van Hohenheim",
+            "Izumi Curtis"
+        ],
+        "explanation": "In 'Fullmetal Alchemist', Edward Elric is given the title of 'Fullmetal Alchemist' by King Bradley when he becomes the youngest State Alchemist in the history of Amestris. The name is a direct and somewhat ironic reference to his prosthetic 'automail' arm and leg, which are made of steel.",
+        "id": 40
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "What is the name of the school in the anime and manga \"Gosick\"?",
+        "correct_answer": "St. Marguerite",
+        "wrong_answers": [
+            "St. Augustine",
+            "St. Mary",
+            "St. Bernadette"
+        ],
+        "explanation": "The story of 'Gosick' is set in the fictional European country of Saubure, and the main characters attend the prestigious St. Marguerite Academy. The academy, with its vast library and old-world architecture, serves as the primary setting for the many mysteries that the protagonists, Kazuya Kujo and Victorique de Blois, solve throughout the series.",
+        "id": 41
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the age of Ash Ketchum in Pokemon when he starts his journey?",
+        "correct_answer": "10",
+        "wrong_answers": [
+            "11",
+            "12",
+            "9"
+        ],
+        "explanation": "In the first episode of the Pok\u00e9mon anime, 'Pok\u00e9mon, I Choose You!', it is stated that trainers can begin their journey at the age of 10. Ash Ketchum famously oversleeps on his 10th birthday and misses the opportunity to choose one of the three starter Pok\u00e9mon. Despite the many years that have passed in the real world, Ash's age has remained a consistent 10 years old throughout the series, a fact that has become a running gag and a topic of much fan debate.",
+        "id": 42
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "The two main characters of \"No Game No Life\", Sora and Shiro, together go by what name?",
+        "correct_answer": "Blank",
+        "wrong_answers": [
+            "Immanity",
+            "Disboard",
+            "Warbeasts"
+        ],
+        "explanation": "The undefeated gaming duo of Sora and Shiro are known in the online world as 'Blank' (\u7a7a\u767d, K\u016bhaku). This name comes from their practice of leaving their in-game names empty. The name is also a clever pun, as the Japanese word 'k\u016bhaku' is written with the kanji for 'sky' (\u7a7a, sora) and 'white' (\u767d, shiro), the names of the two main characters.",
+        "id": 43
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "The protagonist in \"Humanity Has Declined\" has no discernable name and is simply referred to as 'I' for most of the series.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. The protagonist of 'Humanity Has Declined' is a nameless narrator who refers to herself in the first person as 'I' (watashi). This is a deliberate stylistic choice by the author, Romeo Tanaka, which reflects the series' themes of fading identity and the protagonist's cynical, detached perspective on the absurd, post-apocalyptic world she inhabits.",
+        "id": 44
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Studio Ghibli is a Japanese animation studio responsible for the films \"Wolf Children\" and \"The Boy and the Beast\".",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. While often compared to the works of Studio Ghibli, 'Wolf Children' and 'The Boy and the Beast' were actually directed by the acclaimed director Mamoru Hosoda and animated by his studio, Studio Chizu. Studio Ghibli, co-founded by Hayao Miyazaki, is famous for films such as 'Spirited Away', 'My Neighbor Totoro', and 'Princess Mononoke'.",
+        "id": 45
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In JoJo's Bizarre Adventure, who says \"Yare yare daze\"?",
+        "correct_answer": "Jotaro Kujo",
+        "wrong_answers": [
+            "Joseph Joestar",
+            "Jolyne Cujoh",
+            "Koichi Hirose"
+        ],
+        "explanation": "'Yare yare daze' (\u3084\u308c\u3084\u308c\u3060\u305c) is the iconic catchphrase of Jotaro Kujo, the protagonist of 'Stardust Crusaders', the third part of 'JoJo's Bizarre Adventure'. The phrase, which roughly translates to 'Gimme a break...' or 'What a pain...', perfectly encapsulates Jotaro's cool, stoic, and often exasperated personality. It is one of the most famous and beloved catchphrases in all of anime.",
+        "id": 46
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"To Love-Ru: Darkness\", Yami reveals her real name is Eve.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. In the sequel series, 'To Love-Ru Darkness', it is revealed that the true name of the powerful assassin Golden Darkness, or 'Yami', is Eve. She was created by the scientist Tearju Lunatique, and her name is a direct reference to the character Eve from the manga 'Black Cat', which was also created by 'To Love-Ru' illustrator Kentaro Yabuki.",
+        "id": 47
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Medaka Kurokami from \"Medaka Box\" has what abnormality?",
+        "correct_answer": "The End",
+        "wrong_answers": [
+            "Perfection",
+            "Sandbox",
+            "Fairness"
+        ],
+        "explanation": "Medaka Kurokami's Abnormality is called 'The End'. This incredibly powerful ability allows her to learn any skill or superpower she sees or hears about, and to master it to a level of 'perfection' that surpasses the original user. This reflects her character concept as a 'perfect' human being who can overcome any challenge.",
+        "id": 48
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which anime did Seiji Kishi NOT direct?",
+        "correct_answer": "Another",
+        "wrong_answers": [
+            "Humanity Has Declined",
+            "Assassination Classroom",
+            "Danganronpa: The Animation"
+        ],
+        "explanation": "Seiji Kishi is a prolific anime director who has helmed many popular series. He directed 'Humanity Has Declined', 'Assassination Classroom', and 'Danganronpa: The Animation'. 'Another', a horror mystery series, was directed by Tsutomu Mizushima.",
+        "id": 49
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Love Live: School Idol Project\" what pseudonym does Kotori Minami use in her job as a maid?",
+        "correct_answer": "Minalinsky",
+        "wrong_answers": [
+            "Stanoytchev",
+            "Kuznetsov",
+            "Aqours"
+        ],
+        "explanation": "In the 'Love Live! School Idol Project' anime, Kotori Minami secretly works part-time at a maid cafe in Akihabara. To hide her identity from her friends and schoolmates, she uses the pseudonym 'Minalinsky'. This becomes a running gag in the series, as her friends are initially unaware that the 'legendary maid Minalinsky' is actually their friend Kotori.",
+        "id": 50
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The main protagonist of the fourth part of JoJo's Bizarre Adventure is which of the following?",
+        "correct_answer": "Josuke Higashikata",
+        "wrong_answers": [
+            "Yoshikage kira",
+            "Koichi Hirose",
+            "Joey JoJo"
+        ],
+        "explanation": "Josuke Higashikata is the protagonist of 'Diamond is Unbreakable', the fourth part of 'JoJo's Bizarre Adventure'. He is the illegitimate son of Joseph Joestar, the protagonist of the second part, 'Battle Tendency'. Josuke's Stand is 'Crazy Diamond', which has the ability to restore objects and living things to a previous state, a power he often uses to heal injuries and repair objects.",
+        "id": 51
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which animation studio animated the 2016 anime \"Mob Psycho 100\"?",
+        "correct_answer": "Bones",
+        "wrong_answers": [
+            "A-1 Pictures",
+            "Shaft",
+            "Madhouse"
+        ],
+        "explanation": "'Mob Psycho 100' was animated by Studio Bones, a studio renowned for its high-quality animation and action sequences. Bones is also responsible for other acclaimed series such as 'Fullmetal Alchemist: Brotherhood', 'My Hero Academia', 'Soul Eater', and 'Eureka Seven'.",
+        "id": 52
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Who is the horror manga artist who made Uzumaki?",
+        "correct_answer": "Junji Ito",
+        "wrong_answers": [
+            "Kazuo Umezu",
+            "Shintaro Kago",
+            "Sui Ishida"
+        ],
+        "explanation": "'Uzumaki', the classic horror manga about a town obsessed with spirals, was written and illustrated by the master of horror, Junji Ito. Ito is famous for his unique and terrifying brand of body horror and cosmic horror, and his other major works include 'Tomie' and 'Gyo'.",
+        "id": 53
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The animated film \"Spirited Away\" won the Academy Award for Best Animated Feature at the 75th Academy Awards in 2003.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. In 2003, 'Spirited Away' won the Academy Award for Best Animated Feature, becoming the first, and to date, the only hand-drawn, non-English language animated film to win the prestigious award. This historic win helped to introduce a new generation of Western audiences to the world of anime.",
+        "id": 54
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What colour hair does the main character of the Yu-Gi-Oh! original anime series have?",
+        "correct_answer": "Red, black and yellow",
+        "wrong_answers": [
+            "Red, yellow and green",
+            "Red, black and green",
+            "Red, purple and blue"
+        ],
+        "explanation": "The correct answer is Red, black and yellow.",
+        "id": 55
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the anime Seven Deadly Sins what is the name of one of the sins?",
+        "correct_answer": "Diane",
+        "wrong_answers": [
+            "Sakura",
+            "Ayano",
+            "Sheska"
+        ],
+        "explanation": "Hawk is a talking pig and Meliodas's companion. He is the captain of the Order of Scraps Disposal, a mock order of knights who dispose of leftover food. Despite his small size and comical nature, he is very protective of his friends, especially Elizabeth Liones.",
+        "id": 56
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"JoJo's Bizarre Adventure\", which of the following Stands does NOT have a time-based ability?",
+        "correct_answer": "20th Century Boy",
+        "wrong_answers": [
+            "Made in Heaven",
+            "Star Platinum",
+            "The World"
+        ],
+        "explanation": "In 'JoJo's Bizarre Adventure', many Stands have time-based abilities. 'The World' (used by DIO) and 'Star Platinum' (used by Jotaro Kujo) can both stop time for a few seconds. 'Made in Heaven' (used by Enrico Pucci) has the ability to accelerate time to an infinite degree, eventually resetting the universe. '20th Century Boy' (used by Magenta Magenta), however, is a defensive Stand that makes its user completely invulnerable to any attack as long as they remain perfectly still. It has no ability to manipulate time.",
+        "id": 57
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the Overlord Anime who was Cocytus made by?",
+        "correct_answer": "Warrior Takemikazuchi",
+        "wrong_answers": [
+            "Peroroncino",
+            "Ulbert Alain Odle",
+            "Bukubukuchagama"
+        ],
+        "explanation": "In the world of 'Overlord', the NPCs of the Great Tomb of Nazarick were created by the 41 members of the guild Ainz Ooal Gown. Cocytus, the Guardian of the 5th Floor, was created by the guild member Warrior Takemikazuchi. The other options are also creators of prominent NPCs: Peroroncino created Shalltear Bloodfallen, Ulbert Alain Odle created Demiurge, and Bukubukuchagama created the twin dark elves, Aura and Mare.",
+        "id": 58
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "What is the last line muttered in the anime film \"The End of Evangelion\"?",
+        "correct_answer": "\"How disgusting.\"",
+        "wrong_answers": [
+            "\"Idiot, I won't let you kill me!\"",
+            "\"Nothing.\"",
+            "\"Goddammit, Shinji.\""
+        ],
+        "explanation": "The final line of the notoriously surreal and apocalyptic film 'The End of Evangelion' is spoken by Asuka Langley Soryu to the protagonist, Shinji Ikari. After the cataclysmic 'Third Impact' has seemingly ended, Shinji and Asuka are the only two people left on a desolate beach, surrounded by a sea of LCL. Shinji begins to strangle Asuka, but stops when she caresses his cheek. He then breaks down sobbing, and Asuka looks down at him and utters the final, ambiguous line: 'Kimochi warui' (\\u6c17\\u6301\\u3061\\u60aa\\u3044), which is most commonly translated as 'How disgusting.'",
+        "id": 59
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In Pok\u00e9mon Chronicles, why was Misty afraid of Gyarados?",
+        "correct_answer": "She crawled into it's mouth as a baby.",
+        "wrong_answers": [
+            "She found it scary.",
+            "She was badly injured from it.",
+            "It is part Bug."
+        ],
+        "explanation": "In the 'Pok\u00e9mon Chronicles' episode 'Cerulean Blues', it is revealed that Misty's fear of Gyarados stems from a traumatic childhood experience. As a baby, she crawled into the mouth of a Gyarados at the Cerulean City Gym. This event left her with a deep-seated phobia of the species, which she eventually overcomes in the same episode by protecting the very same Gyarados from a group of thugs.",
+        "id": 60
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What studio animated Fullmetal Alchemist?",
+        "correct_answer": "Bones",
+        "wrong_answers": [
+            "Trigger",
+            "Pierrot",
+            "xebec"
+        ],
+        "explanation": "Both the original 2003 'Fullmetal Alchemist' anime and the 2009 reboot, 'Fullmetal Alchemist: Brotherhood', were animated by the acclaimed Studio Bones. The studio is famous for its high-quality animation and dynamic action sequences, and is also responsible for other popular series such as 'My Hero Academia', 'Soul Eater', and 'Mob Psycho 100'.",
+        "id": 61
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Throughout the entirety of \"Dragon Ball Z\", Goku only kills two characters: a miniboss named Yakon and Kid Buu.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "This is a classic piece of Dragon Ball Z trivia. Despite being the most powerful hero in the universe, Goku is famously merciful and almost always spares his defeated enemies. Throughout the entire 'Dragon Ball Z' series, he only directly kills two antagonists: Yakon, a minor villain whom he kills by overloading him with energy, and Kid Buu, the final villain of the series, whom he defeats with a Super Spirit Bomb.",
+        "id": 62
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who is the colossal titan in \"Attack On Titan\"?",
+        "correct_answer": "Bertolt Hoover",
+        "wrong_answers": [
+            "Reiner",
+            "Eren",
+            "Sasha"
+        ],
+        "explanation": "In a major plot twist in 'Attack on Titan', the true identity of the Colossal Titan is revealed to be Bertolt Hoover, a quiet and reserved member of the 104th Training Corps. His reveal, alongside that of his close friend Reiner Braun as the Armored Titan, is a pivotal moment in the series. Eren Jaeger is the protagonist and the Attack Titan, while Sasha Blouse is a human soldier with no Titan abilities.",
+        "id": 63
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which animation studio produced the anime adaptation of \"xxxHolic\"?",
+        "correct_answer": "Production I.G",
+        "wrong_answers": [
+            "Sunrise",
+            "Xebec",
+            "Kyoto Animation"
+        ],
+        "explanation": "The anime adaptation of the manga 'xxxHolic' was produced by the renowned animation studio Production I.G. The studio is known for its high production values and has produced many other critically acclaimed and popular anime series, including 'Ghost in the Shell: Stand Alone Complex', 'Psycho-Pass', and the first three seasons of 'Haikyuu!!'.",
+        "id": 64
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The character Momonga from the \"Overlord\" series orders his servants to call him by what name?",
+        "correct_answer": "Ainz Ooal Gown",
+        "wrong_answers": [
+            "Master",
+            "Yggdrasil",
+            "Kugane Maruyama"
+        ],
+        "explanation": "At the beginning of the 'Overlord' series, the protagonist, a salaryman whose real name is Satoru Suzuki, is trapped in the game Yggdrasil as his in-game avatar, the powerful undead sorcerer Momonga. In order to increase his chances of finding other players who may have been transported to the new world with him, he decides to adopt the name of his old guild, Ainz Ooal Gown, hoping that the legendary name will spread far and wide.",
+        "id": 65
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"One Piece\", what does \"the Pirate King\" mean to the captain of the Straw Hat Pirates?",
+        "correct_answer": "Freedom",
+        "wrong_answers": [
+            "Promise",
+            "Adventure",
+            "Friendship"
+        ],
+        "explanation": "In 'One Piece', Monkey D. Luffy's motivation for becoming the Pirate King is not about ruling the seas or accumulating wealth. As he explains to Silvers Rayleigh, the former first mate of the Pirate King Gol D. Roger, he believes that the Pirate King is the person with the most freedom in the world. This desire for ultimate freedom is the core of Luffy's character and his driving force throughout his journey.",
+        "id": 66
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Toriko\", which of the following foods is knowingly compatible with Toriko?",
+        "correct_answer": "Poison Potato",
+        "wrong_answers": [
+            "Mors Oil",
+            "Alpacookie",
+            "Parmesansho Fruit"
+        ],
+        "explanation": "In the world of 'Toriko', a Gourmet Hunter's compatibility with an ingredient is a crucial factor. Toriko, one of the Four Heavenly Kings, has an incredible resistance to many types of poisons due to his specialized Gourmet Cells. The Poison Potato is a notoriously deadly ingredient, but because it is a 'compatible ingredient' for Toriko, and with the expert preparation of his chef partner Komatsu, he is able to safely consume it and even use it to further evolve his own abilities.",
+        "id": 67
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which of the following countries does \"JoJo's Bizarre Adventure: Stardust Crusaders\" not take place in?",
+        "correct_answer": "Philippines",
+        "wrong_answers": [
+            "India",
+            "Pakistan",
+            "Egypt"
+        ],
+        "explanation": "In 'JoJo's Bizarre Adventure: Stardust Crusaders', the protagonists embark on a perilous journey from Tokyo, Japan to Cairo, Egypt to defeat the evil vampire DIO. Their route takes them through several countries, including Hong Kong, Singapore, India, Pakistan, the United Arab Emirates, and Saudi Arabia. They never visit the Philippines.",
+        "id": 68
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the anime Assassination Classroom what is the class that Korosensei teaches?",
+        "correct_answer": "Class 3-E",
+        "wrong_answers": [
+            "Class 3-A",
+            "Class 3-B",
+            "Class 3-D"
+        ],
+        "explanation": "In 'Assassination Classroom', the super-powered, octopus-like creature Koro-sensei becomes the homeroom teacher of Class 3-E of Kunugigaoka Junior High School. This class is known as the 'End Class', a dumping ground for the school's underachievers and delinquents. The students of Class 3-E are tasked by the government with assassinating Koro-sensei before he can destroy the Earth, as he has threatened to do.",
+        "id": 69
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"Hunter x Hunter\", what are members in Killua's family known for being?",
+        "correct_answer": "Assassins",
+        "wrong_answers": [
+            "Bandits",
+            "Hunters",
+            "Ninjas"
+        ],
+        "explanation": "In 'Hunter x Hunter', Killua Zoldyck is a member of the Zoldyck family, a world-renowned and feared family of elite assassins. Killua was trained from a young age in the art of assassination and possesses incredible strength, speed, and resistance to poison and electricity. His decision to leave his family and become a Hunter is a central part of his character arc.",
+        "id": 70
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Which Pok\u00e9mon and it's evolutions were banned from appearing in a main role after the Episode 38 Incident?",
+        "correct_answer": "The Porygon Line",
+        "wrong_answers": [
+            "The Pikachu Line",
+            "The Elekid Line",
+            "The Magby Line"
+        ],
+        "explanation": "This question refers to the infamous 'Denn\u014d Senshi Porygon' (Electric Soldier Porygon) episode of the original Pok\u00e9mon anime, which aired in Japan on December 16, 1997. A scene in the episode featured a rapid succession of flashing red and blue lights that caused photosensitive epileptic seizures in hundreds of viewers. The episode was immediately pulled from broadcast and has never been aired again. As a result of this incident, Porygon and its evolutions, Porygon2 and Porygon-Z, have never appeared in a prominent role in the anime since, despite the fact that the flashing lights were caused by Pikachu's Thunderbolt attack.",
+        "id": 71
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Highschool DxD\", what is the name of the item some humans are born with?",
+        "correct_answer": "Sacred Gear",
+        "wrong_answers": [
+            "Imperial Arm",
+            "Hallowed Relic",
+            "Blessed Artifact"
+        ],
+        "explanation": "In the world of 'Highschool DxD', Sacred Gears are powerful artifacts created by the God of the Bible and bestowed upon certain humans. These items can grant their users a wide variety of abilities, ranging from simple weapons to incredibly complex and powerful skills. The protagonist of the series, Issei Hyoudou, wields one of the most powerful Sacred Gears, the 'Boosted Gear', which has the ability to double the user's power every 10 seconds.",
+        "id": 72
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Krusty is the guild master of which guild in \"Log Horizon\"?",
+        "correct_answer": "D. D. D",
+        "wrong_answers": [
+            "Silver Sword",
+            "West Wind Brigade",
+            "Oceanic Systems (Marine Agency)"
+        ],
+        "explanation": "In 'Log Horizon', Krusty is the charismatic and powerful guild master of D.D.D., one of the three largest and most powerful combat guilds in the city of Akihabara. The other guilds mentioned are also members of the Round Table Alliance: the Black Sword Knights are led by Isaac, the West Wind Brigade is led by Soujirou Seta, and Oceanic Systems is a production guild led by Michitaka.",
+        "id": 73
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Puella Magi Madoka Magica\", what is the first name of Madoka's younger brother?",
+        "correct_answer": "Tatsuya",
+        "wrong_answers": [
+            "Montoya",
+            "Tomohisa",
+            "Minato"
+        ],
+        "explanation": "In 'Puella Magi Madoka Magica', Madoka's family consists of her mother Junko, her father Tomohisa, and her younger brother Tatsuya. Tatsuya is a young, innocent boy who is one of the few people who remembers Madoka after she becomes a cosmic entity at the end of the series.",
+        "id": 74
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "The name of the attack \"Kamehameha\" in Dragon Ball Z was named after a famous king of Hawaii.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "This is a famous piece of 'Dragon Ball' trivia. When series creator Akira Toriyama was trying to come up with a name for a signature energy attack for Master Roshi, his wife, Nachi Mikami, suggested the name 'Kamehameha'. The name is a reference to King Kamehameha I, the founder and first ruler of the Kingdom of Hawaii. The name also incorporates the Japanese word for 'turtle' (kame), which is Master Roshi's animal theme.",
+        "id": 75
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What color is Ry\u016bko Matoi's half of the Scissor Blade in the anime Kill la KIll?",
+        "correct_answer": "Red",
+        "wrong_answers": [
+            "Green",
+            "Blue",
+            "Purple"
+        ],
+        "explanation": "Ryuko Matoi, the protagonist of 'Kill la Kill', wields a giant, single-bladed red scissor blade. It is one half of a pair of 'Rending Scissors' created by her father, Isshin Matoi, to cut Life Fibers. The other half of the scissors is purple and is wielded by her rival, Satsuki Kiryuin.",
+        "id": 76
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What is the name of Ry\u016bko Matoi's theme song in the anime Kill la Kill?",
+        "correct_answer": "Before My Body Is Dry",
+        "wrong_answers": [
+            "Don't Lose Your Way",
+            "Till I Die",
+            "Suck Your Blood"
+        ],
+        "explanation": "The iconic theme song that plays during Ryuko Matoi's triumphant moments in 'Kill la Kill' is titled 'Before My Body Is Dry'. The song is famous for its powerful chorus, which features the memorable English phrase 'Don't lose your way'. This has led to a common misconception that 'Don't Lose Your Way' is the title of the song.",
+        "id": 77
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the \"Melancholy of Haruhi Suzumiya\" series, the narrator goes by the nickname Kyon.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "The protagonist and narrator of 'The Melancholy of Haruhi Suzumiya' is known almost exclusively by his nickname, Kyon. This nickname was given to him by his grandmother. His real name is never revealed in the series, a fact that has become a long-running joke among fans.",
+        "id": 78
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Who was the Director of the 1988 Anime film \"Grave of the Fireflies\"?",
+        "correct_answer": "Isao Takahata",
+        "wrong_answers": [
+            "Hayao Miyazaki",
+            "Satoshi Kon",
+            "Sunao Katabuchi"
+        ],
+        "explanation": "'Grave of the Fireflies' (1988) is a powerful and heartbreaking anti-war film directed by Isao Takahata, one of the co-founders of the legendary Studio Ghibli. While often associated with the work of his Ghibli co-founder, Hayao Miyazaki, Takahata had his own distinct directorial style, often focusing on more realistic and dramatic stories. 'Grave of the Fireflies' is considered one of his masterpieces.",
+        "id": 79
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"JoJo's Bizarre Adventure: Stardust Crusaders\", what is the last name of the protagonist Jotaro?",
+        "correct_answer": "Kujo",
+        "wrong_answers": [
+            "Cujoh",
+            "Joestar",
+            "Higashikata"
+        ],
+        "explanation": "The protagonist of 'JoJo's Bizarre Adventure: Stardust Crusaders' is Jotaro Kujo. The 'JoJo' in his name comes from the first two letters of his first and last name. 'Cujoh' is the last name of his daughter, Jolyne Cujoh, the protagonist of Part 6, 'Stone Ocean'. 'Joestar' is the family name of the main JoJo lineage, and 'Higashikata' is the last name of Josuke, the protagonist of Part 4, 'Diamond is Unbreakable'.",
+        "id": 80
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"Fairy Tail\", what is the nickname of Natsu Dragneel?",
+        "correct_answer": "The Salamander",
+        "wrong_answers": [
+            "The Dragon Slayer",
+            "The Dragon",
+            "The Demon"
+        ],
+        "explanation": "Natsu Dragneel is a Fire Dragon Slayer, a wizard with the abilities of a dragon. In the world of 'Fairy Tail', he is widely known by his fiery epithet, 'The Salamander'. This nickname is a reference to the mythical creature of the same name, which was believed to be able to live in and control fire.",
+        "id": 81
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What is the name of the main character of the anime \"One-Punch Man\"?",
+        "correct_answer": "Saitama",
+        "wrong_answers": [
+            "Genos",
+            "Sonic",
+            "King"
+        ],
+        "explanation": "The protagonist of 'One-Punch Man' is Saitama, a hero who is so powerful that he can defeat any enemy with a single punch. This immense power has led to him becoming bored with his life as a hero. The other characters listed are also from the series: Genos is Saitama's loyal cyborg disciple, Sonic is a recurring rival ninja, and King is another S-Class hero who is secretly a normal person who often gets credit for Saitama's heroic deeds.",
+        "id": 82
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What was studio Trigger's first original long-form animated series for television?",
+        "correct_answer": "Kill la Kill",
+        "wrong_answers": [
+            "Kiznaiver",
+            "Inferno Cop",
+            "Gurren Lagann"
+        ],
+        "explanation": "Studio Trigger's first original full-length television anime series was the 2013 hit 'Kill la Kill'. The studio was founded in 2011 by former Gainax employees Hiroyuki Imaishi and Masahiko \u014ctsuka. 'Gurren Lagann' was produced by Gainax before Trigger was founded. 'Inferno Cop' was Trigger's first original work, but it was a series of shorts released online (ONA). 'Kiznaiver' was a later original series from Trigger, released in 2016.",
+        "id": 83
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the anime \"My Hero Academia\", which character is shown with the ability to manipulate gravity?",
+        "correct_answer": "Uraraka",
+        "wrong_answers": [
+            "Bakugo",
+            "Deku",
+            "Asui "
+        ],
+        "explanation": "In 'My Hero Academia', Ochaco Uraraka's Quirk is called 'Zero Gravity', which allows her to nullify the effects of gravity on any solid object she touches with the pads on her fingertips. The other characters listed have different Quirks: Katsuki Bakugo's is 'Explosion', Izuku Midoriya's (Deku) is 'One For All', and Tsuyu Asui's is 'Frog'.",
+        "id": 84
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "The name of Junko Enoshima's imposter at the beginning of Danganronpa: Trigger Happy Havoc is?",
+        "correct_answer": "Mukuro Ikusaba",
+        "wrong_answers": [
+            "Ryota Mitarai",
+            "Ultimate Imposter",
+            "Komaru Naegi"
+        ],
+        "explanation": "In a major plot twist in 'Danganronpa: Trigger Happy Havoc', the character who initially introduces herself as Junko Enoshima is actually her older twin sister, Mukuro Ikusaba, the 'Ultimate Soldier', in disguise. The real Junko Enoshima is the true mastermind behind the killing game, and she murders her own sister in front of the other students to demonstrate her commitment to despair.",
+        "id": 85
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"Hunter x Hunter\", which of the following is NOT a type of Nen aura?",
+        "correct_answer": "Restoration",
+        "wrong_answers": [
+            "Emission",
+            "Transmutation",
+            "Specialization"
+        ],
+        "explanation": "In the world of 'Hunter x Hunter', Nen is the ability to control one's own life energy or aura. There are six distinct types of Nen aura: Enhancement (strengthening oneself or an object), Transmutation (changing the quality of one's aura to mimic something else), Emission (detaching aura from the body), Conjuration (creating objects from aura), Manipulation (controlling animate or inanimate things), and Specialization (unique abilities that don't fall into the other categories). 'Restoration' is not one of the six official types of Nen, although some Nen abilities can have restorative effects.",
+        "id": 86
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the name of the corgi in Cowboy Bebop?",
+        "correct_answer": "Einstein",
+        "wrong_answers": [
+            "Edward",
+            "Rocket",
+            "Joel"
+        ],
+        "explanation": "The hyper-intelligent Welsh Corgi in the classic anime 'Cowboy Bebop' is named Ein. His name is a reference to the famous physicist Albert Einstein, a nod to the dog's enhanced intelligence. Ein is a 'data dog', a genetically engineered animal capable of storing large amounts of data in his brain.",
+        "id": 87
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The heroine of \"Humanity Has Declined\" is a mediator between humans and what?",
+        "correct_answer": "Fairies",
+        "wrong_answers": [
+            "Elves",
+            "The Earth",
+            "Animals"
+        ],
+        "explanation": "The nameless protagonist of 'Humanity Has Declined' is a UN mediator between the last remnants of humanity and the 'fairies', a species of small, technologically advanced, and childlike beings who have become the new dominant species on Earth. Her job is to ensure peaceful coexistence between the two species, a task made difficult by the fairies' whimsical and often chaotic nature.",
+        "id": 88
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "My Hero Academia's main character Midoriya goes by what superhero name?",
+        "correct_answer": "Deku",
+        "wrong_answers": [
+            "All Might",
+            "Saitama",
+            "Kona"
+        ],
+        "explanation": "In 'My Hero Academia', Izuku Midoriya's superhero name is 'Deku'. The name was originally a derogatory nickname given to him by his childhood rival, Katsuki Bakugo, meaning 'useless' or 'good for nothing'. However, his friend Ochaco Uraraka points out that 'Deku' can also be read as 'one who can do it', inspiring him to reclaim the name and turn it into a symbol of his determination to become the world's greatest hero.",
+        "id": 89
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who is the true moon princess in Sailor Moon?",
+        "correct_answer": "Sailor Moon",
+        "wrong_answers": [
+            "Sailor Venus",
+            "Sailor Mars",
+            "Sailor Jupiter"
+        ],
+        "explanation": "In a major plot twist in the first season of 'Sailor Moon', it is revealed that the true identity of the Moon Princess is Usagi Tsukino, a.k.a. Sailor Moon herself. She is the reincarnation of Princess Serenity, the heir to the throne of the ancient Moon Kingdom. For a time, Sailor Venus acted as a decoy princess to protect Usagi from the forces of the Dark Kingdom.",
+        "id": 90
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the \"Toaru Majutsu no Index\" anime, Touma Kamijou is a level 0 esper that has the ability to do what?",
+        "correct_answer": "Dispell any esper or magical powers",
+        "wrong_answers": [
+            "Teleport",
+            "Make telepathic communications",
+            "Create electricity from his own body"
+        ],
+        "explanation": "In 'Toaru Majutsu no Index', the protagonist, Touma Kamijou, possesses a unique ability in his right hand called the 'Imagine Breaker'. This power allows him to negate any supernatural phenomenon, including all esper abilities and magic, upon contact. Because this ability cannot be quantified by the city's esper ranking system, he is officially classified as a Level 0, the lowest possible rank, despite the incredible power he wields.",
+        "id": 91
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"JoJo's Bizarre Adventure\", Father Enrico Pucchi uses a total of 3 stands in Part 6: Stone Ocean.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. In 'JoJo's Bizarre Adventure: Stone Ocean', the main antagonist, Father Enrico Pucci, utilizes three different Stands throughout the story. He begins with 'Whitesnake', which can steal a person's memories and Stand in the form of discs. He then fuses with the Green Baby to evolve his Stand into 'C-Moon', which has the power to manipulate gravity. Finally, he achieves his ultimate goal and evolves his Stand into 'Made in Heaven', which has the ability to accelerate time to an infinite degree.",
+        "id": 92
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which studio made Cowboy Bebop?",
+        "correct_answer": "Sunrise",
+        "wrong_answers": [
+            "Bones",
+            "Madhouse",
+            "Pierriot"
+        ],
+        "explanation": "The classic 1998 anime series 'Cowboy Bebop' was animated by the renowned studio Sunrise. The studio is one of the largest and most famous in Japan, and is also responsible for many other iconic anime series, particularly in the mecha genre, such as the 'Gundam' franchise, 'Code Geass', and 'The Vision of Escaflowne'.",
+        "id": 93
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "The characters of \"Log Horizon\" are trapped in what game?",
+        "correct_answer": "Elder Tale",
+        "wrong_answers": [
+            "Sword Art Online",
+            "Tower Unite",
+            "Yggdrasil"
+        ],
+        "explanation": "The characters in 'Log Horizon' are trapped in the long-running and popular MMORPG, 'Elder Tale'. The other games listed are also settings for 'trapped in a game' anime series: 'Sword Art Online' is the setting for the series of the same name, and 'Yggdrasil' is the game from which the protagonist of 'Overlord' is transported.",
+        "id": 94
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is Gatomon's name in the original Japanese version of Digimon Adventure?",
+        "correct_answer": "Tailmon",
+        "wrong_answers": [
+            "Pawmon",
+            "Catmon",
+            "Nekomon"
+        ],
+        "explanation": "In the original Japanese version of 'Digimon Adventure', the Digimon known as Gatomon in the English dub is named 'Tailmon'. The name was changed for the English release, with 'Gato' being the Spanish word for 'cat'. This kind of name change was common in the English localization of the Digimon anime.",
+        "id": 95
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the anime, \"Fullmetal Alchemist\", who is known as the 'Flame Alchemist'?",
+        "correct_answer": "Roy Mustang",
+        "wrong_answers": [
+            "Edward Elric",
+            "Maes Hughes",
+            "Lin Yao"
+        ],
+        "explanation": "In the world of 'Fullmetal Alchemist', State Alchemists are given a title that reflects their specialty. Colonel Roy Mustang, a powerful alchemist and a key character in the series, is known as the 'Flame Alchemist' due to his mastery of fire-based alchemy. Edward Elric is the 'Fullmetal Alchemist', Maes Hughes is a non-alchemist military officer, and Lin Yao is a prince from the foreign country of Xing.",
+        "id": 96
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In Full Metal Panic!, Whispered are those who are capable of creating Black Technology.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. In the world of 'Full Metal Panic!', the 'Whispered' are a select group of individuals who possess innate, advanced scientific and technological knowledge, referred to as 'Black Technology'. This knowledge is implanted in their minds and can be accessed subconsciously. The main heroine of the series, Kaname Chidori, is one of the most powerful Whispered, making her a target for various organizations who wish to exploit her abilities.",
+        "id": 97
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who was a voice actor for the English dubbing of HOWL'S MOVING CASTLE (2004)?",
+        "correct_answer": "Christian Bale",
+        "wrong_answers": [
+            "Matt Damon",
+            "Joseph Gordon-Levitt",
+            "Willem Dafoe"
+        ],
+        "explanation": "The English dub of Studio Ghibli's 'Howl's Moving Castle' features a star-studded cast of Hollywood actors. The titular character, the wizard Howl, was voiced by Christian Bale. The rest of the main cast includes Emily Mortimer as young Sophie, Jean Simmons as old Sophie, and Billy Crystal as the fire demon Calcifer.",
+        "id": 98
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the \"Dragon Ball\" franchise, what is the name of Goku's brother?",
+        "correct_answer": "Raditz",
+        "wrong_answers": [
+            "Gohan",
+            "Vegeta",
+            "Bardock"
+        ],
+        "explanation": "At the beginning of 'Dragon Ball Z', Goku's older brother, Raditz, arrives on Earth to recruit him into the Frieza Force and reveals Goku's Saiyan heritage. Raditz's arrival is the catalyst for many of the events of the series. The other characters listed are also close relatives of Goku: Gohan is his son, and Bardock is his father. Vegeta is his rival and a fellow Saiyan.",
+        "id": 99
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"One Piece\", which one of the following is NOT an Ancient Weapon?",
+        "correct_answer": "Jupiter",
+        "wrong_answers": [
+            "Uranus",
+            "Poseidon",
+            "Pluton"
+        ],
+        "explanation": "In the world of 'One Piece', the three Ancient Weapons are superweapons of immense destructive power, each named after a Greco-Roman deity. They are Pluton, a massive battleship; Poseidon, the ability to control the giant Sea Kings, a power embodied by the mermaid princess Shirahoshi; and Uranus, whose nature is still a mystery. Jupiter is not one of the three Ancient Weapons.",
+        "id": 100
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the anime, Full Metal Panic!, who is Kaname's best friend?",
+        "correct_answer": "Kyoko Tokiwa",
+        "wrong_answers": [
+            "Melissa Mao",
+            "Ren Mikihara",
+            "Teletha \"Tessa\" Testarossa"
+        ],
+        "explanation": "In 'Full Metal Panic!', Kaname Chidori's best friend and classmate is Kyoko Tokiwa. She is often a source of comedic relief and a grounding presence for Kaname amidst the chaos of her life. Melissa Mao and Teletha 'Tessa' Testarossa are members of the anti-terrorist organization Mithril, and Ren Mikihara is another supporting character in the series.",
+        "id": 101
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the anime series \"Full Metal Alchemist\", what do Alchemists consider the greatest taboo?",
+        "correct_answer": "Human Transmutation ",
+        "wrong_answers": [
+            "Transmuting Lead Into Gold",
+            "Using Alchemy For Crime ",
+            "Preforming Without A Permit"
+        ],
+        "explanation": "In the world of 'Fullmetal Alchemist', the practice of Human Transmutation, attempting to bring a deceased person back to life using alchemy, is strictly forbidden and considered the ultimate taboo. The series' protagonists, Edward and Alphonse Elric, learn this firsthand when their attempt to resurrect their mother results in Ed losing his left leg and Al losing his entire body. This event is the catalyst for the entire story.",
+        "id": 102
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the series JoJo's Bizarre Adventure, which main character makes the greatest number of recurring appearances?",
+        "correct_answer": "Jotaro Kujo",
+        "wrong_answers": [
+            "Giorno Giovanna",
+            "Joseph Joestar",
+            "Josuke Higashikata"
+        ],
+        "explanation": "Jotaro Kujo, the protagonist of Part 3: Stardust Crusaders, holds the record for the most recurring appearances of any main character in the 'JoJo's Bizarre Adventure' manga. He plays a major role in Part 4: Diamond is Unbreakable, and makes guest appearances in Part 5: Vento Aureo and Part 6: Stone Ocean, appearing in a total of four parts. Joseph Joestar appears in three parts (2, 3, and 4), while Giorno Giovanna and Josuke Higashikata (from Part 4) only appear in their respective parts.",
+        "id": 103
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who is the armored titan in \"Attack On Titan\"?",
+        "correct_answer": "Reiner Braun",
+        "wrong_answers": [
+            "Armin Arlelt",
+            "Mikasa Ackermann",
+            "Eren Jaeger"
+        ],
+        "explanation": "In a major plot twist in 'Attack on Titan', the true identity of the Armored Titan is revealed to be Reiner Braun, a member of the 104th Training Corps who was considered a leader among his peers. His reveal, alongside that of his close friend Bertolt Hoover as the Colossal Titan, is a pivotal moment in the series. Eren Jaeger is the protagonist and the Attack Titan, Armin Arlert later becomes the Colossal Titan, and Mikasa Ackermann is a human soldier with no Titan abilities.",
+        "id": 104
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the name of JoJo's Bizarre Adventure Part 5?",
+        "correct_answer": "Vento Aureo",
+        "wrong_answers": [
+            "Vento Oreo",
+            "Vanto Aureo",
+            "Vento Eureo"
+        ],
+        "explanation": "The fifth part of the long-running manga series 'JoJo's Bizarre Adventure' is titled 'Vento Aureo', which is Italian for 'Golden Wind'. The story follows Giorno Giovanna, the son of the series' most iconic villain, DIO, as he seeks to become a 'Gang-Star' and reform the Italian mafia from within.",
+        "id": 105
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What studio animated Ouran High School Host Club?",
+        "correct_answer": "Bones",
+        "wrong_answers": [
+            "Production I.G",
+            "Kyoto Animation",
+            "xebec"
+        ],
+        "explanation": "The 2006 anime adaptation of the popular shoujo manga 'Ouran High School Host Club' was produced by Studio Bones. The studio is known for a wide variety of successful anime, including action series like 'Fullmetal Alchemist' and 'My Hero Academia', as well as comedies like 'Ouran High School Host Club'.",
+        "id": 106
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Who voices \"Shou Suzuki\" in the English dub of \"Mob Psycho 100\"?",
+        "correct_answer": "Casey Mongillo",
+        "wrong_answers": [
+            "Ben Diskin",
+            "Chris Niosi",
+            "David Naughton"
+        ],
+        "explanation": "The English voice actor for the character Shou Suzuki in the anime 'Mob Psycho 100' is Casey Mongillo. Mongillo is also known for voicing other prominent anime characters, including Shinji Ikari in the Netflix dub of 'Neon Genesis Evangelion' and Emporio Alni\u00f1o in 'JoJo's Bizarre Adventure: Stone Ocean'.",
+        "id": 107
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Who was the Author of the manga Monster Hunter Orage?",
+        "correct_answer": "Hiro Mashima",
+        "wrong_answers": [
+            "Shin Yamamoto",
+            "Keiichi Hikami",
+            "Hirohiko Araki"
+        ],
+        "explanation": "'Monster Hunter Orage' is a manga series based on the popular 'Monster Hunter' video game franchise. It was written and illustrated by Hiro Mashima, the celebrated manga artist best known for creating the long-running and immensely popular series 'Fairy Tail' and 'Edens Zero'.",
+        "id": 108
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "The character Plum from \"No Game No Life\" is a girl.",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. Plum Stoker is a Dhampir, a race similar to vampires, and is the last living male of his species. He uses his race's proficiency in magic to disguise himself as a girl to avoid being targeted for his unique status.",
+        "id": 109
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The main antagonist of the second part of JoJo's Bizarre Adventure is which of the following?",
+        "correct_answer": "Kars",
+        "wrong_answers": [
+            "Erina Joestar",
+            "Santana",
+            "Wired Beck"
+        ],
+        "explanation": "The main antagonist of 'JoJo's Bizarre Adventure: Battle Tendency' is Kars, the leader of the Pillar Men, a race of ancient, powerful, and seemingly immortal superhumans. Kars is a brilliant and ruthless warrior who seeks to obtain the Red Stone of Aja to overcome his race's weakness to the sun and become the ultimate lifeform. Santana is another Pillar Man, but he is defeated early in the story. Erina Joestar is the wife of the first JoJo, Jonathan Joestar, and Wired Beck is a minor antagonist.",
+        "id": 110
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which animation studio produced \"Log Horizon\"?",
+        "correct_answer": "Satelite",
+        "wrong_answers": [
+            "Sunrise",
+            "Xebec",
+            "Production I.G"
+        ],
+        "explanation": "The first season of the 'Log Horizon' anime was produced by the animation studio Satelight. The second and third seasons of the series were produced by Studio Deen.",
+        "id": 111
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In Ms. Kobayashi's Dragon Maid, who is Kobayashi's maid?",
+        "correct_answer": "Tohru",
+        "wrong_answers": [
+            "Lucoa",
+            "Kanna",
+            "Elma"
+        ],
+        "explanation": "The central premise of 'Miss Kobayashi's Dragon Maid' is that the titular office worker, Kobayashi, drunkenly invites a powerful dragon named Tohru to be her live-in maid. Tohru, who is in love with Kobayashi, accepts the offer, and the series follows their daily lives as they are joined by other dragons from another world, including Kanna, Lucoa, and Elma.",
+        "id": 112
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which animation studio produced \"Sword Art Online\"?",
+        "correct_answer": "A-1 Pictures",
+        "wrong_answers": [
+            "Production I.G",
+            "Silver Link",
+            "Kyoto Animation"
+        ],
+        "explanation": "The popular and influential 'trapped in a game' anime series, 'Sword Art Online', was produced by A-1 Pictures. The studio is known for a wide variety of successful anime, including 'Fairy Tail', 'The Seven Deadly Sins', and 'Kaguya-sama: Love Is War'.",
+        "id": 113
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "\"Silhouette\", a song performed by the group 'KANA-BOON' is featured as the sixteenth opening of which anime?",
+        "correct_answer": "Naruto: Shipp\u016bden",
+        "wrong_answers": [
+            "One Piece",
+            "Naruto",
+            "Gurren Lagann"
+        ],
+        "explanation": "The song 'Silhouette' by the Japanese rock band KANA-BOON is the sixteenth opening theme of the long-running anime series 'Naruto: Shipp\u016bden'. The song is one of the most popular and iconic openings from the entire 'Naruto' franchise.",
+        "id": 114
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What year did \"Attack on Titan\" first air?",
+        "correct_answer": "2013",
+        "wrong_answers": [
+            "2014",
+            "2012",
+            "2015"
+        ],
+        "explanation": "The first season of the immensely popular and critically acclaimed anime series 'Attack on Titan' first aired in Japan on April 7, 2013. The series has since gone on to have multiple seasons and has become a global phenomenon.",
+        "id": 115
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What year did \"Attack on Titan\" Season 2 begin airing?",
+        "correct_answer": "2017",
+        "wrong_answers": [
+            "2018",
+            "2019",
+            "2020"
+        ],
+        "explanation": "After a long and infamous four-year wait for fans, the second season of 'Attack on Titan' began airing in Japan on April 1, 2017. The season was much shorter than the first, consisting of only 12 episodes.",
+        "id": 116
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Druid is a mage class in \"Log Horizon\".",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. In the world of 'Log Horizon', the twelve character classes are divided into four groups: Warrior, Weapon-based, Healer, and Mage. The Druid class is a Healer, specializing in heal-over-time spells. The four Mage classes are Sorcerer, Enchanter, Summoner, and Kannagi.",
+        "id": 117
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the name of the stuffed lion in Bleach?",
+        "correct_answer": "Kon",
+        "wrong_answers": [
+            "Jo",
+            "Urdiu",
+            "Chad"
+        ],
+        "explanation": "The small, energetic, and often perverted stuffed lion in the anime 'Bleach' is named Kon. He is a Modified Soul, or 'Mod-Soul', an artificial soul designed by the Soul Society to enhance human physiology to fight Hollows. Kon's soul was placed inside the lion plushie, and he serves as a recurring comic relief character throughout the series.",
+        "id": 118
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The anime Attack on Titan was directed by Tetsur\u014d Araki, the same person who directed the anime Highschool of the Dead.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. Tetsur\u014d Araki is a well-known and acclaimed anime director, famous for his dynamic and action-packed style. He directed the first three seasons of 'Attack on Titan' as well as the 2010 anime series 'Highschool of the Dead'. His other major directorial works include 'Death Note', 'Guilty Crown', and 'Kabaneri of the Iron Fortress'.",
+        "id": 119
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What year does Part 7 of \"JoJo's Bizarre Adventure\" take place in?",
+        "correct_answer": "1890",
+        "wrong_answers": [
+            "1888",
+            "1999",
+            "2003"
+        ],
+        "explanation": "Part 7 of 'JoJo's Bizarre Adventure', titled 'Steel Ball Run', is set in the year 1890 and takes place in an alternate timeline from the previous six parts. The story follows the trans-American horse race, the Steel Ball Run, and features the protagonists Johnny Joestar and Gyro Zeppeli.",
+        "id": 120
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Who is the creator of the manga series \"One Piece\"?",
+        "correct_answer": "Eiichiro Oda",
+        "wrong_answers": [
+            "Yoshihiro Togashi",
+            "Hayao Miyazaki",
+            "Masashi Kishimoto"
+        ],
+        "explanation": "The long-running and immensely popular manga series 'One Piece' was created by the legendary manga artist Eiichiro Oda. The other authors listed are also famous for their own works: Yoshihiro Togashi is the creator of 'Hunter x Hunter' and 'Yu Yu Hakusho', Hayao Miyazaki is the co-founder of Studio Ghibli and the director of many acclaimed animated films, and Masashi Kishimoto is the creator of 'Naruto'.",
+        "id": 121
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"One Piece,\" what color is Tony Tony Chopper's nose?",
+        "correct_answer": "Blue",
+        "wrong_answers": [
+            "Black",
+            "Grey",
+            "Red"
+        ],
+        "explanation": "Tony Tony Chopper, the doctor of the Straw Hat Pirates in 'One Piece', is a reindeer who ate the Human-Human Fruit, which gave him human intelligence and the ability to transform. He is easily identified by his signature blue nose, a feature that caused him to be ostracized by his fellow reindeer.",
+        "id": 122
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"To Love-Ru\", Ren and Run are from what planet?",
+        "correct_answer": "Memorze",
+        "wrong_answers": [
+            "Deviluke",
+            "Mistletoe",
+            "Okiwana"
+        ],
+        "explanation": "In the 'To Love-Ru' series, the characters Ren and his female alter-ego Run are from the planet Memorze. The people of Memorze have the unique ability to change their gender when they are stimulated, such as by a sneeze. Ren comes to Earth to pursue Lala, but his female form, Run, ends up falling in love with Rito.",
+        "id": 123
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Toriko\", which of the following Heavenly Kings has an enhanced sense of Hearing?",
+        "correct_answer": "Zebra",
+        "wrong_answers": [
+            "Coco",
+            "Sunny",
+            "Toriko"
+        ],
+        "explanation": "The Four Heavenly Kings in 'Toriko' are a group of four incredibly powerful Gourmet Hunters, each with a different enhanced sense. Zebra is known for his superhuman hearing, which is so powerful that he can hear conversations from miles away. The other Heavenly Kings are Toriko (enhanced smell), Coco (enhanced sight, including the ability to see electromagnetic waves), and Sunny (enhanced touch through his hair).",
+        "id": 124
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In JoJo's Bizarre Adventure, which character is able to accelerate time?",
+        "correct_answer": "Enrico Pucci",
+        "wrong_answers": [
+            "Jotaro Kujo",
+            "Jolyne Cujoh",
+            "Kujo Jotaro"
+        ],
+        "explanation": "In 'JoJo's Bizarre Adventure: Stone Ocean', the main antagonist, Father Enrico Pucci, achieves the ability to accelerate time with his final Stand, 'Made in Heaven'. This incredibly powerful ability allows him to speed up time to an infinite degree, eventually resetting the universe. Jotaro Kujo's Stand, 'Star Platinum', can stop time, while his daughter Jolyne Cujoh's Stand, 'Stone Free', allows her to unravel her body into string.",
+        "id": 125
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which of the following manga have the most tankouban volumes?",
+        "correct_answer": "Golgo 13",
+        "wrong_answers": [
+            "JoJo's Bizarre Adventure",
+            "Detective Conan",
+            "One Piece"
+        ],
+        "explanation": "While all of the listed series are famously long-running, 'Golgo 13' holds the Guinness World Record for the most volumes published for a single manga series, with over 200 volumes. As of 2024, 'JoJo's Bizarre Adventure' has over 130 volumes, while 'Detective Conan' and 'One Piece' both have over 100 volumes.",
+        "id": 126
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the theme song of \"Neon Genesis Evangelion\"?",
+        "correct_answer": "A Cruel Angel's Thesis",
+        "wrong_answers": [
+            "Stardust Crusaders",
+            "Requiem for a Dream",
+            "God Knows"
+        ],
+        "explanation": "'A Cruel Angel's Thesis' is the iconic and widely beloved opening theme song of the anime series 'Neon Genesis Evangelion'. The song is one of the most famous and recognizable anime theme songs of all time. 'Stardust Crusaders' is an opening for 'JoJo's Bizarre Adventure', 'Requiem for a Dream' is a film score, and 'God Knows' is a famous insert song from 'The Melancholy of Haruhi Suzumiya'.",
+        "id": 127
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which of the stands from \"JoJo's Bizarre Adventure\" mimics the likeness of a tomato?",
+        "correct_answer": "Pearl Jam",
+        "wrong_answers": [
+            "Red Hot Chili Pepper",
+            "Cream Starter",
+            "Nut King Call"
+        ],
+        "explanation": "Pearl Jam is the Stand of the chef Tonio Trussardi in 'JoJo's Bizarre Adventure: Diamond is Unbreakable'. It is a colony Stand, meaning it is composed of multiple small units. These units, which resemble a cross between a tomato and an onion, are infused into Tonio's cooking and have the ability to cure various ailments.",
+        "id": 128
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the anime Black Butler, who is betrothed to be married to Ciel Phantomhive?",
+        "correct_answer": "Elizabeth Midford",
+        "wrong_answers": [
+            "Rachel Phantomhive",
+            "Alexis Leon Midford",
+            "Angelina Dalles"
+        ],
+        "explanation": "In the anime and manga series 'Black Butler', Ciel Phantomhive is betrothed to his cousin, Elizabeth Midford. Their marriage was arranged by their parents when they were children. Rachel Phantomhive is Ciel's mother, Alexis Leon Midford is Elizabeth's father, and Angelina Dalles (Madam Red) is Ciel's aunt.",
+        "id": 129
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which JoJo's Bizarre Adventure character possesses the Stand named Silver Chariot?",
+        "correct_answer": "Jean Pierre Polnareff",
+        "wrong_answers": [
+            "Noriaki Kakyoin",
+            "Hol Horse",
+            "Hermes Costello"
+        ],
+        "explanation": "The Stand 'Silver Chariot' is wielded by the French swordsman Jean Pierre Polnareff, a major ally in 'JoJo's Bizarre Adventure: Stardust Crusaders'. The other characters listed are also Stand users: Noriaki Kakyoin's Stand is 'Hierophant Green', Hol Horse's is 'Emperor', and Hermes Costello's is 'Kiss'.",
+        "id": 130
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which studio animated Afro Samurai?",
+        "correct_answer": "Gonzo",
+        "wrong_answers": [
+            "Kyoto Animation",
+            "xebec",
+            "Production I.G"
+        ],
+        "explanation": "The 2007 anime miniseries 'Afro Samurai' was produced by the animation studio Gonzo. The studio is known for its action and sci-fi series, and has also produced other notable works such as 'Hellsing', 'Full Metal Panic!', and 'Gankutsuou: The Count of Monte Cristo'.",
+        "id": 131
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which of the following anime of the mecha genre began airing in 1982?",
+        "correct_answer": "The Super Dimension Fortress Macross",
+        "wrong_answers": [
+            "Mobile Suit Gundam",
+            "Armored Trooper VOTOMS",
+            "Neon Genesis Evangelion"
+        ],
+        "explanation": "Of the four influential mecha anime listed, 'The Super Dimension Fortress Macross' is the one that began airing in 1982. 'Mobile Suit Gundam' first aired in 1979, 'Armored Trooper VOTOMS' in 1983, and 'Neon Genesis Evangelion' in 1995.",
+        "id": 132
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Akatsuki's subclass in \"Log Horizon\" is what?",
+        "correct_answer": " Tracker",
+        "wrong_answers": [
+            "Assassin",
+            "Scribe",
+            "Apprentice"
+        ],
+        "explanation": "In 'Log Horizon', Akatsuki's main class is Assassin, which allows her to deal high damage from the shadows. Her subclass is Tracker, which grants her enhanced stealth and tracking abilities, making her an expert in reconnaissance and silent takedowns.",
+        "id": 133
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"A Certain Magical Index,\" what is Accelerator able to control?",
+        "correct_answer": "Vectors",
+        "wrong_answers": [
+            "Velocity",
+            "Quantums",
+            "Wormholes"
+        ],
+        "explanation": "In the 'A Certain Magical Index' series, the character known as Accelerator is the most powerful Level 5 esper in Academy City. His ability is 'Vector Transformation', which allows him to control and manipulate any vector he comes into contact with. This gives him control over a wide range of phenomena, including motion, heat, electricity, and even light, making him virtually untouchable.",
+        "id": 134
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the Naruto manga, what is the last name of Tsunade?",
+        "correct_answer": "Senju",
+        "wrong_answers": [
+            "Haruno",
+            "Uzumaki",
+            "Yamanaka"
+        ],
+        "explanation": "Tsunade's full name is Tsunade Senju. She is the granddaughter of the First Hokage, Hashirama Senju, and a member of the legendary Senju clan. She is one of the three 'Legendary Sannin' alongside Jiraiya and Orochimaru, and becomes the Fifth Hokage of the Hidden Leaf Village.",
+        "id": 135
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the \"Toaru Kagaku no Railgun\" anime,  espers can only reach a maximum of level 6 in their abilities.",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. In the world of 'A Certain Magical Index' and its spinoff 'A Certain Scientific Railgun', Level 5 is the highest officially recognized level of esper ability. Level 6 is a theoretical, god-like level of power that has never been naturally achieved. The main plot of the 'Sisters' arc revolves around the 'Level 6 Shift Project', a secret experiment designed to artificially force Accelerator, the strongest Level 5, to evolve to Level 6 by having him kill 20,000 clones of Mikoto Misaka.",
+        "id": 136
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Ikki Kurogane is known by what nickname at the beginning of \"Chivalry of a Failed Knight\"?",
+        "correct_answer": "Worst One",
+        "wrong_answers": [
+            "Another One",
+            "Blazer",
+            "Princess"
+        ],
+        "explanation": "Ikki Kurogane, the protagonist of 'Chivalry of a Failed Knight', is known at the beginning of the series by the derogatory nickname 'The Worst One'. This is because he is an F-Rank Blazer, the lowest possible rank for a magical knight, and is looked down upon by his family and peers. Despite this, he is a highly skilled swordsman who overcomes his lack of magical power with pure talent and hard work.",
+        "id": 137
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"Highschool of the Dead\", where did Komuro and Saeko establish to meet after the bus explosion?",
+        "correct_answer": "Eastern Police Station",
+        "wrong_answers": [
+            "The Center Mall",
+            "Komuro's House",
+            "On The Main Bridge"
+        ],
+        "explanation": "In the anime 'Highschool of the Dead', after the group is separated following a bus explosion, the characters agree to meet up at a designated location. The chosen meeting point is the Eastern Police Station, which they hope will be a secure location to regroup and plan their next move.",
+        "id": 138
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Who voices the character \"Reigen\"  in the English dub of \"Mob Psycho 100\"?",
+        "correct_answer": "Chris Niosi",
+        "wrong_answers": [
+            "Max Mittelman",
+            "Kyle McCarley",
+            "Casey Mongillo"
+        ],
+        "explanation": "The English voice actor for the charismatic and hilarious con-artist psychic, Arataka Reigen, in the anime 'Mob Psycho 100' is Chris Niosi. The other voice actors listed also voice characters in the English dub: Max Mittelman voices Ritsu Kageyama, Kyle McCarley voices Shigeo 'Mob' Kageyama, and Casey Mongillo voices Shou Suzuki.",
+        "id": 139
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the \"To Love-Ru\" series, Golden Darkness is sent to kill Lala Deviluke.",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. In the 'To Love-Ru' series, the galactic assassin Golden Darkness is hired by one of Lala's rejected suitors, Lacospo, to kill the main protagonist, Rito Yuuki. However, after observing Rito's kind nature, she decides to stay on Earth and abandons her mission, though she often teases Rito by claiming she still intends to kill him one day.",
+        "id": 140
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What was Ash Ketchum's second Pokemon?",
+        "correct_answer": "Caterpie",
+        "wrong_answers": [
+            "Charmander",
+            "Pikachu",
+            "Pidgey"
+        ],
+        "explanation": "In the first few episodes of the Pok\u00e9mon anime, Ash Ketchum begins his journey with his starter Pok\u00e9mon, Pikachu. The first wild Pok\u00e9mon he catches is a Caterpie in Viridian Forest, making it his second Pok\u00e9mon overall. Shortly after, he also catches a Pidgeotto.",
+        "id": 141
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What caused the titular mascot of Yo-Kai Watch, Jibanyan, to become a yokai?",
+        "correct_answer": "Being run over by a truck",
+        "wrong_answers": [
+            "Ate one too many chocobars",
+            "Through a magical ritual",
+            "When he put on the harmaki"
+        ],
+        "explanation": "Jibanyan's backstory is surprisingly tragic for such a comical character. He was originally a normal cat named Rudy who was owned by a girl named Amy. One day, he was hit and killed by a truck while trying to save Amy from the same fate. After his death, he became a yokai and now haunts the intersection where he died, trying to get his revenge on passing trucks.",
+        "id": 142
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the 2011 TV anime series, \"THE iDOLM@STER\", what was the name of Iori's stuffed toy bunny?",
+        "correct_answer": "Charles",
+        "wrong_answers": [
+            "Bubsy",
+            "Kero",
+            "Usagi"
+        ],
+        "explanation": "In the anime series 'THE iDOLM@STER', Iori Minase, one of the idols of 765 Production, is often seen carrying a stuffed bunny rabbit named 'de Charles', or simply Charles. The bunny is a treasured possession and a symbol of her childish side, which she often tries to hide behind a haughty and arrogant demeanor.",
+        "id": 143
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Little Witch Academia\", what is Shiny Chariot's alias at Luna Nova Academy?",
+        "correct_answer": "Ursula Callistis",
+        "wrong_answers": [
+            "Croix Meridies",
+            "Miranda Holbrook",
+            "Anne Finnelan"
+        ],
+        "explanation": "In 'Little Witch Academia', the once-famous stage magician Shiny Chariot secretly works as a teacher at the Luna Nova Magical Academy under the alias Ursula Callistis. She takes a special interest in the protagonist, Akko Kagari, who was inspired to become a witch after seeing one of Shiny Chariot's shows as a child. Croix Meridies is her former friend and rival, while Miranda Holbrook and Anne Finnelan are other teachers at the academy.",
+        "id": 144
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the last name of Edward and Alphonse in the Fullmetal Alchemist series.",
+        "correct_answer": "Elric",
+        "wrong_answers": [
+            "Ellis",
+            "Eliek",
+            "Elwood"
+        ],
+        "explanation": "The two protagonists of the 'Fullmetal Alchemist' series are the brothers Edward and Alphonse Elric. Their journey to restore their bodies after a failed human transmutation experiment is the central plot of the story.",
+        "id": 145
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What is the name of the device that allows for infinite energy in the anime \"Dimension W\"?",
+        "correct_answer": "Coils",
+        "wrong_answers": [
+            "Wires",
+            "Collectors",
+            "Tesla"
+        ],
+        "explanation": "In the world of 'Dimension W', the problem of energy has been solved by the invention of 'Coils', devices that can draw a seemingly infinite supply of energy from the mysterious fourth dimension, Dimension W. The story follows a 'Collector' named Kyoma Mabuchi, who is tasked with recovering illegal, unofficial Coils.",
+        "id": 146
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In what year did the manga \"Ping Pong\" begin serialization?",
+        "correct_answer": "1996",
+        "wrong_answers": [
+            "2014",
+            "2010",
+            "2003"
+        ],
+        "explanation": "The manga 'Ping Pong', created by the acclaimed author Taiy\u014d Matsumoto, was serialized in Shogakukan's 'Big Comic Spirits' magazine from 1996 to 1997. The series was later adapted into a critically acclaimed anime series in 2014, directed by Masaaki Yuasa.",
+        "id": 147
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which of these is not a world in the anime \"Buddyfight\"?",
+        "correct_answer": "Ancient Dragon World",
+        "wrong_answers": [
+            "Dragon World",
+            "Star Dragon World",
+            "Darkness Dragon World"
+        ],
+        "explanation": "In the 'Future Card Buddyfight' franchise, players build their decks around a specific 'World'. While Dragon World, Star Dragon World, and Darkness Dragon World are all official worlds in the game, 'Ancient Dragon World' is not. Other official worlds include Magic World, Katana World, and Danger World.",
+        "id": 148
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In Chobits, Hideki found Chii in his apartment.",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. In the beginning of the 'Chobits' manga and anime, the protagonist, Hideki Motosuwa, finds the abandoned 'persocom' (a personal computer with a human-like form) Chii in a pile of trash on his way home from work. He takes her home and activates her, beginning their story together.",
+        "id": 149
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What animation studio produced \"Gurren Lagann\"?",
+        "correct_answer": "Gainax",
+        "wrong_answers": [
+            "Kyoto Animation",
+            "Pierrot",
+            "A-1 Pictures"
+        ],
+        "explanation": "The 2007 mecha anime series 'Tengen Toppa Gurren Lagann' was produced by the legendary studio Gainax. The studio is famous for its influential and often experimental anime, and is also responsible for other iconic series such as 'Neon Genesis Evangelion', 'FLCL', and 'Panty & Stocking with Garterbelt'.",
+        "id": 150
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which animation studio animated \"To Love-Ru\"?",
+        "correct_answer": "Xebec",
+        "wrong_answers": [
+            "Trigger",
+            "Sunrise",
+            "Kyoto Animation"
+        ],
+        "explanation": "The anime adaptation of the 'To Love-Ru' manga series, including the original series, 'Motto To Love Ru', and 'To Love Ru Darkness', were all produced by the animation studio Xebec. The studio was also responsible for other popular series such as 'Shaman King', 'Love Hina', and 'Fafner in the Azure'.",
+        "id": 151
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the anime \"Mr. Osomatsu\", how many brothers does Osomatsu-san have?",
+        "correct_answer": "5",
+        "wrong_answers": [
+            "6",
+            "7",
+            "4"
+        ],
+        "explanation": "The anime series 'Mr. Osomatsu' is a comedy that follows the lives of the Matsuno sextuplets. This means there are six brothers in total: Osomatsu, Karamatsu, Choromatsu, Ichimatsu, Jyushimatsu, and Todomatsu. Therefore, Osomatsu has five brothers.",
+        "id": 152
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which animation studio animated \"Psycho Pass\"?",
+        "correct_answer": "Production I.G",
+        "wrong_answers": [
+            "Kyoto Animation",
+            "Shaft",
+            "Trigger"
+        ],
+        "explanation": "The first season of the cyberpunk thriller anime 'Psycho-Pass' was produced by the renowned animation studio Production I.G. The studio is known for its high production values and has produced many other critically acclaimed and popular anime series, including 'Ghost in the Shell: Stand Alone Complex', 'Haikyuu!!', and 'Vinland Saga'.",
+        "id": 153
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In Haikyuu!!, who is not a member of Karasuno VBC?",
+        "correct_answer": "Shigeru Yahaba",
+        "wrong_answers": [
+            "Tadashi Yamaguchi",
+            "Hisashi Kinoshita",
+            "Kazuhito Narita"
+        ],
+        "explanation": "While Tadashi Yamaguchi, Hisashi Kinoshita, and Kazuhito Narita are all members of the Karasuno High School Volleyball Club, Shigeru Yahaba is a second-year student and setter for their rival team, Aobajohsai High.",
+        "id": 154
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which of these names are not a character of JoJo's Bizarre Adventure?",
+        "correct_answer": "JoJo Kikasu",
+        "wrong_answers": [
+            "Jean-Pierre Polnareff",
+            "George Joestar",
+            "Risotto Nero"
+        ],
+        "explanation": "While 'JoJo's Bizarre Adventure' is known for its large and diverse cast of characters with unique names, 'JoJo Kikasu' is not one of them. Jean-Pierre Polnareff is a major ally in Part 3: Stardust Crusaders, George Joestar is the name of both the father of the first JoJo and the father of the second JoJo, and Risotto Nero is the leader of the assassination team in Part 5: Golden Wind.",
+        "id": 155
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What song plays in the ending credits of the anime \"Ergo Proxy\"?",
+        "correct_answer": "Paranoid Android",
+        "wrong_answers": [
+            "Sadistic Summer",
+            "Bittersweet Symphony",
+            "Mad World"
+        ],
+        "explanation": "The ending theme song for the cyberpunk anime series 'Ergo Proxy' is 'Paranoid Android', a famous and critically acclaimed song by the English rock band Radiohead. The use of a popular Western song as an ending theme is unusual for an anime series and contributes to the show's unique and atmospheric tone.",
+        "id": 156
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In which manga did the \"404 Girl\" from 4chan originate from?",
+        "correct_answer": "Yotsuba&!",
+        "wrong_answers": [
+            "Azumanga Daioh",
+            "Lucky Star",
+            "Clover"
+        ],
+        "explanation": "The '404 Girl' is a popular internet meme that originated on the imageboard website 4chan. The character is Yotsuba Koiwai, the titular protagonist of the manga series 'Yotsuba&!'. The meme was created by editing a panel from the manga to make it appear as if Yotsuba was the '404 Not Found' error page. The character was adopted as a mascot for the site because '4chan' is known as 'Yotsuba Channel' in Japan.",
+        "id": 157
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Who was the first Legendary Pokemon to be defeated by Ash Ketchum in the Pok\u00e9mon anime?",
+        "correct_answer": "Articuno",
+        "wrong_answers": [
+            "Darkrai",
+            "Latios",
+            "Regice"
+        ],
+        "explanation": "In the 'Pok\u00e9mon: Battle Frontier' season of the anime, Ash Ketchum challenges the Frontier Brain Noland to a battle. Noland's partner Pok\u00e9mon is a wild Articuno that he has befriended. In a one-on-one battle, Ash's Charizard manages to defeat the legendary bird, marking the first time that Ash has defeated a Legendary Pok\u00e9mon in a formal battle.",
+        "id": 158
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the 2012 animated film \"Wolf Children\", what are the names of the wolf children?",
+        "correct_answer": "Ame & Yuki",
+        "wrong_answers": [
+            "Hana & Yuki",
+            "Ame & Hana",
+            "Chuck & Anna"
+        ],
+        "explanation": "The 2012 animated film 'Wolf Children' tells the story of a young woman named Hana who falls in love with a werewolf and gives birth to two half-wolf, half-human children. Their daughter is named Yuki, and their son is named Ame. The film follows their lives as they grow up and struggle to find their place in the world.",
+        "id": 159
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the 1988 film \"Akira\", Tetsuo ends up destroying Tokyo.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. In the climax of the 1988 film 'Akira', the character Tetsuo Shima's immense and uncontrollable psychic powers cause him to lose control of his physical form, transforming into a grotesque, ever-expanding mass of flesh that engulfs and destroys much of Neo-Tokyo.",
+        "id": 160
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"Shakugan no Shana\" what was the Shana usually referred as?",
+        "correct_answer": "Flame-Haired Burning-Eyed Hunter",
+        "wrong_answers": [
+            "Flame Haze",
+            "Flame-Haired Burning-Eyed Haze",
+            "Shana"
+        ],
+        "explanation": "In the 'Shakugan no Shana' series, the protagonist, who is initially nameless, is a powerful warrior known by her title, the 'Flame-Haired Burning-Eyed Hunter'. She is a 'Flame Haze', a general term for beings who have made a contract with a Crimson Lord to hunt down the monstrous Denizens. The name 'Shana' is given to her by the male protagonist, Yuji Sakai, after her sentient sword, the Nietono no Shana.",
+        "id": 161
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What is the name of the infamous pachinko machine from \"Kaiji\"?",
+        "correct_answer": "The Bog",
+        "wrong_answers": [
+            "The Devil",
+            "The Undefeated",
+            "The Dragon"
+        ],
+        "explanation": "In the second season of the gambling anime 'Kaiji', the protagonist is forced to challenge a monstrous, heavily rigged pachinko machine known as 'The Bog'. The machine is infamous for having never been beaten, and it is designed to drain the player's money with its unfair mechanisms. Kaiji's battle against The Bog is one of the most iconic and suspenseful arcs in the series.",
+        "id": 162
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which one of these Manga titles was not created by Urasawa Naoki?",
+        "correct_answer": "My Father's Journal",
+        "wrong_answers": [
+            "Billy Bat",
+            "20th Century Boys",
+            "Monster"
+        ],
+        "explanation": "'Billy Bat', '20th Century Boys', and 'Monster' are all critically acclaimed and popular manga series created by the master of suspense, Naoki Urasawa. 'My Father's Journal' is also a highly regarded manga, but it was written and illustrated by a different acclaimed author, Jiro Taniguchi.",
+        "id": 163
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which song was the callsign for Stefan Verdemann's KWFM radio station in Urasawa Naoki's \"Monster\"?",
+        "correct_answer": "Over the Rainbow",
+        "wrong_answers": [
+            "What a Wonderful World",
+            "When You Wish Upon A Star",
+            "Singing In The Rain"
+        ],
+        "explanation": "In Naoki Urasawa's manga series 'Monster', the character Stefan Verdemann runs a small radio station called KWFM. The callsign for his main radio show is the classic song 'Over the Rainbow' from the 1939 film 'The Wizard of Oz'.",
+        "id": 164
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What sport is being played in the Anime Eyeshield 21?",
+        "correct_answer": "American Football",
+        "wrong_answers": [
+            "Baseball",
+            "Football",
+            "Basketball"
+        ],
+        "explanation": "'Eyeshield 21' is a popular sports manga and anime series that revolves around the sport of American football. The story follows Sena Kobayakawa, a timid high school student who, thanks to his incredible running speed, becomes the star running back of the Deimon Devil Bats football team, under the secret identity of 'Eyeshield 21'.",
+        "id": 165
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Who is the author of the manga series \"Astro Boy\"?",
+        "correct_answer": "Osamu Tezuka",
+        "wrong_answers": [
+            "Mitsuteri Yokoyama",
+            "Takao Saito",
+            "Yoshihiro Tatsumi"
+        ],
+        "explanation": "The iconic and influential manga series 'Astro Boy' was created by the legendary Osamu Tezuka, who is widely regarded as the 'God of Manga' and the 'father of anime'. His pioneering work in the 1950s and 60s helped to shape the modern manga and anime industries.",
+        "id": 166
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In the anime Noragami who is one of the main protagonists?",
+        "correct_answer": "Yukine",
+        "wrong_answers": [
+            "Karuha",
+            "Mineha",
+            "Mayu"
+        ],
+        "explanation": "The three main protagonists of the anime series 'Noragami' are the obscure god of calamity, Yato; a human girl named Hiyori Iki, whose soul frequently slips out of her body; and Yukine, a wandering spirit who becomes Yato's 'Regalia', a divine weapon. Karuha, Mineha, and Mayu are other Regalia who serve other gods.",
+        "id": 167
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In Pok\u00e9mon, Ash's Pikachu refuses to go into a pokeball.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. A central and enduring aspect of the relationship between Ash Ketchum and his Pikachu is that Pikachu refuses to travel inside his Pok\u00e9 Ball. From the very first episode of the anime, Pikachu has preferred to travel on Ash's shoulder, a unique trait that sets him apart from most other Pok\u00e9mon in the series.",
+        "id": 168
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "The character Plum from \"No Game No Life\" is of what race?",
+        "correct_answer": "Dhampir",
+        "wrong_answers": [
+            "Fl\u00fcgel",
+            "Imanity",
+            "Seiren"
+        ],
+        "explanation": "In the world of 'No Game No Life', Plum is a member of the Dhampir race, a species that shares characteristics with vampires. The Fl\u00fcgel are an angelic race, Imanity is the human race, and the Seiren are a mermaid-like race.",
+        "id": 169
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Kirito and Asuna are main characters from which anime?",
+        "correct_answer": "Sword Art Online",
+        "wrong_answers": [
+            "One Piece",
+            "Death Note",
+            "Fairy Tail"
+        ],
+        "explanation": "Kirito (Kazuto Kirigaya) and Asuna Yuuki are the two main protagonists of the popular 'trapped in a game' anime series, 'Sword Art Online'. Their relationship and adventures in the virtual world of Aincrad and beyond are the central focus of the story.",
+        "id": 170
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which one of these characters is from \"Legendz : Tale of the Dragon Kings\"?",
+        "correct_answer": "Shiron",
+        "wrong_answers": [
+            "Jack",
+            "Axia",
+            "Drum"
+        ],
+        "explanation": "Shiron is the main Windragon Legendz in the anime and manga series 'Legendz: Tale of the Dragon Kings'. He is a powerful and loyal creature who is partnered with the human protagonist, Shu.",
+        "id": 171
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What was the reason for the banning of episode 35 of the \"Pok\u00e9mon Original Series\" Anime?",
+        "correct_answer": "Gun Usage",
+        "wrong_answers": [
+            "Flashing Images",
+            "Jynx",
+            "Strong Violence"
+        ],
+        "explanation": "Episode 35 of the original Pok\u00e9mon anime, 'The Legend of Dratini', was banned from airing outside of Japan due to the repeated and prominent use of firearms by one of the characters, the Safari Zone warden. The episode features multiple scenes where the warden points a revolver at Ash and his friends, a level of realistic violence that was deemed inappropriate for a children's show in many countries. The 'Flashing Images' reason refers to the infamous 'Denn\u014d Senshi Porygon' episode, while the 'Jynx' controversy was about the character's design, not a specific episode ban.",
+        "id": 172
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In the anime Initial D, how does Takumi Fujiwara describe a drift?",
+        "correct_answer": "'. . . the front tires slide so the car won't face the inside'",
+        "wrong_answers": [
+            "'. . . the wheels lose traction, making the car slide sideways'",
+            "'. . . the car oversteers through a curve, causing it to turn faster'",
+            "'. . . you turn a lot'"
+        ],
+        "explanation": "In the second episode of 'Initial D', when asked what a drift is, the protagonist Takumi Fujiwara gives the counter-intuitive answer, '... the front tires slide so the car won't face the inside'. This is considered an advanced answer by the older, more experienced drivers because it shows a deeper understanding of car control. Rather than simply focusing on the oversteer of the rear wheels, Takumi's answer emphasizes the importance of controlling the understeer of the front wheels to maintain a perfect drift.",
+        "id": 173
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "How many \"JoJos\" that are protagonists are there in the series \"Jojo's Bizarre Adventure\"?",
+        "correct_answer": "8+",
+        "wrong_answers": [
+            "6+",
+            "4+",
+            "5+"
+        ],
+        "explanation": "As of 2024, there are nine parts to the 'JoJo's Bizarre Adventure' manga, each with a different protagonist who can be referred to as 'JoJo'. The protagonists are: Jonathan Joestar, Joseph Joestar, Jotaro Kujo, Josuke Higashikata (from Part 4), Giorno Giovanna, Jolyne Cujoh, Johnny Joestar, Josuke Higashikata (from Part 8), and Jodio Joestar. Therefore, the correct answer is 8+.",
+        "id": 174
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Who is One Punch Man voiced by in the Japanese version.",
+        "correct_answer": "Makoto Furukawa",
+        "wrong_answers": [
+            "Zach Aguilar",
+            "Kaito Ishikawa",
+            "Max Mittelman "
+        ],
+        "explanation": "In the Japanese version of the 'One-Punch Man' anime, the protagonist, Saitama, is voiced by Makoto Furukawa. In the English dub of the series, Saitama is voiced by Max Mittelman.",
+        "id": 175
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"One Piece\", who confirms the existence of the legendary treasure, One Piece?",
+        "correct_answer": "Edward \"Whitebeard\" Newgate",
+        "wrong_answers": [
+            "Former Marine Fleet Admiral Sengoku",
+            "Pirate King Gol D Roger",
+            "Silvers Rayleigh"
+        ],
+        "explanation": "While the Pirate King, Gol D. Roger, started the Great Pirate Era with his final words, it was the legendary pirate Edward 'Whitebeard' Newgate who, with his dying breath at the Battle of Marineford, confirmed to the entire world that the One Piece is real. This declaration reignited the ambitions of pirates everywhere and plunged the world into a new age of piracy.",
+        "id": 176
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Which anime heavily features music from the genre \"Eurobeat\"?",
+        "correct_answer": "Initial D",
+        "wrong_answers": [
+            "Wangan Midnight",
+            "Kino no Tabi",
+            "Cowboy Bebop"
+        ],
+        "explanation": "The street racing anime 'Initial D' is famous for its high-energy Eurobeat soundtrack, which plays during the intense mountain pass races. The music has become so iconic that it is inseparable from the series itself and is often credited with popularizing the Eurobeat genre outside of Japan.",
+        "id": 177
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Kiznaiver is an adaptation of a manga.",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. 'Kiznaiver' is an original anime series created and produced by Studio Trigger. It is not an adaptation of a manga. The series was written by Mari Okada and directed by Hiroshi Kobayashi.",
+        "id": 178
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"Future Diary\", what is the name of Yuno Gasai's Phone Diary?",
+        "correct_answer": "Yukiteru Diary",
+        "wrong_answers": [
+            "Murder Diary",
+            "Escape Diary ",
+            "Justice Diary "
+        ],
+        "explanation": "In 'Future Diary', Yuno Gasai's Future Diary is known as the 'Yukiteru Diary'. Unlike other diaries which predict the user's own future, Yuno's diary exclusively tracks the future of the series' protagonist, Yukiteru Amano, updating every ten minutes. This reflects her obsessive and all-consuming love for him.",
+        "id": 179
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "In \"The Melancholy of Haruhi Suzumiya\" series, the SOS Brigade club leader is unknowingly treated as a(n) __ by her peers.",
+        "correct_answer": "God",
+        "wrong_answers": [
+            "Alien",
+            "Time Traveler",
+            "Esper"
+        ],
+        "explanation": "In 'The Melancholy of Haruhi Suzumiya', the titular character, Haruhi, is an energetic and eccentric high school student who is unknowingly a god-like being with the power to alter, create, and destroy reality based on her emotions and desires. The other members of her club, the SOS Brigade, are an alien, a time traveler, and an esper, all sent by their respective organizations to monitor her and prevent her from accidentally destroying the universe.",
+        "id": 180
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "In \"One Piece\", who is the girl who overcame her enslaved past and became an agent of an army to fight the corrupt government?",
+        "correct_answer": "Koala",
+        "wrong_answers": [
+            "Boa Hancock",
+            "Nico Robin",
+            "Emporio Ivankov "
+        ],
+        "explanation": "Koala is a character in 'One Piece' who was a slave of the World Nobles as a child. She was freed by the Sun Pirates, led by Fisher Tiger, and eventually joined the Revolutionary Army, where she became a skilled practitioner of Fish-Man Karate. Boa Hancock was also a slave of the World Nobles, but she became the empress of Amazon Lily. Nico Robin was a fugitive for most of her life, but not a slave. Emporio Ivankov is a commander in the Revolutionary Army, but has no known history of being a slave.",
+        "id": 181
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Which part from the JoJo's Bizarre Adventure manga is about a horse race across America?",
+        "correct_answer": "Part 7: Steel Ball Run",
+        "wrong_answers": [
+            "Part 6: Stone Ocean",
+            "Part 3: Stardust Crusaders",
+            "Part 5: Golden Wind"
+        ],
+        "explanation": "Part 7 of 'JoJo's Bizarre Adventure', titled 'Steel Ball Run', is set in an alternate timeline from the previous parts and follows the story of a trans-American horse race in the year 1890. The protagonists, Johnny Joestar and Gyro Zeppeli, compete in the race while also uncovering a conspiracy involving the President of the United States.",
+        "id": 182
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "No Game No Life first aired in 2014.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. The anime adaptation of the 'No Game No Life' light novel series first aired in Japan on April 9, 2014. The series was produced by Madhouse and ran for 12 episodes.",
+        "id": 183
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "Which of the following films was NOT directed by Hayao Miyazaki?",
+        "correct_answer": "Wolf Children",
+        "wrong_answers": [
+            "Princess Mononoke",
+            "Spirited Away",
+            "Kiki's Delivery Service"
+        ],
+        "explanation": "'Princess Mononoke', 'Spirited Away', and 'Kiki's Delivery Service' are all classic and critically acclaimed films written and directed by the legendary Hayao Miyazaki and animated by Studio Ghibli. 'Wolf Children' is also a highly acclaimed animated film, but it was directed by another celebrated director, Mamoru Hosoda, and animated by his own studio, Studio Chizu.",
+        "id": 184
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What year did the anime \"Himouto! Umaru-chan\" air?",
+        "correct_answer": "2015",
+        "wrong_answers": [
+            "2014",
+            "2012",
+            "2013"
+        ],
+        "explanation": "The anime adaptation of the manga series 'Himouto! Umaru-chan' first aired in Japan in July 2015. The series was produced by the animation studio Doga Kobo.",
+        "id": 185
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "What is the name of the final villain in the manga series \"Bleach\"?",
+        "correct_answer": "Yhwach",
+        "wrong_answers": [
+            "Juha Bach",
+            "Yuhabah",
+            "Juhabach"
+        ],
+        "explanation": "The final antagonist of the 'Bleach' manga series is Yhwach, the emperor of the Wandenreich and the progenitor of the Quincy. His goal is to destroy the Soul King and merge the Human World, Soul Society, and Hueco Mundo into a single world without death. The other names are common mistranslations or romanizations of his name.",
+        "id": 186
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What's the English Dub Name of \"Smile Precure\"?",
+        "correct_answer": "Glitter Force",
+        "wrong_answers": [
+            "Sparkle Girls",
+            "Fairy Tale Patrol",
+            "Power Princesses"
+        ],
+        "explanation": "The English-language adaptation of the magical girl anime 'Smile Precure!' was heavily localized by Saban Brands and released on Netflix under the title 'Glitter Force'. The dub featured significant changes to character names, cultural references, and even the number of episodes.",
+        "id": 187
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"To Love-Ru\", who is the first to hear of Yami's past from her?",
+        "correct_answer": "Rito",
+        "wrong_answers": [
+            "Mikan",
+            "Lala",
+            "Haruna"
+        ],
+        "explanation": "In the 'To Love-Ru' series, the stoic and mysterious assassin Golden Darkness (Yami) slowly opens up to the main character, Rito Yuuki. He is the first person she trusts enough to reveal details about her past as a living weapon, a significant moment in the development of their close and complex relationship.",
+        "id": 188
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In Dragon Ball Z, who was the first character to go Super Saiyan 2?",
+        "correct_answer": "Gohan",
+        "wrong_answers": [
+            "Goku",
+            "Vegeta",
+            "Trunks"
+        ],
+        "explanation": "In a pivotal and iconic moment in the 'Cell Saga' of 'Dragon Ball Z', Gohan becomes the first character to achieve the Super Saiyan 2 transformation. After witnessing the death of the peaceful android 16 at the hands of the villain Cell, Gohan's rage explodes, unlocking a new level of power that allows him to easily overpower and defeat Cell.",
+        "id": 189
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "How does the character Dragowizard, Qinus Axia's from the anime \"Buddyfight\" differ between the Japanese and English dubs?",
+        "correct_answer": "Different Gender",
+        "wrong_answers": [
+            "Different Body Proportions",
+            "Different Backstory",
+            "Different Appearance"
+        ],
+        "explanation": "In the original Japanese version of the 'Future Card Buddyfight' anime, the character Dragowizard, Qinus Axia is male. However, in the English dub of the series, the character's gender was changed to female. This type of change is not uncommon in the localization of anime for Western audiences.",
+        "id": 190
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In \"To Love-Ru: Darkness\", which of the girls attempt making a harem for Rito Yuuki?",
+        "correct_answer": "Momo Deviluke",
+        "wrong_answers": [
+            "Yami (Golden Darkness)",
+            "Haruna Sairenji",
+            "Mea Kurosaki"
+        ],
+        "explanation": "The central plot of 'To Love-Ru: Darkness' revolves around Momo Belia Deviluke's 'Harem Plan'. Being in love with Rito Yuuki but not wanting to interfere with her sister Lala's relationship with him, Momo decides to create a harem for Rito so that she and all the other girls who have feelings for him can be with him. She acts as a matchmaker and often puts Rito in compromising situations to advance her plan.",
+        "id": 191
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "medium",
+        "question": "In the \"Re:Zero\" manga series, which of the following Sin Archbishops eats Rem's existence?",
+        "correct_answer": "Ley Batenkaitos",
+        "wrong_answers": [
+            "Roy Alphard",
+            "Petelgeuse Romanee-Conti",
+            "Louis Arneb"
+        ],
+        "explanation": "In the world of 'Re:Zero', the Sin Archbishop of Gluttony, Ley Batenkaitos, has the ability to eat a person's name and memories, effectively erasing them from the world and the memories of everyone who knew them. At the end of the first season of the anime, he uses this power on Rem, putting her in a comatose state and erasing her from everyone's memory except for the protagonist, Subaru Natsuki, who is immune to the effects of the Archbishops' powers due to his 'Return by Death' ability.",
+        "id": 192
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "hard",
+        "question": "Which of these anime have over 7,500 episodes?",
+        "correct_answer": "Sazae-san",
+        "wrong_answers": [
+            "Naruto",
+            "One Piece",
+            "Chibi Maruko-chan"
+        ],
+        "explanation": "'Sazae-san' is the longest-running animated television series in the world, holding the Guinness World Record. First airing in 1969, it has broadcast over 2,800 weekly episodes, each containing three short segments, bringing the total number of individual stories to well over 7,500. For comparison, 'One Piece' has over 1,100 episodes, 'Chibi Maruko-chan' has over 1,500, and the two 'Naruto' series have a combined total of 720 episodes.",
+        "id": 193
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "Clefairy was intended to be Ash's starting Pok\u00e9mon in the pilot episode of the cartoon.",
+        "correct_answer": "True",
+        "wrong_answers": [
+            "False"
+        ],
+        "explanation": "True. In the original planning stages of the Pok\u00e9mon anime, the creators intended for the protagonist, Ash Ketchum, to have a Clefairy as his starter Pok\u00e9mon. However, it was later decided that Pikachu would be a more appealing choice for a wider audience, and the change was made before the first episode aired.",
+        "id": 194
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "What is the name of Funny Valentine's stand in Jojo's Bizarre Adventure Part 7, Steel Ball Run?",
+        "correct_answer": "Dirty Deeds Done Dirt Cheap",
+        "wrong_answers": [
+            "Filthy Acts Done For A Reasonable Price",
+            "Civil War",
+            "God Bless The USA"
+        ],
+        "explanation": "The Stand of Funny Valentine, the main antagonist of 'JoJo's Bizarre Adventure: Steel Ball Run', is named 'Dirty Deeds Done Dirt Cheap', a reference to the song by the rock band AC/DC. Due to copyright concerns, the name is often localized in video games and other media as 'Filthy Acts at a Reasonable Price'.",
+        "id": 195
+    },
+    {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "difficulty": "easy",
+        "question": "The anime \"Lucky Star\" follows the story of one girl who is unaware she is God.",
+        "correct_answer": "False",
+        "wrong_answers": [
+            "True"
+        ],
+        "explanation": "False. This question is describing the plot of a different anime, 'The Melancholy of Haruhi Suzumiya', in which the titular character is an unknowing god-like being. 'Lucky Star' is a slice-of-life comedy series that follows the daily lives of a group of high school girls, with a particular focus on the otaku protagonist, Konata Izumi.",
+        "id": 196
+    }
+]
