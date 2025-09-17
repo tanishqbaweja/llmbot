@@ -1740,7 +1740,7 @@ def get_random_question(user_id, question_type):
 
 class TriviaView(discord.ui.View):
     def __init__(self, question_data, user_id, server_id, question_type):
-        super().__init__(timeout=20)
+        super().__init__(timeout=30)
         self.question_data = question_data
         self.user_id = user_id
         self.server_id = server_id
@@ -1882,7 +1882,7 @@ async def trivia_command(ctx):
     if question.get('difficulty'):
         embed.add_field(name="Difficulty", value=question['difficulty'].title(), inline=True)
     
-    embed.set_footer(text="⏰ You have 20 seconds to answer!")
+    embed.set_footer(text="⏰ You have 30 seconds to answer!")
     
     # Create view with buttons
     view = TriviaView(question, user_id, server_id, 'trivia')
@@ -1922,7 +1922,7 @@ async def genshin_command(ctx):
     if question.get('difficulty'):
         embed.add_field(name="Difficulty", value=question['difficulty'].title(), inline=True)
     
-    embed.set_footer(text="⏰ You have 20 seconds to answer!")
+    embed.set_footer(text="⏰ You have 30 seconds to answer!")
     
     # Create view with buttons
     view = TriviaView(question, user_id, server_id, 'genshin')
