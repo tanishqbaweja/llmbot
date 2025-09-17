@@ -1,0 +1,2602 @@
+[
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "In what desolate, cold region is Aino's workshop located?",
+        "correct_answer": "Nod-Krai",
+        "wrong_answers": [
+            "Dragonspine",
+            "The Chasm",
+            "Stormbearer Mountains"
+        ],
+        "explanation": "Located at the border, Nod-Krai is neither a land of abundance nor a place of joy. All year round, the cold wind howls and lashes the lands.",
+        "id": "GEN2-0001"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "What is the name of the energy cannon Aino built to defend against the Wild Hunt?",
+        "correct_answer": "Boom and Blast Kuuvahki Energy Cannon",
+        "wrong_answers": [
+            "The Speranza's Hope",
+            "The Clink-Clank Cannon",
+            "The Wildfire Eradicator"
+        ],
+        "explanation": "Aino built the massive Boom and Blast Kuuvahki Energy Cannon that defends everyone from the Wild Hunt's invasions.",
+        "id": "GEN2-0002"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What did Katya first give Aino to eat when she took her in?",
+        "correct_answer": "A bowl of warm, sweet soup",
+        "wrong_answers": [
+            "A Midsommar Torte",
+            "A piece of bread",
+            "A hot cup of tea"
+        ],
+        "explanation": "Katya remembered pulling the timid girl... into the house and handing her a bowl of warm, sweet soup.",
+        "id": "GEN2-0003"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What was the name of the workshop where Aino first met her friend Lyulka?",
+        "correct_answer": "Rossum Workshop",
+        "wrong_answers": [
+            "Nuts and Bolts",
+            "Clink-Clank Krumkake Craftshop",
+            "Papa Wrench's Wonders"
+        ],
+        "explanation": "The noise of clinking and clanking from the 'Rossum Workshop' workshop was the song she came to be most familiar with.",
+        "id": "GEN2-0004"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What was Lyulka's family's workshop called?",
+        "correct_answer": "Nuts and Bolts",
+        "wrong_answers": [
+            "Rossum Workshop",
+            "The Speranza",
+            "The Conch Shack"
+        ],
+        "explanation": "This is how she met her lifelong best friend — Lyulka, the daughter of the owner of the 'Nuts and Bolts.'",
+        "id": "GEN2-0005"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "What kind of stories did the Snezhnayan mechanic 'Papa Wrench' tell the children?",
+        "correct_answer": "Snezhnayan fairy tales",
+        "wrong_answers": [
+            "War stories",
+            "Adventure novels",
+            "Mechanical textbooks"
+        ],
+        "explanation": "Papa Wrench... decided to stay for a while to regale the children with Snezhnayan fairy tales.",
+        "id": "GEN2-0006"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What happened to the alarm clocks Aino fixed for the Conch Gang?",
+        "correct_answer": "They grew wings and flew around the room",
+        "wrong_answers": [
+            "They sang songs",
+            "They told jokes",
+            "They exploded with confetti"
+        ],
+        "explanation": "The Conch Gang's broken alarm clocks were fixed, but suddenly grew wings and would fly around their rooms in the mornings.",
+        "id": "GEN2-0007"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What did the trash can Aino repaired for the back kitchen do after being fed?",
+        "correct_answer": "It would let out a playful burp",
+        "wrong_answers": [
+            "It sorted the garbage automatically",
+            "It played a happy tune",
+            "It dispensed a small treat"
+        ],
+        "explanation": "When fed with garbage, it would chew up everything contentedly, then let loose a playful burp of satisfaction.",
+        "id": "GEN2-0008"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What did Aino use the screw from Papa Wrench for?",
+        "correct_answer": "A hairpin",
+        "wrong_answers": [
+            "A part for Ineffa",
+            "A necklace",
+            "A key to her workshop"
+        ],
+        "explanation": "She threaded the screw into her hair. From then on, this screw served both as an iron hairpin and a guiding light.",
+        "id": "GEN2-0009"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "Where did Aino decide to set up her own workshop?",
+        "correct_answer": "In a mechanical boneyard west of Nasha Town",
+        "wrong_answers": [
+            "In the old Rossum Workshop",
+            "In a cave on the tundra",
+            "In a special room at the Speranza"
+        ],
+        "explanation": "Aino had heard... if one were to leave Nasha Town and head west, there was a place piled high with abandoned metal scrap... a mechanical boneyard.",
+        "id": "GEN2-0010"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What sweet did Aino have Ineffa purchase from Katya at the Speranza?",
+        "correct_answer": "Midsommar Tortes",
+        "wrong_answers": [
+            "Krumkakes",
+            "Sweet Madame",
+            "Sugar-Frosted Slime"
+        ],
+        "explanation": "First, come here, say hello to Aunty Katya, then ask for two Midsommar Tortes.",
+        "id": "GEN2-0011"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "How does Aino define 'love' to her creation, Ineffa?",
+        "correct_answer": "Something you can't measure with Mora",
+        "wrong_answers": [
+            "A complex algorithm",
+            "A chemical reaction",
+            "An unnecessary emotion"
+        ],
+        "explanation": "Yeah! It's something you can't measure with Mora — it's the care we have for each other...",
+        "id": "GEN2-0012"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "What was the first robot Aino ever built, which she kept as her 'first family'?",
+        "correct_answer": "A small robot that could only make jingling sounds",
+        "wrong_answers": [
+            "A miniature version of Ineffa",
+            "A mechanical bird",
+            "A puppy-like floor sweeper"
+        ],
+        "explanation": "It wasn't equipped with any intelligence modules and could only make jingling sounds when it was shaken. Its sole purpose was companionship.",
+        "id": "GEN2-0013"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "What idea did Aino have while creating Ineffa that led to her receiving her Vision?",
+        "correct_answer": "To give her a learning module",
+        "wrong_answers": [
+            "To give her a powerful weapon",
+            "To make her taller than a human",
+            "To give her the ability to fly"
+        ],
+        "explanation": "'Maybe I should give her a learning module. Family members need to learn and grow together...' This idea suddenly popped into Aino's head.",
+        "id": "GEN2-0014"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What did Aino dream about right before discovering her Vision?",
+        "correct_answer": "Ineffa waking her up and offering her krumkakes",
+        "wrong_answers": [
+            "Papa Wrench returning to visit",
+            "Winning a mechanics competition",
+            "Flying through the sky with her inventions"
+        ],
+        "explanation": "Hearing someone calling her to wake up, Aino rubbed her aching head... 'Time to wake up, I have made your favorite krumkakes for breakfast.'",
+        "id": "GEN2-0015"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "According to Aino, ordering from her is like buying what, which might fire a scary doll at you?",
+        "correct_answer": "A box of chocolates",
+        "wrong_answers": [
+            "A lottery ticket",
+            "A mystery box",
+            "A gacha machine"
+        ],
+        "explanation": "Placing an order with Aino is like buying a box of chocolates... except that the box has a chance to fire a scary doll at you when you open it.",
+        "id": "GEN2-0016"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "What physical condition were Aino's hands in when Katya first met her?",
+        "correct_answer": "Swollen, purple, and cracked from the cold",
+        "wrong_answers": [
+            "Covered in oil and grease",
+            "Perfectly clean and delicate",
+            "Bandaged from a recent injury"
+        ],
+        "explanation": "Her hands were swollen and purple from the cold, with cracks in her skin more striking than the scarlet broth.",
+        "id": "GEN2-0017"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "easy",
+        "question": "Who was the only member of the Conch Gang who preferred to be alone?",
+        "correct_answer": "Aino",
+        "wrong_answers": [
+            "Katya",
+            "Lyulka",
+            "All of them were social"
+        ],
+        "explanation": "The other children roamed the tundra forests in packs... but little Aino was the only one who preferred to be alone.",
+        "id": "GEN2-0018"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "hard",
+        "question": "What two important things did Papa Wrench tell Aino before he left?",
+        "correct_answer": "To never underestimate her talents or put down her tools",
+        "wrong_answers": [
+            "To always be kind and to share her inventions",
+            "To study hard and to obey her elders",
+            "To leave Nod-Krai and to find her parents"
+        ],
+        "explanation": "He placed a screw in Aino's palm and told the girl two important things: To never underestimate her talents, nor to ever put down her tools.",
+        "id": "GEN2-0019"
+    },
+    {
+        "category": "Aino",
+        "difficulty": "medium",
+        "question": "After leaving the Conch Gang, who offered to set up a workshop with Aino?",
+        "correct_answer": "Lyulka",
+        "wrong_answers": [
+            "Katya",
+            "Papa Wrench",
+            "No one"
+        ],
+        "explanation": "Lyulka had reached out to her, asking if she would like to move in with her, and perhaps even set up a workshop together.",
+        "id": "GEN2-0020"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "Before Albedo's arrival, what did the average citizen of Mondstadt think alchemy was only good for?",
+        "correct_answer": "Putting broken odds and ends together",
+        "wrong_answers": [
+            "Creating dangerous potions",
+            "Turning lead into gold",
+            "Communicating with spirits"
+        ],
+        "explanation": "The few commonly known alchemy techniques of today are but enough to put some broken odds and ends together, saving you the money you would have otherwise spent on glue.",
+        "id": "GEN2-0021"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "easy",
+        "question": "Why does Albedo prefer to keep a certain distance in his relationships?",
+        "correct_answer": "He believes maintaining them requires too much energy",
+        "wrong_answers": [
+            "He is shy",
+            "He dislikes people",
+            "His master told him to"
+        ],
+        "explanation": "He is, however, of the persuasion that it requires more energy to maintain relationships established on excessive enthusiasm.",
+        "id": "GEN2-0022"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "Who was the recipient of the recommendation letter from Albedo's master?",
+        "correct_answer": "Alice",
+        "wrong_answers": [
+            "Jean",
+            "Lisa",
+            "Varka"
+        ],
+        "explanation": "The recipient of the letter was the famed travel writer Alice, an old friend of Albedo's master, Rhinedottir.",
+        "id": "GEN2-0023"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "Who does Albedo express disappointment in for choosing to remain a mere Librarian despite their talent?",
+        "correct_answer": "Lisa",
+        "wrong_answers": [
+            "Sucrose",
+            "Timaeus",
+            "Jean"
+        ],
+        "explanation": "Yet he cannot help but feel sincere disappointment that Lisa, for all her great talents, has chosen to remain a mere Librarian.",
+        "id": "GEN2-0024"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "According to Albedo, what percentage of his energy is required for his work with the Knights of Favonius?",
+        "correct_answer": "Five percent",
+        "wrong_answers": [
+            "Ten percent",
+            "Fifty percent",
+            "One hundred percent"
+        ],
+        "explanation": "The work of the Knights is actually quite easy for Albedo — requiring only five percent of his energy.",
+        "id": "GEN2-0025"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "What task takes up most of Albedo's remaining energy after his official duties?",
+        "correct_answer": "Remedying Klee's disasters",
+        "wrong_answers": [
+            "His personal experiments",
+            "Teaching Sucrose and Timaeus",
+            "Gathering rare materials"
+        ],
+        "explanation": "From that day forth, remedying Klee's disasters would come to take up most of Albedo's remaining energy...",
+        "id": "GEN2-0026"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "easy",
+        "question": "Who is the only 'kin' that Albedo remembers?",
+        "correct_answer": "His master, Rhinedottir",
+        "wrong_answers": [
+            "Alice",
+            "Klee",
+            "He has no kin"
+        ],
+        "explanation": "For Albedo, she is his only kin.",
+        "id": "GEN2-0027"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "What happened when Albedo's master demonstrated her alchemical technique to him?",
+        "correct_answer": "A huge life form burst from its culture tank",
+        "wrong_answers": [
+            "A flower bloomed from ash",
+            "She created a perfect copy of herself",
+            "She disappeared in a flash of light"
+        ],
+        "explanation": "She demonstrated her technique before him as a huge life form burst from its culture tank in a shower of shattered fragments.",
+        "id": "GEN2-0028"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "What was the title of the classical text Albedo's master left him?",
+        "correct_answer": "Opus Magnum",
+        "wrong_answers": [
+            "The Heart of Naberius",
+            "The Art of Khemia",
+            "A Flower's Secret"
+        ],
+        "explanation": "The classical text was one of the last extant manuscripts of the Opus Magnum from his master's collection.",
+        "id": "GEN2-0029"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "What art of creation, originating in Khaenri'ah, focuses on creating life?",
+        "correct_answer": "The Art of Khemia",
+        "wrong_answers": [
+            "The Opus Magnum",
+            "Bio-Alchemy",
+            "The Art of Mondstadt"
+        ],
+        "explanation": "This art of creation was known as 'The Art of Khemia.' Its lineage can be traced back to the nation of Khaenri'ah.",
+        "id": "GEN2-0030"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "According to Albedo's master's notes, what is the alchemical stage that comes after 'soil'?",
+        "correct_answer": "Chalk",
+        "wrong_answers": [
+            "Ash",
+            "Dust",
+            "Gold"
+        ],
+        "explanation": "The next stage after 'soil' is 'chalk,' which was also something his master had mentioned.",
+        "id": "GEN2-0031"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "What did Albedo's master say 'chalk' was used to make?",
+        "correct_answer": "Primordial man",
+        "wrong_answers": [
+            "The Philosopher's Stone",
+            "Homunculi",
+            "The universe"
+        ],
+        "explanation": "'Chalk is the spotless soil, and was used to make primordial man.'",
+        "id": "GEN2-0032"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "How did Albedo initially start developing his artistic skills?",
+        "correct_answer": "By illustrating his alchemical notes",
+        "wrong_answers": [
+            "He was taught by Alice",
+            "He took classes in Mondstadt",
+            "He copied famous paintings"
+        ],
+        "explanation": "At first, he would simply illustrate his notes with basic sketches. But he soon noticed that the process of rendering things in great detail helped him to intimately understand their physical makeup.",
+        "id": "GEN2-0033"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "What was Albedo's reaction to the illustrations from Inazuma?",
+        "correct_answer": "He was amazed by their narrative power",
+        "wrong_answers": [
+            "He thought they were too simple",
+            "He was not impressed",
+            "He found them difficult to understand"
+        ],
+        "explanation": "How was it that drawings of such generality could possess such narrative power? Amazed, he decided to give it a go himself.",
+        "id": "GEN2-0034"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "What was the negative review given to the book 'A Legend of Sword' that Albedo illustrated?",
+        "correct_answer": "It was called 'a dictionary with divine illustrations'",
+        "wrong_answers": [
+            "The story was boring",
+            "The art style was inconsistent",
+            "It was too expensive"
+        ],
+        "explanation": "Unfortunately, it received lukewarm reviews, being lambasted as 'a dictionary with divine illustrations.'",
+        "id": "GEN2-0035"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "easy",
+        "question": "What was Albedo's immediate reaction upon receiving his Vision?",
+        "correct_answer": "He gave it a single glance and continued working",
+        "wrong_answers": [
+            "He was overjoyed",
+            "He was confused",
+            "He tried to dissect it"
+        ],
+        "explanation": "When he received it, he gave it a single glance before continuing to engross himself in his work. He barely felt any wave of emotion at all.",
+        "id": "GEN2-0036"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "medium",
+        "question": "What does Albedo consider his Vision to be?",
+        "correct_answer": "A tool for convenient research",
+        "wrong_answers": [
+            "A gift from the gods",
+            "A sign of his genius",
+            "A dangerous burden"
+        ],
+        "explanation": "As far as he is concerned, his Vision is merely a tool with which he can more conveniently conduct his research.",
+        "id": "GEN2-0037"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "easy",
+        "question": "What brings Albedo true joy?",
+        "correct_answer": "Turning the unknown into the known",
+        "wrong_answers": [
+            "Praise from his peers",
+            "Spending time with Klee",
+            "Creating beautiful art"
+        ],
+        "explanation": "What truly sparks joy within him is turning the unknown into the known.",
+        "id": "GEN2-0038"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "In Albedo's own words, what is the universe?",
+        "correct_answer": "The dark essence of the true starry sky",
+        "wrong_answers": [
+            "Heaven reversed",
+            "A dream lost to time",
+            "The basis of all life"
+        ],
+        "explanation": "The universe is the dark essence of the true starry sky, and the earth is the accumulated memories of time and lives.",
+        "id": "GEN2-0039"
+    },
+    {
+        "category": "Albedo",
+        "difficulty": "hard",
+        "question": "What does Albedo musingly think his master's 'final assignment' might actually mean?",
+        "correct_answer": "The pursuit of a happy life",
+        "wrong_answers": [
+            "To destroy the world",
+            "To find his master again",
+            "To surpass his master's abilities"
+        ],
+        "explanation": "'When parents speak to their children about 'the meaning of this world'... surely they just mean the pursuit of a happy life?' From time to time, Albedo finds himself musing on this sentiment.",
+        "id": "GEN2-0040"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "According to Alhaitham, when is the only time he will give comments during a meeting?",
+        "correct_answer": "When someone has come up with something offensively foolish",
+        "wrong_answers": [
+            "When he is asked directly",
+            "When the topic interests him",
+            "When it affects his personal interests"
+        ],
+        "explanation": "He does make comments, however, when someone has come up with something offensively foolish — and one should expect these comments to be more blunt than necessary.",
+        "id": "GEN2-0041"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "hard",
+        "question": "What does Alhaitham believe will happen to those who cannot harness their desire for knowledge?",
+        "correct_answer": "They will be destroyed by it",
+        "wrong_answers": [
+            "They will never find the truth",
+            "They will become slaves to the Akasha",
+            "They will lose their minds"
+        ],
+        "explanation": "Whoever is unable to harness their desire for knowledge will be destroyed by it. Such is the rule of the Nation of Wisdom.",
+        "id": "GEN2-0042"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "What was the main personal benefit Alhaitham gained from being the Acting Grand Sage?",
+        "correct_answer": "He kept the salary and completed personal research projects",
+        "wrong_answers": [
+            "He gained more power and influence",
+            "He earned the respect of the other Sages",
+            "He got to work closely with the Dendro Archon"
+        ],
+        "explanation": "If he did manage to gain anything from it at all, it was the financial benefits: His salary stayed the same after his resignation, not to mention the several high-quality research projects that he was able to complete on his own.",
+        "id": "GEN2-0043"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "easy",
+        "question": "How does Alhaitham typically greet the other heroes of the archon-saving operation?",
+        "correct_answer": "With a nod or two",
+        "wrong_answers": [
+            "With a warm smile",
+            "With a formal bow",
+            "He ignores them"
+        ],
+        "explanation": "He has more or less befriended the other participants... they have gotten close to the point where Alhaitham might greet these people with a nod or two when he sees them.",
+        "id": "GEN2-0044"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "hard",
+        "question": "What trick did Alhaitham know that allowed him to avoid the effects of the Divine Knowledge Capsule?",
+        "correct_answer": "How to alter the status signal of the Akasha",
+        "wrong_answers": [
+            "He had a special resistance to it",
+            "He knew how to reverse its power",
+            "He created a fake capsule"
+        ],
+        "explanation": "As a scholar lucky enough to have read the Akasha's system manual, he had studied the headset and Canned Knowledge, such that he knew how to alter the status signal of the Akasha.",
+        "id": "GEN2-0045"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "hard",
+        "question": "What does Alhaitham believe is the hidden meaning when ordinary people call someone a 'genius'?",
+        "correct_answer": "It's an excuse to alienate them and justify their own underachievement",
+        "wrong_answers": [
+            "It's a genuine compliment",
+            "It's a way to ask for favors",
+            "It's a sign of jealousy"
+        ],
+        "explanation": "'They are successful because they are different' — such is the typical excuse favored by underachievers. These ignorant notions mean nothing to Alhaitham.",
+        "id": "GEN2-0046"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "How many joint research projects has Alhaitham participated in?",
+        "correct_answer": "Only one",
+        "wrong_answers": [
+            "None",
+            "Two",
+            "Several"
+        ],
+        "explanation": "As a result, he has only participated in one joint research project. Despite its eventual success, the project resulted in a huge quarrel and a parting of ways.",
+        "id": "GEN2-0047"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "hard",
+        "question": "Why did Kaveh end up living with Alhaitham?",
+        "correct_answer": "He went bankrupt and had previously forfeited his right to the house",
+        "wrong_answers": [
+            "They reconciled their differences",
+            "Alhaitham took pity on him",
+            "Kaveh tricked him into it"
+        ],
+        "explanation": "When next they met, Kaveh had gone bankrupt... Kaveh has previously forfeited the right to his half of this house.",
+        "id": "GEN2-0048"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "What were the professions of Alhaitham's parents?",
+        "correct_answer": "A Haravatat mentor and a Vahumana scholar",
+        "wrong_answers": [
+            "Two Kshahrewar architects",
+            "A scribe and a librarian",
+            "An adventurer and a doctor"
+        ],
+        "explanation": "His father being a mentor in Haravatat and his mother, a renowned scholar in Vahumana.",
+        "id": "GEN2-0049"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "Why did Alhaitham's grandmother allow him to be self-taught as a child?",
+        "correct_answer": "He reported that the Akademiya was boring",
+        "wrong_answers": [
+            "He was too intelligent for his classes",
+            "He was too sickly to attend",
+            "She wanted to teach him herself"
+        ],
+        "explanation": "It only took half a day in the Akademiya for little Alhaitham to report this back to his grandmother: Everyone he met there was boring and he preferred reading alone...",
+        "id": "GEN2-0050"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "Why does Alhaitham prefer reading physical books to using the Akasha?",
+        "correct_answer": "It allows him to analyze, rectify, and question information",
+        "wrong_answers": [
+            "He dislikes technology",
+            "The books were his grandmother's",
+            "The Akasha gives him headaches"
+        ],
+        "explanation": "It was from reading that he acquired the ability to learn, analyze, and even rectify, and ultimately, he has learned to question.",
+        "id": "GEN2-0051"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "hard",
+        "question": "What did Alhaitham's grandmother advise him to do with his wisdom?",
+        "correct_answer": "Discern his own path and understand that vain pursuits are dust",
+        "wrong_answers": [
+            "Become the Grand Sage",
+            "Share it with everyone",
+            "Keep it a secret"
+        ],
+        "explanation": "You must understand that vain pursuits are but dust, and that you must discern your path with the greatest of wisdom.",
+        "id": "GEN2-0052"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "easy",
+        "question": "What three items does Alhaitham keep in his belt pouch?",
+        "correct_answer": "Keys, a book, and a portable music player",
+        "wrong_answers": [
+            "Mora, a map, and a compass",
+            "A weapon, a potion, and a snack",
+            "A pen, a notebook, and a ruler"
+        ],
+        "explanation": "There are only a few things in this pouch: Keys, some recent read of Alhaitham's, and a portable music player...",
+        "id": "GEN2-0053"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "hard",
+        "question": "Where did Alhaitham's Vision appear?",
+        "correct_answer": "Underneath a book he was reading on a research trip",
+        "wrong_answers": [
+            "In his hand during a debate",
+            "On his desk at the Akademiya",
+            "In a treasure chest he found"
+        ],
+        "explanation": "Alhaitham was out on a research trip when he was given the Vision... he realized that an intricate ornament had been underneath the tome this whole time.",
+        "id": "GEN2-0054"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "easy",
+        "question": "What is Alhaitham's primary life goal?",
+        "correct_answer": "To live a peaceful and comfortable life",
+        "wrong_answers": [
+            "To become the Grand Sage",
+            "To uncover all the world's secrets",
+            "To become the wealthiest man in Sumeru"
+        ],
+        "explanation": "He is a brilliant man, but he is only an ordinary employee of the Akademiya... leading a carefree and comfortable life.",
+        "id": "GEN2-0055"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "Who does Alhaitham consider a perfect 'mirror' for observing the world?",
+        "correct_answer": "Kaveh",
+        "wrong_answers": [
+            "The Traveler",
+            "Lesser Lord Kusanali",
+            "Cyno"
+        ],
+        "explanation": "As far as Alhaitham is concerned, Kaveh is... the polar opposite of himself as a scholar — that is to say, an excellent mirror.",
+        "id": "GEN2-0056"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "What did Alhaitham's grandmother do for him when he was admitted to the Akademiya?",
+        "correct_answer": "Applied for him to be able to attend classes in other Darshans",
+        "wrong_answers": [
+            "Gave him a large sum of Mora",
+            "Wrote him a letter of recommendation",
+            "Bought him a new set of books"
+        ],
+        "explanation": "He was informed that his grandmother had also applied for him to be able to attend classes in other Darshans.",
+        "id": "GEN2-0057"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "What does Alhaitham believe is the function of language in society?",
+        "correct_answer": "It is a regulative tool used to govern thoughts",
+        "wrong_answers": [
+            "It is for communication only",
+            "It is a form of art",
+            "It is inherently flawed"
+        ],
+        "explanation": "A unified language helps to govern thoughts. Language is the bottom line, rules, weapons, and violence.",
+        "id": "GEN2-0058"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "medium",
+        "question": "How did Alhaitham acquire his house near the Akademiya?",
+        "correct_answer": "It was allocated to him based on a successful early-stage research project",
+        "wrong_answers": [
+            "He inherited it from his grandmother",
+            "He bought it with his salary",
+            "He won it in a competition"
+        ],
+        "explanation": "The Akademiya even used this project... as a reference for allocating housing resources, and as such, Alhaitham was given a very decent house.",
+        "id": "GEN2-0059"
+    },
+    {
+        "category": "Alhaitham",
+        "difficulty": "easy",
+        "question": "What is Alhaitham's opinion on being called a 'hero'?",
+        "correct_answer": "He has no opinion and doesn't think it's worth talking about",
+        "wrong_answers": [
+            "He is proud of the title",
+            "He finds it embarrassing",
+            "He believes he deserves it"
+        ],
+        "explanation": "As one of the protagonists in their stories, Alhaitham has no opinion whatsoever about being a 'hero,' nor does he believe that these stories are worth talking about.",
+        "id": "GEN2-0060"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "Besides 'Outcast' and 'Savior,' what is another title Aloy held in her original world?",
+        "correct_answer": "Seeker",
+        "wrong_answers": [
+            "The Huntress",
+            "The Nora Brave",
+            "The Machine-Slayer"
+        ],
+        "explanation": "Outcast, hunter of machines, Seeker, Anointed, Savior... Aloy had many identities in her original world.",
+        "id": "GEN2-0061"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "Who were the only ones who knew the truth of Aloy's birth at the beginning of her story?",
+        "correct_answer": "The High Matriarchs of her tribe",
+        "wrong_answers": [
+            "Rost",
+            "The Sun-King",
+            "HADES"
+        ],
+        "explanation": "The reasons for this were known only to the very High Matriarchs of the tribe who had exiled her.",
+        "id": "GEN2-0062"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What was the ultimate prize for winning the Proving contest?",
+        "correct_answer": "The victor could ask for a reward",
+        "wrong_answers": [
+            "A powerful weapon",
+            "Leadership of the tribe",
+            "A great feast"
+        ],
+        "explanation": "There was only one way to discover the identity of Aloy's parents — victory at the Proving... in which the victor would be free to ask for a reward.",
+        "id": "GEN2-0063"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What personal sacrifice did Rost make to ensure Aloy could escape the assassins?",
+        "correct_answer": "He sacrificed his life",
+        "wrong_answers": [
+            "He gave her his weapon",
+            "He used himself as a decoy",
+            "He revealed a secret path"
+        ],
+        "explanation": "It was only through Rost's sacrifice that Aloy was able to escape.",
+        "id": "GEN2-0064"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "easy",
+        "question": "Besides humans, what other kind of terrifying enemies did Aloy face on her journey?",
+        "correct_answer": "Machines",
+        "wrong_answers": [
+            "Ghosts",
+            "Dragons",
+            "Demons"
+        ],
+        "explanation": "Her pursuit brought her into a wild and dangerous world... bringing... terrifying enemies — whether human or machine — before her.",
+        "id": "GEN2-0065"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What was the primary goal of the AI known as HADES?",
+        "correct_answer": "To cleanse the world of all life",
+        "wrong_answers": [
+            "To enslave humanity",
+            "To control all machines",
+            "To terraform the planet"
+        ],
+        "explanation": "In the end, the true enemy, HADES, appeared before her. It was an artificial intelligence filled with malice, bent on cleansing the world of all life.",
+        "id": "GEN2-0066"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "hard",
+        "question": "The genetic material used to create Aloy was the key to preventing what?",
+        "correct_answer": "The second coming of the apocalypse",
+        "wrong_answers": [
+            "A war between tribes",
+            "The machines from evolving",
+            "The planet from freezing"
+        ],
+        "explanation": "This genetic material was the key to preventing the second coming of the apocalypse.",
+        "id": "GEN2-0067"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "Who helped Aloy in her final, decisive battle against HADES?",
+        "correct_answer": "Allies from many tribes",
+        "wrong_answers": [
+            "Rost's spirit",
+            "The Old Ones",
+            "She fought alone"
+        ],
+        "explanation": "Armed with this knowledge, and with the help of allies from many tribes, Aloy was finally able to defeat HADES...",
+        "id": "GEN2-0068"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "After defeating HADES, what was the purpose of Aloy's new journey?",
+        "correct_answer": "To pursue ancient technologies and cleanse the land",
+        "wrong_answers": [
+            "To find a way home",
+            "To rule over the tribes",
+            "To become a legend"
+        ],
+        "explanation": "After defeating HADES, Aloy embarked on a new journey, pursuing ancient technologies and cleansing the land that HADES had trampled underfoot.",
+        "id": "GEN2-0069"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "Where did Aloy find the portal that brought her to Teyvat?",
+        "correct_answer": "In an ancient, dilapidated laboratory",
+        "wrong_answers": [
+            "At the top of a mountain",
+            "In the heart of Meridian",
+            "In an underwater ruin"
+        ],
+        "explanation": "In one ancient, dilapidated laboratory, she found something she had never seen before — a gleaming portal.",
+        "id": "GEN2-0070"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What did Aloy feel as if she were in two places at once?",
+        "correct_answer": "When she looked into the portal",
+        "wrong_answers": [
+            "When she was born",
+            "When she fought HADES",
+            "When she spoke to the High Matriarchs"
+        ],
+        "explanation": "She saw her own image within the portal as one looking into a mirror, feeling as if she were in two places at once.",
+        "id": "GEN2-0071"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "easy",
+        "question": "In her original world, Aloy was destined to be what?",
+        "correct_answer": "The heroine who would heal it",
+        "wrong_answers": [
+            "A queen",
+            "A god",
+            "A normal hunter"
+        ],
+        "explanation": "She was destined on account of her genetics to be the heroine who would heal it.",
+        "id": "GEN2-0072"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "easy",
+        "question": "Where was Aloy raised by Rost?",
+        "correct_answer": "In the rugged mountains near their tribal dwellings",
+        "wrong_answers": [
+            "In the city of Meridian",
+            "In an ancient ruin",
+            "In a hidden village"
+        ],
+        "explanation": "She was raised in the rugged mountains near their tribal dwellings by the experienced Hunter, Rost.",
+        "id": "GEN2-0073"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "After being saved by Rost, Aloy later learned she was the true ______ of the attack.",
+        "correct_answer": "target",
+        "wrong_answers": [
+            "cause",
+            "mastermind",
+            "hero"
+        ],
+        "explanation": "Later, Aloy would learn that she was the true target of the attack...",
+        "id": "GEN2-0074"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "hard",
+        "question": "What did Aloy find in every Old World Ruin she searched?",
+        "correct_answer": "The Old Ones' lost secrets",
+        "wrong_answers": [
+            "Powerful weapons",
+            "Maps to other worlds",
+            "Recordings from the past"
+        ],
+        "explanation": "In her long journey, she found every Old World Ruin that there was to be found in search of the Old Ones' lost secrets.",
+        "id": "GEN2-0075"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What happened immediately after Aloy was enveloped by the portal's energy?",
+        "correct_answer": "Her own world completely disappeared from her sight",
+        "wrong_answers": [
+            "She lost consciousness",
+            "She gained new powers",
+            "She met the portal's creator"
+        ],
+        "explanation": "With a flash of light, the 'world' that Aloy knew completely disappeared from her sight, and she now found herself in a strange, beautiful new world...",
+        "id": "GEN2-0076"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What was Aloy's primary motivation for entering the Proving?",
+        "correct_answer": "To discover the identity of her parents",
+        "wrong_answers": [
+            "To become the best hunter",
+            "To earn the tribe's respect",
+            "To win a valuable prize"
+        ],
+        "explanation": "There was only one way to discover the identity of Aloy's parents — victory at the Proving...",
+        "id": "GEN2-0077"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "hard",
+        "question": "What key piece of information did Aloy discover about her own origin?",
+        "correct_answer": "She was a clone of a woman who saved the world 1,000 years ago",
+        "wrong_answers": [
+            "She was the daughter of a High Matriarch",
+            "She was part machine",
+            "She was from another world"
+        ],
+        "explanation": "Aloy discovered she was not born of human flesh and blood but was the result of cloning. The genetics of the woman who had saved all life 1,000 years ago had been the basis for her creation.",
+        "id": "GEN2-0078"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "medium",
+        "question": "What was the name of the shining city where Aloy had her decisive battle?",
+        "correct_answer": "Meridian",
+        "wrong_answers": [
+            "Sunfall",
+            "Daytower",
+            "Mother's Heart"
+        ],
+        "explanation": "...Aloy was finally able to defeat HADES and its human and machine minions in a decisive battle in the shining city of Meridian.",
+        "id": "GEN2-0079"
+    },
+    {
+        "category": "Aloy",
+        "difficulty": "hard",
+        "question": "What did Aloy's journey after defeating HADES primarily involve?",
+        "correct_answer": "Pursuing ancient technologies and cleansing the land",
+        "wrong_answers": [
+            "Uniting the tribes under her rule",
+            "Rebuilding the city of Meridian",
+            "Finding more portals to other worlds"
+        ],
+        "explanation": "After defeating HADES, Aloy embarked on a new journey, pursuing ancient technologies and cleansing the land that HADES had trampled underfoot.",
+        "id": "GEN2-0080"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "easy",
+        "question": "Besides Good Hunter, what are two other locations where one can often find Amber?",
+        "correct_answer": "The banks of Cider Lake and the tree tops at Windrise",
+        "wrong_answers": [
+            "The Cathedral and the Library",
+            "The Dawn Winery and Springvale",
+            "Stormterror's Lair and Dragonspine"
+        ],
+        "explanation": "Whether it's before the Good Hunter's signboard, the banks of Cider Lake, or the tree tops at Windrise, one can find traces of this vigilant Outrider in red anywhere.",
+        "id": "GEN2-0081"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What childhood mischief did Amber get into while trying to steal eggs?",
+        "correct_answer": "She dropped a bird's nest on her grandpa's head",
+        "wrong_answers": [
+            "She fell out of the tree",
+            "She was attacked by the mother bird",
+            "She accidentally cooked the eggs with her Vision"
+        ],
+        "explanation": "Her infamous deeds include accidentally dropping a bird's nest on her grandpa's head while trying to steal the eggs from it...",
+        "id": "GEN2-0082"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "How did Amber's grandpa come to join the Knights of Favonius?",
+        "correct_answer": "He was a mercenary from Liyue saved by a Knights' doctor",
+        "wrong_answers": [
+            "He was a noble from Mondstadt",
+            "He was recruited for his archery skills",
+            "He was a former Treasure Hoarder who turned himself in"
+        ],
+        "explanation": "He was the only survivor, saved by a doctor from the Knights of Favonius. Too ashamed to return home and anxious to repay the debt, Amber's grandpa joined the Knights of Favonius.",
+        "id": "GEN2-0083"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What did Amber do as a child that showed her early interest in becoming an Outrider?",
+        "correct_answer": "She secretly practiced the moves her grandpa taught",
+        "wrong_answers": [
+            "She made her own bow and arrows",
+            "She followed the Outriders on patrol",
+            "She read every book about the Knights"
+        ],
+        "explanation": "During the day, she would crouch by the window and secretly watch him training the Outriders. At night, she would sneak into the yard and practice the moves he had taught that day.",
+        "id": "GEN2-0084"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "hard",
+        "question": "What did Amber's grandpa say was the reason he decided to watch over Mondstadt?",
+        "correct_answer": "Because it accepted him and became his homeland",
+        "wrong_answers": [
+            "Because he owed a debt to the Anemo Archon",
+            "Because he fell in love with a Mondstadt lady",
+            "Because it was his duty as a Knight"
+        ],
+        "explanation": "'When Mondstadt accepted me, it became my homeland. Then, I decided to watch over this new home of mine.'",
+        "id": "GEN2-0085"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "easy",
+        "question": "How many years ago did Amber's grandpa disappear?",
+        "correct_answer": "Four years ago",
+        "wrong_answers": [
+            "One year ago",
+            "Ten years ago",
+            "When she was a baby"
+        ],
+        "explanation": "Something happened one day four years ago that profoundly changed Amber. That day, her grandpa... simply disappeared.",
+        "id": "GEN2-0086"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What happened to the Outrider division after Amber's grandpa left?",
+        "correct_answer": "It became undisciplined and was preserved in name only",
+        "wrong_answers": [
+            "It was disbanded completely",
+            "Amber became the new leader",
+            "It became stronger than ever"
+        ],
+        "explanation": "Without his leadership they rapidly became undisciplined and lost their edge... the Outrider division was facing obsoletion. In the end, it was preserved as a part of the Knights' organization, but in name only.",
+        "id": "GEN2-0087"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "How did Amber feel about the senior knights taking special care of her?",
+        "correct_answer": "She felt it meant she wasn't mature enough",
+        "wrong_answers": [
+            "She was grateful for their help",
+            "She enjoyed the attention",
+            "She didn't notice"
+        ],
+        "explanation": "For a girl as desperate to excel as she was, being taken care of by others implied that she wasn't yet mature enough to stand on her own two feet.",
+        "id": "GEN2-0088"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What did Amber do to prove her maturity to the other knights?",
+        "correct_answer": "She voraciously sought out extra responsibilities",
+        "wrong_answers": [
+            "She challenged them to duels",
+            "She completed a dangerous solo mission",
+            "She ignored their help"
+        ],
+        "explanation": "Accordingly, she voraciously sought out extra responsibilities and made this as visible as possible to her seniors.",
+        "id": "GEN2-0089"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "easy",
+        "question": "What is Amber's reasoning for being the 'best Outrider ever'?",
+        "correct_answer": "Because she's the one and only Outrider left",
+        "wrong_answers": [
+            "Because her grandpa trained her",
+            "Because she has a Vision",
+            "Because Jean told her so"
+        ],
+        "explanation": "'I am Outrider Amber, the one and only outrider — which makes me the best one out there!'",
+        "id": "GEN2-0090"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "hard",
+        "question": "In her journal, what did Amber write about the magical bird she caught?",
+        "correct_answer": "She couldn't remember its full name",
+        "wrong_answers": [
+            "It was beautiful and majestic",
+            "It was delicious",
+            "It sang a beautiful song"
+        ],
+        "explanation": "'I finally caught that magical bird! It's called a Rami... something. I don't remember.'",
+        "id": "GEN2-0091"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What was the result of Amber's first attempt to cook her signature steak?",
+        "correct_answer": "It was charred on the outside but raw on the inside",
+        "wrong_answers": [
+            "It was perfect",
+            "It was too spicy",
+            "She burned it to a crisp"
+        ],
+        "explanation": "I'm sure I followed the cookbook to the letter... But while the outside is charred, the inside isn't cooked yet...",
+        "id": "GEN2-0092"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What was Amber's reaction after meeting a strong outlander?",
+        "correct_answer": "She felt she must train harder to not fall behind",
+        "wrong_answers": [
+            "She was jealous of their power",
+            "She asked them to join the Knights",
+            "She was suspicious of them"
+        ],
+        "explanation": "'I met a strange outlander today... Ugh, come to think of it, what would I do if an enemy that strong showed up? ...I musn't fall behind. I must train harder!'",
+        "id": "GEN2-0093"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What did Amber realize she needed to do after her grandpa's departure?",
+        "correct_answer": "Forge her own path instead of waiting for directions",
+        "wrong_answers": [
+            "Find him at all costs",
+            "Disband the Outriders",
+            "Become the new Grand Master"
+        ],
+        "explanation": "Amber realized that she shouldn't wait for directions from someone else, but that she should be like those courageous birds that spread their wings and flew into the blue skies.",
+        "id": "GEN2-0094"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "easy",
+        "question": "How does Amber watch over the City of Freedom?",
+        "correct_answer": "With the eye of an eagle and the cunning of a bunny rabbit",
+        "wrong_answers": [
+            "From the top of the Cathedral",
+            "With the help of the other Knights",
+            "By setting traps all over the city"
+        ],
+        "explanation": "She spreads her Wind Glider's wings and watches over the City of Freedom with the eye of an eagle and the cautious cunning of a bunny rabbit.",
+        "id": "GEN2-0095"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "Who ended up on damage control duty for Amber's childhood antics?",
+        "correct_answer": "Her grandpa",
+        "wrong_answers": [
+            "Jean",
+            "Kaeya",
+            "Her parents"
+        ],
+        "explanation": "Invariably, it was Amber's grandpa who ended up on damage control duty each time his granddaughter's misbehavior caused yet another incident.",
+        "id": "GEN2-0096"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What was the state of the Outriders when Amber first joined?",
+        "correct_answer": "They were facing obsoletion and losing members",
+        "wrong_answers": [
+            "They were at the height of their power",
+            "They were a newly formed division",
+            "They were a small but elite unit"
+        ],
+        "explanation": "A few failed operations later, the Outrider division was facing obsoletion... Experienced members either transferred to another detachment or resigned...",
+        "id": "GEN2-0097"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "hard",
+        "question": "Amber's grandpa was the leader of what kind of group before joining the Knights?",
+        "correct_answer": "A mercenary group",
+        "wrong_answers": [
+            "A group of Treasure Hoarders",
+            "A traveling circus",
+            "A merchant caravan"
+        ],
+        "explanation": "Amber's grandpa was once the leader of a mercenary group. He came from Liyue Harbor and was tasked with protecting merchant caravans...",
+        "id": "GEN2-0098"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "medium",
+        "question": "What did Amber's grandpa leave behind when he disappeared?",
+        "correct_answer": "His coat of arms and sword",
+        "wrong_answers": [
+            "A letter of explanation",
+            "A map to a hidden treasure",
+            "His Vision"
+        ],
+        "explanation": "That day, her grandpa left his coat of arms and sword in his office and simply disappeared...",
+        "id": "GEN2-0099"
+    },
+    {
+        "category": "Amber",
+        "difficulty": "easy",
+        "question": "To Amber, her grandpa's silent, unconditional love was like what?",
+        "correct_answer": "A warm breeze",
+        "wrong_answers": [
+            "A sturdy shield",
+            "A guiding star",
+            "A roaring fire"
+        ],
+        "explanation": "To Amber, her grandpa's silent, unconditional love was like a warm breeze that wrapped around her like a blanket.",
+        "id": "GEN2-0100"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "easy",
+        "question": "What is Arataki Itto's more accurate employment status, according to the story?",
+        "correct_answer": "Three-quarters unemployed",
+        "wrong_answers": [
+            "Fully employed",
+            "A freelance worker",
+            "Retired"
+        ],
+        "explanation": "As such, a more accurate designation should have been 'three-quarters unemployed.'",
+        "id": "GEN2-0101"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "How do parents in Inazuma sometimes use Arataki Itto's name?",
+        "correct_answer": "As a threat to make their children behave",
+        "wrong_answers": [
+            "As an example of a good person",
+            "As a character in bedtime stories",
+            "To encourage them to be strong"
+        ],
+        "explanation": "If one really had to assign some sort of hazard level to him, then perhaps the level of being used by parents to keep naughty children in line ('If you don't behave, Arataki Itto will come and snatch your snacks away!') might suffice.",
+        "id": "GEN2-0102"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "hard",
+        "question": "According to Kuki Shinobu, when was the Arataki Gang officially founded?",
+        "correct_answer": "The first time she had to bail Itto out of a Shogunate gaol",
+        "wrong_answers": [
+            "When Itto saved Akira from ruffians",
+            "When they all roasted Lavender Melons together",
+            "It was never officially founded"
+        ],
+        "explanation": "For Kuki Shinobu, the Gang was officially formed the first time she had to drag Itto's sorry behind out of Shogunate gaol...",
+        "id": "GEN2-0103"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What food does Itto claim makes him feel queasy for three days straight just by looking at it?",
+        "correct_answer": "Fried Tofu",
+        "wrong_answers": [
+            "Beans",
+            "Onikabuto",
+            "Lavender Melons"
+        ],
+        "explanation": "Of all products made with beans, Itto fears Fried Tofu the most — indeed, he even says that the very sight of it leaves him feeling queasy for three days straight.",
+        "id": "GEN2-0104"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What was the outcome of the 'kitsune ramen' eating contest Itto had with a fox-eared lady?",
+        "correct_answer": "He won, but at a great personal cost",
+        "wrong_answers": [
+            "He lost and had to give up his chair",
+            "It was a draw",
+            "The contest was interrupted"
+        ],
+        "explanation": "Itto, hungry from a hard day's work, chose an eating contest... he soldiered on gamely en route to victory nonetheless.",
+        "id": "GEN2-0105"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "hard",
+        "question": "What item did Itto receive as a trophy after his eating contest?",
+        "correct_answer": "The chair he was fighting over",
+        "wrong_answers": [
+            "A lifetime supply of ramen",
+            "A medal",
+            "The lady's fox mask"
+        ],
+        "explanation": "And as for that innocent chair, it was ultimately given to Itto as a trophy by the rather mortified owner of the food stand.",
+        "id": "GEN2-0106"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "hard",
+        "question": "What happened during Itto's sumo match with a young tengu in his youth?",
+        "correct_answer": "They both rolled down a mountain",
+        "wrong_answers": [
+            "Itto won easily",
+            "The tengu cheated",
+            "It was stopped by Kujou Sara"
+        ],
+        "explanation": "Unexpectedly, the ensuing furor sent them both rolling down a mountain.",
+        "id": "GEN2-0107"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "hard",
+        "question": "Why did the young Itto decide it would be better to be a feared 'Blue Oni'?",
+        "correct_answer": "Because his gentle 'Crimson Oni' parents were driven out by humans",
+        "wrong_answers": [
+            "The Blue Oni in the story was stronger",
+            "He liked the color blue",
+            "A fortune teller told him to"
+        ],
+        "explanation": "Would it not be better to become the Blue Oni, whom people feared? Surely that was preferable to being like his parents, who were driven out despite having done nothing wrong.",
+        "id": "GEN2-0108"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "Who saved Itto when he collapsed on the street as a child?",
+        "correct_answer": "An old human woman he calls Granny Oni",
+        "wrong_answers": [
+            "Kuki Shinobu",
+            "His parents",
+            "A kind samurai"
+        ],
+        "explanation": "At this moment of crisis, Itto was saved by an old human woman.",
+        "id": "GEN2-0109"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What was the 'Great Singalong' activity suggested by Itto for a new year's celebration?",
+        "correct_answer": "Standing on a cliff and singing against the ocean wind",
+        "wrong_answers": [
+            "A karaoke competition at a tavern",
+            "A parade through Hanamizaka",
+            "A concert with professional musicians"
+        ],
+        "explanation": "This activity... entailed everyone standing on a cliff and singing against the ocean wind to express their innermost feelings...",
+        "id": "GEN2-0110"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "Where did Itto find his Vision?",
+        "correct_answer": "Under his hip after waking up one morning",
+        "wrong_answers": [
+            "At the bottom of a bowl of ramen",
+            "During a sumo match",
+            "It was delivered by Kuki Shinobu"
+        ],
+        "explanation": "Itto's Vision was something he found under his hip after waking up one morning.",
+        "id": "GEN2-0111"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "hard",
+        "question": "How did Itto try to get advice on making his Vision shinier?",
+        "correct_answer": "He wrote to Ms. Hina's advice column",
+        "wrong_answers": [
+            "He asked Kuki Shinobu",
+            "He polished it with sand",
+            "He took it to a blacksmith"
+        ],
+        "explanation": "A certain question showed up in the advice column of the 'That's Life' magazine that went like this: 'Ms. Hina, how should I best take care of my Vision and make it shinier?'",
+        "id": "GEN2-0112"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What is the scientific basis for the oni's legendary fear of beans?",
+        "correct_answer": "They have a severe allergy to them",
+        "wrong_answers": [
+            "The smell is repulsive to them",
+            "It is a psychological weakness",
+            "There is no scientific basis"
+        ],
+        "explanation": "As it turns out, oni are allergic to beans.",
+        "id": "GEN2-0113"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "In Akira's opinion, when was the Arataki Gang founded?",
+        "correct_answer": "When Itto saved him from ruffians",
+        "wrong_answers": [
+            "At the first Lavender Melon roast",
+            "When Kuki Shinobu joined",
+            "When Itto got his Vision"
+        ],
+        "explanation": "Akira believes that it all began when Itto saved him from a few two-bit ruffians.",
+        "id": "GEN2-0114"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "easy",
+        "question": "What did Itto and his friends roast and eat when they were broke?",
+        "correct_answer": "Lavender Melons",
+        "wrong_answers": [
+            "Onikabuto",
+            "Fish",
+            "Stolen snacks"
+        ],
+        "explanation": "That day, not one of them had a single Mora to their name... While gorging himself on a melon, Itto said with a sigh, 'We should roast Lavender Melons like this every year!'",
+        "id": "GEN2-0115"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "easy",
+        "question": "What is Itto's philosophy on competition?",
+        "correct_answer": "That every battle must be taken seriously, regardless of the opponent",
+        "wrong_answers": [
+            "It's all about having fun",
+            "Winning is everything",
+            "There's no shame in losing"
+        ],
+        "explanation": "Itto believes that every battle must be taken seriously, whether one's foe is a 5-year old child or the Almighty Shogun herself.",
+        "id": "GEN2-0116"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What does Itto think of the tengu he has competed against?",
+        "correct_answer": "He's amazed at how strong they are despite being skinny",
+        "wrong_answers": [
+            "He thinks they are cheaters",
+            "He despises them",
+            "He respects them as worthy rivals"
+        ],
+        "explanation": "Also, how on earth were these tengu all so strong despite looking so skinny?",
+        "id": "GEN2-0117"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "hard",
+        "question": "What did the villagers say to Itto's family that he has heard countless times since?",
+        "correct_answer": "'Once an oni, always an oni.'",
+        "wrong_answers": [
+            "'Get out of our village!'",
+            "'You are not welcome here.'",
+            "'We don't trust your kind.'"
+        ],
+        "explanation": "Itto remembers the wary, disgusted stares the villagers gave him and his parents as they left, and the parting words they said, which Itto has heard countless times since: 'Once an oni, always an oni.'",
+        "id": "GEN2-0118"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What was the first thing Granny Oni offered to the starving, young Itto?",
+        "correct_answer": "A bowl of porridge",
+        "wrong_answers": [
+            "A bag of Mora",
+            "A place to stay",
+            "A new set of clothes"
+        ],
+        "explanation": "'You must be hungry. Come, I've made some porridge.'",
+        "id": "GEN2-0119"
+    },
+    {
+        "category": "Arataki Itto",
+        "difficulty": "medium",
+        "question": "What was the Arataki Gang's reaction to the 'Great Singalong' idea?",
+        "correct_answer": "They rejected it in their hearts",
+        "wrong_answers": [
+            "They were excited",
+            "They thought it was a great idea",
+            "They were indifferent"
+        ],
+        "explanation": "The various gang members actually rejected this in their hearts when they found out about it. After all, screaming into the wind was nowhere near as fun as eating melons.",
+        "id": "GEN2-0120"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "What is the name of the hotel that serves as one face of the House of the Hearth?",
+        "correct_answer": "Hotel Bouffes d'ete",
+        "wrong_answers": [
+            "The Vasari Passage Inn",
+            "The Knave's Manor",
+            "The House of the Hearth"
+        ],
+        "explanation": "The Hotel Bouffes d'ete, situated in the Vasari Passage, is a lovely building... and the luxurious Hotel is but one of the House's faces.",
+        "id": "GEN2-0121"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "easy",
+        "question": "What does Arlecchino do to crime scenes so as not to traumatize those who come after?",
+        "correct_answer": "Renders the area spotless",
+        "wrong_answers": [
+            "Burns all the evidence",
+            "Leaves a warning sign",
+            "Hires professional cleaners"
+        ],
+        "explanation": "She will settle affairs while talking and laughing, even being so considerate as to do those who come after a favor by rendering the area spotless, so as not to traumatize them.",
+        "id": "GEN2-0122"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "What was Arlecchino's unlikely birthday gift from the children one year?",
+        "correct_answer": "A lizard in a bowl",
+        "wrong_answers": [
+            "A hand-drawn portrait",
+            "A song they wrote",
+            "A rare flower"
+        ],
+        "explanation": "Both bowl and lizard wound up being taken for that year's gift by The Knave, who just happened to return home at that moment.",
+        "id": "GEN2-0123"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "What eventually happened to the lizard Arlecchino kept as a pet?",
+        "correct_answer": "She released it, and it was eaten by a bird",
+        "wrong_answers": [
+            "It escaped",
+            "She gave it to Freminet",
+            "It is still in her office"
+        ],
+        "explanation": "Not long after it left, the lizard became this one's lunch. Now it seems to want me to serve it seconds...",
+        "id": "GEN2-0124"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "According to the previous Knave, Crucabena, what was the purpose of the House of the Hearth?",
+        "correct_answer": "An experiment to select a 'king' through mutual slaughter",
+        "wrong_answers": [
+            "To raise loyal soldiers for the Tsaritsa",
+            "To give orphans a loving home",
+            "To train the next generation of Harbingers"
+        ],
+        "explanation": "She would speak of unspeakable cruelties as if they were fairy-tale fantasies, guiding the House members to mutual slaughter, until the strongest among them was selected as 'king.'",
+        "id": "GEN2-0125"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What eulogy did Arlecchino write on the tombstone of the previous Knave?",
+        "correct_answer": "Here the last light of the setting sun lies buried. Here the coming dawn finds a welcome.",
+        "wrong_answers": [
+            "She was a mother to us all.",
+            "May she find peace in the next life.",
+            "A necessary evil, now laid to rest."
+        ],
+        "explanation": "A small tombstone stands at the site where she slew their 'Mother,' the eulogy penned by her hand. 'Here the last light of the setting sun lies buried. Here the coming dawn finds a welcome.'",
+        "id": "GEN2-0126"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "What happens to Arlecchino's body if she lets her vigilance wane?",
+        "correct_answer": "Black marks spread across it like it's burning",
+        "wrong_answers": [
+            "She loses control of her power",
+            "She falls into a deep sleep",
+            "She temporarily loses her memory"
+        ],
+        "explanation": "Each time she let her vigilance wane, this power would run rampant, eating away at her body... The blackened marks were akin to those of burned charcoal, just as she seemed akin to burning firewood.",
+        "id": "GEN2-0127"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What is the nature of 'Clervie's shadow' that sometimes appears to Arlecchino?",
+        "correct_answer": "A complete, conscious afterimage of the real Clervie",
+        "wrong_answers": [
+            "A hallucination caused by guilt",
+            "A ghost haunting her",
+            "A memory she replays in her mind"
+        ],
+        "explanation": "In cases few and far between, these afterimages would be complete enough to take on the form of a 'conscious individual.' Of course, these were hardly as special as 'Clervie's shadow'...",
+        "id": "GEN2-0128"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What did Pierro say was the reason the Fatui chose Arlecchino?",
+        "correct_answer": "They are willing to endure a mean existence to accomplish their goals",
+        "wrong_answers": [
+            "Because of her great power",
+            "Because she shared their ideals",
+            "Because the Tsaritsa ordered it"
+        ],
+        "explanation": "'The naive will die for their ideals, but we are willing to endure even the meanest existence to accomplish our goals.'",
+        "id": "GEN2-0129"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What did Pierro advise Arlecchino to consider instead of how the world is now?",
+        "correct_answer": "To where it should go",
+        "wrong_answers": [
+            "Her own future",
+            "The Tsaritsa's will",
+            "The secrets of the Abyss"
+        ],
+        "explanation": "'Rather than dwelling on how the world is now, you should consider to where it should go.'",
+        "id": "GEN2-0130"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What was the children's game 'Marelle' used for in the old House of the Hearth?",
+        "correct_answer": "A deadly trial where falling meant death on upturned blades",
+        "wrong_answers": [
+            "A way to select new recruits",
+            "A method of punishment",
+            "A harmless game, same as today"
+        ],
+        "explanation": "In those days, each and every child would leap into the boxes one by one... The area outside of the boxes was lined with upturned blades.",
+        "id": "GEN2-0131"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "When did Arlecchino receive her Vision?",
+        "correct_answer": "On a moonlit night after resolving to assassinate 'Mother'",
+        "wrong_answers": [
+            "The moment she killed 'Mother'",
+            "It was a gift from the Tsaritsa",
+            "She took it from Clervie"
+        ],
+        "explanation": "Then, on one moonlit night, a Vision came to her without warning or portent.",
+        "id": "GEN2-0132"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "What did Arlecchino's Vision do to the moon when she first received it?",
+        "correct_answer": "It tinted the moon crimson",
+        "wrong_answers": [
+            "It blocked out the moon's light",
+            "It made the moon appear closer",
+            "It revealed a secret message on the moon"
+        ],
+        "explanation": "The round Vision lined up perfectly with the moon, and the glimmering gem tinted the latter crimson—",
+        "id": "GEN2-0133"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "To Arlecchino, what is her Vision proof of?",
+        "correct_answer": "Her defiance of fate and command over her own future",
+        "wrong_answers": [
+            "Her loyalty to the Tsaritsa",
+            "Her love for the children of the House",
+            "Her superior strength"
+        ],
+        "explanation": "To her, this is proof of her defiance of fate, wresting from it command over her future.",
+        "id": "GEN2-0134"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "Despite bowing to no god, what does Arlecchino do with her Vision?",
+        "correct_answer": "She takes meticulous care of it",
+        "wrong_answers": [
+            "She hides it away",
+            "She tries to destroy it",
+            "She rarely uses it"
+        ],
+        "explanation": "As a Fatui Harbinger, Arlecchino bows before no god. Yet though it represents the institution of The Seven, she always takes meticulous care of this Vision.",
+        "id": "GEN2-0135"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "medium",
+        "question": "What lesson did Arlecchino teach the girl with the necklace?",
+        "correct_answer": "To master her emotions and never be their slave",
+        "wrong_answers": [
+            "That vanity is a sin",
+            "That jewelry is a weakness in battle",
+            "To always obey 'Father'"
+        ],
+        "explanation": "This is your new lesson — to understand the source of your emotions. Master them, use them. Never be their slave.",
+        "id": "GEN2-0136"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What was the name of the ancient underground kingdom's final dynasty, which Pierro served?",
+        "correct_answer": "Eclipse",
+        "wrong_answers": [
+            "Crimson Moon",
+            "Khaenri'ah",
+            "Black Sun"
+        ],
+        "explanation": "I once served the final dynasty of an ancient underground kingdom. Its dynastic name was 'Eclipse,' and before them came the 'Crimson Moon.'",
+        "id": "GEN2-0137"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "easy",
+        "question": "Where is the Hotel Bouffes d'ete located?",
+        "correct_answer": "The Vasari Passage",
+        "wrong_answers": [
+            "The Court of Fontaine",
+            "Poisson",
+            "Romaritime Harbor"
+        ],
+        "explanation": "The Hotel Bouffes d'ete, situated in the Vasari Passage, is a lovely building...",
+        "id": "GEN2-0138"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "hard",
+        "question": "What did Clervie say as she was dying?",
+        "correct_answer": "She was happy to finally be free",
+        "wrong_answers": [
+            "She cursed Peruere",
+            "She begged for her life",
+            "She apologized to her mother"
+        ],
+        "explanation": "But as she slipped away towards death, she was truly happy, for she had finally found her freedom.",
+        "id": "GEN2-0139"
+    },
+    {
+        "category": "Arlecchino",
+        "difficulty": "easy",
+        "question": "What is the number of the questions Pierro agreed to answer for Arlecchino?",
+        "correct_answer": "Five",
+        "wrong_answers": [
+            "Three",
+            "Seven",
+            "One"
+        ],
+        "explanation": "As such, I will answer five of your questions concerning the world... or concerning yourself.",
+        "id": "GEN2-0140"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What is the common misnomer for Baizhu, which was started by his apprentice Qiqi?",
+        "correct_answer": "Mr. Bai",
+        "wrong_answers": [
+            "Dr. Zhu",
+            "Master Bai",
+            "The Serpent Doctor"
+        ],
+        "explanation": "Finally, there came a morning when Qiqi saw Baizhu and... said: 'Good, morning. Bai... Bai... Mr. Bai.'",
+        "id": "GEN2-0141"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What did Changsheng angrily protest being called by Qiqi?",
+        "correct_answer": "'long, long, snake'",
+        "wrong_answers": [
+            "'Noodles'",
+            "'Slippery'",
+            "'Green Thing'"
+        ],
+        "explanation": "'Mr. Bai.' Qiqi answered earnestly. 'And, long... long, snake.' '—Outrageous! My name isn't 'long snake'—'",
+        "id": "GEN2-0142"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "What is the name of the extremely expensive item sold at Bubu Pharmacy for nearly 3 million Mora?",
+        "correct_answer": "Everlasting Incense",
+        "wrong_answers": [
+            "Elixir of Immortality",
+            "Adepti's Delight",
+            "Jade-Forged Essence"
+        ],
+        "explanation": "But there is some merchandise priced at a curious premium — such as the 'Everlasting Incense,' which was 2,990,000 Mora even after a discount.",
+        "id": "GEN2-0143"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "easy",
+        "question": "Besides being a physician, what other skill is Baizhu known for?",
+        "correct_answer": "Considerable business acumen",
+        "wrong_answers": [
+            "Cooking",
+            "Calligraphy",
+            "Swordsmanship"
+        ],
+        "explanation": "Baizhu is not only a brilliant physician, but possesses considerable business acumen.",
+        "id": "GEN2-0144"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "Why does Baizhu often accept only a token fee for treating rare diseases?",
+        "correct_answer": "The chance to research them is an opportunity Mora can't buy",
+        "wrong_answers": [
+            "He feels sorry for the patients",
+            "It is required by the Ministry of Civil Affairs",
+            "He is trying to build his reputation"
+        ],
+        "explanation": "As for the chance to research the secret arts of the adepti and strange diseases... these are opportunities no amount of Mora could ever buy.",
+        "id": "GEN2-0145"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "How does Baizhu's breakfast ritual involve three plates of pastries?",
+        "correct_answer": "Two large plates for him and Herbalist Gui, one small plate for Qiqi and Changsheng",
+        "wrong_answers": [
+            "One for sweet, one for salty, and one for savory",
+            "One for each of them to share",
+            "He eats all three himself"
+        ],
+        "explanation": "The snacks are divided into three portions, two large and one small. The large plates are for Baizhu and Herbalist Gui, and the small plate is for Qiqi and Changsheng.",
+        "id": "GEN2-0146"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "Why do the people of Liyue leave gifts of fresh food at Bubu Pharmacy's door?",
+        "correct_answer": "To thank Baizhu for his cheap healthcare",
+        "wrong_answers": [
+            "It is a Liyue tradition for businesses",
+            "They hope to get free medicine",
+            "To ward off evil spirits"
+        ],
+        "explanation": "The public knows that Dr. Baizhu doesn't always charge for his consultations... using the savings to give gifts by way of thanks is a perfectly sensible thing to do.",
+        "id": "GEN2-0147"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "Who helps Qiqi keep time during her calisthenics by counting 'one two three'?",
+        "correct_answer": "Changsheng",
+        "wrong_answers": [
+            "Baizhu",
+            "Herbalist Gui",
+            "Hu Tao"
+        ],
+        "explanation": "If she catches Qiqi performing her calisthenics in the courtyard, she will wind about Qiqi's shoulders and help her keep time with a 'one two three one two three,' and so on.",
+        "id": "GEN2-0148"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "Which government body in Liyue placed Baizhu on its 'persons of special interest list'?",
+        "correct_answer": "The Ministry of Civil Affairs",
+        "wrong_answers": [
+            "The Liyue Qixing",
+            "The Millelith",
+            "The Adepti Council"
+        ],
+        "explanation": "The name 'Baizhu' had already appeared on the Ministry of Civil Affairs' persons of special interest list.",
+        "id": "GEN2-0149"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "How did Baizhu counter the Ministry's surveillance of his research?",
+        "correct_answer": "He used rumors to convince the public his work was benign",
+        "wrong_answers": [
+            "He conducted his research in secret",
+            "He bribed the officials",
+            "He stopped his research temporarily"
+        ],
+        "explanation": "He saw through their methods, and turned the ears and mouths of the people to his own ends, letting them spread the word on his behalf that his research and approach had no ill intent and would cause no trouble.",
+        "id": "GEN2-0150"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What is Hu Tao's solution to her and Baizhu's differing views on life and death?",
+        "correct_answer": "Inviting him over for dinner",
+        "wrong_answers": [
+            "Having a formal debate",
+            "Ignoring him completely",
+            "Reporting him to the Qixing"
+        ],
+        "explanation": "If the matter cannot be explained or settled in a couple words, it's better to have Baizhu over for dinner!",
+        "id": "GEN2-0151"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "Where do Baizhu and Zhongli conduct last rites for the deceased?",
+        "correct_answer": "In a secluded thatched cottage",
+        "wrong_answers": [
+            "At Wangsheng Funeral Parlor",
+            "At Bubu Pharmacy",
+            "On Wuwang Hill"
+        ],
+        "explanation": "The two parties hold a ceremony in a secluded thatched cottage in the dead of night.",
+        "id": "GEN2-0152"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What happened to Baizhu's parents?",
+        "correct_answer": "They died in a horrific plague when he was young",
+        "wrong_answers": [
+            "They were killed by monsters",
+            "They abandoned him",
+            "They are still alive"
+        ],
+        "explanation": "When Baizhu was young, his hometown was struck by a horrific plague... Having lost both his parents, Baizhu began to follow in the footsteps of his master...",
+        "id": "GEN2-0153"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "What ultimately caused the death of Baizhu's master?",
+        "correct_answer": "He was exhausted by the maladies from a contract",
+        "wrong_answers": [
+            "The same plague that killed Baizhu's parents",
+            "Old age",
+            "He was assassinated"
+        ],
+        "explanation": "Baizhu's master was completely exhausted by the maladies brought on by a contract, and could hold on no longer.",
+        "id": "GEN2-0154"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "hard",
+        "question": "Where did Baizhu's Vision first appear?",
+        "correct_answer": "On his master's tombstone",
+        "wrong_answers": [
+            "In his hand during a consultation",
+            "In a boiling pot of medicine",
+            "Next to him while he slept"
+        ],
+        "explanation": "The first thing reflected in his now vertical pupils was a Vision, appearing briefly like a firefly on his master's tombstone.",
+        "id": "GEN2-0155"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What does Baizhu personally prepare for his staff and Qiqi for lunch?",
+        "correct_answer": "A nutritious meal and sweet soup",
+        "wrong_answers": [
+            "Herbal tea and rice cakes",
+            "Stir-fried vegetables",
+            "He orders takeout from Wanmin Restaurant"
+        ],
+        "explanation": "At this time, Baizhu is at leisure to personally prepare a nutritious meal and sweet soup that are both healthy and tasty for all who come to call.",
+        "id": "GEN2-0156"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What did Baizhu have to do for Qiqi before she had her notebook?",
+        "correct_answer": "Go out and find her every time she got lost",
+        "wrong_answers": [
+            "Tie a rope to her wrist",
+            "Lock her in the pharmacy",
+            "Repeat his name to her every morning"
+        ],
+        "explanation": "Helpless to stop her, Baizhu would personally go out to find her each and every time, and remind her of the fact she lived with him...",
+        "id": "GEN2-0157"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What is Baizhu's general pricing strategy for most products?",
+        "correct_answer": "High sales with low margins",
+        "wrong_answers": [
+            "Extremely high prices",
+            "Pay what you can",
+            "Bartering for goods"
+        ],
+        "explanation": "The prices at Bubu Pharmacy are generally fair, and the pricing strategy for most products is one of high sales with low margins on each transaction.",
+        "id": "GEN2-0158"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "medium",
+        "question": "What is Baizhu's response to people who covet his secret of immortality?",
+        "correct_answer": "He easily deals with their crude methods",
+        "wrong_answers": [
+            "He ignores them",
+            "He reports them to the Millelith",
+            "He offers to teach them"
+        ],
+        "explanation": "As for the aforementioned first type of people, those who covet the secret of immortality, though they are many in number, their methods are crude, and they are easy to deal with.",
+        "id": "GEN2-0159"
+    },
+    {
+        "category": "Baizhu",
+        "difficulty": "easy",
+        "question": "What physical symptoms does Baizhu suffer from when his illness flares up?",
+        "correct_answer": "Chills, hot flashes, breathing problems, and intense pain",
+        "wrong_answers": [
+            "Memory loss and confusion",
+            "Temporary blindness",
+            "Uncontrollable shaking"
+        ],
+        "explanation": "Baizhu lay down, tormented by the chills and following hot flashes, occasional breathing problems, and intermittent yet intense full-body pains...",
+        "id": "GEN2-0160"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "easy",
+        "question": "What common saying do the citizens of Mondstadt have about Barbara?",
+        "correct_answer": "The sight of Barbara makes all my problems disappear.",
+        "wrong_answers": [
+            "Barbara's voice is a gift from the Anemo Archon.",
+            "A song from Barbara can cure any illness.",
+            "Barbara is the jewel of the Church of Favonius."
+        ],
+        "explanation": "'The sight of Barbara makes all my problems disappear.' This is quite a common saying among the citizens of Mondstadt.",
+        "id": "GEN2-0161"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "How did the people of Mondstadt initially react to Barbara's songs?",
+        "correct_answer": "They sounded strange and many struggled to see the appeal",
+        "wrong_answers": [
+            "They loved them instantly",
+            "They thought they were too sad",
+            "They were banned by the Church"
+        ],
+        "explanation": "At first, Barbara's songs sounded strange to the citizens of Mondstadt, and many struggled to see the appeal.",
+        "id": "GEN2-0162"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "What is Barbara's source of disillusionment as an idol?",
+        "correct_answer": "The smiles on people's faces don't last long after her songs end",
+        "wrong_answers": [
+            "She doesn't get paid enough",
+            "She doesn't like the attention",
+            "She thinks her songs are not good enough"
+        ],
+        "explanation": "Yet, the smiles on their faces never last long after the songs end. This has led Barbara to become somewhat disillusioned and doubtful.",
+        "id": "GEN2-0163"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "Who was surprised by Barbara's determination and resilience despite her setbacks?",
+        "correct_answer": "Her father, Seamus Pegg",
+        "wrong_answers": [
+            "Her sister, Jean",
+            "Alice",
+            "Varka"
+        ],
+        "explanation": "Her determination and resilience even surprised her father, Seamus Pegg, the Cardinal of Daybreak.",
+        "id": "GEN2-0164"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "On whose counsel did Barbara decide to become a healer?",
+        "correct_answer": "Her father's",
+        "wrong_answers": [
+            "Her sister's",
+            "Alice's",
+            "Her own"
+        ],
+        "explanation": "Under her father's counsel, Barbara became a healer.",
+        "id": "GEN2-0165"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "easy",
+        "question": "What does Barbara consider her greatest reward?",
+        "correct_answer": "Seeing the smiles on people's faces",
+        "wrong_answers": [
+            "The sound of applause",
+            "Receiving 'Thank you' letters",
+            "Surpassing her sister"
+        ],
+        "explanation": "To Barbara, the greatest reward is seeing the smiles on people's faces.",
+        "id": "GEN2-0166"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "What motivates Barbara to take care of herself after a long day?",
+        "correct_answer": "Remembering the encouragement she receives from others",
+        "wrong_answers": [
+            "Her desire to be famous",
+            "Her rivalry with her sister",
+            "Her faith in the Anemo Archon"
+        ],
+        "explanation": "'It's the encouragement I receive from others that keeps me going.'",
+        "id": "GEN2-0167"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "hard",
+        "question": "What is Barbara's buried ambition for becoming the most popular person in Mondstadt?",
+        "correct_answer": "To be of help to her sister, Jean",
+        "wrong_answers": [
+            "To prove her father wrong",
+            "To become a noble",
+            "To earn a lot of Mora"
+        ],
+        "explanation": "'If only I excelled more, perhaps I could be of help to Jean.' This is what she believes.",
+        "id": "GEN2-0168"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "hard",
+        "question": "What was the name of the project Alice was working on that was falling through?",
+        "correct_answer": "'Teyvat Idols!'",
+        "wrong_answers": [
+            "'Mondstadt's Got Talent'",
+            "'The Knights of Favonius Choir'",
+            "'The Alice Experience'"
+        ],
+        "explanation": "Some time later, when Alice anxiously relayed to Barbara that plans for 'Teyvat Idols!' were falling through...",
+        "id": "GEN2-0169"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "What was Barbara's reasoning for singing to the sick boy despite having no experience?",
+        "correct_answer": "It was no reason to abandon a child in their time of need",
+        "wrong_answers": [
+            "She wanted to test her healing powers",
+            "She was ordered to by a senior sister",
+            "She thought it would make her famous"
+        ],
+        "explanation": "'Never having sung before is no reason to abandon a child in their time of need,' Barbara thought to herself.",
+        "id": "GEN2-0170"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "How did Barbara perform her first song, the lullaby?",
+        "correct_answer": "She had to hum most of it because she forgot the words",
+        "wrong_answers": [
+            "Perfectly, with a beautiful voice",
+            "She cried while singing it",
+            "She made up her own words"
+        ],
+        "explanation": "After quickly realizing that she barely knew any of the words, she had to resort to humming the tune instead.",
+        "id": "GEN2-0171"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "Where did Barbara's Vision appear?",
+        "correct_answer": "Next to her hand while she slept after singing all night",
+        "wrong_answers": [
+            "In the sick boy's hand",
+            "On her hymnal",
+            "It was delivered by an owl"
+        ],
+        "explanation": "...perhaps it had something to do with the Vision which had mysteriously appeared next to her hand at some point during the night.",
+        "id": "GEN2-0172"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "What was more important to Barbara than receiving her Vision?",
+        "correct_answer": "Seeing the sick boy smile again",
+        "wrong_answers": [
+            "Getting a good night's sleep",
+            "The praise from the other sisters",
+            "The power it granted her"
+        ],
+        "explanation": "It was the sight of the boy smiling once again that filled her heart with joy.",
+        "id": "GEN2-0173"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "hard",
+        "question": "What simple wish in Barbara's heart led to her receiving a Vision?",
+        "correct_answer": "The wish to heal the sick through the power of song",
+        "wrong_answers": [
+            "The wish to be as great as her sister",
+            "The wish to become the most popular idol",
+            "The wish to serve the Anemo Archon"
+        ],
+        "explanation": "Barbara received her Vision for the simple but beautiful wish that took hold in her heart that night: A dream of healing the sick through the power of song.",
+        "id": "GEN2-0174"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "easy",
+        "question": "Besides improving people's moods, what can Barbara's powers do?",
+        "correct_answer": "Heal flesh wounds and physical ailments",
+        "wrong_answers": [
+            "Make plants grow faster",
+            "Control the weather",
+            "Talk to animals"
+        ],
+        "explanation": "Her healing powers extend to flesh wounds and other physical ailments.",
+        "id": "GEN2-0175"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "easy",
+        "question": "Who is an example of a citizen who hums Barbara's tunes badly?",
+        "correct_answer": "Albert",
+        "wrong_answers": [
+            "Huffman",
+            "Cyrus",
+            "Pallad"
+        ],
+        "explanation": "'Albert, would you stop please! You're completely out of tune!'",
+        "id": "GEN2-0176"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "hard",
+        "question": "What magazine did Alice give Barbara to teach her about being an idol?",
+        "correct_answer": "'Idol Magazine'",
+        "wrong_answers": [
+            "'Teyvat Travel Guide'",
+            "'The Steambird'",
+            "'Vera's Melancholy'"
+        ],
+        "explanation": "'Idol Magazine' was the name of the assigned reading material.",
+        "id": "GEN2-0177"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "What did Barbara realize an outstanding idol was capable of?",
+        "correct_answer": "Bringing spiritual healing to others through song and dance",
+        "wrong_answers": [
+            "Earning a lot of Mora",
+            "Becoming a noble",
+            "Leading the people"
+        ],
+        "explanation": "She also discovered that an outstanding idol is capable of not just bringing joy to themselves, but also bringing spiritual healing to others through the power of song and dance.",
+        "id": "GEN2-0178"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "easy",
+        "question": "What is Barbara's general demeanor?",
+        "correct_answer": "Bright and optimistic, but clumsy",
+        "wrong_answers": [
+            "Serious and diligent",
+            "Shy and reserved",
+            "Loud and energetic"
+        ],
+        "explanation": "Barbara has always been a bright and optimistic girl since she was young. Though at times she can be a bit clumsy and mess things up, she always bounces right back...",
+        "id": "GEN2-0179"
+    },
+    {
+        "category": "Barbara",
+        "difficulty": "medium",
+        "question": "What is Barbara's current secret project?",
+        "correct_answer": "Swotting up on new tunes behind the scenes",
+        "wrong_answers": [
+            "Writing her autobiography",
+            "Learning to cook",
+            "Practicing swordsmanship"
+        ],
+        "explanation": "Barbara is slyly swotting up on new tunes behind the scenes to this very day.",
+        "id": "GEN2-0180"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What do foreign merchants claim is special about Liyue Harbor?",
+        "correct_answer": "That they have managed to commodify humanity",
+        "wrong_answers": [
+            "It has the best food in Teyvat",
+            "The gods walk among mortals",
+            "It is the wealthiest city"
+        ],
+        "explanation": "Foreign merchants will retort that the only thing special about Liyue is that 'They've managed to commodify humanity, too!'",
+        "id": "GEN2-0181"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What does Ningguang consider Beidou to be, despite her maverick nature?",
+        "correct_answer": "The most reliable person in Liyue",
+        "wrong_answers": [
+            "A necessary evil",
+            "Her greatest rival",
+            "A dangerous liability"
+        ],
+        "explanation": "'On the contrary, Beidou is the most reliable person in Liyue,' she replies.",
+        "id": "GEN2-0182"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "What was Xiangling's condition for agreeing to cook for The Crux?",
+        "correct_answer": "That she would not have to cook Yue-style seafood",
+        "wrong_answers": [
+            "That Beidou would find her rare ingredients",
+            "That she would be paid in advance",
+            "That she could experiment with new recipes"
+        ],
+        "explanation": "'If you want to have Yue-style seafood, then I can't agree to help you. I'll have you know that I intend to transcend Liyue's two warring culinary styles with my cooking...'",
+        "id": "GEN2-0183"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "How much Mora did Beidou offer Xiangling as a retainer to cook for her crew?",
+        "correct_answer": "Fifty thousand Mora",
+        "wrong_answers": [
+            "Ten thousand Mora",
+            "One hundred thousand Mora",
+            "A chest of gold coins"
+        ],
+        "explanation": "Beidou merely smiled and gestured to the chest of gold coins beside her: 'How does a retainer of fifty thousand Mora sound?'",
+        "id": "GEN2-0184"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "What title did Beidou insist her crew use when addressing Xiangling?",
+        "correct_answer": "Madam Xiangling",
+        "wrong_answers": [
+            "Chef Xiangling",
+            "Miss Xiangling",
+            "The Culinary Master"
+        ],
+        "explanation": "She also insisted that they refer to her as 'Madam Xiangling.'",
+        "id": "GEN2-0185"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "What story does Beidou's First Mate tell new sailors?",
+        "correct_answer": "How Beidou sang through a horrific storm",
+        "wrong_answers": [
+            "How she defeated Haishan",
+            "How she beat Ningguang at chess",
+            "How she founded The Crux"
+        ],
+        "explanation": "Her First Mate always takes new sailors out after their first safe return for drinks and fills them in on the details of an old story... Beidou stood on the deck behind the wheel, singing a Liyue fishermen's song in the storm.",
+        "id": "GEN2-0186"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "According to pier gossip, who has Beidou beaten at chess twice?",
+        "correct_answer": "Ningguang",
+        "wrong_answers": [
+            "Zhongli",
+            "Keqing",
+            "No one, it's just a rumor"
+        ],
+        "explanation": "Beidou has beaten Ningguang at chess. Twice. The important part is not so much that she did win Ningguang's money, but more that she dared to.",
+        "id": "GEN2-0187"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "According to pier gossip, what has Beidou never done since slaying Haishan?",
+        "correct_answer": "Sung a fishermen's shanty",
+        "wrong_answers": [
+            "Lost a fight",
+            "Paid her fines",
+            "Drank alone"
+        ],
+        "explanation": "Since the day she slew the sea monster Haishan, Beidou has never sung a fishermen's shanty ever again.",
+        "id": "GEN2-0188"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What was Beidou's childhood lullaby about?",
+        "correct_answer": "Rex Lapis smiting the sea monsters",
+        "wrong_answers": [
+            "The Guili Assembly",
+            "The founding of Liyue",
+            "The adepti of Jueyun Karst"
+        ],
+        "explanation": "The tale of Rex Lapis smiting the sea monsters had become legendary among the people of Liyue. As a child, Beidou loved tales like this...",
+        "id": "GEN2-0189"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "How long did Beidou's personal, one-on-one fight with Haishan last?",
+        "correct_answer": "Ten hours",
+        "wrong_answers": [
+            "Four days",
+            "A full day",
+            "One hour"
+        ],
+        "explanation": "Beidou battled the thusly tied-down creature for ten hours, well into the night.",
+        "id": "GEN2-0190"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "What did Beidou do all night before delivering the final blow to Haishan?",
+        "correct_answer": "Stood on the prow, waiting without eating or drinking",
+        "wrong_answers": [
+            "Slept to conserve her energy",
+            "Sang shanties with her crew",
+            "Sharpened her greatsword"
+        ],
+        "explanation": "Having neither eaten nor drank throughout the night, Beidou heard a change in the sound of the waves.",
+        "id": "GEN2-0191"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "The final strike that killed Haishan was said to be powerful enough to do what?",
+        "correct_answer": "Slice the moon in two or rip a mountain from the world",
+        "wrong_answers": [
+            "Split the ocean itself",
+            "Shatter the sky",
+            "Create a new island"
+        ],
+        "explanation": "With one almighty strike that sounded as if it could have sliced the moon in two or ripped a mountain from the face of the world, she chopped the leviathan's head clean off!",
+        "id": "GEN2-0192"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What did Beidou do when she encountered a small private boat during a strong storm?",
+        "correct_answer": "Ordered her crew to tow it to safety",
+        "wrong_answers": [
+            "Ignored it",
+            "Gave them supplies but left them",
+            "Sank it by accident"
+        ],
+        "explanation": "Seeing the way it was tossed about by the waves, she ordered her crew to tow the boat to safety — despite the risk that her ship's keel might give way.",
+        "id": "GEN2-0193"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "What is Ningguang's advice for getting Beidou to cooperate?",
+        "correct_answer": "Tell her the truth and what's in it for her",
+        "wrong_answers": [
+            "Challenge her to a drinking contest",
+            "Offer her a large sum of Mora",
+            "Appeal to her sense of honor"
+        ],
+        "explanation": "'Just tell her the truth, as well as what's in it for her, and she'll come around in her own time.'",
+        "id": "GEN2-0194"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What surprised Xiangling about Beidou during their voyages together?",
+        "correct_answer": "Her vast knowledge of seafood and its preparation",
+        "wrong_answers": [
+            "Her skill at navigating",
+            "Her beautiful singing voice",
+            "Her ability to talk to fish"
+        ],
+        "explanation": "She found herself surprised by Beidou's vast knowledge of seafood and their culinary preparation, given how far she usually was from any kitchen.",
+        "id": "GEN2-0195"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What is a common exaggeration told about Beidou's fighting prowess?",
+        "correct_answer": "That she can cut a sea monster in half with one hit",
+        "wrong_answers": [
+            "That she can control the weather",
+            "That she is immortal",
+            "That she can breathe underwater"
+        ],
+        "explanation": "It is said that she once used it to cut a formidable sea monster from the depths of the ocean abyss in half with just one hit.",
+        "id": "GEN2-0196"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What did the crew of the boat Beidou rescued become afterward?",
+        "correct_answer": "Her loyal trade partners",
+        "wrong_answers": [
+            "New members of The Crux",
+            "Her sworn enemies",
+            "Her servants"
+        ],
+        "explanation": "Grateful to Beidou for saving their lives, the crew of the rescued boat became her loyal trade partners thereafter.",
+        "id": "GEN2-0197"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "How does Beidou act in her dealings with Ningguang, unlike other collaborators?",
+        "correct_answer": "She is at odds with her and does not show reverence",
+        "wrong_answers": [
+            "She is completely obedient",
+            "She tries to flatter her",
+            "She avoids her at all costs"
+        ],
+        "explanation": "She does not tread carefully or show reverence in the way that most of them do. In fact, one could even say Beidou is sometimes at odds with Ningguang.",
+        "id": "GEN2-0198"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "hard",
+        "question": "What did Beidou's crew use to assail Haishan before she fought it?",
+        "correct_answer": "Cannons, harpoons, arrows, and ropes",
+        "wrong_answers": [
+            "Only their swords",
+            "A giant net",
+            "Explosive barrels"
+        ],
+        "explanation": "With cannons and harpoons, arrows and ropes the fleet would assail Haishan...",
+        "id": "GEN2-0199"
+    },
+    {
+        "category": "Beidou",
+        "difficulty": "medium",
+        "question": "What descended from the heavens after Beidou slew Haishan?",
+        "correct_answer": "A bolt of purple lightning, followed by her Vision",
+        "wrong_answers": [
+            "A shower of stars",
+            "A rainbow",
+            "The Geo Archon's praise"
+        ],
+        "explanation": "The sound of thunder filled the heavens, and a single bolt of purple lightning struck the ocean right in front of Beidou... Thus descended a Vision...",
+        "id": "GEN2-0200"
+    }
+]

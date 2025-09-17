@@ -131,15 +131,15 @@
     },
     {
         "category": "Albedo",
-        "difficulty": "easy",
-        "question": "What is Albedo's title in the Knights of Favonius?",
-        "correct_answer": "Chief Alchemist",
+        "difficulty": "medium",
+        "question": "What flower did Albedo create from the ash of a burnt flower?",
+        "correct_answer": "A Cecilia",
         "wrong_answers": [
-            "Captain",
-            "Librarian",
-            "Outrider"
+            "A Windwheel Aster",
+            "A Sweet Flower",
+            "A Dandelion"
         ],
-        "explanation": "Albedo holds the title of Chief Alchemist for the Knights of Favonius.",
+        "explanation": "To demonstrate alchemy, Albedo lifted the burnt ash of a flower that once grew atop a Dendro Slime's head. Seconds later, a Cecilia sprouted forth from the ash in his hand.",
         "id": "GEN0011"
     },
     {
@@ -495,15 +495,15 @@
     },
     {
         "category": "Aloy",
-        "difficulty": "hard",
-        "question": "Who is the woman that Aloy is a clone of?",
-        "correct_answer": "Dr. Elisabet Sobeck",
+        "difficulty": "easy",
+        "question": "What did Rost teach Aloy?",
+        "correct_answer": "How to hunt",
         "wrong_answers": [
-            "GAIA",
-            "Aloy from the past",
-            "The High Matriarch"
+            "How to read",
+            "How to build machines",
+            "How to talk to spirits"
         ],
-        "explanation": "Aloy is a clone of the 21st-century scientist Dr. Elisabet Sobeck.",
+        "explanation": "He taught her how to hunt: to have cat-like form and deadly accuracy.",
         "id": "GEN0039"
     },
     {
@@ -587,14 +587,14 @@
     {
         "category": "Amber",
         "difficulty": "easy",
-        "question": "What is Amber the champion of in Mondstadt?",
-        "correct_answer": "Gliding",
+        "question": "What is Amber's title, known throughout Mondstadt?",
+        "correct_answer": "The Crimson Knight",
         "wrong_answers": [
-            "Archery",
-            "Running",
-            "Cooking"
+            "The Dandelion Knight",
+            "The Spark Knight",
+            "The Spindrift Knight"
         ],
-        "explanation": "Amber is the three-time Gliding Champion of Mondstadt.",
+        "explanation": "The 'Crimson Knight' is known throughout Mondstadt.",
         "id": "GEN0046"
     },
     {
@@ -1262,15 +1262,15 @@
     },
     {
         "category": "Beidou",
-        "difficulty": "hard",
-        "question": "According to pier gossip, who has Beidou beaten at chess twice?",
-        "correct_answer": "Ningguang",
+        "difficulty": "easy",
+        "question": "Where did Beidou grow up?",
+        "correct_answer": "In a fishing village",
         "wrong_answers": [
-            "Zhongli",
-            "Her First Mate",
-            "The Tianquan"
+            "In Liyue Harbor",
+            "Aboard The Alcor",
+            "In Qingce Village"
         ],
-        "explanation": "Pier laborers gossip that Beidou has beaten Ningguang at chess twice, a daring feat.",
+        "explanation": "Beidou was born in a small fishing village and spent her childhood there.",
         "id": "GEN0098"
     },
     {
@@ -2289,15 +2289,15 @@
     },
     {
         "category": "Citlali",
-        "difficulty": "medium",
-        "question": "What is the name of the mystic art of weaving memory scrolls?",
-        "correct_answer": "Ukumbuko",
+        "difficulty": "hard",
+        "question": "For how many years was Huitzilin Citlali's rival, and for how many years were they friends?",
+        "correct_answer": "Rivals for twenty years, friends for twenty more",
         "wrong_answers": [
-            "The Night-Wind's Weave",
-            "The Art of Memory",
-            "The Shaman's Chronicle"
+            "Rivals for ten years, friends for thirty",
+            "Rivals for thirty years, friends for ten",
+            "They were always rivals"
         ],
-        "explanation": "The mystic art of weaving scrolls is tied to the Ancient Name 'Ukumbuko,' meaning 'Memory.'",
+        "explanation": "The great shaman Huitzilin was Citlali's rival for twenty years, and her friend for twenty more.",
         "id": "GEN0177"
     },
     {
@@ -2730,266 +2730,6 @@
         "id": "GEN0210"
     },
     {
-        "category": "Chevreuse",
-        "difficulty": "easy",
-        "question": "What is Chevreuse's role in Fontaine?",
-        "correct_answer": "Captain of the Special Patrol",
-        "wrong_answers": [
-            "Champion Duelist",
-            "Chief of the Gardes",
-            "A judge"
-        ],
-        "explanation": "Chevreuse is the Captain of the Special Security and Surveillance Patrol.",
-        "id": "GEN0211"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "easy",
-        "question": "What weapon is Chevreuse often seen with?",
-        "correct_answer": "A musket",
-        "wrong_answers": [
-            "A sword",
-            "A polearm",
-            "A claymore"
-        ],
-        "explanation": "She is often seen with a musket slung across her back, and her squad also uses them.",
-        "id": "GEN0212"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "medium",
-        "question": "What did Chevreuse's father do for a living?",
-        "correct_answer": "He was a Garde",
-        "wrong_answers": [
-            "He was a merchant",
-            "He was a duelist",
-            "He was a reporter"
-        ],
-        "explanation": "Her father, Donatello, was an upstanding officer of the law, a member of the Gardes.",
-        "id": "GEN0213"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "medium",
-        "question": "Why was Chevreuse's father exiled to the Fortress of Meropide?",
-        "correct_answer": "He leaked secret intelligence",
-        "wrong_answers": [
-            "He was framed for a crime",
-            "He lost a duel",
-            "He disobeyed a direct order"
-        ],
-        "explanation": "Her father violated regulations by leaking secret intelligence about a major case to the press to help his investigation.",
-        "id": "GEN0214"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "hard",
-        "question": "Where did Chevreuse's family move after her father was exiled?",
-        "correct_answer": "The Fleuve Cendre",
-        "wrong_answers": [
-            "Poisson",
-            "Romaritime Harbor",
-            "A remote village"
-        ],
-        "explanation": "Her family moved to the Fleuve Cendre, the sewers of the Court of Fontaine.",
-        "id": "GEN0215"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "easy",
-        "question": "What does the Special Patrol's 'infamous reputation' help prevent?",
-        "correct_answer": "People committing crimes",
-        "wrong_answers": [
-            "Children misbehaving",
-            "Reporters asking questions",
-            "Merchants arguing"
-        ],
-        "explanation": "Chevreuse believes their fearsome reputation may pull people back from the edge before they commit a crime.",
-        "id": "GEN0216"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "medium",
-        "question": "Who does Chevreuse sometimes invite to help with cases?",
-        "correct_answer": "Serious felons",
-        "wrong_answers": [
-            "Other Gardes",
-            "Journalists",
-            "Duelists"
-        ],
-        "explanation": "Chevreuse will sometimes invite serious felons to participate in cases as 'special consultants' to catch other criminals.",
-        "id": "GEN0217"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "hard",
-        "question": "Who was the Vice Captain that initially prevented Chevreuse from doing fieldwork?",
-        "correct_answer": "Grizzetti",
-        "wrong_answers": [
-            "Donatello",
-            "Petronilla",
-            "Callas"
-        ],
-        "explanation": "Vice Captain Grizzetti, a close friend of her father's, believed her conception of justice was too simple at first.",
-        "id": "GEN0218"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "medium",
-        "question": "What is Chevreuse's definition of justice?",
-        "correct_answer": "It is decided by the courts",
-        "wrong_answers": [
-            "An eye for an eye",
-            "The will of the people",
-            "The word of the Iudex"
-        ],
-        "explanation": "She believes true 'justice' can only be decided by the courts, and her role is to bring criminals there.",
-        "id": "GEN0219"
-    },
-    {
-        "category": "Chevreuse",
-        "difficulty": "easy",
-        "question": "What is the primary focus of the Special Security and Surveillance Patrol?",
-        "correct_answer": "The most heinous of cases",
-        "wrong_answers": [
-            "Petty theft",
-            "Public disputes",
-            "Noble family affairs"
-        ],
-        "explanation": "The Special Patrol focuses on the most vile and violent criminals and the most heinous of cases.",
-        "id": "GEN0220"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "easy",
-        "question": "What is the name of Chiori's boutique in Fontaine?",
-        "correct_answer": "Chioriya Boutique",
-        "wrong_answers": [
-            "Ogura Textiles",
-            "The House of Chiori",
-            "Fontaine Fashion"
-        ],
-        "explanation": "Chiori is the owner and designer of the Chioriya Boutique.",
-        "id": "GEN0221"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "easy",
-        "question": "Where is Chiori originally from?",
-        "correct_answer": "Inazuma",
-        "wrong_answers": [
-            "Fontaine",
-            "Liyue",
-            "Sumeru"
-        ],
-        "explanation": "Chiori is a striking foreigner from Inazuma who brought her unique fashion sense to Fontaine.",
-        "id": "GEN0222"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "medium",
-        "question": "What does Chiori sometimes use to cut fabric?",
-        "correct_answer": "Her sword",
-        "wrong_answers": [
-            "Special scissors",
-            "A heated blade",
-            "A laser"
-        ],
-        "explanation": "She will sometimes draw her sword and swiftly cut fabric with a clean slash, as if dueling with it.",
-        "id": "GEN0223"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "medium",
-        "question": "What is Chiori's true brand, according to her?",
-        "correct_answer": "Never give up",
-        "wrong_answers": [
-            "Live in the present",
-            "Fashion is freedom",
-            "Rules are meant to be broken"
-        ],
-        "explanation": "Chiori has stated that 'Never give up' is her true brand.",
-        "id": "GEN0224"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "hard",
-        "question": "What is the name of the puppet Chiori uses as a model for her designs?",
-        "correct_answer": "Tamoto",
-        "wrong_answers": [
-            "Chioriya",
-            "Ogura",
-            "Mio"
-        ],
-        "explanation": "Chiori uses a small puppet named 'Tamoto' to try out her designs before making a full-size outfit.",
-        "id": "GEN0225"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "easy",
-        "question": "What does Chiori prefer over off-the-shelf clothing?",
-        "correct_answer": "Personalized, custom jobs",
-        "wrong_answers": [
-            "Inazuman styles",
-            "Simple and elegant",
-            "Bold and colorful"
-        ],
-        "explanation": "She shows more enthusiasm for customers who want a personalized, custom-made outfit.",
-        "id": "GEN0226"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "medium",
-        "question": "How does Chiori get a lot of her intelligence?",
-        "correct_answer": "Overhearing customers",
-        "wrong_answers": [
-            "Hiring spies",
-            "Reading newspapers",
-            "Bribing officials"
-        ],
-        "explanation": "Rivers of intelligence flow through her doors as merchants and dignitaries gossip and flaunt what they know.",
-        "id": "GEN0227"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "hard",
-        "question": "When did Chiori's Vision appear?",
-        "correct_answer": "After deciding to go to Fontaine",
-        "wrong_answers": [
-            "During a design competition",
-            "While fighting off ruffians",
-            "As a gift from a customer"
-        ],
-        "explanation": "Her Vision appeared in her puppet Tamoto's hands after she solidified her dream of opening the 'Chioriya Boutique' in Fontaine.",
-        "id": "GEN0228"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "medium",
-        "question": "What did Chiori do when a drunk man burst into her shop?",
-        "correct_answer": "Threw him out the window",
-        "wrong_answers": [
-            "Called the Gardes",
-            "Ignored him",
-            "Served him tea"
-        ],
-        "explanation": "Before he could even finish speaking, she sent him flying out the window in an elegant arc.",
-        "id": "GEN0229"
-    },
-    {
-        "category": "Chiori",
-        "difficulty": "easy",
-        "question": "As a child, what was the one subject Chiori showed interest in?",
-        "correct_answer": "Tailoring",
-        "wrong_answers": [
-            "Sword fighting",
-            "Flower arranging",
-            "Tea ceremonies"
-        ],
-        "explanation": "After showing no interest in other arts, Chiori was entranced by a bolt of fabric, beginning her journey into tailoring.",
-        "id": "GEN0230"
-    },
-    {
         "category": "Dehya",
         "difficulty": "easy",
         "question": "What is Dehya's moniker?",
@@ -3030,15 +2770,15 @@
     },
     {
         "category": "Dehya",
-        "difficulty": "medium",
-        "question": "Who did Dehya serve as a bodyguard for in Sumeru City?",
-        "correct_answer": "Dunyazard",
+        "difficulty": "hard",
+        "question": "What did Dehya's father, Kusayla, say a lion could do?",
+        "correct_answer": "Make the sun shiver and take out ten guys its size",
         "wrong_answers": [
-            "Nilou",
-            "Candace",
-            "Nahida"
+            "Run faster than the wind",
+            "Heal any wound",
+            "Talk to humans"
         ],
-        "explanation": "Dehya was hired as a bodyguard for the Homayani family's young lady, Dunyazard.",
+        "explanation": "According to Kusayla, when a lion roars, even the blazing sun must shiver... The lion can take out ten guys his size. Easy.",
         "id": "GEN0234"
     },
     {
@@ -3095,15 +2835,15 @@
     },
     {
         "category": "Dehya",
-        "difficulty": "easy",
-        "question": "What is Dehya's elemental Vision?",
-        "correct_answer": "Pyro",
+        "difficulty": "medium",
+        "question": "What does Dehya do when a greatsword is not suitable in a fight?",
+        "correct_answer": "Uses her fists",
         "wrong_answers": [
-            "Geo",
-            "Electro",
-            "Anemo"
+            "Switches to a smaller blade",
+            "Retreats",
+            "Uses her Vision"
         ],
-        "explanation": "Dehya's passion and fierce fighting style are complemented by her Pyro Vision.",
+        "explanation": "In moments where a greatsword is too slow, she will cast it aside and use her fists.",
         "id": "GEN0239"
     },
     {
@@ -7464,14 +7204,14 @@
     {
         "category": "Neuvillette",
         "difficulty": "hard",
-        "question": "What is the great secret of the people of Fontaine?",
-        "correct_answer": "They are dissolved Oceanids",
+        "question": "What did the letter from Focalors invite Neuvillette to do?",
+        "correct_answer": "To come and see Fontaine, offering him the best seat in the greatest theater",
         "wrong_answers": [
-            "They are all guilty of a sin",
-            "They are not human",
-            "They are cursed"
+            "To become the new Hydro Archon",
+            "To judge the people of Fontaine",
+            "To help her fight the Heavenly Principles"
         ],
-        "explanation": "The people of Fontaine were originally Oceanids dissolved into the Primordial Sea, a 'sin' that the prophecy sought to absolve.",
+        "explanation": "The former Hydro Archon, Focalors, sent him a letter inviting him to Fontaine to be the Iudex... claiming 'I shall leave you a seat with the best view in the greatest theater.'",
         "id": "GEN0595"
     },
     {
@@ -7931,132 +7671,132 @@
     },
     {
         "category": "Ororon",
-        "difficulty": "medium",
-        "question": "What is the name of Ororon's adoptive father?",
-        "correct_answer": "Mpemba",
+        "difficulty": "easy",
+        "question": "What tribe does Ororon belong to?",
+        "correct_answer": "The Masters of the Night-Wind",
         "wrong_answers": [
-            "Jelani",
-            "Azizi",
-            "Baraka"
+            "The Collective of Plenty",
+            "The Scions of the Canopy",
+            "The Flower-Feather Clan"
         ],
-        "explanation": "Ororon was adopted by Mpemba, a man who had lost his own son.",
+        "explanation": "Ororon is a member of the Masters of the Night-Wind tribe in Natlan.",
         "id": "GEN0641"
     },
     {
         "category": "Ororon",
         "difficulty": "easy",
-        "question": "What unique 'cuisine' is Ororon known for creating?",
-        "correct_answer": "Memory Cuisine",
+        "question": "What does Ororon have a habit of doing?",
+        "correct_answer": "Naming everything around him",
         "wrong_answers": [
-            "Illusionary Feasts",
-            "Emotional Dishes",
-            "Spiritual Sustenance"
+            "Drawing on everything",
+            "Talking to everything",
+            "Collecting everything"
         ],
-        "explanation": "Ororon has the ability to create 'Memory Cuisine,' dishes that allow people to re-experience past memories.",
+        "explanation": "Influenced by his environment, Ororon developed a habit of naming everything around him, whether it was alive or not.",
         "id": "GEN0642"
     },
     {
         "category": "Ororon",
-        "difficulty": "easy",
-        "question": "What is the name of the establishment Ororon runs?",
-        "correct_answer": "The Hearthfire",
+        "difficulty": "medium",
+        "question": "Why did Ororon become a 'volunteer librarian' for his tribe?",
+        "correct_answer": "He was searching for the meaning of his name and got carried away",
         "wrong_answers": [
-            "The Memory Cafe",
-            "Ororon's Kitchen",
-            "The Traveler's Respite"
+            "He loves reading more than anything",
+            "He was assigned the duty by the elders",
+            "He wanted to organize the tribe's history"
         ],
-        "explanation": "Ororon is the owner and chef of a small but famous establishment called The Hearthfire.",
+        "explanation": "While searching historical records for the meaning of his name, he got engrossed in the tribe's vast collection of texts and became a volunteer librarian.",
         "id": "GEN0643"
     },
     {
         "category": "Ororon",
         "difficulty": "hard",
-        "question": "Who was Ororon's first 'customer' for his Memory Cuisine?",
-        "correct_answer": "His adoptive father, Mpemba",
+        "question": "According to a storybook Ororon read, what might be the origin of his fragmented soul?",
+        "correct_answer": "He is a remnant of an Archon's experiment to merge human and beast bloodlines",
         "wrong_answers": [
-            "A lonely old woman",
-            "A grieving mother",
-            "A weary traveler"
+            "He was cursed by an evil god",
+            "He was born under an unlucky star",
+            "He is a reincarnated spirit"
         ],
-        "explanation": "His first customer was his father, for whom he recreated the taste of his late biological son's favorite dessert.",
+        "explanation": "A storybook suggested that during the Archon War, experiments to merge human and beast bloodlines resulted in flawed remnants, which could be his origin.",
         "id": "GEN0644"
     },
     {
         "category": "Ororon",
-        "difficulty": "medium",
-        "question": "What did Ororon's Vision initially appear as?",
-        "correct_answer": "A smooth, black stone",
+        "difficulty": "hard",
+        "question": "What did Ororon name the homemade liquor he learned to brew from a Fatui soldier?",
+        "correct_answer": "Astral Mist",
         "wrong_answers": [
-            "A glowing ember",
-            "A piece of charcoal",
-            "A clear crystal"
+            "Fire-Water",
+            "The Captain's Courage",
+            "Night-Wind Brew"
         ],
-        "explanation": "His Vision first appeared as an unremarkable smooth, black stone he found in a riverbed.",
+        "explanation": "He decided that if he ever made a batch of 'Fire-Water' clear enough to reflect the night sky, he would name it 'Astral Mist.'",
         "id": "GEN0645"
     },
     {
         "category": "Ororon",
         "difficulty": "medium",
-        "question": "What does Ororon use as the key ingredient for his Memory Cuisine?",
-        "correct_answer": "The customer's emotions and memories",
+        "question": "Who is Ororon's veterinarian friend?",
+        "correct_answer": "Ifa",
         "wrong_answers": [
-            "Rare herbs from the wild",
-            "Secret spices",
-            "Elemental energy"
+            "Cacucu",
+            "Chasca",
+            "Kinich"
         ],
-        "explanation": "He uses the customer's own feelings and memories as the core 'ingredient' to shape the flavor of the dish.",
+        "explanation": "The story details several conversations between Ororon and his friend Ifa, the vet from the Flower-Feather Clan.",
         "id": "GEN0646"
     },
     {
         "category": "Ororon",
-        "difficulty": "hard",
-        "question": "Why did Ororon's adoptive mother leave the family?",
-        "correct_answer": "She could not bear the memories of her late son",
+        "difficulty": "medium",
+        "question": "What is Ororon's most 'meaningful and carefully drawn work' of art?",
+        "correct_answer": "The placard in front of Ifa's clinic",
         "wrong_answers": [
-            "She fell in love with another man",
-            "She had a fight with Mpemba",
-            "She went on a long journey"
+            "A portrait of his Granny",
+            "A map of Natlan",
+            "A woven scroll of the Ley Lines"
         ],
-        "explanation": "Unable to move on from the grief of losing her son, she chose to leave, hoping distance would ease her pain.",
+        "explanation": "His most meaningful and carefully drawn work is the placard in front of Ifa's clinic, which he took great care in creating.",
         "id": "GEN0647"
     },
     {
         "category": "Ororon",
         "difficulty": "easy",
-        "question": "What is Ororon's elemental Vision?",
-        "correct_answer": "Electro",
+        "question": "What does Ororon use to carry snacks for wild animals?",
+        "correct_answer": "A Snack Box",
         "wrong_answers": [
-            "Pyro",
-            "Dendro",
-            "Anemo"
+            "A leather pouch",
+            "A woven basket",
+            "His pockets"
         ],
-        "explanation": "Ororon possesses an Electro Vision, which activated from a stone he carried.",
+        "explanation": "The story has a section titled 'Snack Box' which describes how he carries treats for animals, sorted by their preferences.",
         "id": "GEN0648"
     },
     {
         "category": "Ororon",
         "difficulty": "hard",
-        "question": "What did Ororon's first successful memory dish taste like for his father?",
-        "correct_answer": "Sweet with a hint of saltiness",
+        "question": "On the third night of his strange dreams, what did Ororon shout that woke him up?",
+        "correct_answer": "If you wanted to make a complete shadow, then you'd at least need to start out with some light!",
         "wrong_answers": [
-            "Bitter and sour",
-            "Spicy and hot",
-            "Cold and tasteless"
+            "Who are you?",
+            "Leave me alone!",
+            "This is just a dream!"
         ],
-        "explanation": "The dish tasted of sweet fruit, but also of the salty tears his father shed for his lost son.",
+        "explanation": "Uncharacteristically irritated by the voice in his dream, he shouted back, 'If you wanted to make a complete shadow, then you'd at least need to start out with some light!'",
         "id": "GEN0649"
     },
     {
         "category": "Ororon",
-        "difficulty": "medium",
-        "question": "What is the primary purpose of Ororon's cooking?",
-        "correct_answer": "To help people face their past",
+        "difficulty": "easy",
+        "question": "How did Ororon get his Vision?",
+        "correct_answer": "It appeared on his chest after three nights of strange dreams",
         "wrong_answers": [
-            "To make a lot of Mora",
-            "To become a famous chef",
-            "To experiment with new flavors"
+            "He found it in a riverbed",
+            "His Granny gave it to him",
+            "He received it after helping an animal"
         ],
-        "explanation": "Ororon believes that only by truly facing one's past can one be freed from it, and his cooking is a means to that end.",
+        "explanation": "After three nights of strange dreams, he woke up to find a Vision weighing on his chest, which he called 'the gaze of the gods.'",
         "id": "GEN0650"
     },
     {
@@ -8894,14 +8634,14 @@
     {
         "category": "Rosaria",
         "difficulty": "hard",
-        "question": "Why does Rosaria wear a red rose on her gauntlet?",
-        "correct_answer": "It means 'my lips are sealed'",
+        "question": "What did Rosaria have to do to earn her freedom from the bandit gang?",
+        "correct_answer": "Kill one of the elders in combat",
         "wrong_answers": [
-            "It's a symbol of her faith",
-            "It was a gift from Barbara",
-            "It's a family crest"
+            "Steal a valuable treasure",
+            "Complete a dangerous mission",
+            "Escape into the mountains"
         ],
-        "explanation": "In Mondstadt, the red rose means 'my lips are sealed,' reminding her to keep the Knights' secrets.",
+        "explanation": "An elder tossed her a dagger and told her to kill him to earn her freedom, which she did.",
         "id": "GEN0715"
     },
     {
@@ -8919,15 +8659,15 @@
     },
     {
         "category": "Rosaria",
-        "difficulty": "hard",
-        "question": "What did Rosaria have to do to earn her freedom from the bandit gang?",
-        "correct_answer": "Kill one of the elders in combat",
+        "difficulty": "medium",
+        "question": "What did Rosaria's 'Church-Issue Journal' actually contain?",
+        "correct_answer": "Advertising slogans from street vendors",
         "wrong_answers": [
-            "Steal a valuable treasure",
-            "Complete a dangerous mission",
-            "Escape into the mountains"
+            "Theological essays",
+            "Her personal diary",
+            "Sketches of Mondstadt"
         ],
-        "explanation": "An elder tossed her a dagger and told her to kill him to earn her freedom, which she did.",
+        "explanation": "This journal is a relic from Rosaria's novice days... a random assortment of marketplace cries and advertising slogans...",
         "id": "GEN0717"
     },
     {
@@ -9348,15 +9088,15 @@
     },
     {
         "category": "Sethos",
-        "difficulty": "easy",
-        "question": "What is Sethos's elemental Vision?",
-        "correct_answer": "Electro",
+        "difficulty": "medium",
+        "question": "What is the name of the Vahumana student Sethos encounters who is also known for his speed?",
+        "correct_answer": "Hat Guy",
         "wrong_answers": [
-            "Geo",
-            "Anemo",
-            "Dendro"
+            "The Wanderer",
+            "A Vahumana scholar",
+            "An errand boy"
         ],
-        "explanation": "The story does not explicitly state the element, but context from his abilities implies it is Electro.",
+        "explanation": "He encounters a student from Vahumana known for his speed called 'Hat Guy.'",
         "id": "GEN0750"
     },
     {
@@ -9582,15 +9322,15 @@
     },
     {
         "category": "Shikanoin Heizou",
-        "difficulty": "easy",
-        "question": "What is Heizou's elemental Vision?",
-        "correct_answer": "Anemo",
+        "difficulty": "medium",
+        "question": "Who is Heizou's cousin who wanted to stand up for him?",
+        "correct_answer": "Kano Nana",
         "wrong_answers": [
-            "Electro",
-            "Geo",
-            "Inazuma"
+            "Kujou Sara",
+            "Yae Miko",
+            "A Doushin"
         ],
-        "explanation": "The story does not state his element, but his abilities imply it is Anemo.",
+        "explanation": "After Heizou's cousin, Kano Nana, heard about it, she came to Heizou and determined to stand up for him.",
         "id": "GEN0768"
     },
     {
@@ -9738,15 +9478,15 @@
     },
     {
         "category": "Sigewinne",
-        "difficulty": "easy",
-        "question": "What is Sigewinne's elemental Vision?",
-        "correct_answer": "Hydro",
+        "difficulty": "medium",
+        "question": "Who does Sigewinne maintain a regular correspondence with via letters?",
+        "correct_answer": "Neuvillette",
         "wrong_answers": [
-            "Cryo",
-            "Dendro",
-            "Anemo"
+            "Wriothesley",
+            "Clorinde",
+            "Her family"
         ],
-        "explanation": "The story does not explicitly state her element, but context implies it is Hydro.",
+        "explanation": "Ever since entering the Fortress, Sigewinne has maintained a correspondence with Neuvillette via letters.",
         "id": "GEN0780"
     },
     {
@@ -10388,15 +10128,15 @@
     },
     {
         "category": "Tighnari",
-        "difficulty": "easy",
-        "question": "What is Tighnari's elemental Vision?",
-        "correct_answer": "Dendro",
+        "difficulty": "medium",
+        "question": "What nickname did Tighnari's colleagues give him that he disliked?",
+        "correct_answer": "General Watchleader",
         "wrong_answers": [
-            "Anemo",
-            "Hydro",
-            "Geo"
+            "The Forest General",
+            "Master Tighnari",
+            "The Green Guardian"
         ],
-        "explanation": "As a Forest Watcher from the Amurta darshan, Tighnari wields a Dendro vision.",
+        "explanation": "His colleagues gave him the nickname 'General Watchleader,' but he prevailed upon them to stop, finding the title too great for him to bear.",
         "id": "GEN0830"
     },
     {
@@ -10895,15 +10635,15 @@
     },
     {
         "category": "Wriothesley",
-        "difficulty": "easy",
-        "question": "What is Wriothesley's elemental Vision?",
-        "correct_answer": "Cryo",
+        "difficulty": "hard",
+        "question": "What did Wriothesley do on the day of his sentencing when asked for his birthday?",
+        "correct_answer": "He said it was 'Today'",
         "wrong_answers": [
-            "Hydro",
-            "Electro",
-            "Anemo"
+            "He refused to answer",
+            "He gave a fake date",
+            "He said he didn't have one"
         ],
-        "explanation": "The story does not explicitly state his element, but his abilities imply it is Cryo.",
+        "explanation": "The Gestionnaire in charge of recording his sentence asked him for his personal particulars. 'Your birthday, please.' '...Today.'",
         "id": "GEN0869"
     },
     {
@@ -10986,15 +10726,15 @@
     },
     {
         "category": "Xiangling",
-        "difficulty": "easy",
-        "question": "What is Xiangling's elemental Vision?",
-        "correct_answer": "Pyro",
+        "difficulty": "medium",
+        "question": "What did Xiangling's father have to eat for two days after trying her 'Chef's Special Cold-Dressed Fowl'?",
+        "correct_answer": "Simple white congee",
         "wrong_answers": [
-            "Dendro",
-            "Anemo",
-            "Hydro"
+            "Herbal medicine",
+            "Plain rice",
+            "Nothing but water"
         ],
-        "explanation": "The story mentions her using Pyro Slimes in her cooking, and her Vision allows her to control fire.",
+        "explanation": "When Xiangling finally created her crowning achievement... her father paid the price, needing to resort to simple white congee for two days following.",
         "id": "GEN0876"
     },
     {
@@ -11129,15 +10869,15 @@
     },
     {
         "category": "Xianyun",
-        "difficulty": "easy",
-        "question": "What is Xianyun's elemental Vision?",
-        "correct_answer": "Anemo",
+        "difficulty": "medium",
+        "question": "What does Xianyun claim is the purpose of her red-rimmed spectacles?",
+        "correct_answer": "They are an accessory and make her look more 'human'",
         "wrong_answers": [
-            "Cryo",
-            "Geo",
-            "Hydro"
+            "To help her see clearly",
+            "To read ancient texts",
+            "To protect her eyes from dust"
         ],
-        "explanation": "With a quick jump up and a gust of wind below, she's already at the top in the blink of an eye.",
+        "explanation": "'Glasses,' she explained, 'not only help people see, but can be worn as accessories too, you know! ... Don't they feel more... human?'",
         "id": "GEN0887"
     },
     {
@@ -11285,15 +11025,15 @@
     },
     {
         "category": "Xiao",
-        "difficulty": "easy",
-        "question": "What is Xiao's elemental Vision?",
-        "correct_answer": "Anemo",
+        "difficulty": "hard",
+        "question": "Who saved Xiao from his karmic debt with the sound of a flute?",
+        "correct_answer": "Venti (The Anemo Archon)",
         "wrong_answers": [
-            "Geo",
-            "Electro",
-            "Dendro"
+            "The Traveler",
+            "Rex Lapis",
+            "Cloud Retainer"
         ],
-        "explanation": "The story does not explicitly state his element, but his abilities imply it is Anemo.",
+        "explanation": "He had been rescued by the sound of a flute... The last person who could help him was one of The Seven themselves.",
         "id": "GEN0899"
     },
     {
@@ -11662,41 +11402,41 @@
     },
     {
         "category": "Yanfei",
-        "difficulty": "easy",
-        "question": "What is Yanfei's elemental Vision?",
-        "correct_answer": "Pyro",
+        "difficulty": "medium",
+        "question": "What were the professions of Yanfei's parents?",
+        "correct_answer": "An illuminated beast and a mortal merchant",
         "wrong_answers": [
-            "Geo",
-            "Electro",
-            "Hydro"
+            "Two legal advisers",
+            "A scholar and a warrior",
+            "A farmer and a tailor"
         ],
-        "explanation": "The story does not explicitly state her element, but her abilities imply it is Pyro.",
+        "explanation": "Yanfei's father is an illuminated beast, while her mother is an ordinary mortal merchant.",
         "id": "GEN0928"
     },
     {
         "category": "Yanfei",
-        "difficulty": "medium",
-        "question": "Who does Yanfei see as Liyue's unofficial legal troubleshooter?",
-        "correct_answer": "Herself",
+        "difficulty": "hard",
+        "question": "What is the name of the special book Yanfei collects that contains only the most basic principles of law?",
+        "correct_answer": "Codex Finalem",
         "wrong_answers": [
-            "Ningguang",
-            "Keqing",
-            "Ganyu"
+            "The General Law of Liyue",
+            "The Book of Final Justice",
+            "The Adeptus Code"
         ],
-        "explanation": "Ningguang the Tianquan will often study Yanfei's doings, as if she were Liyue's unofficial legal troubleshooter.",
+        "explanation": "The 'Codex Finalem' is the most special of the many legal treatises that Yanfei collects. After opening it... one will find naught but the most basic few principles of the law inscribed.",
         "id": "GEN0929"
     },
     {
-        "category": "Yanfei",
-        "difficulty": "hard",
-        "question": "What is the one food Xinyan despises more than anything?",
-        "correct_answer": "Carrots",
+        "category": "Xingqiu",
+        "difficulty": "medium",
+        "question": "What martial arts school did Xingqiu join?",
+        "correct_answer": "The Guhua Clan",
         "wrong_answers": [
-            "Slime Condensate",
-            "Onions",
-            "Bitter Melon"
+            "The Liyue Martial Academy",
+            "The Feiyun School of Swordplay",
+            "The Way of the Spear"
         ],
-        "explanation": "She will be sure to add that person to the special section of his blacklist reserved for people he despises even more than carrots.",
+        "explanation": "To keep Xingqiu from spending his whole day at Wanwen Bookhouse... his father agreed to let him learn martial arts from the Guhua Clan.",
         "id": "GEN0930"
     },
     {
@@ -11766,15 +11506,15 @@
     },
     {
         "category": "Yaoyao",
-        "difficulty": "easy",
-        "question": "What is Yaoyao's elemental Vision?",
-        "correct_answer": "Dendro",
+        "difficulty": "hard",
+        "question": "What did Yaoyao's master, Streetward Rambler, first teach her?",
+        "correct_answer": "The etiquette of tomes of poetry",
         "wrong_answers": [
-            "Anemo",
-            "Hydro",
-            "Geo"
+            "Spear arts",
+            "Adepti self-cultivation",
+            "How to cook"
         ],
-        "explanation": "The story does not explicitly state her element, but her abilities imply it is Dendro.",
+        "explanation": "When Yaoyao first became the adeptus' disciple, she was still too young to have learned to read and write, and so her master began by teaching her the etiquette of tomes of poetry on a daily basis.",
         "id": "GEN0936"
     },
     {
@@ -12169,29 +11909,16 @@
     },
     {
         "category": "Yumemizuki Mizuki",
-        "difficulty": "hard",
-        "question": "What did Mizuki's medical teacher, 'the witch,' give her to change her appearance?",
-        "correct_answer": "A potion made from her own dissolved body",
+        "difficulty": "medium",
+        "question": "What is the name of the great youkai gathering Mizuki attended as a child with Yae Miko?",
+        "correct_answer": "Hyakumonogatari Taikai",
         "wrong_answers": [
-            "A magical mask",
-            "An ancient spell",
-            "A blessed talisman"
+            "The Grand Narukami Festival",
+            "The Youkai Summit",
+            "The Kitsune's Banquet"
         ],
-        "explanation": "The bottle on the table is not some sort of mysterious potion, but the final gift I can leave you after I have dissolved myself.",
+        "explanation": "At the great gathering known as the 'Hyakumonogatari Taikai,' the baku were little more than bit-part characters.",
         "id": "GEN0967"
-    },
-    {
-        "category": "Yumemizuki Mizuki",
-        "difficulty": "easy",
-        "question": "What is Mizuki's elemental Vision?",
-        "correct_answer": "Anemo",
-        "wrong_answers": [
-            "Hydro",
-            "Dendro",
-            "Electro"
-        ],
-        "explanation": "The story does not explicitly state her element, but context from her abilities imply it is Anemo.",
-        "id": "GEN0968"
     },
     {
         "category": "Yumemizuki Mizuki",
@@ -12204,7 +11931,7 @@
             "A suggestion from a patient"
         ],
         "explanation": "The vibrant land of the seemingly indefatigable People of the Springs in Natlan's southern regions... Mizuki conceived the idea of establishing an 'entertainment group.'",
-        "id": "GEN0969"
+        "id": "GEN0968"
     },
     {
         "category": "Yumemizuki Mizuki",
@@ -12217,7 +11944,7 @@
             "She meditates in hot springs"
         ],
         "explanation": "Mizuki also conducts therapy on herself... The two little baku, embodying these two different aspects of Mizuki's self, each have their own flaws.",
-        "id": "GEN0970"
+        "id": "GEN0969"
     },
     {
         "category": "Zhongli",
@@ -12612,131 +12339,131 @@
     {
         "category": "Flins",
         "difficulty": "easy",
-        "question": "What is Flins's profession?",
-        "correct_answer": "A sailor",
+        "question": "What is Flins's official title?",
+        "correct_answer": "A warrior of the Lightkeepers",
         "wrong_answers": [
-            "A merchant",
-            "A knight",
-            "A fisherman"
+            "A lighthouse keeper",
+            "A Ratnik",
+            "A civilian commendation awardee"
         ],
-        "explanation": "Flins is a sailor who works for Master Elch, a merchant from Mondstadt.",
+        "explanation": "Flins introduces himself as a warrior of the Lightkeepers.",
         "id": "GEN1001"
     },
     {
         "category": "Flins",
         "difficulty": "easy",
-        "question": "What is the name of the ship Flins sails on?",
-        "correct_answer": "The Dancing Narwhal",
+        "question": "What is the name of the island where Flins lives?",
+        "correct_answer": "Final Night Cemetery",
         "wrong_answers": [
-            "The Sea Serpent",
-            "The Alcor",
-            "The Wave Rider"
+            "The Isle of Slumber",
+            "The Ghost-Fire Reef",
+            "The Blue Flame Sanctuary"
         ],
-        "explanation": "Flins is a sailor aboard the merchant vessel, 'The Dancing Narwhal'.",
+        "explanation": "There is a small isle in the central-southern region of Nod-Krai that has earned the name 'Final Night Cemetery'.",
         "id": "GEN1002"
     },
     {
         "category": "Flins",
         "difficulty": "medium",
-        "question": "What is Flins's dream?",
-        "correct_answer": "To have his own merchant ship",
+        "question": "What does Flins call the young Ratnik, Illuga?",
+        "correct_answer": "Young Master",
         "wrong_answers": [
-            "To become a Knight of Favonius",
-            "To travel the entire world",
-            "To find a legendary treasure"
+            "Brother",
+            "Recruit",
+            "Sir"
         ],
-        "explanation": "Flins's dream is to one day save up enough Mora to have his own merchant vessel.",
+        "explanation": "Flins often addresses Illuga as 'Young Master,' noting his politeness and social graces.",
         "id": "GEN1003"
     },
     {
         "category": "Flins",
-        "difficulty": "medium",
-        "question": "Who does Flins have a friendly rivalry with?",
-        "correct_answer": "Baiwen",
+        "difficulty": "hard",
+        "question": "What was the name of the fae noble who originally owned the 'Tear of the North' gemstone?",
+        "correct_answer": "Kyryll Chudomirovich Flins",
         "wrong_answers": [
-            "Beidou",
-            "The Traveler",
-            "His captain"
+            "Sokolov",
+            "Nikita",
+            "Olav"
         ],
-        "explanation": "Flins has a friendly rivalry with Baiwen of the Liyue Crux Fleet, often competing to see who can deliver goods faster.",
+        "explanation": "The fae noble who... ultimately gave the jewel away on the pretext of losing a bet was named Kyryll Chudomirovich Flins.",
         "id": "GEN1004"
     },
     {
         "category": "Flins",
         "difficulty": "hard",
-        "question": "What 'treasure' did Flins find that turned out to be a misunderstanding?",
-        "correct_answer": "A box of love letters",
+        "question": "What is Flins's peculiar hobby, which he keeps in document boxes?",
+        "correct_answer": "Making 'Skeleton Jigsaws' from monster parts",
         "wrong_answers": [
-            "A map to a hidden island",
-            "A cursed artifact",
-            "A chest full of Mora"
+            "Collecting ancient coins",
+            "Writing poetry",
+            "Carving wooden birds"
         ],
-        "explanation": "He once found a floating box he thought was treasure, but it contained love letters from a sailor to his sweetheart, which he dutifully delivered.",
+        "explanation": "You will discover his rather peculiar private collection — the 'Skeleton Jigsaws.' Each puzzle set consists of miniature skeletons Flins has meticulously carved by hand.",
         "id": "GEN1005"
     },
     {
         "category": "Flins",
-        "difficulty": "easy",
-        "question": "What does Flins believe is the most important quality for a sailor?",
-        "correct_answer": "A love for the sea",
+        "difficulty": "medium",
+        "question": "What color is the flame in Flins's lantern?",
+        "correct_answer": "Cold blue",
         "wrong_answers": [
-            "Strength",
-            "A good sense of direction",
-            "Bravery"
+            "Bright red",
+            "Ghostly green",
+            "Warm yellow"
         ],
-        "explanation": "Flins believes that a true love for the sea is the most important quality a sailor can have.",
+        "explanation": "The flame in Flins's lantern had always been cold blue, yet he had never seen anyone else purchase a similar one.",
         "id": "GEN1006"
     },
     {
         "category": "Flins",
         "difficulty": "medium",
-        "question": "When did Flins receive his Vision?",
-        "correct_answer": "After navigating his ship through a terrible storm",
+        "question": "What did Flins's colleagues give him after a card game?",
+        "correct_answer": "A deck of cards",
         "wrong_answers": [
-            "During a battle with pirates",
-            "While fishing",
-            "As a gift from his captain"
+            "A bottle of wine",
+            "A new lantern",
+            "A pouch of Mora"
         ],
-        "explanation": "He received his Vision after successfully navigating The Dancing Narwhal through a dangerous, unnatural storm, saving the ship and its crew.",
+        "explanation": "His colleagues said, 'Brother, take this deck of cards with you. We'll keep a seat for you, too...'",
         "id": "GEN1007"
     },
     {
         "category": "Flins",
         "difficulty": "hard",
-        "question": "What special knot did Flins learn from an old sailor in Inazuma?",
-        "correct_answer": "The Unbreakable Heart",
+        "question": "How did the being Kyryll begin his long slumber?",
+        "correct_answer": "He transformed into a ball of fire and sank beneath a stone altar",
         "wrong_answers": [
-            "The Serpent's Coil",
-            "The Dragon's Tail",
-            "The Fisherman's Friend"
+            "He drank a sleeping potion",
+            "He was sealed away by the Tsaritsa",
+            "He entered a magical coffin"
         ],
-        "explanation": "An old Inazuman sailor taught him a special knot called the 'Unbreakable Heart,' which he uses to secure the most important cargo.",
+        "explanation": "Atop a stone altar, Kyryll transformed into a ball of fire and sank beneath the earth, beginning a slumber that would last hundreds of years.",
         "id": "GEN1008"
     },
     {
         "category": "Flins",
-        "difficulty": "easy",
-        "question": "What is Flins's elemental Vision?",
-        "correct_answer": "Electro",
+        "difficulty": "hard",
+        "question": "What did a mortally wounded warrior do to reawaken the azure flame?",
+        "correct_answer": "Traced symbols on the stone altar with his own blood",
         "wrong_answers": [
-            "Hydro",
-            "Geo",
-            "Anemo"
+            "He prayed to the Tsaritsa",
+            "He sacrificed his Vision",
+            "He played a magical flute"
         ],
-        "explanation": "His Electro vision allows him to read the winds and predict the weather, making him an invaluable sailor.",
+        "explanation": "A mortally wounded warrior, collapsing upon the sacrificial sanctum and tracing the symbols on the stone slate with fresh blood.",
         "id": "GEN1009"
     },
     {
         "category": "Flins",
-        "difficulty": "medium",
-        "question": "What does Flins often do for the children in Liyue Harbor?",
-        "correct_answer": "Tells them stories of his sea voyages",
+        "difficulty": "easy",
+        "question": "What is the name of Flins's Vision-like accessory?",
+        "correct_answer": "The Moon Wheel",
         "wrong_answers": [
-            "Gives them candy",
-            "Teaches them to sail",
-            "Plays games with them"
+            "The Tear of the North",
+            "The Azure Flame",
+            "The Lightkeeper's Seal"
         ],
-        "explanation": "He enjoys telling the children of Liyue Harbor exaggerated tales of his adventures on the high seas.",
+        "explanation": "Flins shared the true origin of the Moon Wheel, an unexpected gift that appeared in his showroom.",
         "id": "GEN1010"
     },
     {
@@ -12806,15 +12533,15 @@
     },
     {
         "category": "Ifa",
-        "difficulty": "easy",
-        "question": "What is Ifa's elemental Vision?",
-        "correct_answer": "Anemo",
+        "difficulty": "medium",
+        "question": "Why did Ifa not want to adopt any animals long-term?",
+        "correct_answer": "He feared he would adopt every wounded creature he found",
         "wrong_answers": [
-            "Dendro",
-            "Geo",
-            "Hydro"
+            "He didn't have enough space",
+            "He was allergic to them",
+            "His tribe forbade it"
         ],
-        "explanation": "The story implies his vision is Anemo, mentioning a 'cool breeze' and his ability to fly with Cacucu.",
+        "explanation": "Ifa has an unwritten rule to avoid taking in animals long-term, as he fears he would adopt every wounded creature he finds.",
         "id": "GEN1016"
     },
     {
@@ -13222,15 +12949,15 @@
     },
     {
         "category": "Xilonen",
-        "difficulty": "easy",
-        "question": "What is Xilonen's elemental Vision?",
-        "correct_answer": "Geo",
+        "difficulty": "medium",
+        "question": "What is Xilonen's preferred hobby outside of smithing?",
+        "correct_answer": "Being a DJ",
         "wrong_answers": [
-            "Pyro",
-            "Electro",
-            "Anemo"
+            "Napping in treetops",
+            "Reading technical manuals",
+            "Playing cards"
         ],
-        "explanation": "The story strongly implies a Geo vision through her connection to forging, furnaces, Phlogiston, and fire.",
+        "explanation": "'Once I don't have to forge Ancient Names anymore, let me come work for you as an official DJ. How about that?'",
         "id": "GEN1048"
     },
     {
@@ -13258,5 +12985,135 @@
         ],
         "explanation": "She and the artisan Xilonen created the 'Flamestrider,' a multifunctional vehicle.",
         "id": "GEN1050"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "easy",
+        "question": "What is Yunjin's profession?",
+        "correct_answer": "An opera singer and director",
+        "wrong_answers": [
+            "A playwright",
+            "A tea house owner",
+            "A martial artist"
+        ],
+        "explanation": "Yunjin is the director and soul of the Yun-Han Opera Troupe, and a famed opera singer.",
+        "id": "GEN1051"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "easy",
+        "question": "What is the name of the opera troupe Yunjin leads?",
+        "correct_answer": "Yun-Han Opera Troupe",
+        "wrong_answers": [
+            "The Heyu Opera Company",
+            "The Liyue Opera",
+            "The Divine Damsels"
+        ],
+        "explanation": "The most acclaimed opera troupe in Liyue is the Yun-Han Opera Troupe, and its current director is Yun Jin.",
+        "id": "GEN1052"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "medium",
+        "question": "Besides singing, what other role does Yunjin have in her troupe?",
+        "correct_answer": "A playwright",
+        "wrong_answers": [
+            "A costume designer",
+            "A composer",
+            "A martial arts choreographer"
+        ],
+        "explanation": "What's even rarer is that this young actress is also a playwright. Many of the troupe's new plays were written by Yun Jin.",
+        "id": "GEN1053"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "medium",
+        "question": "Who is Yunjin's rock 'n' roll musician friend?",
+        "correct_answer": "Xinyan",
+        "wrong_answers": [
+            "Hu Tao",
+            "Xiangling",
+            "Beidou"
+        ],
+        "explanation": "She finds that rock 'n' roll vibrates with vigor and even became friends with the rock 'n' roll musician Xinyan.",
+        "id": "GEN1054"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "hard",
+        "question": "What name does Yunjin use for her friend Xinyan to avoid upsetting the troupe elders?",
+        "correct_answer": "Xingyan, Fan Er'ye's adopted daughter",
+        "wrong_answers": [
+            "A visiting musician from Fontaine",
+            "A new waitress at the tea house",
+            "A quiet poet"
+        ],
+        "explanation": "To avoid the elders' nagging, Yunjin pretends she is visiting 'Fan Er'ye's adopted daughter Xingyan' to discuss Liyue Opera.",
+        "id": "GEN1055"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "medium",
+        "question": "What respectful title do Yunjin's fans call her?",
+        "correct_answer": "Sir Yun",
+        "wrong_answers": [
+            "Director Yun",
+            "The Divine Damsel",
+            "Lady Yun"
+        ],
+        "explanation": "After an impressed fan half-joked that 'the Sir Yun we have now sings rather well too,' the title stuck and everyone started to call her Sir Yun.",
+        "id": "GEN1056"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "medium",
+        "question": "What kind of stories does Yunjin wish to tell in her operas?",
+        "correct_answer": "Stories of mortal joys and sorrows",
+        "wrong_answers": [
+            "Stories of the adepti and Rex Lapis",
+            "Stories of heroic battles",
+            "Stories of romance and comedy"
+        ],
+        "explanation": "'So, let me sing of human stories. May my brush be the brush of all hearts and my voice the voice of all souls.'",
+        "id": "GEN1057"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "hard",
+        "question": "What was the profession of Yunjin's ancestors before they became opera performers?",
+        "correct_answer": "Weaponsmiths",
+        "wrong_answers": [
+            "Merchants",
+            "Scholars",
+            "Farmers"
+        ],
+        "explanation": "Her ancestors used to work as weaponsmiths instead of opera performers.",
+        "id": "GEN1058"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "hard",
+        "question": "What opera was Yunjin performing when she had an epiphany and received her Vision?",
+        "correct_answer": "Snow Treading",
+        "wrong_answers": [
+            "The Divine Damsel of Devastation",
+            "String of Pearls",
+            "A self-written play"
+        ],
+        "explanation": "What broke her bottleneck was an opera named 'Snow Treading.' Feeling as if she had become her character, she had an epiphany and later found a Vision in her sleeve.",
+        "id": "GEN1059"
+    },
+    {
+        "category": "Yunjin",
+        "difficulty": "medium",
+        "question": "What does Yunjin believe is the key to telling a moving tale on stage?",
+        "correct_answer": "Becoming the character you are playing",
+        "wrong_answers": [
+            "Skillful singing and dancing",
+            "Elaborate costumes and sets",
+            "A dramatic story"
+        ],
+        "explanation": "She realized that to tell a moving tale, she had to leave herself behind and walk in the shoes of the many characters she played, to breathe, live, and smile just like them.",
+        "id": "GEN1060"
     }
 ]
