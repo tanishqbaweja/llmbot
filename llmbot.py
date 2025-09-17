@@ -3,7 +3,7 @@ from discord.ext import commands
 import aiohttp
 import sqlite3
 import json
-from datetime import datetime
+from datetime import datetime, date
 import os
 import re
 import asyncio
@@ -15,6 +15,8 @@ import threading
 import stat
 import secrets
 import requests
+import csv
+import random
 from collections import defaultdict
 from contextlib import contextmanager
 from logging.handlers import RotatingFileHandler
@@ -266,6 +268,12 @@ def init_db():
                          (user_id INTEGER, channel_id INTEGER, last_request_time REAL, PRIMARY KEY (user_id, channel_id))''')
             c.execute('''CREATE TABLE IF NOT EXISTS user_personalities
                          (user_id INTEGER PRIMARY KEY, personality TEXT)''')
+            c.execute('''CREATE TABLE IF NOT EXISTS trivia_scores
+                         (user_id INTEGER, server_id INTEGER, points INTEGER, last_question_date TEXT, daily_count INTEGER, PRIMARY KEY (user_id, server_id))''')
+            c.execute('''CREATE TABLE IF NOT EXISTS trivia_completed
+                         (user_id INTEGER, file_name TEXT, question_id TEXT, PRIMARY KEY (user_id, file_name, question_id))''')
+            c.execute('''CREATE TABLE IF NOT EXISTS genshin_completed
+                         (user_id INTEGER, question_id TEXT, PRIMARY KEY (user_id, question_id))''')
             
             # Check if migration is needed
             c.execute("PRAGMA table_info(usage_tracking)")
@@ -1613,6 +1621,367 @@ async def help_command(ctx):
     await ctx.reply(embed=embed)
 
 
+
+def load_trivia_questions():
+    questions = {}
+    
+    # Load trivia_questions.json
+    try:
+        with open('trivia/trivia_questions.json', 'r', encoding='utf-8') as f:
+            questions['trivia_questions.json'] = json.load(f)
+    except FileNotFoundError:
+        questions['trivia_questions.json'] = []
+    
+    # Load anime_trivia.json
+    try:
+        with open('trivia/anime_trivia.json', 'r', encoding='utf-8') as f:
+            questions['anime_trivia.json'] = json.load(f)
+    except FileNotFoundError:
+        questions['anime_trivia.json'] = []
+    
+    # Load quiz_questions.csv
+    try:
+        with open('trivia/quiz_questions.csv', 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            questions['quiz_questions.csv'] = list(reader)
+    except FileNotFoundError:
+        questions['quiz_questions.csv'] = []
+    
+    return questions
+
+def load_genshin_questions():
+    try:
+        with open('trivia/genshin_trivia.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+def check_daily_limit(user_id):
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            today = date.today().isoformat()
+            c.execute('SELECT daily_count, last_question_date FROM trivia_scores WHERE user_id = ? LIMIT 1', (user_id,))
+            result = c.fetchone()
+            
+            if not result:
+                return True, 0
+            
+            daily_count, last_date = result
+            if last_date != today:
+                return True, 0
+            
+            return daily_count < 50, daily_count
+    except Exception:
+        return True, 0
+
+def update_daily_count(user_id):
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            today = date.today().isoformat()
+            c.execute('SELECT daily_count, last_question_date FROM trivia_scores WHERE user_id = ? LIMIT 1', (user_id,))
+            result = c.fetchone()
+            
+            if not result:
+                c.execute('INSERT INTO trivia_scores (user_id, server_id, points, last_question_date, daily_count) VALUES (?, 0, 0, ?, 1)', (user_id, today))
+            else:
+                daily_count, last_date = result
+                if last_date != today:
+                    c.execute('UPDATE trivia_scores SET last_question_date = ?, daily_count = 1 WHERE user_id = ?', (today, user_id))
+                else:
+                    c.execute('UPDATE trivia_scores SET daily_count = daily_count + 1 WHERE user_id = ?', (user_id,))
+            
+            conn.commit()
+    except Exception as e:
+        logging.error(f"Error updating daily count: {e}")
+
+def get_random_question(user_id, question_type):
+    if question_type == 'genshin':
+        questions = load_genshin_questions()
+        completed_query = 'SELECT question_id FROM genshin_completed WHERE user_id = ?'
+        file_name = 'genshin_trivia.json'
+    else:
+        all_questions = load_trivia_questions()
+        questions = []
+        for file_name, file_questions in all_questions.items():
+            for q in file_questions:
+                q['_file'] = file_name
+                questions.append(q)
+        completed_query = 'SELECT file_name, question_id FROM trivia_completed WHERE user_id = ?'
+    
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute(completed_query, (user_id,))
+            completed = c.fetchall()
+            
+            if question_type == 'genshin':
+                completed_ids = {str(row[0]) for row in completed}
+                available = [q for q in questions if str(q.get('id', '')) not in completed_ids]
+                
+                if not available:
+                    c.execute('DELETE FROM genshin_completed WHERE user_id = ?', (user_id,))
+                    conn.commit()
+                    available = questions
+            else:
+                completed_pairs = {(row[0], str(row[1])) for row in completed}
+                available = [q for q in questions if (q['_file'], str(q.get('id', ''))) not in completed_pairs]
+                
+                if not available:
+                    c.execute('DELETE FROM trivia_completed WHERE user_id = ?', (user_id,))
+                    conn.commit()
+                    available = questions
+            
+            return random.choice(available) if available else None
+    except Exception as e:
+        logging.error(f"Error getting random question: {e}")
+        return None
+
+class TriviaView(discord.ui.View):
+    def __init__(self, question_data, user_id, server_id, question_type):
+        super().__init__(timeout=20)
+        self.question_data = question_data
+        self.user_id = user_id
+        self.server_id = server_id
+        self.question_type = question_type
+        self.answered = False
+        
+        # Add buttons based on question type
+        if question_data.get('type') == 'boolean' or len(question_data.get('wrong_answers', [])) == 0:
+            self.add_item(TriviaButton('True', 'true', discord.ButtonStyle.green))
+            self.add_item(TriviaButton('False', 'false', discord.ButtonStyle.red))
+        else:
+            options = [question_data['correct_answer']] + question_data['wrong_answers']
+            random.shuffle(options)
+            
+            styles = [discord.ButtonStyle.primary, discord.ButtonStyle.secondary, discord.ButtonStyle.success, discord.ButtonStyle.danger]
+            for i, option in enumerate(options[:4]):
+                style = styles[i % len(styles)]
+                self.add_item(TriviaButton(option[:80], option, style))
+    
+    async def on_timeout(self):
+        for item in self.children:
+            item.disabled = True
+        
+        embed = discord.Embed(title="⏰ Time's Up!", description="You didn't answer in time.", color=0xff9900)
+        try:
+            await self.message.edit(embed=embed, view=self)
+        except:
+            pass
+
+class TriviaButton(discord.ui.Button):
+    def __init__(self, label, value, style):
+        super().__init__(label=label, style=style)
+        self.value = value
+    
+    async def callback(self, interaction):
+        if interaction.user.id != self.view.user_id:
+            await interaction.response.send_message("This isn't your trivia question!", ephemeral=True)
+            return
+        
+        if self.view.answered:
+            await interaction.response.send_message("You already answered!", ephemeral=True)
+            return
+        
+        self.view.answered = True
+        
+        # Disable all buttons
+        for item in self.view.children:
+            item.disabled = True
+        
+        question = self.view.question_data
+        correct_answer = question['correct_answer']
+        
+        # Check if answer is correct
+        if question.get('type') == 'boolean':
+            is_correct = (self.value.lower() == correct_answer.lower())
+        else:
+            is_correct = (self.value == correct_answer)
+        
+        # Update database
+        try:
+            with get_db_connection() as conn:
+                c = conn.cursor()
+                
+                # Mark question as completed
+                if self.view.question_type == 'genshin':
+                    c.execute('INSERT OR IGNORE INTO genshin_completed (user_id, question_id) VALUES (?, ?)', 
+                             (self.view.user_id, str(question.get('id', ''))))
+                else:
+                    file_name = question.get('_file', '')
+                    c.execute('INSERT OR IGNORE INTO trivia_completed (user_id, file_name, question_id) VALUES (?, ?, ?)', 
+                             (self.view.user_id, file_name, str(question.get('id', ''))))
+                
+                # Update score if correct
+                if is_correct:
+                    points = 10 if question.get('difficulty') == 'easy' else 20 if question.get('difficulty') == 'medium' else 30
+                    c.execute('INSERT OR IGNORE INTO trivia_scores (user_id, server_id, points, last_question_date, daily_count) VALUES (?, ?, 0, ?, 0)', 
+                             (self.view.user_id, self.view.server_id, date.today().isoformat()))
+                    c.execute('UPDATE trivia_scores SET points = points + ? WHERE user_id = ? AND server_id = ?', 
+                             (points, self.view.user_id, self.view.server_id))
+                
+                conn.commit()
+        except Exception as e:
+            logging.error(f"Error updating trivia database: {e}")
+        
+        # Create response embed
+        if is_correct:
+            points = 10 if question.get('difficulty') == 'easy' else 20 if question.get('difficulty') == 'medium' else 30
+            embed = discord.Embed(title="🎉 Correct!", description=f"You earned {points} points!", color=0x00ff00)
+        else:
+            embed = discord.Embed(title="❌ Wrong!", description=f"The correct answer was: **{correct_answer}**", color=0xff0000)
+        
+        if question.get('explanation'):
+            embed.add_field(name="Explanation", value=question['explanation'][:1024], inline=False)
+        
+        await interaction.response.edit_message(embed=embed, view=self.view)
+
+@bot.command(name='trivia')
+async def trivia_command(ctx):
+    user_id = ctx.author.id
+    server_id = ctx.guild.id if ctx.guild else 0
+    
+    # Check daily limit
+    can_play, current_count = check_daily_limit(user_id)
+    if not can_play:
+        await ctx.reply(f"🚫 You've reached your daily limit of 50 trivia questions! ({current_count}/50)")
+        return
+    
+    # Get random question
+    question = get_random_question(user_id, 'trivia')
+    if not question:
+        await ctx.reply("❌ No trivia questions available!")
+        return
+    
+    # Update daily count
+    update_daily_count(user_id)
+    
+    # Create embed
+    embed = discord.Embed(
+        title=f"🧠 Trivia Question ({current_count + 1}/50)",
+        description=question['question'],
+        color=0x0099ff
+    )
+    
+    if question.get('category'):
+        embed.add_field(name="Category", value=question['category'], inline=True)
+    if question.get('difficulty'):
+        embed.add_field(name="Difficulty", value=question['difficulty'].title(), inline=True)
+    
+    embed.set_footer(text="⏰ You have 20 seconds to answer!")
+    
+    # Create view with buttons
+    view = TriviaView(question, user_id, server_id, 'trivia')
+    
+    message = await ctx.reply(embed=embed, view=view)
+    view.message = message
+
+@bot.command(name='genshin')
+async def genshin_command(ctx):
+    user_id = ctx.author.id
+    server_id = ctx.guild.id if ctx.guild else 0
+    
+    # Check daily limit
+    can_play, current_count = check_daily_limit(user_id)
+    if not can_play:
+        await ctx.reply(f"🚫 You've reached your daily limit of 50 trivia questions! ({current_count}/50)")
+        return
+    
+    # Get random question
+    question = get_random_question(user_id, 'genshin')
+    if not question:
+        await ctx.reply("❌ No Genshin trivia questions available!")
+        return
+    
+    # Update daily count
+    update_daily_count(user_id)
+    
+    # Create embed
+    embed = discord.Embed(
+        title=f"⚔️ Genshin Impact Trivia ({current_count + 1}/50)",
+        description=question['question'],
+        color=0x9966cc
+    )
+    
+    if question.get('category'):
+        embed.add_field(name="Category", value=question['category'], inline=True)
+    if question.get('difficulty'):
+        embed.add_field(name="Difficulty", value=question['difficulty'].title(), inline=True)
+    
+    embed.set_footer(text="⏰ You have 20 seconds to answer!")
+    
+    # Create view with buttons
+    view = TriviaView(question, user_id, server_id, 'genshin')
+    
+    message = await ctx.reply(embed=embed, view=view)
+    view.message = message
+
+@bot.command(name='leaderboard')
+async def leaderboard_command(ctx):
+    server_id = ctx.guild.id if ctx.guild else 0
+    
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('SELECT user_id, points FROM trivia_scores WHERE server_id = ? ORDER BY points DESC LIMIT 10', (server_id,))
+            results = c.fetchall()
+            
+            if not results:
+                await ctx.reply("📊 No trivia scores yet in this server!")
+                return
+            
+            embed = discord.Embed(title="🏆 Server Trivia Leaderboard", color=0xffd700)
+            
+            leaderboard_text = ""
+            for i, (user_id, points) in enumerate(results, 1):
+                try:
+                    user = bot.get_user(user_id) or await bot.fetch_user(user_id)
+                    username = user.display_name if user else f"User {user_id}"
+                except:
+                    username = f"User {user_id}"
+                
+                medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else f"{i}."
+                leaderboard_text += f"{medal} **{username}** - {points} points\n"
+            
+            embed.description = leaderboard_text
+            await ctx.reply(embed=embed)
+    
+    except Exception as e:
+        logging.error(f"Error in leaderboard: {e}")
+        await ctx.reply("❌ Error retrieving leaderboard!")
+
+@bot.command(name='leaderboardglobal')
+async def leaderboard_global_command(ctx):
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('SELECT user_id, SUM(points) as total_points FROM trivia_scores GROUP BY user_id ORDER BY total_points DESC LIMIT 10')
+            results = c.fetchall()
+            
+            if not results:
+                await ctx.reply("📊 No trivia scores yet globally!")
+                return
+            
+            embed = discord.Embed(title="🌍 Global Trivia Leaderboard", color=0x00ff00)
+            
+            leaderboard_text = ""
+            for i, (user_id, points) in enumerate(results, 1):
+                try:
+                    user = bot.get_user(user_id) or await bot.fetch_user(user_id)
+                    username = user.display_name if user else f"User {user_id}"
+                except:
+                    username = f"User {user_id}"
+                
+                medal = "🥇" if i == 1 else "🥈" if i == 2 else "🥉" if i == 3 else f"{i}."
+                leaderboard_text += f"{medal} **{username}** - {points} points\n"
+            
+            embed.description = leaderboard_text
+            await ctx.reply(embed=embed)
+    
+    except Exception as e:
+        logging.error(f"Error in global leaderboard: {e}")
+        await ctx.reply("❌ Error retrieving global leaderboard!")
 
 @bot.command(name='mistralapicheck')
 async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
