@@ -6490,7 +6490,7 @@
         "category": "Lan Yan",
         "difficulty": "easy",
         "question": "What is Lan Yan's elemental Vision?",
-        "correct_answer": "Dendro",
+        "correct_answer": "Cryo",
         "wrong_answers": [
             "Hydro",
             "Anemo",
@@ -8024,13 +8024,13 @@
         "category": "Ororon",
         "difficulty": "easy",
         "question": "What is Ororon's elemental Vision?",
-        "correct_answer": "Geo",
+        "correct_answer": "Electro",
         "wrong_answers": [
             "Pyro",
             "Dendro",
             "Anemo"
         ],
-        "explanation": "Ororon possesses a Geo Vision, which activated from a stone he carried.",
+        "explanation": "Ororon possesses an Electro Vision, which activated from a stone he carried.",
         "id": "GEN0648"
     },
     {
@@ -12717,13 +12717,13 @@
         "category": "Flins",
         "difficulty": "easy",
         "question": "What is Flins's elemental Vision?",
-        "correct_answer": "Anemo",
+        "correct_answer": "Electro",
         "wrong_answers": [
             "Hydro",
             "Geo",
-            "Electro"
+            "Anemo"
         ],
-        "explanation": "His Anemo vision allows him to read the winds and predict the weather, making him an invaluable sailor.",
+        "explanation": "His Electro vision allows him to read the winds and predict the weather, making him an invaluable sailor.",
         "id": "GEN1009"
     },
     {
@@ -13107,13 +13107,13 @@
         "category": "Kinich",
         "difficulty": "easy",
         "question": "What is Kinich's elemental Vision?",
-        "correct_answer": "Geo",
+        "correct_answer": "Dendro",
         "wrong_answers": [
             "Pyro",
-            "Dendro",
+            "Geo",
             "Anemo"
         ],
-        "explanation": "He received an emerald-hued Geo Vision, which activated at the moment of his death and allowed his body to continue fighting.",
+        "explanation": "He received an emerald-hued Dendro Vision, which activated at the moment of his death and allowed his body to continue fighting.",
         "id": "GEN1039"
     },
     {
@@ -13224,13 +13224,13 @@
         "category": "Xilonen",
         "difficulty": "easy",
         "question": "What is Xilonen's elemental Vision?",
-        "correct_answer": "Pyro",
+        "correct_answer": "Geo",
         "wrong_answers": [
-            "Geo",
+            "Pyro",
             "Electro",
             "Anemo"
         ],
-        "explanation": "The story strongly implies a Pyro vision through her connection to forging, furnaces, Phlogiston, and fire.",
+        "explanation": "The story strongly implies a Geo vision through her connection to forging, furnaces, Phlogiston, and fire.",
         "id": "GEN1048"
     },
     {
