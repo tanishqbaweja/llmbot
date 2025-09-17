@@ -1790,7 +1790,7 @@ class TriviaButton(discord.ui.Button):
         # Update button colors and disable all buttons
         for item in self.view.children:
             item.disabled = True
-            if item.value == question['correct_answer']:
+            if item.value == self.view.question_data['correct_answer']:
                 item.style = discord.ButtonStyle.success  # Green for correct
             else:
                 item.style = discord.ButtonStyle.secondary  # Gray for others
