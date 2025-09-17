@@ -1829,9 +1829,9 @@ class TriviaButton(discord.ui.Button):
         # Create response embed
         if is_correct:
             points = 10 if question.get('difficulty') == 'easy' else 20 if question.get('difficulty') == 'medium' else 30
-            embed = discord.Embed(title="🎉 Correct!", description=f"You earned {points} points!", color=0x00ff00)
+            embed = discord.Embed(title="🎉 Correct!", description=f"**Question:** {question['question']}\n\n✅ You earned {points} points!", color=0x00ff00)
         else:
-            embed = discord.Embed(title="❌ Wrong!", description=f"The correct answer was: **{correct_answer}**", color=0xff0000)
+            embed = discord.Embed(title="❌ Wrong!", description=f"**Question:** {question['question']}\n\n❌ The correct answer was: **{correct_answer}**", color=0xff0000)
         
         if question.get('explanation'):
             embed.add_field(name="Explanation", value=question['explanation'][:1024], inline=False)
@@ -1860,7 +1860,7 @@ async def trivia_command(ctx):
     
     # Create embed
     embed = discord.Embed(
-        title="🧠 Trivia Question",
+        title=f"🧠 Trivia Question for {ctx.author.display_name}",
         description=question['question'],
         color=0x0099ff
     )
@@ -1900,7 +1900,7 @@ async def genshin_command(ctx):
     
     # Create embed
     embed = discord.Embed(
-        title="⚔️ Genshin Impact Trivia",
+        title=f"⚔️ Genshin Impact Trivia for {ctx.author.display_name}",
         description=question['question'],
         color=0x9966cc
     )
