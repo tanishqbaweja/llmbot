@@ -1785,6 +1785,15 @@ class TriviaButton(discord.ui.Button):
         
         self.view.answered = True
         
+        question = self.view.question_data
+        correct_answer = question['correct_answer']
+        
+        # Check if answer is correct
+        if question.get('type') == 'boolean':
+            is_correct = (self.value.lower() == correct_answer.lower())
+        else:
+            is_correct = (self.value == correct_answer)
+        
         # Update button colors and disable all buttons
         for item in self.view.children:
             item.disabled = True
@@ -1802,15 +1811,6 @@ class TriviaButton(discord.ui.Button):
                     item.style = discord.ButtonStyle.danger  # Red for user's wrong choice
                 else:
                     item.style = discord.ButtonStyle.secondary  # Gray for others
-        
-        question = self.view.question_data
-        correct_answer = question['correct_answer']
-        
-        # Check if answer is correct
-        if question.get('type') == 'boolean':
-            is_correct = (self.value.lower() == correct_answer.lower())
-        else:
-            is_correct = (self.value == correct_answer)
         
         # Update database
         try:
