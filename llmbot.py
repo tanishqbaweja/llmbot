@@ -1761,14 +1761,15 @@ class TriviaView(discord.ui.View):
                 self.add_item(TriviaButton(option[:80], option, style))
     
     async def on_timeout(self):
-        for item in self.children:
-            item.disabled = True
-        
-        embed = discord.Embed(title="⏰ Time's Up!", description="You didn't answer in time.", color=0xff9900)
-        try:
-            await self.message.edit(embed=embed, view=self)
-        except:
-            pass
+        if not self.answered:
+            for item in self.children:
+                item.disabled = True
+            
+            embed = discord.Embed(title="⏰ Time's Up!", description="You didn't answer in time.", color=0xff9900)
+            try:
+                await self.message.edit(embed=embed, view=self)
+            except:
+                pass
 
 class TriviaButton(discord.ui.Button):
     def __init__(self, label, value, style):
@@ -1859,7 +1860,7 @@ async def trivia_command(ctx):
     
     # Create embed
     embed = discord.Embed(
-        title=f"🧠 Trivia Question ({current_count + 1}/50)",
+        title="🧠 Trivia Question",
         description=question['question'],
         color=0x0099ff
     )
@@ -1899,7 +1900,7 @@ async def genshin_command(ctx):
     
     # Create embed
     embed = discord.Embed(
-        title=f"⚔️ Genshin Impact Trivia ({current_count + 1}/50)",
+        title="⚔️ Genshin Impact Trivia",
         description=question['question'],
         color=0x9966cc
     )
