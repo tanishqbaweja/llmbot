@@ -1806,7 +1806,7 @@ class TriviaButton(discord.ui.Button):
             else:
                 # User answered incorrectly
                 if item.value == self.view.question_data['correct_answer']:
-                    item.style = discord.ButtonStyle.primary  # Blue for correct answer
+                    item.style = discord.ButtonStyle.success  # Green for correct answer
                 elif item.value == self.value:
                     item.style = discord.ButtonStyle.danger  # Red for user's wrong choice
                 else:
