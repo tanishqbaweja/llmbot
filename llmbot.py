@@ -1955,7 +1955,7 @@ class LeaderboardView(discord.ui.View):
         leaderboard_text = ""
         for i, (user_id, points) in enumerate(page_results, start + 1):
             try:
-                user = bot.get_user(user_id)
+                user = bot.get_user(user_id) or await bot.fetch_user(user_id)
                 username = user.display_name if user else f"User {user_id}"
             except:
                 username = f"User {user_id}"
