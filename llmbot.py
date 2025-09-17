@@ -1755,7 +1755,7 @@ class TriviaView(discord.ui.View):
             options = [question_data['correct_answer']] + question_data['wrong_answers']
             random.shuffle(options)
             
-            styles = [discord.ButtonStyle.primary, discord.ButtonStyle.secondary, discord.ButtonStyle.success, discord.ButtonStyle.danger]
+            styles = [discord.ButtonStyle.primary, discord.ButtonStyle.secondary, discord.ButtonStyle.blurple, discord.ButtonStyle.danger]
             for i, option in enumerate(options[:4]):
                 style = styles[i % len(styles)]
                 self.add_item(TriviaButton(option[:80], option, style))
@@ -1787,9 +1787,13 @@ class TriviaButton(discord.ui.Button):
         
         self.view.answered = True
         
-        # Disable all buttons
+        # Update button colors and disable all buttons
         for item in self.view.children:
             item.disabled = True
+            if item.value == question['correct_answer']:
+                item.style = discord.ButtonStyle.success  # Green for correct
+            else:
+                item.style = discord.ButtonStyle.secondary  # Gray for others
         
         question = self.view.question_data
         correct_answer = question['correct_answer']
