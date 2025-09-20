@@ -2085,17 +2085,33 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
                 try:
                     chunk = json.loads(line)
                     if 'choices' in chunk and len(chunk['choices']) > 0:
-                        delta = chunk['choices'][0].get('delta', {})
+                        choice = chunk['choices'][0]
+                        delta = choice.get('delta', {})
                         
-                        # Handle reasoning content
+                        # Check for reasoning in multiple possible locations
+                        reasoning_text = None
                         if 'reasoning' in delta and delta['reasoning']:
-                            reasoning_content += delta['reasoning']
+                            reasoning_text = delta['reasoning']
+                        elif 'reasoning' in choice and choice['reasoning']:
+                            reasoning_text = choice['reasoning']
+                        elif 'reasoning' in chunk and chunk['reasoning']:
+                            reasoning_text = chunk['reasoning']
+                        
+                        if reasoning_text:
+                            reasoning_content += reasoning_text
                             yield {'type': 'reasoning', 'content': reasoning_content}
                         
-                        # Handle regular content
+                        # Handle regular content - check for thinking patterns
                         if 'content' in delta and delta['content']:
-                            full_response += delta['content']
-                            yield {'type': 'response', 'content': full_response}
+                            content = delta['content']
+                            full_response += content
+                            
+                            # If content contains thinking markers, treat as reasoning
+                            if any(marker in content.lower() for marker in ['<thinking>', 'let me think', 'i need to', 'first,', 'reasoning:']):
+                                reasoning_content += content
+                                yield {'type': 'reasoning', 'content': reasoning_content}
+                            else:
+                                yield {'type': 'response', 'content': full_response}
                 except json.JSONDecodeError:
                     continue
 
