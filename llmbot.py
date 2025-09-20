@@ -2074,6 +2074,7 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
         raise Exception(f"Grok API Error {response.status_code}: {response.text[:100]}")
     
     full_response = ""
+    reasoning_content = ""
     for line in response.iter_lines():
         if line:
             line = line.decode('utf-8')
@@ -2085,9 +2086,16 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
                     chunk = json.loads(line)
                     if 'choices' in chunk and len(chunk['choices']) > 0:
                         delta = chunk['choices'][0].get('delta', {})
+                        
+                        # Handle reasoning content
+                        if 'reasoning' in delta:
+                            reasoning_content += delta['reasoning']
+                            yield {'type': 'reasoning', 'content': reasoning_content}
+                        
+                        # Handle regular content
                         if 'content' in delta:
                             full_response += delta['content']
-                            yield full_response
+                            yield {'type': 'response', 'content': full_response}
                 except json.JSONDecodeError:
                     continue
 
@@ -2121,15 +2129,25 @@ async def x_command(ctx, *, prompt):
             full_response = ""
             last_length = 0
             
-            async for partial_response in call_grok_api(api_key, prompt, ctx.author.id, input_image):
-                full_response = partial_response
+            reasoning_msg = None
+            
+            async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
+                if chunk['type'] == 'reasoning':
+                    reasoning_content = chunk['content']
+                    if len(reasoning_content) - last_length >= 200:
+                        if reasoning_msg is None:
+                            reasoning_msg = await ctx.reply(f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
+                        else:
+                            await reasoning_msg.edit(content=f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
+                        last_length = len(reasoning_content)
                 
-                # Stream response every 200 characters
-                if len(full_response) - last_length >= 200:
-                    if response_message is None:
-                        response_message = status_msg
-                    await response_message.edit(content=full_response[:2000])
-                    last_length = len(full_response)
+                elif chunk['type'] == 'response':
+                    full_response = chunk['content']
+                    if len(full_response) - last_length >= 200:
+                        if response_message is None:
+                            response_message = status_msg
+                        await response_message.edit(content=full_response[:2000])
+                        last_length = len(full_response)
             
             # Final update
             if not full_response.strip():
