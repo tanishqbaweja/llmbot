@@ -2292,7 +2292,10 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None, attachm
     
     data = {
         "model": "x-ai/grok-4:online",
-        "messages": [{"role": "user", "content": content}],
+        "messages": [
+            {"role": "system", "content": "Keep responses under 1000 characters and be concise."},
+            {"role": "user", "content": content}
+        ],
         "stream": True,
         "max_tokens": 1000,
 
