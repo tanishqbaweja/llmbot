@@ -549,7 +549,7 @@ async def call_openrouter_api(api_key, prompt, user_id=None):
     else:
         raise Exception(f"OpenRouter API Error {response.status_code}: {response.text[:100]}")
 
-async def get_ai_response(prompt, message):
+async def get_ai_response(prompt, message, force_model=None):
     user_id = message.author.id
     
     # Check user rate limit
@@ -568,7 +568,126 @@ async def get_ai_response(prompt, message):
         active_requests.add(user_id)
     
     try:
-        # Try OpenRouter Mistral first
+        # If force_model is specified, use that specific model/API
+        if force_model:
+            if force_model == "mistral-openrouter":
+                for api_key in OPENROUTER_API_KEYS:
+                    try:
+                        response_text = await call_openrouter_api(api_key, prompt, user_id)
+                        if response_text:
+                            response_message = await message.reply(response_text[:2000])
+                            if len(response_text) > 2000:
+                                await message.reply(response_text[2000:])
+                            
+                            message_link = f"https://discord.com/channels/{message.guild.id}/{message.channel.id}/{response_message.id}"
+                            store_bot_message(response_message.id, message_link, "mistral-openrouter", api_key)
+                            print(f"Response generated using OpenRouter Mistral (forced)")
+                            return
+                    except Exception as e:
+                        safe_error = sanitize_log_message(str(e)[:100])
+                        logging.error(f"OpenRouter API error: {safe_error}")
+                        continue
+            elif force_model == "grok":
+                for api_key in OPENROUTER_API_KEYS:
+                    try:
+                        status_msg = await message.reply("🤖 Grok is thinking...")
+                        full_response = ""
+                        async for chunk in call_grok_api(api_key, prompt, user_id):
+                            if chunk['type'] == 'response':
+                                full_response = chunk['content']
+                        
+                        if not full_response.strip():
+                            full_response = "I'm having trouble generating a response. Please try again."
+                        
+                        await status_msg.edit(content=full_response[:2000])
+                        if len(full_response) > 2000:
+                            await message.reply(full_response[2000:])
+                        
+                        message_link = f"https://discord.com/channels/{message.guild.id}/{message.channel.id}/{status_msg.id}"
+                        store_bot_message(status_msg.id, message_link, "grok", api_key)
+                        print(f"Response generated using Grok (forced)")
+                        return
+                    except Exception as e:
+                        safe_error = sanitize_log_message(str(e)[:100])
+                        logging.error(f"Grok API error: {safe_error}")
+                        continue
+            elif force_model in MODEL_PRIORITY:
+                # Force specific Groq model
+                for api_key, key_num in API_KEYS_WITH_NUMBERS:
+                    if key_num < 11 or key_num > 17:
+                        continue
+                    if not check_rate_limits(api_key, force_model):
+                        continue
+                    
+                    try:
+                        response_message = None
+                        full_response = ""
+                        last_length = 0
+                        is_thinking_model = force_model in ["deepseek-r1-distill-llama-70b", "qwen/qwen3-32b"]
+                        in_thinking = False
+                        thinking_done = False
+                        
+                        async for partial_response in call_groq_api(api_key, force_model, prompt, message.author.id):
+                            full_response = partial_response
+                            
+                            # Handle thinking models
+                            if is_thinking_model:
+                                if "<think>" in full_response and not thinking_done:
+                                    in_thinking = True
+                                    if response_message is None:
+                                        response_message = await message.reply("🤔 Thinking...")
+                                    continue
+                                
+                                if "</think>" in full_response and in_thinking:
+                                    thinking_done = True
+                                    in_thinking = False
+                                    display_content = full_response.split("</think>", 1)[-1].strip()
+                                    if display_content:
+                                        await response_message.edit(content=display_content[:2000])
+                                        last_length = len(display_content)
+                                    continue
+                                
+                                if thinking_done and not in_thinking:
+                                    display_content = full_response.split("</think>", 1)[-1].strip()
+                                    if len(display_content) - last_length >= 200:
+                                        await response_message.edit(content=display_content[:2000])
+                                        last_length = len(display_content)
+                            else:
+                                if len(full_response) - last_length >= 200:
+                                    if response_message is None:
+                                        response_message = await message.reply(full_response[:2000])
+                                    else:
+                                        await response_message.edit(content=full_response[:2000])
+                                    last_length = len(full_response)
+                        
+                        # Final update
+                        display_content = full_response
+                        if "</think>" in full_response:
+                            display_content = full_response.split("</think>", 1)[-1].strip()
+                        
+                        if not display_content.strip():
+                            display_content = "I'm having trouble generating a response. Please try again."
+                        
+                        if response_message:
+                            await response_message.edit(content=display_content[:2000])
+                            if len(display_content) > 2000:
+                                await message.reply(display_content[2000:])
+                        else:
+                            response_message = await message.reply(display_content[:2000])
+                            if len(display_content) > 2000:
+                                await message.reply(display_content[2000:])
+                        
+                        message_link = f"https://discord.com/channels/{message.guild.id}/{message.channel.id}/{response_message.id}"
+                        store_bot_message(response_message.id, message_link, force_model, api_key)
+                        update_usage(api_key, force_model, len(full_response))
+                        print(f"Response generated using Groq API key {key_num} with model: {force_model} (forced)")
+                        return
+                    except Exception as e:
+                        safe_error = sanitize_log_message(str(e)[:100])
+                        logging.error(f"Groq API error with model {force_model}, key {key_num}: {safe_error}")
+                        continue
+        
+        # Default behavior - try OpenRouter Mistral first
         if OPENROUTER_API_KEYS:
             for api_key in OPENROUTER_API_KEYS:
                 try:
@@ -837,8 +956,15 @@ async def on_message(message):
                 
                 update_user_request_time(message.author.id, message.channel.id)
                 
+                # Check if replying to bot message to use same model
+                original_model = None
+                if referenced_message.author == bot.user:
+                    message_info = get_message_info(referenced_message.id)
+                    if message_info:
+                        original_model = message_info[0]  # model is first element
+                
                 combined_prompt = f"User is replying to this message: '{referenced_message.content}' with: '{clean_content}'. Respond appropriately to their reply."
-                await get_ai_response(combined_prompt, message)
+                await get_ai_response(combined_prompt, message, force_model=original_model)
                 return
             except Exception as e:
                 safe_error = sanitize_log_message(str(e)[:100])
@@ -1058,8 +1184,8 @@ async def image_command(ctx, *, prompt):
                 await ctx.reply(f"⏰ Please wait {seconds}s before generating another image.")
             return
     
-    # Handle image attachments
-    input_image = None
+    # Handle image attachments from user's message
+    input_images = []
     if ctx.message.attachments:
         attachment = ctx.message.attachments[0]
         if not attachment.content_type or not attachment.content_type.startswith('image/'):
@@ -1069,17 +1195,43 @@ async def image_command(ctx, *, prompt):
         try:
             image_data = await attachment.read()
             input_image = Image.open(BytesIO(image_data))
-            # Verify it's actually an image by trying to load it
             input_image.verify()
-            # Reopen since verify() closes the image
             input_image = Image.open(BytesIO(image_data))
+            input_images.append(input_image)
         except Exception:
             await ctx.reply("❌ Invalid or corrupted image file.")
             return
     
+    # Handle reply context - include replied-to content and images
+    if ctx.message.reference:
+        try:
+            referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+            
+            # Include replied-to message content in prompt
+            reply_content = referenced_message.content or "[No text content]"
+            prompt = f"User is replying to this message: '{reply_content}' and wants to generate an image with prompt: '{prompt}'. Use both contexts for generation."
+            
+            # Include replied-to images if any
+            if referenced_message.attachments:
+                for attachment in referenced_message.attachments:
+                    if attachment.content_type and attachment.content_type.startswith('image/'):
+                        try:
+                            image_data = await attachment.read()
+                            ref_image = Image.open(BytesIO(image_data))
+                            ref_image.verify()
+                            ref_image = Image.open(BytesIO(image_data))
+                            input_images.append(ref_image)
+                        except Exception:
+                            continue  # Skip invalid images
+        except Exception:
+            pass  # Use original prompt if can't fetch referenced message
+    
     if not is_admin(user_id):
         user_image_last_request[user_id] = now
-    await generate_image(prompt, ctx.message, input_image)
+    
+    # Pass first image to generate_image (Gemini can handle multiple but we'll use first)
+    final_image = input_images[0] if input_images else None
+    await generate_image(prompt, ctx.message, final_image)
 
 @bot.command(name='ai')
 async def ai_command(ctx, *, prompt):
@@ -1127,8 +1279,8 @@ async def gemini_command(ctx, *, prompt):
         await ctx.reply("⚠️ Input too long after sanitization.")
         return
     
-    # Handle image attachments
-    input_image = None
+    # Handle image attachments from user's message
+    input_images = []
     if ctx.message.attachments:
         attachment = ctx.message.attachments[0]
         if attachment.content_type and attachment.content_type.startswith('image/'):
@@ -1137,22 +1289,41 @@ async def gemini_command(ctx, *, prompt):
                 input_image = Image.open(BytesIO(image_data))
                 input_image.verify()
                 input_image = Image.open(BytesIO(image_data))
+                input_images.append(input_image)
             except Exception:
                 await ctx.reply("❌ Invalid or corrupted image file.")
                 return
     
-    # Handle reply context
+    # Handle reply context - include replied-to content and images
     if ctx.message.reference:
         try:
             referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
-            prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
+            
+            # Include replied-to message content
+            reply_content = referenced_message.content or "[No text content]"
+            prompt = f"User is replying to this message: '{reply_content}' with: '{prompt}'. Respond appropriately to their reply."
+            
+            # Include replied-to images if any
+            if referenced_message.attachments:
+                for attachment in referenced_message.attachments:
+                    if attachment.content_type and attachment.content_type.startswith('image/'):
+                        try:
+                            image_data = await attachment.read()
+                            ref_image = Image.open(BytesIO(image_data))
+                            ref_image.verify()
+                            ref_image = Image.open(BytesIO(image_data))
+                            input_images.append(ref_image)
+                        except Exception:
+                            continue  # Skip invalid images
         except Exception:
             pass  # Use original prompt if can't fetch referenced message
     
     if not is_admin(user_id):
         user_gemini_last_request[user_id] = now
     
-    await get_gemini_response(prompt, ctx.message, input_image)
+    # Pass all images to Gemini
+    final_image = input_images[0] if input_images else None
+    await get_gemini_response(prompt, ctx.message, final_image)
 
 @bot.command(name='setpersonality')
 async def setpersonality_command(ctx, *, personality):
@@ -2129,59 +2300,80 @@ async def x_command(ctx, *, prompt):
         if attachment.content_type and attachment.content_type.startswith('image/'):
             input_image = attachment.url
     
-    # Handle reply context
+    # Handle reply context with Gemma check for bot messages
+    original_model = None
     if ctx.message.reference:
         try:
             referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+            
+            # If replying to bot message, use Gemma check and get original model
+            if referenced_message.author == bot.user:
+                should_reply = await check_if_should_reply(referenced_message.content, prompt)
+                if not should_reply:
+                    return
+                
+                message_info = get_message_info(referenced_message.id)
+                if message_info:
+                    original_model = message_info[0]
+            
             prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
         except Exception:
             pass
     
-    status_msg = await ctx.reply("🤖 Grok is thinking...")
-    
-    for api_key in OPENROUTER_API_KEYS:
-        try:
-            response_message = None
-            full_response = ""
-            last_length = 0
-            
-            reasoning_msg = None
-            reasoning_last_length = 0
-            response_last_length = 0
-            
-            async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
-                if chunk['type'] == 'reasoning':
-                    reasoning_content = chunk['content']
-                    if len(reasoning_content) - reasoning_last_length >= 200:
-                        if reasoning_msg is None:
-                            reasoning_msg = await ctx.reply(f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
-                        else:
-                            await reasoning_msg.edit(content=f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
-                        reasoning_last_length = len(reasoning_content)
+    # If we have original model info and it's "grok", use Grok; otherwise use default Grok
+    if original_model == "grok" or not original_model:
+        status_msg = await ctx.reply("🤖 Grok is thinking...")
+        
+        for api_key in OPENROUTER_API_KEYS:
+            try:
+                response_message = None
+                full_response = ""
+                last_length = 0
                 
-                elif chunk['type'] == 'response':
-                    full_response = chunk['content']
-                    if len(full_response) - response_last_length >= 200:
-                        if response_message is None:
-                            response_message = status_msg
-                        await response_message.edit(content=full_response[:2000])
-                        response_last_length = len(full_response)
-            
-            # Final update
-            if not full_response.strip():
-                full_response = "I'm having trouble generating a response. Please try again."
-            
-            await status_msg.edit(content=full_response[:2000])
-            if len(full_response) > 2000:
-                await ctx.reply(full_response[2000:])
-            return
-            
-        except Exception as e:
-            safe_error = sanitize_log_message(str(e)[:100])
-            logging.error(f"Grok API error: {safe_error}")
-            continue
-    
-    await status_msg.edit(content="❌ All Grok API keys failed.")
+                reasoning_msg = None
+                reasoning_last_length = 0
+                response_last_length = 0
+                
+                async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
+                    if chunk['type'] == 'reasoning':
+                        reasoning_content = chunk['content']
+                        if len(reasoning_content) - reasoning_last_length >= 200:
+                            if reasoning_msg is None:
+                                reasoning_msg = await ctx.reply(f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
+                            else:
+                                await reasoning_msg.edit(content=f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
+                            reasoning_last_length = len(reasoning_content)
+                    
+                    elif chunk['type'] == 'response':
+                        full_response = chunk['content']
+                        if len(full_response) - response_last_length >= 200:
+                            if response_message is None:
+                                response_message = status_msg
+                            await response_message.edit(content=full_response[:2000])
+                            response_last_length = len(full_response)
+                
+                # Final update
+                if not full_response.strip():
+                    full_response = "I'm having trouble generating a response. Please try again."
+                
+                await status_msg.edit(content=full_response[:2000])
+                if len(full_response) > 2000:
+                    await ctx.reply(full_response[2000:])
+                
+                # Store bot message in database
+                message_link = f"https://discord.com/channels/{ctx.guild.id}/{ctx.channel.id}/{status_msg.id}"
+                store_bot_message(status_msg.id, message_link, "grok", api_key)
+                return
+                
+            except Exception as e:
+                safe_error = sanitize_log_message(str(e)[:100])
+                logging.error(f"Grok API error: {safe_error}")
+                continue
+        
+        await status_msg.edit(content="❌ All Grok API keys failed.")
+    else:
+        # Use the original model through get_ai_response
+        await get_ai_response(prompt, ctx.message, force_model=original_model)
 
 @bot.command(name='mistralapicheck')
 async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
