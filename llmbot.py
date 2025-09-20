@@ -2325,50 +2325,58 @@ async def x_command(ctx, *, prompt):
         status_msg = await ctx.reply("🤖 Grok is thinking...")
         
         for api_key in OPENROUTER_API_KEYS:
-            try:
-                response_message = None
-                full_response = ""
-                last_length = 0
-                
-                reasoning_msg = None
-                reasoning_last_length = 0
-                response_last_length = 0
-                
-                async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
-                    if chunk['type'] == 'reasoning':
-                        reasoning_content = chunk['content']
-                        if len(reasoning_content) - reasoning_last_length >= 200:
-                            if reasoning_msg is None:
-                                reasoning_msg = await ctx.reply(f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
-                            else:
-                                await reasoning_msg.edit(content=f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
-                            reasoning_last_length = len(reasoning_content)
+            # Retry up to 3 times for HTTP errors
+            for retry in range(3):
+                try:
+                    response_message = None
+                    full_response = ""
+                    last_length = 0
                     
-                    elif chunk['type'] == 'response':
-                        full_response = chunk['content']
-                        if len(full_response) - response_last_length >= 200:
-                            if response_message is None:
-                                response_message = status_msg
-                            await response_message.edit(content=full_response[:2000])
-                            response_last_length = len(full_response)
-                
-                # Final update
-                if not full_response.strip():
-                    full_response = "I'm having trouble generating a response. Please try again."
-                
-                await status_msg.edit(content=full_response[:2000])
-                if len(full_response) > 2000:
-                    await ctx.reply(full_response[2000:])
-                
-                # Store bot message in database
-                message_link = f"https://discord.com/channels/{ctx.guild.id}/{ctx.channel.id}/{status_msg.id}"
-                store_bot_message(status_msg.id, message_link, "grok", api_key)
-                return
-                
-            except Exception as e:
-                safe_error = sanitize_log_message(str(e)[:100])
-                logging.error(f"Grok API error: {safe_error}")
-                continue
+                    reasoning_msg = None
+                    reasoning_last_length = 0
+                    response_last_length = 0
+                    
+                    async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
+                        if chunk['type'] == 'reasoning':
+                            reasoning_content = chunk['content']
+                            if len(reasoning_content) - reasoning_last_length >= 200:
+                                if reasoning_msg is None:
+                                    reasoning_msg = await ctx.reply(f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
+                                else:
+                                    await reasoning_msg.edit(content=f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
+                                reasoning_last_length = len(reasoning_content)
+                        
+                        elif chunk['type'] == 'response':
+                            full_response = chunk['content']
+                            if len(full_response) - response_last_length >= 200:
+                                if response_message is None:
+                                    response_message = status_msg
+                                await response_message.edit(content=full_response[:2000])
+                                response_last_length = len(full_response)
+                    
+                    # Final update
+                    if not full_response.strip():
+                        full_response = "I'm having trouble generating a response. Please try again."
+                    
+                    await status_msg.edit(content=full_response[:2000])
+                    if len(full_response) > 2000:
+                        await ctx.reply(full_response[2000:])
+                    
+                    # Store bot message in database
+                    message_link = f"https://discord.com/channels/{ctx.guild.id}/{ctx.channel.id}/{status_msg.id}"
+                    store_bot_message(status_msg.id, message_link, "grok", api_key)
+                    return
+                    
+                except Exception as e:
+                    error_str = str(e)
+                    # Retry on HTTP errors (429, 503, 500, etc.)
+                    if any(code in error_str for code in ["429", "503", "500", "502", "504"]) and retry < 2:
+                        await asyncio.sleep(1)
+                        continue
+                    # Max retries reached or other error - try next API key
+                    safe_error = sanitize_log_message(error_str[:100])
+                    logging.error(f"Grok API error: {safe_error}")
+                    break
         
         await status_msg.edit(content="❌ All Grok API keys failed.")
     else:
