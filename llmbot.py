@@ -17,6 +17,7 @@ import secrets
 import requests
 import csv
 import random
+import base64
 from collections import defaultdict
 from contextlib import contextmanager
 from logging.handlers import RotatingFileHandler
@@ -124,7 +125,6 @@ db_lock = threading.Lock()
 channel_cooldowns = {}  # {channel_id: minutes}
 user_channel_last_request = {}  # {(user_id, channel_id): timestamp}
 user_image_last_request = {}  # {user_id: timestamp} - Global 3min cooldown for images
-user_gemini_last_request = {}  # {user_id: timestamp} - Global 1min cooldown for Gemini
 
 MAX_REQUESTS_PER_USER = 10
 RATE_LIMIT_WINDOW = 180
@@ -939,7 +939,15 @@ async def on_message(message):
                 # Check cooldown first before any API calls
                 can_proceed, remaining = check_channel_cooldown(message.author.id, message.channel.id)
                 if not can_proceed:
-                    return  # Silently ignore if on cooldown
+                    minutes = int(remaining // 60)
+                    seconds = int(remaining % 60)
+                    if minutes > 0:
+                        cooldown_msg = await message.reply(f"⏰ On cooldown! Please wait {minutes}m {seconds}s")
+                    else:
+                        cooldown_msg = await message.reply(f"⏰ On cooldown! Please wait {seconds}s")
+                    await asyncio.sleep(5)
+                    await cooldown_msg.delete()
+                    return
                 
                 # Smart reply filtering for bot messages
                 if referenced_message.author == bot.user:
@@ -1168,6 +1176,17 @@ async def setcooldown_command(ctx, minutes: int):
 
 @bot.command(name='image')
 async def image_command(ctx, *, prompt):
+    # Check channel cooldown first
+    can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
+    if not can_proceed:
+        minutes = int(remaining // 60)
+        seconds = int(remaining % 60)
+        if minutes > 0:
+            await ctx.reply(f"⏰ On cooldown! Please wait {minutes}m {seconds}s")
+        else:
+            await ctx.reply(f"⏰ On cooldown! Please wait {seconds}s")
+        return
+    
     # Check image-specific cooldown (3 minutes globally, skip for admins)
     user_id = ctx.author.id
     now = time.time()
@@ -1229,6 +1248,8 @@ async def image_command(ctx, *, prompt):
     if not is_admin(user_id):
         user_image_last_request[user_id] = now
     
+    update_user_request_time(ctx.author.id, ctx.channel.id)
+    
     # Pass first image to generate_image (Gemini can handle multiple but we'll use first)
     final_image = input_images[0] if input_images else None
     await generate_image(prompt, ctx.message, final_image)
@@ -1262,17 +1283,18 @@ async def ai_command(ctx, *, prompt):
 
 @bot.command(name='gemini')
 async def gemini_command(ctx, *, prompt):
-    # Check Gemini-specific cooldown (1 minute globally, skip for admins)
-    user_id = ctx.author.id
-    now = time.time()
+    # Check channel cooldown first
+    can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
+    if not can_proceed:
+        minutes = int(remaining // 60)
+        seconds = int(remaining % 60)
+        if minutes > 0:
+            await ctx.reply(f"⏰ On cooldown! Please wait {minutes}m {seconds}s")
+        else:
+            await ctx.reply(f"⏰ On cooldown! Please wait {seconds}s")
+        return
     
-    if not is_admin(user_id) and user_id in user_gemini_last_request:
-        time_since_last = now - user_gemini_last_request[user_id]
-        if time_since_last < 60:  # 1 minute = 60 seconds
-            remaining = 60 - time_since_last
-            seconds = int(remaining)
-            await ctx.reply(f"⏰ Please wait {seconds}s before using Gemini again.")
-            return
+
     
     prompt = sanitize_input(prompt)
     if len(prompt) > MAX_INPUT_LENGTH:
@@ -1318,8 +1340,7 @@ async def gemini_command(ctx, *, prompt):
         except Exception:
             pass  # Use original prompt if can't fetch referenced message
     
-    if not is_admin(user_id):
-        user_gemini_last_request[user_id] = now
+    update_user_request_time(ctx.author.id, ctx.channel.id)
     
     # Pass all images to Gemini
     final_image = input_images[0] if input_images else None
@@ -1403,6 +1424,32 @@ async def apicheck_command(ctx, *, test_prompt="Hello"):
             await ctx.reply(f"❌ API Key {key_num}: FAILED - {safe_error}")
     
     await ctx.reply("🏁 API check completed!")
+
+async def process_attachments_for_grok(attachments):
+    processed = []
+    for attachment in attachments:
+        try:
+            file_data = await attachment.read()
+            file_base64 = base64.b64encode(file_data).decode('utf-8')
+            
+            # Determine MIME type
+            if attachment.content_type:
+                mime_type = attachment.content_type
+            elif attachment.filename.lower().endswith('.pdf'):
+                mime_type = 'application/pdf'
+            elif attachment.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp')):
+                mime_type = f'image/{attachment.filename.split(".")[-1].lower()}'
+            else:
+                mime_type = 'application/octet-stream'
+            
+            processed.append({
+                'filename': attachment.filename,
+                'file_data': f'data:{mime_type};base64,{file_base64}'
+            })
+        except Exception as e:
+            logging.error(f"Error processing attachment {attachment.filename}: {e}")
+            continue
+    return processed
 
 def extract_urls(text):
     import re
@@ -1632,6 +1679,17 @@ async def delete_command(ctx):
 
 @bot.command(name='oss')
 async def oss_command(ctx, *, prompt):
+    # Check cooldown first
+    can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
+    if not can_proceed:
+        minutes = int(remaining // 60)
+        seconds = int(remaining % 60)
+        if minutes > 0:
+            await ctx.reply(f"⏰ On cooldown! Please wait {minutes}m {seconds}s")
+        else:
+            await ctx.reply(f"⏰ On cooldown! Please wait {seconds}s")
+        return
+    
     # Check for attachments in user's message
     if ctx.message.attachments:
         await ctx.reply("Files are currently not supported in OSS. Use Gemini (!gemini)!")
@@ -2208,30 +2266,53 @@ async def leaderboard_global_command(ctx):
         logging.error(f"Error in global leaderboard: {e}")
         await ctx.reply("❌ Error retrieving global leaderboard!")
 
-async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
+async def call_grok_api(api_key, prompt, user_id=None, input_image=None, attachments=None):
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
     
-    # Prepare content
+    # Prepare content array
+    content = [{"type": "text", "text": prompt}]
+    
+    # Add image if provided
     if input_image:
-        content = [
-            {"type": "text", "text": prompt},
-            {"type": "image_url", "image_url": {"url": input_image}}
-        ]
-    else:
-        content = prompt
+        content.append({"type": "image_url", "image_url": {"url": input_image}})
+    
+    # Add file attachments if provided
+    if attachments:
+        for attachment in attachments:
+            content.append({
+                "type": "file",
+                "file": {
+                    "filename": attachment["filename"],
+                    "file_data": attachment["file_data"]
+                }
+            })
     
     data = {
-        "model": "x-ai/grok-4-fast:free",
+        "model": "x-ai/grok-4:online",
         "messages": [{"role": "user", "content": content}],
         "stream": True,
         "reasoning": {
             "enabled": True,
             "effort": "high",
             "exclude": False
-        }
+        },
+        "plugins": [
+            {
+                "id": "web",
+                "engine": "exa",
+                "max_results": 5,
+                "search_prompt": "Here are some web search results relevant to your question:"
+            },
+            {
+                "id": "file-parser",
+                "pdf": {
+                    "engine": "pdf-text"
+                }
+            }
+        ]
     }
     
     response = requests.post(
@@ -2288,23 +2369,47 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
 
 @bot.command(name='x')
 async def x_command(ctx, *, prompt):
+    # Check cooldown first
+    can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
+    if not can_proceed:
+        minutes = int(remaining // 60)
+        seconds = int(remaining % 60)
+        if minutes > 0:
+            await ctx.reply(f"⏰ On cooldown! Please wait {minutes}m {seconds}s")
+        else:
+            await ctx.reply(f"⏰ On cooldown! Please wait {seconds}s")
+        return
+    
     prompt = sanitize_input(prompt)
     if len(prompt) > MAX_INPUT_LENGTH:
         await ctx.reply("⚠️ Input too long.")
         return
     
-    # Handle image attachments
+    # Process all attachments (images and files)
     input_image = None
+    all_attachments = []
+    
+    # Process user's attachments
     if ctx.message.attachments:
-        attachment = ctx.message.attachments[0]
-        if attachment.content_type and attachment.content_type.startswith('image/'):
-            input_image = attachment.url
+        user_attachments = await process_attachments_for_grok(ctx.message.attachments)
+        all_attachments.extend(user_attachments)
+        
+        # Keep image URL for backward compatibility
+        for attachment in ctx.message.attachments:
+            if attachment.content_type and attachment.content_type.startswith('image/'):
+                input_image = attachment.url
+                break
     
     # Handle reply context with Gemma check for bot messages
     original_model = None
     if ctx.message.reference:
         try:
             referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+            
+            # Process attachments from referenced message
+            if referenced_message.attachments:
+                ref_attachments = await process_attachments_for_grok(referenced_message.attachments)
+                all_attachments.extend(ref_attachments)
             
             # If replying to bot message, use Gemma check and get original model
             if referenced_message.author == bot.user:
@@ -2316,7 +2421,8 @@ async def x_command(ctx, *, prompt):
                 if message_info:
                     original_model = message_info[0]
             
-            prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
+            reply_content = referenced_message.content or "[No text content]"
+            prompt = f"User is replying to this message: '{reply_content}' with: '{prompt}'. Respond appropriately to their reply."
         except Exception:
             pass
     
@@ -2336,7 +2442,7 @@ async def x_command(ctx, *, prompt):
                     reasoning_last_length = 0
                     response_last_length = 0
                     
-                    async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
+                    async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image, all_attachments):
                         if chunk['type'] == 'reasoning':
                             reasoning_content = chunk['content']
                             if len(reasoning_content) - reasoning_last_length >= 200:
@@ -2365,6 +2471,7 @@ async def x_command(ctx, *, prompt):
                     # Store bot message in database
                     message_link = f"https://discord.com/channels/{ctx.guild.id}/{ctx.channel.id}/{status_msg.id}"
                     store_bot_message(status_msg.id, message_link, "grok", api_key)
+                    update_user_request_time(ctx.author.id, ctx.channel.id)
                     return
                     
                 except Exception as e:
