@@ -2294,7 +2294,7 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None, attachm
         "model": "x-ai/grok-4:online",
         "messages": [{"role": "user", "content": content}],
         "stream": True,
-        "max_tokens": 8000,
+        "max_tokens": 2000,
         "reasoning": {
             "enabled": True,
             "effort": "high",
