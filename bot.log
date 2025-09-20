@@ -10518,3 +10518,150 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-19 00:39:05,084 - discord.client - INFO - Got a request to RESUME the websocket.
 2025-09-19 00:39:05,557 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
 2025-09-19 00:39:07,398 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d54246e63ca2be2ed60b2334c4ecd981 under trace ["gateway-prd-arm-us-east1-d-b6l1",{"micros":809,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":482,"calls":[]},"session_lookup_finished",{"micros":6,"calls":[]},"discord-sessions-prd-2-31",{"micros":21}]}].
+2025-09-19 04:56:00,451 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-19 04:56:00,452 - discord.client - INFO - logging in using static token
+2025-09-19 04:56:01,381 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-19 04:56:01,772 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-d-nknx",{"micros":92745,"calls":["id_created",{"micros":366,"calls":[]},"session_lookup_time",{"micros":255,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-prd-2-183",{"micros":91814,"calls":["start_session",{"micros":82084,"calls":["discord-api-rpc-84487f5d7c-pxqcp",{"micros":47108,"calls":["get_user",{"micros":11896},"get_guilds",{"micros":4724},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":25901},"apex_experiments",{"micros":2434},"user_activities",{"micros":6},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":39,"calls":[]},"presence_started",{"micros":7666,"calls":[]},"guilds_started",{"micros":87,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1869,"calls":[]},"connect_finished",{"micros":1925,"calls":[]},"build_ready",{"micros":10,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 130c01fae69ac19e09b052809127f9b0).
+2025-09-19 07:05:08,829 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 07:05:09,314 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 07:05:09,615 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-b6hb",{"micros":515,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":257,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-183",{"micros":20}]}].
+2025-09-19 08:29:59,226 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 08:29:59,228 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 08:29:59,704 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 08:30:00,004 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-3p4j",{"micros":523,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":211,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":28}]}].
+2025-09-19 09:00:32,935 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 09:00:33,419 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 09:00:33,718 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-139v",{"micros":503,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":258,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-183",{"micros":23}]}].
+2025-09-19 09:58:05,612 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 09:58:05,612 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 09:58:06,100 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 09:58:06,405 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-813q",{"micros":1986,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1702,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":19}]}].
+2025-09-19 11:31:56,339 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 11:31:56,339 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 11:31:56,833 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 11:31:57,155 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-95t3",{"micros":547,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":239,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-183",{"micros":24}]}].
+2025-09-19 11:32:02,938 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 11:32:02,939 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 11:32:03,334 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 11:32:03,643 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-mnmr",{"micros":581,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":252,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-183",{"micros":16}]}].
+2025-09-19 12:30:42,206 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 12:30:42,688 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 12:30:43,001 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-9rnq",{"micros":1436,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1244,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-183",{"micros":20}]}].
+2025-09-19 15:22:36,317 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 15:22:36,863 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 15:22:37,178 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-c-0kq0",{"micros":484,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":227,"calls":[]},"session_lookup_finished",{"micros":7,"calls":[]},"discord-sessions-prd-2-183",{"micros":22}]}].
+2025-09-19 16:27:19,115 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 16:27:19,118 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 16:27:19,632 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 16:27:19,956 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-7mxs",{"micros":1275,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1037,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-183",{"micros":22}]}].
+2025-09-19 16:59:17,320 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 16:59:17,320 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 16:59:17,843 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 16:59:18,168 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-6r3x",{"micros":6671,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1598,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":19}]}].
+2025-09-19 17:08:23,222 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 17:08:23,222 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 17:08:23,711 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 17:08:24,015 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-mdxq",{"micros":695,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":341,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":22}]}].
+2025-09-19 17:44:35,753 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 17:44:35,754 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 17:44:36,225 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 17:44:36,525 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-c0zk",{"micros":519,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":244,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":28}]}].
+2025-09-19 18:23:10,298 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 18:23:10,298 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 18:23:10,795 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 18:23:11,103 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-r80w",{"micros":1790,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1444,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":17}]}].
+2025-09-19 19:27:46,435 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 19:27:46,437 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 19:27:47,002 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 19:27:47,311 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-2t33",{"micros":512,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":222,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-183",{"micros":20}]}].
+2025-09-19 20:15:55,062 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 20:15:55,064 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 20:15:55,792 - discord.client - ERROR - Attempting a reconnect in 1.67s
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 599, in _request
+    resp = await req.send(conn)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client_reqrep.py", line 712, in send
+    await writer.write_headers(status_line, self.headers)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\http_writer.py", line 130, in write_headers
+    self._write(buf)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\http_writer.py", line 75, in _write
+    raise ConnectionResetError("Cannot write to closing transport")
+ConnectionResetError: Cannot write to closing transport
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 614, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 489, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 339, in from_client
+    socket = await client.http.ws_connect(gateway)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 216, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 825, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 613, in _request
+    raise ClientOSError(*exc.args) from exc
+aiohttp.client_exceptions.ClientOSError: Cannot write to closing transport
+2025-09-19 20:15:57,590 - discord.client - ERROR - Attempting a reconnect in 1.23s
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 614, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 489, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 338, in from_client
+    gateway = gateway or await client.http.get_gateway()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 3071, in get_gateway
+    data = await self.request(Route("GET", "/gateway"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 286, in request
+    async with self.__session.request(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1187, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 601, in _request
+    await resp.start(conn)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client_reqrep.py", line 965, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [WinError 1236] The network connection was aborted by the local system
+2025-09-19 20:15:59,300 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 20:15:59,608 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-b-76pg",{"micros":621,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":348,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":17}]}].
+2025-09-19 20:53:00,943 - root - ERROR - Command error: Command raised an exception: JSONDecodeError: Expecting ',' delimiter: line 12679 column 67 (char 49
+2025-09-19 20:53:18,175 - root - ERROR - Command error: Command raised an exception: JSONDecodeError: Expecting ',' delimiter: line 12679 column 67 (char 49
+2025-09-19 20:57:12,036 - root - ERROR - Command error: Command raised an exception: JSONDecodeError: Expecting ',' delimiter: line 12731 column 35 (char 49
+2025-09-19 21:00:11,274 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 21:00:11,275 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 21:00:12,792 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 21:00:13,089 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-c-trdn",{"micros":879,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":301,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-183",{"micros":33}]}].
+2025-09-19 22:31:31,212 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-19 22:31:31,215 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-19 22:31:31,695 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-19 22:31:31,995 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-c-r150",{"micros":584,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":267,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-183",{"micros":25}]}].
+2025-09-20 00:20:27,910 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 00:20:28,403 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 00:20:28,701 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-c-f15p",{"micros":554,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":260,"calls":[]},"session_lookup_finished",{"micros":7,"calls":[]},"discord-sessions-prd-2-183",{"micros":22}]}].
+2025-09-20 02:02:54,162 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 02:02:54,652 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 02:02:54,949 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-6h96",{"micros":4260,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":3754,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-183",{"micros":20}]}].
+2025-09-20 03:26:53,819 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-20 03:26:58,991 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-09-20 03:26:59,012 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-20 03:35:21,290 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 03:35:21,753 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 03:35:22,048 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-d-d9qp",{"micros":2287,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1953,"calls":[]},"session_lookup_finished",{"micros":20,"calls":[]},"discord-sessions-prd-2-183",{"micros":36}]}].
+2025-09-20 05:31:37,487 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 05:31:37,976 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 05:31:38,275 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 130c01fae69ac19e09b052809127f9b0 under trace ["gateway-prd-arm-us-east1-c-09wf",{"micros":534,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":293,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-183",{"micros":21}]}].

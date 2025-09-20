@@ -2037,6 +2037,116 @@ async def leaderboard_global_command(ctx):
         logging.error(f"Error in global leaderboard: {e}")
         await ctx.reply("❌ Error retrieving global leaderboard!")
 
+async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    
+    # Prepare content
+    if input_image:
+        content = [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": input_image}}
+        ]
+    else:
+        content = prompt
+    
+    data = {
+        "model": "x-ai/grok-4-fast:free",
+        "messages": [{"role": "user", "content": content}],
+        "stream": True,
+        "reasoning": {
+            "enabled": True,
+            "effort": "high",
+            "exclude": False
+        }
+    }
+    
+    response = requests.post(
+        "https://openrouter.ai/api/v1/chat/completions",
+        headers=headers,
+        json=data,
+        stream=True
+    )
+    
+    if response.status_code != 200:
+        raise Exception(f"Grok API Error {response.status_code}: {response.text[:100]}")
+    
+    full_response = ""
+    for line in response.iter_lines():
+        if line:
+            line = line.decode('utf-8')
+            if line.startswith('data: '):
+                line = line[6:]
+                if line == '[DONE]':
+                    break
+                try:
+                    chunk = json.loads(line)
+                    if 'choices' in chunk and len(chunk['choices']) > 0:
+                        delta = chunk['choices'][0].get('delta', {})
+                        if 'content' in delta:
+                            full_response += delta['content']
+                            yield full_response
+                except json.JSONDecodeError:
+                    continue
+
+@bot.command(name='x')
+async def x_command(ctx, *, prompt):
+    prompt = sanitize_input(prompt)
+    if len(prompt) > MAX_INPUT_LENGTH:
+        await ctx.reply("⚠️ Input too long.")
+        return
+    
+    # Handle image attachments
+    input_image = None
+    if ctx.message.attachments:
+        attachment = ctx.message.attachments[0]
+        if attachment.content_type and attachment.content_type.startswith('image/'):
+            input_image = attachment.url
+    
+    # Handle reply context
+    if ctx.message.reference:
+        try:
+            referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+            prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
+        except Exception:
+            pass
+    
+    status_msg = await ctx.reply("🤖 Grok is thinking...")
+    
+    for api_key in OPENROUTER_API_KEYS:
+        try:
+            response_message = None
+            full_response = ""
+            last_length = 0
+            
+            async for partial_response in call_grok_api(api_key, prompt, ctx.author.id, input_image):
+                full_response = partial_response
+                
+                # Stream response every 200 characters
+                if len(full_response) - last_length >= 200:
+                    if response_message is None:
+                        response_message = status_msg
+                    await response_message.edit(content=full_response[:2000])
+                    last_length = len(full_response)
+            
+            # Final update
+            if not full_response.strip():
+                full_response = "I'm having trouble generating a response. Please try again."
+            
+            await status_msg.edit(content=full_response[:2000])
+            if len(full_response) > 2000:
+                await ctx.reply(full_response[2000:])
+            return
+            
+        except Exception as e:
+            safe_error = sanitize_log_message(str(e)[:100])
+            logging.error(f"Grok API error: {safe_error}")
+            continue
+    
+    await status_msg.edit(content="❌ All Grok API keys failed.")
+
 @bot.command(name='mistralapicheck')
 async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
     if not is_admin(ctx.author.id):
