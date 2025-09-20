@@ -2088,12 +2088,12 @@ async def call_grok_api(api_key, prompt, user_id=None, input_image=None):
                         delta = chunk['choices'][0].get('delta', {})
                         
                         # Handle reasoning content
-                        if 'reasoning' in delta:
+                        if 'reasoning' in delta and delta['reasoning']:
                             reasoning_content += delta['reasoning']
                             yield {'type': 'reasoning', 'content': reasoning_content}
                         
                         # Handle regular content
-                        if 'content' in delta:
+                        if 'content' in delta and delta['content']:
                             full_response += delta['content']
                             yield {'type': 'response', 'content': full_response}
                 except json.JSONDecodeError:
@@ -2130,24 +2130,26 @@ async def x_command(ctx, *, prompt):
             last_length = 0
             
             reasoning_msg = None
+            reasoning_last_length = 0
+            response_last_length = 0
             
             async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image):
                 if chunk['type'] == 'reasoning':
                     reasoning_content = chunk['content']
-                    if len(reasoning_content) - last_length >= 200:
+                    if len(reasoning_content) - reasoning_last_length >= 200:
                         if reasoning_msg is None:
                             reasoning_msg = await ctx.reply(f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
                         else:
                             await reasoning_msg.edit(content=f"🤔 **Thinking:**\n```\n{reasoning_content[:1900]}\n```")
-                        last_length = len(reasoning_content)
+                        reasoning_last_length = len(reasoning_content)
                 
                 elif chunk['type'] == 'response':
                     full_response = chunk['content']
-                    if len(full_response) - last_length >= 200:
+                    if len(full_response) - response_last_length >= 200:
                         if response_message is None:
                             response_message = status_msg
                         await response_message.edit(content=full_response[:2000])
-                        last_length = len(full_response)
+                        response_last_length = len(full_response)
             
             # Final update
             if not full_response.strip():
