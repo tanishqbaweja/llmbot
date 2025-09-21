@@ -10807,3 +10807,94 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
 2025-09-20 16:22:37,116 - discord.client - INFO - logging in using static token
 2025-09-20 16:22:38,174 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
 2025-09-20 16:22:38,676 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-1g2n",{"micros":188889,"calls":["id_created",{"micros":420,"calls":[]},"session_lookup_time",{"micros":293,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-146",{"micros":187841,"calls":["start_session",{"micros":144501,"calls":["discord-api-rpc-6f869bd4bb-kv4f2",{"micros":80438,"calls":["get_user",{"micros":12929},"get_guilds",{"micros":2518},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":9},"pending_payments",{"micros":29219},"apex_experiments",{"micros":16837},"user_activities",{"micros":7},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":64,"calls":[]},"presence_started",{"micros":2098,"calls":[]},"guilds_started",{"micros":93,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":41020,"calls":[]},"connect_finished",{"micros":41069,"calls":[]},"build_ready",{"micros":13,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 4ad0a2068cc3ca1e8697949e54ee9565).
+2025-09-20 16:24:31,460 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-20 16:24:31,461 - discord.client - INFO - logging in using static token
+2025-09-20 16:24:32,408 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-20 16:24:32,957 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-f0pj",{"micros":246916,"calls":["id_created",{"micros":362,"calls":[]},"session_lookup_time",{"micros":5050,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-113",{"micros":241180,"calls":["start_session",{"micros":207888,"calls":["discord-api-rpc-6f869bd4bb-lt54j",{"micros":154547,"calls":["get_user",{"micros":58056},"get_guilds",{"micros":20483},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":4},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":32263},"apex_experiments",{"micros":11532},"user_activities",{"micros":6},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":65,"calls":[]},"presence_started",{"micros":8925,"calls":[]},"guilds_started",{"micros":81,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":24141,"calls":[]},"connect_finished",{"micros":24203,"calls":[]},"build_ready",{"micros":15,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 9fcb27da58dc2b47015458c6f22fd1f8).
+2025-09-20 16:24:43,301 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 16:24:46,329 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 18:24:20,255 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 18:24:20,889 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 18:24:21,192 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-c-d3n9",{"micros":912,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":691,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-113",{"micros":21}]}].
+2025-09-20 18:47:12,310 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 18:47:14,714 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 20:26:42,810 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 20:26:43,490 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 20:26:43,803 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-c-3b9c",{"micros":2931,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":181,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-113",{"micros":36}]}].
+2025-09-20 21:09:42,348 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 21:09:45,228 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 21:12:03,081 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 21:12:03,675 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 21:12:03,975 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-b-p5zm",{"micros":606,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":319,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-prd-2-113",{"micros":19}]}].
+2025-09-20 21:18:02,076 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 21:18:05,298 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 21:18:08,062 - root - ERROR - Grok API error: Grok API Error 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. Yo
+2025-09-20 21:18:25,104 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 2521, in <module>
+    bot.run(os.getenv('DISCORD_TOKEN'))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 772, in run
+    loop.run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 412, in _run_event
+    await coro(*args, **kwargs)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 1009, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 386, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 959, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 180, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 2450, in x_command
+    async for chunk in call_grok_api(api_key, prompt, ctx.author.id, input_image, all_attachments):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 2335, in call_grok_api
+    for line in response.iter_lines():
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 869, in iter_lines
+    for chunk in self.iter_content(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\response.py", line 1088, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\response.py", line 1248, in read_chunked
+    self._update_chunk_length()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\response.py", line 1167, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+
+2025-09-20 21:18:29,495 - discord.gateway - INFO - Websocket closed with 1000, cannot reconnect.
+2025-09-20 21:18:29,502 - discord.client - ERROR - Attempting a reconnect in 0.57s
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 617, in connect
+    await self.ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 630, in poll_event
+    raise ConnectionClosed(
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+2025-09-20 21:18:31,065 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 21:18:31,408 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-c-l43f",{"micros":6825,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":6281,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-prd-2-113",{"micros":44}]}].
+2025-09-20 22:45:05,029 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2025-09-20 22:45:05,031 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-20 22:45:05,733 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-20 22:45:06,028 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-b-wcrq",{"micros":542,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":227,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-113",{"micros":31}]}].
+2025-09-20 22:52:35,076 - root - ERROR - Command error: Command raised an exception: JSONDecodeError: Expecting ',' delimiter: line 4 column 64 (char 102)
+2025-09-20 23:07:40,057 - root - ERROR - Command error: Command raised an exception: JSONDecodeError: Expecting ',' delimiter: line 4 column 64 (char 102)
+2025-09-21 01:38:18,776 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-21 01:38:19,444 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-21 01:38:19,743 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-b-whfx",{"micros":622,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":293,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-113",{"micros":24}]}].
+2025-09-21 02:34:49,398 - discord.client - INFO - Got a request to RESUME the websocket.
+2025-09-21 02:34:50,552 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2025-09-21 02:34:50,875 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9fcb27da58dc2b47015458c6f22fd1f8 under trace ["gateway-prd-arm-us-east1-d-kd18",{"micros":571,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":262,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-prd-2-113",{"micros":22}]}].
