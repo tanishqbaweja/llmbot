@@ -816,10 +816,16 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         self.recording = False
         self.last_activity = time.time()
         self.loop = loop or asyncio.get_event_loop()
+        self.processing = False  # Flag to ignore input during processing
+        self.frames_since_speech = 0  # Track frames since last speech
         
     def write(self, data, user):
         """Called when audio data is received from a user"""
         if user is None:
+            return
+        
+        # Ignore input if we're processing
+        if self.processing:
             return
             
         user_id = user if isinstance(user, int) else user.id
@@ -829,51 +835,93 @@ class CustomVoiceSink(discord.sinks.WaveSink):
             self.audio_data[user_id] = bytearray()
         
         # Ensure data is bytes-like
+        actual_data = None
         if isinstance(data, (bytes, bytearray)):
-            self.audio_data[user_id].extend(data)
+            actual_data = data
         elif hasattr(data, 'data'):
-            # If data is an object with .data attribute
-            self.audio_data[user_id].extend(data.data)
+            actual_data = data.data
         else:
-            # Try to convert to bytes
             try:
-                self.audio_data[user_id].extend(bytes(data))
+                actual_data = bytes(data)
             except:
                 return
         
-        # Check for silence (simple volume check)
+        # Check for voice activity
         try:
-            # Convert to audio format for volume check
-            check_data = data if isinstance(data, (bytes, bytearray)) else data.data if hasattr(data, 'data') else bytes(data)
-            volume = audioop.rms(check_data, 2)  # 2 bytes per sample for 16-bit audio
-            if volume < 100:  # Threshold for silence
-                self.silent_frames += 1
-            else:
-                self.silent_frames = 0
-                self.last_activity = time.time()
-                self.recording = True
-        except:
-            pass
+            volume = audioop.rms(actual_data, 2)  # 2 bytes per sample for 16-bit audio
             
-        # If we have 10 frames of silence after recording started, process the audio
-        if self.recording and self.silent_frames > 10:
-            self.recording = False
-            self.silent_frames = 0
-            # Schedule the coroutine in the main event loop from this thread
-            asyncio.run_coroutine_threadsafe(self.process_recording(), self.loop)
+            # Voice detected (threshold adjusted for better detection)
+            if volume > 200:  
+                # If bot is playing, stop it immediately
+                if self.guild_id in voice_sessions:
+                    session = voice_sessions[self.guild_id]
+                    if session['vc'] and session['vc'].is_playing():
+                        session['vc'].stop()
+                        print("Stopped bot playback - user is speaking")
+                        # Reset state for new recording
+                        self.processing = False
+                        self.audio_data.clear()
+                
+                # Start new recording session
+                if not self.recording:
+                    self.recording = True
+                    self.silent_frames = 0
+                    self.frames_since_speech = 0
+                    # Clear ALL buffers for fresh start
+                    self.audio_data.clear()
+                    self.audio_data[user_id] = bytearray()
+                    print(f"Started recording from user {user_id}")
+                
+                # Reset silence counters on voice activity
+                self.silent_frames = 0
+                self.frames_since_speech = 0
+                self.last_activity = time.time()
+                
+                # Append audio data
+                self.audio_data[user_id].extend(actual_data)
+                
+            # Silence detected
+            elif self.recording:
+                self.silent_frames += 1
+                self.frames_since_speech += 1
+                
+                # Continue recording during brief pauses (up to ~0.5 seconds)
+                if self.frames_since_speech < 25:
+                    self.audio_data[user_id].extend(actual_data)
+                
+                # Process after sufficient silence
+                if self.silent_frames > 20:  # ~0.4 seconds of silence
+                    print(f"Processing after {self.silent_frames} frames of silence")
+                    self.recording = False
+                    self.silent_frames = 0
+                    self.frames_since_speech = 0
+                    # Schedule processing in main event loop
+                    asyncio.run_coroutine_threadsafe(self.process_recording(), self.loop)
+        except Exception as e:
+            print(f"Error in voice detection: {e}")
     
     async def process_recording(self):
         """Process the recorded audio"""
-        if self.guild_id in voice_sessions and self.audio_data:
+        if self.guild_id not in voice_sessions or not self.audio_data:
+            return
+            
+        try:
+            # Set processing flag to ignore new input
+            self.processing = True
+            
             # Get the largest audio buffer (main speaker)
             main_user_id = max(self.audio_data.keys(), key=lambda k: len(self.audio_data[k]))
             audio_bytes = bytes(self.audio_data[main_user_id])
             
-            if len(audio_bytes) > 1000:  # Minimum audio length
-                await process_voice_input(self.guild_id, audio_bytes)
-            
-            # Clear audio data
+            # Clear audio data immediately to prevent reprocessing
             self.audio_data.clear()
+            
+            if len(audio_bytes) > 5000:  # Increased minimum for better detection
+                await process_voice_input(self.guild_id, audio_bytes, self)
+                
+        finally:
+            # Always reset processing flag
+            self.processing = False
 
 class GeminiAudioSource(discord.AudioSource):
     """Audio source for playing TTS output"""
@@ -900,7 +948,7 @@ class GeminiAudioSource(discord.AudioSource):
             self.process = None
             self._stdout = None
 
-async def process_voice_input(guild_id, audio_data):
+async def process_voice_input(guild_id, audio_data, sink=None):
     """Process voice input through Whisper -> Gemini -> TTS pipeline"""
     global processing_lock
     
@@ -913,10 +961,17 @@ async def process_voice_input(guild_id, audio_data):
             # Update last activity
             session['last_activity'] = time.time()
             
+            # Set processing flag on sink if provided
+            if sink:
+                sink.processing = True
+            
             # Step 1: Convert speech to text using Groq Whisper
+            print("Processing voice input - Step 1: Speech to Text")
             text = await speech_to_text(audio_data)
             if not text or len(text.strip()) < 2:
                 print("No valid speech detected")
+                if sink:
+                    sink.processing = False
                 return
             
             print(f"User said: {text}")
@@ -961,21 +1016,46 @@ Reply to the latest message appropriately. Keep your response concise and natura
             audio_file = await text_to_speech(response_text)
             
             if audio_file and session['vc'] and session['vc'].is_connected():
-                # Play the audio
+                # Play the audio with callback to reset state when done
                 audio_source = discord.FFmpegPCMAudio(audio_file)
+                
+                def after_playback(error):
+                    if error:
+                        print(f"Playback error: {error}")
+                    # Reset processing flag immediately after playback
+                    if 'sink' in session and session['sink']:
+                        session['sink'].processing = False
+                        session['sink'].recording = False  # Reset recording state
+                        session['sink'].silent_frames = 0
+                        session['sink'].frames_since_speech = 0
+                        print("Reset sink state after playback")
+                    print("Bot finished speaking, ready for new input")
+                    # Clean up temp file in a thread-safe way
+                    def cleanup():
+                        try:
+                            os.remove(audio_file)
+                        except:
+                            pass
+                    asyncio.run_coroutine_threadsafe(
+                        asyncio.sleep(0.1), 
+                        sink.loop if sink else asyncio.get_event_loop()
+                    ).add_done_callback(lambda _: cleanup())
+                
                 if not session['vc'].is_playing():
-                    session['vc'].play(audio_source)
-                    
-                # Clean up temp file after a delay
-                await asyncio.sleep(10)
-                try:
-                    os.remove(audio_file)
-                except:
-                    pass
+                    # Ensure processing flag is set during playback
+                    if sink:
+                        sink.processing = True
+                    session['vc'].play(audio_source, after=after_playback)
+                    # Wait briefly for playback to start
+                    await asyncio.sleep(0.5)
                     
         except Exception as e:
             print(f"Error processing voice input: {e}")
             logging.error(f"Voice processing error: {str(e)[:200]}")
+        finally:
+            # Reset processing flag when done
+            if sink:
+                sink.processing = False
 
 async def speech_to_text(audio_data):
     """Convert speech to text using Groq Whisper API"""
@@ -1107,14 +1187,6 @@ async def voice_command(ctx):
         # Connect to voice channel
         vc = await voice_channel.connect()
         
-        # Initialize session
-        voice_sessions[guild_id] = {
-            'vc': vc,
-            'context': [],
-            'task': None,
-            'last_activity': time.time()
-        }
-        
         # Define callback for when recording stops
         async def recording_callback(sink, *args):
             print(f"Recording stopped for guild {guild_id}")
@@ -1122,6 +1194,16 @@ async def voice_command(ctx):
         # Start recording with custom sink
         loop = asyncio.get_event_loop()
         sink = CustomVoiceSink(guild_id, loop=loop)
+        
+        # Initialize session with sink reference
+        voice_sessions[guild_id] = {
+            'vc': vc,
+            'context': [],
+            'task': None,
+            'last_activity': time.time(),
+            'sink': sink  # Store sink reference
+        }
+        
         vc.start_recording(sink, recording_callback)
         
         # Start inactivity monitor
