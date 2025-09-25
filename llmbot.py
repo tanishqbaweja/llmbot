@@ -179,55 +179,11 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        class VoiceSink:
-            def __init__(self):
-                pass
-                
-            def write(self, data, user):
-                user_id = user.id if user else None
-                print(f"[DEBUG] Audio received from user {user_id}, bot user: {ctx.bot.user.id}")
-                if user_id and user_id != ctx.bot.user.id:
-                    nonlocal last_activity_time, user_audio_buffers, user_silence_counters
-                    last_activity_time = time.time()
-                    print(f"[DEBUG] Processing audio from user {user_id}")
-                    
-                    if user_id not in user_audio_buffers:
-                        user_audio_buffers[user_id] = []
-                        user_silence_counters[user_id] = 0
-                        print(f"[DEBUG] Created new buffer for user {user_id}")
-                    
-                    # Check if audio contains speech (simple volume check)
-                    volume = audioop.rms(data, 2)
-                    print(f"[DEBUG] Audio volume: {volume} for user {user_id}")
-                    
-                    if volume > 10:  # Speech detected (lowered threshold)
-                        user_audio_buffers[user_id].append(data)
-                        user_silence_counters[user_id] = 0
-                        print(f"[DEBUG] Speech detected! Buffer size: {len(user_audio_buffers[user_id])}")
-                    else:  # Silence detected
-                        if len(user_audio_buffers[user_id]) > 0:
-                            user_silence_counters[user_id] += 1
-                            print(f"[DEBUG] Silence counter: {user_silence_counters[user_id]}, buffer size: {len(user_audio_buffers[user_id])}")
-                            
-                            # If 0.2 seconds of silence (10 packets * 20ms = 0.2s)
-                            if user_silence_counters[user_id] >= 10:
-                                if len(user_audio_buffers[user_id]) > 5:  # At least 0.1s of speech
-                                    if user_id not in processing_lock:
-                                        processing_lock[user_id] = True
-                                        print(f"[DEBUG] Processing speech! Buffer has {len(user_audio_buffers[user_id])} packets")
-                                        audio_data = user_audio_buffers[user_id].copy()
-                                        asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source, user_id), bot.loop)
-                                    else:
-                                        print(f"[DEBUG] Already processing for user {user_id}, skipping")
-                                else:
-                                    print(f"[DEBUG] Speech too short, ignoring. Buffer size: {len(user_audio_buffers[user_id])}")
-                                user_audio_buffers[user_id].clear()
-                                user_silence_counters[user_id] = 0
-                else:
-                    print(f"[DEBUG] Ignoring audio from bot or invalid user: {user_id}")
+        # Check available methods on VoiceClient
+        print(f"[DEBUG] Available VoiceClient methods: {[method for method in dir(vc) if 'record' in method.lower() or 'listen' in method.lower() or 'start' in method.lower()]}")
         
-        sink = VoiceSink()
-        vc.listen(sink)
+        # For now, just maintain connection without recording
+        print(f"[DEBUG] Voice recording not supported in this Discord.py version. Maintaining connection only.")
         
         while True:
             await asyncio.sleep(15)
@@ -243,11 +199,7 @@ async def manage_voice_session(ctx, vc, audio_source):
         
     finally:
         print(f"Cleaning up voice session for guild {guild_id}")
-        try:
-            if vc.is_listening():
-                vc.stop_listening()
-        except:
-            pass
+        # No recording cleanup needed
         if vc.is_connected():
             await vc.disconnect()
         if guild_id in voice_sessions:
