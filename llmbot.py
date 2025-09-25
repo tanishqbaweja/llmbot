@@ -1284,10 +1284,13 @@ async def voice_command(ctx):
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
     except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        print(f"Voice command error - Full traceback:\n{error_details}")
         await ctx.reply(f"❌ An error occurred: {str(e)[:100]}")
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
-        logging.error(f"Voice command error: {str(e)}")
+        logging.error(f"Voice command error: {str(e)}\nTraceback: {error_details}")
 
 @bot.command(name='leavevoice')
 async def leave_voice_command(ctx):
