@@ -175,21 +175,42 @@ async def manage_voice_session(ctx, vc, audio_source):
     user_audio_buffers = {}
     user_silence_counters = {}
     processing_lock = {}
-    
+
+    async def recording_finished(sink, *args):
+        print(f"[DEBUG] recording_finished called for guild {guild_id}")
+
     class VoiceSink(discord.sinks.WaveSink):
-        def write(self, data, user):
-            user_id = user.id if user else None
-            if user_id and user_id != ctx.bot.user.id:
-                nonlocal last_activity_time, user_audio_buffers, user_silence_counters
+        def write(self, user, data):
+            try:
+                user_id = user.id if hasattr(user, 'id') else user if user else None
+                if user_id is None or user_id == ctx.bot.user.id:
+                    return
+
+                nonlocal last_activity_time, user_audio_buffers, user_silence_counters, processing_lock
                 last_activity_time = time.time()
-                
+
                 if user_id not in user_audio_buffers:
                     user_audio_buffers[user_id] = []
                     user_silence_counters[user_id] = 0
-                
-                volume = audioop.rms(data, 2)
+
+                pcm_bytes = None
+                if hasattr(data, "pcm") and data.pcm:
+                    pcm_bytes = data.pcm
+                elif hasattr(data, "data") and data.data:
+                    pcm_bytes = data.data
+                elif isinstance(data, (bytes, bytearray)):
+                    pcm_bytes = bytes(data)
+
+                if not pcm_bytes:
+                    return
+
+                try:
+                    volume = audioop.rms(pcm_bytes, 2)
+                except Exception:
+                    volume = 0
+
                 if volume > 10:
-                    user_audio_buffers[user_id].append(data)
+                    user_audio_buffers[user_id].append(pcm_bytes)
                     user_silence_counters[user_id] = 0
                 else:
                     if len(user_audio_buffers[user_id]) > 0:
@@ -202,35 +223,35 @@ async def manage_voice_session(ctx, vc, audio_source):
                                     asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source, user_id), bot.loop)
                             user_audio_buffers[user_id].clear()
                             user_silence_counters[user_id] = 0
+            except Exception as ex:
+                print(f"[DEBUG] VoiceSink.write error: {ex}")
     
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        # Wait for voice connection to be fully ready
         while not vc.is_connected():
             await asyncio.sleep(0.1)
         
-        # Additional wait for connection to stabilize
         await asyncio.sleep(2)
         
         sink = VoiceSink()
         print(f"[DEBUG] Voice client connected: {vc.is_connected()}")
         print(f"[DEBUG] Starting voice recording with sink...")
         
-        try:
-            vc.start_recording(sink)
-            print(f"[DEBUG] Voice recording started successfully!")
-        except Exception as record_error:
-            print(f"[DEBUG] Recording start error: {record_error}")
-            # Try alternative recording method
-            vc.listen(sink)
-            print(f"[DEBUG] Voice listening started as fallback!")
+        vc.start_recording(sink, recording_finished)
+        print(f"[DEBUG] Voice recording started successfully!")
         
         while True:
             await asyncio.sleep(15)
             if time.time() - last_activity_time > 180:
-                vc.stop_recording()
-                await vc.disconnect()
+                try:
+                    vc.stop_recording()
+                except Exception as e:
+                    print(f"[DEBUG] Error stopping recording: {e}")
+                try:
+                    await vc.disconnect()
+                except Exception as e:
+                    print(f"[DEBUG] Error disconnecting vc: {e}")
                 break
 
     except Exception as e:
@@ -240,7 +261,10 @@ async def manage_voice_session(ctx, vc, audio_source):
     finally:
         print(f"Cleaning up voice session for guild {guild_id}")
         if vc.is_connected():
-            await vc.disconnect()
+            try:
+                await vc.disconnect()
+            except Exception:
+                pass
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
 
