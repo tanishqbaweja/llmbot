@@ -2876,16 +2876,19 @@ async def voice_command(ctx):
         print(f"[DEBUG] Joining channel: {channel.name}")
         await ctx.reply(f"Joining {channel.name} to start a conversation...")
 
-        # Try connecting with different voice client configurations
+        # Disconnect if already connected
+        if ctx.guild.voice_client:
+            await ctx.guild.voice_client.disconnect()
+        
+        # Patch supported modes to fix encryption issue
+        import discord.voice_client
+        original_supported_modes = discord.voice_client.VoiceClient.supported_modes
+        discord.voice_client.VoiceClient.supported_modes = lambda self, modes: ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305'] if not modes else modes
+        
         try:
             vc = await channel.connect()
-        except IndexError:
-            # Fallback for encryption mode issues
-            import discord.voice_client
-            original_modes = discord.voice_client.VoiceClient.supported_modes
-            discord.voice_client.VoiceClient.supported_modes = lambda self, modes: ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
-            vc = await channel.connect()
-            discord.voice_client.VoiceClient.supported_modes = original_modes
+        finally:
+            discord.voice_client.VoiceClient.supported_modes = original_supported_modes
         audio_source = GeminiAudioSource()
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
