@@ -1227,6 +1227,19 @@ async def manage_voice_session(guild_id):
 async def on_ready():
     init_db()
     print(f'{bot.user} has connected to Discord!')
+    
+    # Clean up any stale voice connections on startup
+    print("Cleaning up voice connections...")
+    for vc in bot.voice_clients:
+        try:
+            await vc.disconnect(force=True)
+            print(f"Disconnected from stale voice connection in guild {vc.guild.name}")
+        except Exception as e:
+            print(f"Error disconnecting stale voice connection: {e}")
+    
+    # Clear voice sessions
+    voice_sessions.clear()
+    print("Voice system ready")
 
 @bot.command(name='voice')
 async def voice_command(ctx):
@@ -1245,9 +1258,49 @@ async def voice_command(ctx):
         return
     
     try:
-        # Connect to voice channel
+        # Connect to voice channel with retry logic
         print(f"Connecting to voice channel: {voice_channel.name}")
-        vc = await voice_channel.connect()
+        vc = None
+        max_attempts = 3
+        
+        for attempt in range(1, max_attempts + 1):
+            try:
+                print(f"Connection attempt {attempt}/{max_attempts}")
+                # Try to connect with a timeout
+                vc = await voice_channel.connect(timeout=10.0, reconnect=True)
+                print(f"Connected successfully on attempt {attempt}")
+                break
+            except asyncio.TimeoutError:
+                print(f"Connection attempt {attempt} timed out")
+                if attempt < max_attempts:
+                    await asyncio.sleep(2)
+                else:
+                    raise
+            except IndexError as e:
+                # This is the encryption mode selection error
+                print(f"Encryption mode error on attempt {attempt}: {e}")
+                if attempt < max_attempts:
+                    # Clean up any partial connection
+                    try:
+                        if ctx.guild.voice_client:
+                            await ctx.guild.voice_client.disconnect(force=True)
+                    except:
+                        pass
+                    await asyncio.sleep(2)
+                else:
+                    # Try one more time with force disconnect of all voice clients
+                    print("Final attempt - forcing cleanup of all voice connections")
+                    for vc_cleanup in bot.voice_clients:
+                        try:
+                            await vc_cleanup.disconnect(force=True)
+                        except:
+                            pass
+                    await asyncio.sleep(3)
+                    vc = await voice_channel.connect(timeout=10.0, reconnect=False)
+        
+        if not vc:
+            raise Exception("Failed to connect after all attempts")
+        
         print(f"Connected successfully, vc type: {type(vc)}")
         
         # Define callback for when recording stops
@@ -1323,6 +1376,27 @@ async def leave_voice_command(ctx):
 async def test_command(ctx):
     """Test command to verify bot is working"""
     await ctx.reply("✅ Bot is working! Commands are being processed correctly.")
+
+@bot.command(name='resetvoice')
+async def reset_voice_command(ctx):
+    """Reset all voice connections (admin only)"""
+    if not is_admin(ctx.author.id):
+        await ctx.reply("❌ This command is admin only!")
+        return
+    
+    # Disconnect all voice clients
+    count = 0
+    for vc in bot.voice_clients:
+        try:
+            await vc.disconnect(force=True)
+            count += 1
+        except:
+            pass
+    
+    # Clear voice sessions
+    voice_sessions.clear()
+    
+    await ctx.reply(f"🔧 Reset {count} voice connections and cleared all sessions.")
 
 @bot.slash_command(name='help', description='Show available commands')
 async def slash_help_command(ctx):
