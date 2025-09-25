@@ -850,12 +850,12 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         try:
             volume = audioop.rms(actual_data, 2)  # 2 bytes per sample for 16-bit audio
             
-            # Clear speech detection (volume > 250 indicates actual speech)
-            is_speech = volume > 250
-            # Background noise or low speech (80-250)
-            is_noise = 80 < volume <= 250
-            # Silence (volume <= 80)
-            is_silent = volume <= 80
+            # Clear speech detection (volume > 300 indicates actual speech)
+            is_speech = volume > 300
+            # Background noise or low speech (100-300)
+            is_noise = 100 < volume <= 300
+            # Silence (volume <= 100)
+            is_silent = volume <= 100
             
             # If bot is playing and user speaks, stop it
             if is_speech and self.guild_id in voice_sessions:
@@ -881,37 +881,29 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 self.audio_data[user_id].extend(actual_data)
                 self.last_activity = time.time()
                 
-                # Track silence for natural pauses
-                if is_silent:
+                # Count silence/noise frames
+                if is_silent or is_noise:
                     self.silent_frames += 1
-                elif is_noise:
-                    # Background noise - count as partial silence
-                    self.silent_frames += 0.5
                 else:
-                    # Clear speech detected - reset counter
+                    # Reset on clear speech
                     self.silent_frames = 0
                 
                 # Check if we should stop recording
                 should_stop = False
                 reason = ""
                 
-                # Stop after ~1.5 seconds of complete silence (75 frames)
-                # This allows for natural pauses between sentences
-                if self.silent_frames >= 75:
+                # Stop after sufficient silence/noise
+                if self.silent_frames >= 12:  # ~240ms of no clear speech
                     should_stop = True
-                    reason = f"silence ({self.silent_frames} frames, ~{self.silent_frames*20}ms)"
+                    reason = f"silence ({self.silent_frames} frames)"
                 
-                # Timeout after 30 seconds (extended for longer responses)
-                elif hasattr(self, 'recording_start') and (time.time() - self.recording_start) > 30:
+                # Timeout after 10 seconds (failsafe)
+                elif hasattr(self, 'recording_start') and (time.time() - self.recording_start) > 10:
                     should_stop = True
-                    reason = "timeout (30s)"
-                
-                # Optional: Show recording status periodically
-                if int(self.silent_frames) % 20 == 0 and self.silent_frames > 0:
-                    print(f"Recording... (silence: {int(self.silent_frames)} frames, volume: {volume})")
+                    reason = "timeout (10s)"
                 
                 if should_stop:
-                    print(f"Stopping recording due to {reason}")
+                    print(f"Stopping recording due to {reason}, volume was {volume}")
                     self.recording = False
                     self.silent_frames = 0
                     # Process immediately
