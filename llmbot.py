@@ -808,13 +808,14 @@ async def get_ai_response(prompt, message, force_model=None):
 class CustomVoiceSink(discord.sinks.WaveSink):
     """Custom voice sink that records audio from users"""
     
-    def __init__(self, guild_id):
+    def __init__(self, guild_id, loop=None):
         super().__init__()
         self.guild_id = guild_id
         self.audio_data = {}  # {user_id: bytearray}
         self.silent_frames = 0
         self.recording = False
         self.last_activity = time.time()
+        self.loop = loop or asyncio.get_event_loop()
         
     def write(self, data, user):
         """Called when audio data is received from a user"""
@@ -858,7 +859,8 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         if self.recording and self.silent_frames > 10:
             self.recording = False
             self.silent_frames = 0
-            asyncio.create_task(self.process_recording())
+            # Schedule the coroutine in the main event loop from this thread
+            asyncio.run_coroutine_threadsafe(self.process_recording(), self.loop)
     
     async def process_recording(self):
         """Process the recorded audio"""
@@ -1098,7 +1100,8 @@ async def voice_command(ctx):
             print(f"Recording stopped for guild {guild_id}")
         
         # Start recording with custom sink
-        sink = CustomVoiceSink(guild_id)
+        loop = asyncio.get_event_loop()
+        sink = CustomVoiceSink(guild_id, loop=loop)
         vc.start_recording(sink, recording_callback)
         
         # Start inactivity monitor
