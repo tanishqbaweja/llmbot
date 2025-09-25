@@ -13721,3 +13721,30 @@ Traceback: Traceback (most recent call last):
 KeyError: 'state'
 
 2025-09-25 21:44:05,410 - discord.gateway - WARNING - Shard ID None has stopped responding to the gateway. Closing and restarting.
+2025-09-25 21:47:43,388 - discord.client - INFO - logging in using static token
+2025-09-25 21:47:44,874 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 21:47:45,307 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-d-6r3x",{"micros":113577,"calls":["id_created",{"micros":563,"calls":[]},"session_lookup_time",{"micros":216,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-18",{"micros":112462,"calls":["start_session",{"micros":107175,"calls":["discord-api-rpc-686767fc44-qnn4t",{"micros":62525,"calls":["get_user",{"micros":14987},"get_guilds",{"micros":2326},"send_scheduled_deletion_message",{"micros":16},"guild_join_requests",{"micros":487},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":33198},"apex_experiments",{"micros":3263},"user_activities",{"micros":5},"played_application_ids",{"micros":2}]}]},"starting_guild_connect",{"micros":33,"calls":[]},"presence_started",{"micros":318,"calls":[]},"guilds_started",{"micros":76,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":4754,"calls":[]},"connect_finished",{"micros":4834,"calls":[]},"build_ready",{"micros":22,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: a653bafb19adcf4ea8f459a1130896f7).
+2025-09-25 21:48:01,915 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 21:48:01,915 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 21:48:02,472 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10000.discord.media
+2025-09-25 21:48:03,168 - root - ERROR - Voice command error: DiscordVoiceWebSocket.select_protocol() missing 2 required positional arguments: 'port' and 'mode'
+Traceback: Traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 1328, in voice_command
+    vc = await voice_channel.connect(timeout=10.0, reconnect=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1994, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 404, in connect
+    self.ws = await self.connect_websocket()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 375, in connect_websocket
+    await ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 945, in poll_event
+    await self.received_message(utils._from_json(msg.data))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 862, in received_message
+    await self.initial_connection(data)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 82, in patched_initial_connection
+    await self.select_protocol(mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DiscordVoiceWebSocket.select_protocol() missing 2 required positional arguments: 'port' and 'mode'
+
