@@ -850,12 +850,12 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         try:
             volume = audioop.rms(actual_data, 2)  # 2 bytes per sample for 16-bit audio
             
-            # Clear speech detection (volume > 300 indicates actual speech)
-            is_speech = volume > 300
-            # Background noise or low speech (100-300)
-            is_noise = 100 < volume <= 300
-            # Silence (volume <= 100)
-            is_silent = volume <= 100
+            # Clear speech detection (volume > 500 indicates actual speech)
+            is_speech = volume > 500
+            # Background noise or low speech (200-500)
+            is_noise = 200 < volume <= 500
+            # Silence (volume <= 200)
+            is_silent = volume <= 200
             
             # If bot is playing and user speaks, stop it
             if is_speech and self.guild_id in voice_sessions:
@@ -882,18 +882,25 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 self.last_activity = time.time()
                 
                 # Count silence/noise frames
-                if is_silent or is_noise:
+                if is_silent:
                     self.silent_frames += 1
+                    print(f"Silent frame detected, count: {self.silent_frames}, volume: {volume}")
+                elif is_noise:
+                    # Don't fully reset on background noise, just slow the count
+                    if self.silent_frames > 0:
+                        self.silent_frames = max(0, self.silent_frames - 1)
+                    print(f"Noise detected, adjusted count: {self.silent_frames}, volume: {volume}")
                 else:
                     # Reset on clear speech
                     self.silent_frames = 0
+                    print(f"Speech detected, reset silence counter, volume: {volume}")
                 
                 # Check if we should stop recording
                 should_stop = False
                 reason = ""
                 
                 # Stop after sufficient silence/noise
-                if self.silent_frames >= 30:  # ~1.5 seconds of no clear speech (allows for natural pauses)
+                if self.silent_frames >= 25:  # ~500ms of no clear speech (allows for natural pauses)
                     should_stop = True
                     reason = f"silence ({self.silent_frames} frames)"
                 
