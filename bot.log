@@ -12220,3 +12220,25 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:15:42,097 - root - ERROR - Voice processing error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-native-audio-preview-09-2025 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
 2025-09-25 08:18:47,240 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
 2025-09-25 08:18:47,420 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 08:21:00,515 - discord.client - INFO - logging in using static token
+2025-09-25 08:21:02,491 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:21:03,201 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-d-ps7k",{"micros":320457,"calls":["id_created",{"micros":476,"calls":[]},"session_lookup_time",{"micros":3102,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-36",{"micros":315765,"calls":["start_session",{"micros":261308,"calls":["discord-api-rpc-7b94d6b768-fdxcf",{"micros":195159,"calls":["get_user",{"micros":19757},"get_guilds",{"micros":38674},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":9},"pending_payments",{"micros":22730},"apex_experiments",{"micros":4219},"user_activities",{"micros":4},"played_application_ids",{"micros":2}]}]},"starting_guild_connect",{"micros":62,"calls":[]},"presence_started",{"micros":23042,"calls":[]},"guilds_started",{"micros":93,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":31182,"calls":[]},"connect_finished",{"micros":31232,"calls":[]},"build_ready",{"micros":24,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: ebfd0054c7599f67f724bdc643e536d7).
+2025-09-25 08:21:13,421 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:21:13,422 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:21:14,030 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:21:15,117 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:21:15,303 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:21:21,500 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:21:22,142 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:21:23,147 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:21:23,614 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:21:23,615 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:21:23,787 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:21:23,789 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:21:24,191 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-native-audio-dialog:generateContent "HTTP/1.1 404 Not Found"
+2025-09-25 08:21:24,193 - root - ERROR - Voice processing error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-preview-native-audio-dialog is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2025-09-25 08:21:24,843 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:21:24,845 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:21:24,845 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:21:25,490 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-native-audio-dialog:generateContent "HTTP/1.1 404 Not Found"
+2025-09-25 08:21:25,498 - root - ERROR - Voice processing error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.5-flash-preview-native-audio-dialog is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
