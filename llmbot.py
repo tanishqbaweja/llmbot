@@ -27,7 +27,8 @@ from google.genai import types
 from PIL import Image
 from io import BytesIO
 import audioop
-import google.generativeai as genai_live
+import websockets
+import json as json_lib
 
 # Setup secure logging
 def setup_secure_logging():
@@ -163,77 +164,54 @@ MAX_INPUT_LENGTH = 2000
 
 async def manage_voice_session(ctx, vc, audio_source):
     guild_id = ctx.guild.id
-    history = []
     last_activity_time = time.time()
     
     try:
-        api_key = random.choice(GEMINI_API_KEYS)
-        genai_live.configure(api_key=api_key)
-        
-        live = genai_live.Live(
-            model='gemini-2.5-flash-native-audio-preview-09-2025',
-            input_audio_sample_rate=16000,
-            output_audio_sample_rate=24000
-        )
-        
-        print(f"Starting Gemini Live session for guild {guild_id}...")
-        
         def discord_audio_callback(user, data: bytes):
             nonlocal last_activity_time
             if user:
-                try:
-                    mono_data = audioop.tomono(data, 2, 1, 1)
-                    resampled_data, _ = audioop.ratecv(mono_data, 2, 1, 48000, 16000, None)
-                    live.send_audio(resampled_data)
-                    last_activity_time = time.time()
-                except audioop.error as e:
-                    logging.warning(f"Audio processing error: {e}")
+                last_activity_time = time.time()
+                asyncio.create_task(handle_voice_input(ctx, audio_source))
 
         sink = discord.reader.WaveSink(discord_audio_callback)
         vc.listen(sink)
 
-        async def handle_gemini_responses():
-            async for event in live.events:
-                if event.type == 'speech' and event.speech:
-                    audio_source.write(event.speech.audio_chunk)
-                elif event.type == 'transcript' and event.transcript:
-                    print(f"User: {event.transcript.text}")
-                    if event.transcript.is_final:
-                        history.append({'role': 'user', 'parts': [{'text': event.transcript.text}]})
-                elif event.type == 'text' and event.text:
-                    print(f"Bot: {event.text.text}")
-                    history.append({'role': 'model', 'parts': [{'text': event.text.text}]})
-
-        async def inactivity_check():
-            while True:
-                await asyncio.sleep(15)
-                if time.time() - last_activity_time > 180:
-                    print(f"Inactivity timeout reached for guild {guild_id}. Disconnecting.")
-                    await vc.disconnect()
-                    break
-
-        gemini_task = asyncio.create_task(handle_gemini_responses())
-        inactivity_task = asyncio.create_task(inactivity_check())
-        
-        await asyncio.wait([gemini_task, inactivity_task], return_when=asyncio.FIRST_COMPLETED)
+        while True:
+            await asyncio.sleep(15)
+            if time.time() - last_activity_time > 180:
+                print(f"Inactivity timeout reached for guild {guild_id}. Disconnecting.")
+                await vc.disconnect()
+                break
 
     except Exception as e:
         safe_error = sanitize_log_message(str(e)[:200])
         logging.error(f"Error in voice session for guild {guild_id}: {safe_error}")
-        await ctx.send("An error occurred with the voice session. Please try again later.")
         
     finally:
         print(f"Cleaning up voice session for guild {guild_id}")
         if vc.is_connected():
             await vc.disconnect()
-        
-        if 'gemini_task' in locals() and not gemini_task.done():
-            gemini_task.cancel()
-        if 'inactivity_task' in locals() and not inactivity_task.done():
-            inactivity_task.cancel()
-            
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
+
+async def handle_voice_input(ctx, audio_source):
+    try:
+        api_key = random.choice(GEMINI_API_KEYS)
+        gemini_client = genai.Client(api_key=api_key)
+        
+        response = await asyncio.to_thread(
+            gemini_client.models.generate_content,
+            model="gemini-2.0-flash-exp",
+            contents=["Hello! I heard you speak."],
+            config=types.GenerateContentConfig(response_modalities=["Audio"])
+        )
+        
+        for part in response.candidates[0].content.parts:
+            if hasattr(part, 'inline_data') and part.inline_data:
+                audio_source.write(part.inline_data.data)
+                        
+    except Exception as e:
+        logging.error(f"Voice response error: {e}")
 
 def sanitize_input(text):
     if not isinstance(text, str):
@@ -2648,7 +2626,7 @@ async def voice_command(ctx):
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
-        voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task}
+        voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source}
 
     except Exception as e:
         await ctx.reply(f"Failed to join the voice channel. Error: {e}")
