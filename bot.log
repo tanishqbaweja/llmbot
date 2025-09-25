@@ -13130,3 +13130,22 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4014
 2025-09-25 13:17:11,907 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 2)
 2025-09-25 13:18:11,923 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
 2025-09-25 13:18:11,923 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 13:22:42,915 - discord.client - INFO - logging in using static token
+2025-09-25 13:22:44,937 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 13:22:45,461 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-f0pj",{"micros":136657,"calls":["id_created",{"micros":379,"calls":[]},"session_lookup_time",{"micros":7035,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-prd-2-41",{"micros":128164,"calls":["start_session",{"micros":122062,"calls":["discord-api-rpc-686767fc44-tvd7p",{"micros":64353,"calls":["get_user",{"micros":6739},"get_guilds",{"micros":7673},"send_scheduled_deletion_message",{"micros":14},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":11},"pending_payments",{"micros":35262},"apex_experiments",{"micros":10193},"user_activities",{"micros":7},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":54,"calls":[]},"presence_started",{"micros":206,"calls":[]},"guilds_started",{"micros":83,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":5695,"calls":[]},"connect_finished",{"micros":5744,"calls":[]},"build_ready",{"micros":13,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 8d9928ac3434be7da89d76c3c52f96d3).
+2025-09-25 13:22:55,573 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 13:22:55,574 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 13:22:56,164 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11061.discord.media
+2025-09-25 13:22:56,469 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 13:22:57,078 - discord.voice_client - ERROR - Failed to connect to voice... Retrying...
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 404, in connect
+    self.ws = await self.connect_websocket()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 375, in connect_websocket
+    await ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 955, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
+2025-09-25 13:22:58,080 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 13:22:58,082 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 2)
