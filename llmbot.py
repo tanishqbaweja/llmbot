@@ -354,7 +354,7 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
         # Step 6: Play audio in Discord
         print(f"[DEBUG] Step 6: Playing audio in Discord")
         
-        # Check voice client status
+        # Check voice client status and restart if needed
         guild_id = None
         for gid, session in voice_sessions.items():
             if session.get('audio_source') == audio_source:
@@ -362,6 +362,11 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
                 vc = session.get('vc')
                 print(f"[DEBUG] Voice client connected: {vc.is_connected() if vc else False}")
                 print(f"[DEBUG] Voice client playing: {vc.is_playing() if vc else False}")
+                
+                # Restart audio player if not playing
+                if vc and vc.is_connected() and not vc.is_playing():
+                    print(f"[DEBUG] Restarting audio player")
+                    vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
                 break
         
         chunk_size = 3840

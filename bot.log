@@ -12387,3 +12387,16 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:52:52,451 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
 2025-09-25 08:55:57,888 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
 2025-09-25 08:55:58,066 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 08:56:18,642 - discord.client - INFO - logging in using static token
+2025-09-25 08:56:20,538 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:56:21,036 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-b6hb",{"micros":109304,"calls":["id_created",{"micros":691,"calls":[]},"session_lookup_time",{"micros":3146,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-184",{"micros":105063,"calls":["start_session",{"micros":84912,"calls":["discord-api-rpc-686767fc44-9s4ft",{"micros":47988,"calls":["get_user",{"micros":8394},"get_guilds",{"micros":2382},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":8},"pending_payments",{"micros":25236},"apex_experiments",{"micros":5094},"user_activities",{"micros":12},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":73,"calls":[]},"presence_started",{"micros":15619,"calls":[]},"guilds_started",{"micros":86,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":4311,"calls":[]},"connect_finished",{"micros":4359,"calls":[]},"build_ready",{"micros":11,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 66af2b0b49ac8563a9a5defcc239a8c1).
+2025-09-25 08:56:24,822 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:56:24,822 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:56:25,413 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:56:26,454 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:56:26,645 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:56:32,401 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:56:33,093 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:56:34,506 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:56:34,507 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:56:35,440 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
