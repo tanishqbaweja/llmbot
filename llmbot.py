@@ -817,7 +817,7 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         self.last_activity = time.time()
         self.loop = loop or asyncio.get_event_loop()
         self.processing = False  # Flag to ignore input during processing
-        self.frames_since_speech = 0  # Track frames since last speech
+        self.recording_start = 0  # Track when recording started
         
     def write(self, data, user):
         """Called when audio data is received from a user"""
@@ -850,53 +850,65 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         try:
             volume = audioop.rms(actual_data, 2)  # 2 bytes per sample for 16-bit audio
             
-            # Voice detected (threshold adjusted for better detection)
-            if volume > 200:  
-                # If bot is playing, stop it immediately
-                if self.guild_id in voice_sessions:
-                    session = voice_sessions[self.guild_id]
-                    if session['vc'] and session['vc'].is_playing():
-                        session['vc'].stop()
-                        print("Stopped bot playback - user is speaking")
-                        # Reset state for new recording
-                        self.processing = False
-                        self.audio_data.clear()
-                
-                # Start new recording session
-                if not self.recording:
-                    self.recording = True
-                    self.silent_frames = 0
-                    self.frames_since_speech = 0
-                    # Clear ALL buffers for fresh start
+            # Clear speech detection (volume > 300 indicates actual speech)
+            is_speech = volume > 300
+            # Background noise or low speech (100-300)
+            is_noise = 100 < volume <= 300
+            # Silence (volume <= 100)
+            is_silent = volume <= 100
+            
+            # If bot is playing and user speaks, stop it
+            if is_speech and self.guild_id in voice_sessions:
+                session = voice_sessions[self.guild_id]
+                if session['vc'] and session['vc'].is_playing():
+                    session['vc'].stop()
+                    print("Stopped bot playback - user is speaking")
+                    self.processing = False
                     self.audio_data.clear()
-                    self.audio_data[user_id] = bytearray()
-                    print(f"Started recording from user {user_id}")
-                
-                # Reset silence counters on voice activity
+            
+            # Start recording on clear speech
+            if is_speech and not self.recording and not self.processing:
+                self.recording = True
                 self.silent_frames = 0
-                self.frames_since_speech = 0
+                self.recording_start = time.time()
+                # Clear ALL buffers for fresh start
+                self.audio_data.clear()
+                self.audio_data[user_id] = bytearray()
+                print(f"Started recording from user {user_id}, volume: {volume}")
+            
+            # While recording, append all audio
+            if self.recording:
+                self.audio_data[user_id].extend(actual_data)
                 self.last_activity = time.time()
                 
-                # Append audio data
-                self.audio_data[user_id].extend(actual_data)
+                # Count silence/noise frames
+                if is_silent or is_noise:
+                    self.silent_frames += 1
+                else:
+                    # Reset on clear speech
+                    self.silent_frames = 0
                 
-            # Silence detected
-            elif self.recording:
-                self.silent_frames += 1
-                self.frames_since_speech += 1
+                # Check if we should stop recording
+                should_stop = False
+                reason = ""
                 
-                # Continue recording during brief pauses (up to ~0.5 seconds)
-                if self.frames_since_speech < 25:
-                    self.audio_data[user_id].extend(actual_data)
+                # Stop after sufficient silence/noise
+                if self.silent_frames >= 12:  # ~240ms of no clear speech
+                    should_stop = True
+                    reason = f"silence ({self.silent_frames} frames)"
                 
-                # Process after sufficient silence
-                if self.silent_frames > 20:  # ~0.4 seconds of silence
-                    print(f"Processing after {self.silent_frames} frames of silence")
+                # Timeout after 10 seconds (failsafe)
+                elif hasattr(self, 'recording_start') and (time.time() - self.recording_start) > 10:
+                    should_stop = True
+                    reason = "timeout (10s)"
+                
+                if should_stop:
+                    print(f"Stopping recording due to {reason}, volume was {volume}")
                     self.recording = False
                     self.silent_frames = 0
-                    self.frames_since_speech = 0
-                    # Schedule processing in main event loop
+                    # Process immediately
                     asyncio.run_coroutine_threadsafe(self.process_recording(), self.loop)
+                    
         except Exception as e:
             print(f"Error in voice detection: {e}")
     
@@ -913,11 +925,16 @@ class CustomVoiceSink(discord.sinks.WaveSink):
             main_user_id = max(self.audio_data.keys(), key=lambda k: len(self.audio_data[k]))
             audio_bytes = bytes(self.audio_data[main_user_id])
             
+            print(f"Audio buffer size: {len(audio_bytes)} bytes")
+            
             # Clear audio data immediately to prevent reprocessing
             self.audio_data.clear()
             
-            if len(audio_bytes) > 5000:  # Increased minimum for better detection
+            # Reduced minimum to 1000 bytes (very short utterances)
+            if len(audio_bytes) > 1000:
                 await process_voice_input(self.guild_id, audio_bytes, self)
+            else:
+                print(f"Audio too short ({len(audio_bytes)} bytes), ignoring")
                 
         finally:
             # Always reset processing flag
@@ -1027,7 +1044,6 @@ Reply to the latest message appropriately. Keep your response concise and natura
                         session['sink'].processing = False
                         session['sink'].recording = False  # Reset recording state
                         session['sink'].silent_frames = 0
-                        session['sink'].frames_since_speech = 0
                         print("Reset sink state after playback")
                     print("Bot finished speaking, ready for new input")
                     # Clean up temp file in a thread-safe way
