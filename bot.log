@@ -13589,3 +13589,11 @@ TimeoutError
 2025-09-25 21:29:12,332 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
 2025-09-25 21:29:12,876 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10015.discord.media
 2025-09-25 21:29:13,989 - root - ERROR - Voice command error: list index out of range
+2025-09-25 21:31:21,848 - discord.client - INFO - logging in using static token
+2025-09-25 21:31:22,752 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 21:31:23,492 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-4jdh",{"micros":428358,"calls":["id_created",{"micros":326,"calls":[]},"session_lookup_time",{"micros":793,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-37",{"micros":426324,"calls":["start_session",{"micros":376490,"calls":["discord-api-rpc-686767fc44-95ttl",{"micros":323260,"calls":["get_user",{"micros":65202},"get_guilds",{"micros":12943},"send_scheduled_deletion_message",{"micros":18},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":32297},"apex_experiments",{"micros":5129},"user_activities",{"micros":7},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":29,"calls":[]},"presence_started",{"micros":19905,"calls":[]},"guilds_started",{"micros":87,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":29710,"calls":[]},"connect_finished",{"micros":29798,"calls":[]},"build_ready",{"micros":12,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: d09b01406c212784f2e5364af9735d38).
+2025-09-25 21:31:42,895 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 21:31:42,896 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 21:31:43,432 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10000.discord.media
+2025-09-25 21:31:44,730 - root - ERROR - Voice command error: list index out of range
+2025-09-25 21:32:43,688 - discord.gateway - WARNING - Shard ID None has stopped responding to the gateway. Closing and restarting.

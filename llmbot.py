@@ -1037,6 +1037,11 @@ async def process_voice_input(guild_id, audio_data, sink=None):
 Reply to the latest message appropriately. Keep your response concise and natural for voice conversation. Maximum 200 characters."""
             
             # Use a random Gemini API key
+            if not GEMINI_API_KEYS:
+                print("ERROR: No Gemini API keys available")
+                if sink:
+                    sink.processing = False
+                return
             gemini_key = random.choice(GEMINI_API_KEYS)
             
             # Run Gemini in executor to avoid blocking
@@ -1110,8 +1115,12 @@ async def speech_to_text(audio_data):
     try:
         # Use Groq API keys 11-17 for Whisper as per memory
         whisper_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
+        if not whisper_keys and API_KEYS:
+            whisper_keys = [API_KEYS[0]]  # Fallback to first key
+        
         if not whisper_keys:
-            whisper_keys = API_KEYS[:1]  # Fallback to first key
+            print("ERROR: No Groq API keys available for Whisper")
+            return None
         
         # Run blocking I/O in executor to avoid blocking event loop
         loop = asyncio.get_event_loop()
@@ -1156,8 +1165,12 @@ async def text_to_speech(text):
     try:
         # Use Groq API keys 11-14 + main key for TTS as per memory
         tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if (11 <= num <= 14) or num == 17]
+        if not tts_keys and API_KEYS:
+            tts_keys = [API_KEYS[0]]  # Fallback
+        
         if not tts_keys:
-            tts_keys = API_KEYS[:1]  # Fallback
+            print("ERROR: No Groq API keys available for TTS")
+            return None
         
         # Run TTS in executor to avoid blocking
         loop = asyncio.get_event_loop()
