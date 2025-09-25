@@ -12135,3 +12135,13 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:01:12,946 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
 2025-09-25 08:01:14,076 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
 2025-09-25 08:01:14,257 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:02:07,595 - discord.client - INFO - logging in using static token
+2025-09-25 08:02:09,223 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:02:09,710 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-b6hb",{"micros":100648,"calls":["id_created",{"micros":336,"calls":[]},"session_lookup_time",{"micros":289,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-67",{"micros":99755,"calls":["start_session",{"micros":83039,"calls":["discord-api-rpc-7b94d6b768-zs6f8",{"micros":45376,"calls":["get_user",{"micros":5104},"get_guilds",{"micros":6224},"send_scheduled_deletion_message",{"micros":17},"guild_join_requests",{"micros":10},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":28238},"apex_experiments",{"micros":2847},"user_activities",{"micros":5},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":40,"calls":[]},"presence_started",{"micros":369,"calls":[]},"guilds_started",{"micros":83,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":16157,"calls":[]},"connect_finished",{"micros":16203,"calls":[]},"build_ready",{"micros":17,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: f648ac4bcc39b32ab35a24ce2ca9b7d8).
+2025-09-25 08:02:17,724 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:02:17,724 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:02:18,330 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:02:19,237 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:02:19,420 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:04:19,807 - discord.voice_client - INFO - Disconnected from voice by force... potentially reconnecting.
+2025-09-25 08:04:19,809 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 2)

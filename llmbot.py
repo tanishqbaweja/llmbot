@@ -177,31 +177,42 @@ async def manage_voice_session(ctx, vc, audio_source):
         
         class VoiceSink(discord.sinks.Sink):
             def write(self, data, user_id):
+                print(f"[DEBUG] Audio received from user {user_id}, bot user: {ctx.bot.user.id}")
                 if user_id and user_id != ctx.bot.user.id:
                     nonlocal last_activity_time, user_audio_buffers, user_silence_counters
                     last_activity_time = time.time()
+                    print(f"[DEBUG] Processing audio from user {user_id}")
                     
                     if user_id not in user_audio_buffers:
                         user_audio_buffers[user_id] = []
                         user_silence_counters[user_id] = 0
+                        print(f"[DEBUG] Created new buffer for user {user_id}")
                     
                     # Check if audio contains speech (simple volume check)
                     volume = audioop.rms(data, 2)
+                    print(f"[DEBUG] Audio volume: {volume} for user {user_id}")
                     
                     if volume > 500:  # Speech detected
                         user_audio_buffers[user_id].append(data)
                         user_silence_counters[user_id] = 0
+                        print(f"[DEBUG] Speech detected! Buffer size: {len(user_audio_buffers[user_id])}")
                     else:  # Silence detected
                         if len(user_audio_buffers[user_id]) > 0:
                             user_silence_counters[user_id] += 1
+                            print(f"[DEBUG] Silence counter: {user_silence_counters[user_id]}, buffer size: {len(user_audio_buffers[user_id])}")
                             
                             # If 1 second of silence (50 packets * 20ms = 1s)
                             if user_silence_counters[user_id] >= 50:
                                 if len(user_audio_buffers[user_id]) > 25:  # At least 0.5s of speech
+                                    print(f"[DEBUG] Processing speech! Buffer has {len(user_audio_buffers[user_id])} packets")
                                     audio_data = user_audio_buffers[user_id].copy()
                                     asyncio.create_task(process_voice_input(audio_data, audio_source))
+                                else:
+                                    print(f"[DEBUG] Speech too short, ignoring. Buffer size: {len(user_audio_buffers[user_id])}")
                                 user_audio_buffers[user_id].clear()
                                 user_silence_counters[user_id] = 0
+                else:
+                    print(f"[DEBUG] Ignoring audio from bot or invalid user: {user_id}")
         
         vc.start_recording(VoiceSink(), lambda e: print(f"Recording error: {e}") if e else None)
         
@@ -230,18 +241,29 @@ async def manage_voice_session(ctx, vc, audio_source):
             del voice_sessions[guild_id]
 
 async def process_voice_input(audio_chunks, audio_source):
+    print(f"[DEBUG] Starting voice processing with {len(audio_chunks)} audio chunks")
     try:
+        # Step 1: Audio conversion
+        print(f"[DEBUG] Step 1: Converting audio format")
         audio_data = b''.join(audio_chunks)
+        print(f"[DEBUG] Combined audio data size: {len(audio_data)} bytes")
+        
         mono_data = audioop.tomono(audio_data, 2, 1, 1)
         resampled_data, _ = audioop.ratecv(mono_data, 2, 1, 48000, 16000, None)
+        print(f"[DEBUG] Resampled data size: {len(resampled_data)} bytes")
         
+        # Step 2: Create WAV file
+        print(f"[DEBUG] Step 2: Creating WAV file")
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
+            print(f"[DEBUG] Created temp file: {temp_file.name}")
             with wave.open(temp_file.name, 'wb') as wav_file:
                 wav_file.setnchannels(1)
                 wav_file.setsampwidth(2)
                 wav_file.setframerate(16000)
                 wav_file.writeframes(resampled_data)
             
+            # Step 3: Speech-to-text
+            print(f"[DEBUG] Step 3: Calling Groq Whisper API")
             groq_client = Groq(api_key=random.choice(API_KEYS))
             with open(temp_file.name, "rb") as audio_file:
                 transcription = groq_client.audio.transcriptions.create(
@@ -253,12 +275,17 @@ async def process_voice_input(audio_chunks, audio_source):
                 )
             
             os.unlink(temp_file.name)
+            print(f"[DEBUG] Deleted temp file: {temp_file.name}")
         
+        print(f"[DEBUG] Transcription result: '{transcription}'")
         if not transcription.strip():
+            print(f"[DEBUG] Empty transcription, returning")
             return
             
         print(f"User said: {transcription}")
         
+        # Step 4: Generate response
+        print(f"[DEBUG] Step 4: Generating response with Gemini 2.0 Flash")
         gemini_client = genai.Client(api_key=random.choice(GEMINI_API_KEYS))
         response = await asyncio.to_thread(
             gemini_client.models.generate_content,
@@ -269,6 +296,8 @@ async def process_voice_input(audio_chunks, audio_source):
         response_text = response.text.strip() if response.text else "I heard you!"
         print(f"Bot response: {response_text}")
         
+        # Step 5: Generate audio
+        print(f"[DEBUG] Step 5: Generating audio with Gemini Native Audio")
         audio_response = await asyncio.to_thread(
             gemini_client.models.generate_content,
             model="gemini-2.5-flash-native-audio-preview-09-2025",
@@ -276,19 +305,37 @@ async def process_voice_input(audio_chunks, audio_source):
             config=types.GenerateContentConfig(response_modalities=["Audio"])
         )
         
+        print(f"[DEBUG] Audio response received, processing parts")
+        audio_parts_found = 0
         for part in audio_response.candidates[0].content.parts:
             if hasattr(part, 'inline_data') and part.inline_data:
+                audio_parts_found += 1
                 audio_data = part.inline_data.data
+                print(f"[DEBUG] Found audio part {audio_parts_found}, size: {len(audio_data)} bytes")
+                
+                # Step 6: Play audio
+                print(f"[DEBUG] Step 6: Playing audio in Discord")
                 chunk_size = 3840
+                chunks_written = 0
                 for i in range(0, len(audio_data), chunk_size):
                     chunk = audio_data[i:i+chunk_size]
                     if len(chunk) < chunk_size:
                         chunk += b'\x00' * (chunk_size - len(chunk))
                     audio_source.write(chunk)
+                    chunks_written += 1
                     await asyncio.sleep(0.02)
+                print(f"[DEBUG] Wrote {chunks_written} audio chunks to Discord")
+        
+        if audio_parts_found == 0:
+            print(f"[DEBUG] ERROR: No audio parts found in response!")
+        else:
+            print(f"[DEBUG] Voice processing completed successfully!")
         
     except Exception as e:
+        print(f"[DEBUG] ERROR in voice processing: {e}")
         logging.error(f"Voice processing error: {e}")
+        import traceback
+        traceback.print_exc()
 
 def sanitize_input(text):
     if not isinstance(text, str):
