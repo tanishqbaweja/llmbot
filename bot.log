@@ -13490,3 +13490,80 @@ TimeoutError
 2025-09-25 14:32:38,967 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
 2025-09-25 14:32:59,714 - discord.player - INFO - Preparing to terminate ffmpeg process 2860.
 2025-09-25 14:32:59,715 - discord.player - INFO - ffmpeg process 2860 successfully terminated with return code of 0.
+2025-09-25 14:34:06,201 - discord.client - INFO - logging in using static token
+2025-09-25 14:34:08,095 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 14:34:09,051 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-94c8",{"micros":567406,"calls":["id_created",{"micros":409,"calls":[]},"session_lookup_time",{"micros":227,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-65",{"micros":565614,"calls":["start_session",{"micros":551776,"calls":["discord-api-rpc-686767fc44-x5ztf",{"micros":499494,"calls":["get_user",{"micros":11093},"get_guilds",{"micros":86525},"send_scheduled_deletion_message",{"micros":20},"guild_join_requests",{"micros":4645},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":28277},"apex_experiments",{"micros":5058},"user_activities",{"micros":4},"played_application_ids",{"micros":2}]}]},"starting_guild_connect",{"micros":24,"calls":[]},"presence_started",{"micros":363,"calls":[]},"guilds_started",{"micros":87,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":13299,"calls":[]},"connect_finished",{"micros":13351,"calls":[]},"build_ready",{"micros":11,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 768ec805aa36b4595c6a2a740f941300).
+2025-09-25 14:34:13,228 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:34:13,229 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 14:34:13,834 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:34:14,864 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:34:15,047 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:34:18,923 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:34:19,413 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:34:21,609 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:34:21,611 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:34:22,526 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:34:25,331 - discord.player - INFO - Preparing to terminate ffmpeg process 37228.
+2025-09-25 14:34:25,331 - discord.player - INFO - ffmpeg process 37228 successfully terminated with return code of 0.
+2025-09-25 14:34:30,624 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:34:31,116 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:34:33,416 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:34:33,416 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:34:34,316 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:34:44,217 - discord.player - INFO - Preparing to terminate ffmpeg process 37652.
+2025-09-25 14:34:44,220 - discord.player - INFO - ffmpeg process 37652 successfully terminated with return code of 0.
+2025-09-25 14:34:47,899 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:34:48,373 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:34:50,559 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:34:50,560 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:34:51,489 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:34:56,016 - discord.player - INFO - Preparing to terminate ffmpeg process 20916.
+2025-09-25 14:34:56,017 - discord.player - INFO - ffmpeg process 20916 successfully terminated with return code of 0.
+2025-09-25 14:35:02,515 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:35:03,022 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:35:04,237 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:35:04,238 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:35:05,138 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:35:10,243 - discord.player - INFO - Preparing to terminate ffmpeg process 3176.
+2025-09-25 14:35:10,244 - discord.player - INFO - ffmpeg process 3176 successfully terminated with return code of 0.
+2025-09-25 14:35:14,653 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:35:15,154 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:35:17,211 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:35:17,212 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:35:18,236 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:35:21,644 - discord.player - INFO - Preparing to terminate ffmpeg process 22304.
+2025-09-25 14:35:21,646 - discord.player - INFO - ffmpeg process 22304 successfully terminated with return code of 0.
+2025-09-25 14:35:25,429 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:35:25,900 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:35:27,300 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:35:27,301 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:35:28,204 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:35:30,340 - discord.player - INFO - Preparing to terminate ffmpeg process 28860.
+2025-09-25 14:35:30,341 - discord.player - INFO - ffmpeg process 28860 successfully terminated with return code of 0.
+2025-09-25 14:35:40,215 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:35:40,696 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:35:43,055 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:35:43,058 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:35:44,080 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:35:48,605 - discord.player - INFO - Preparing to terminate ffmpeg process 30484.
+2025-09-25 14:35:48,606 - discord.player - INFO - ffmpeg process 30484 successfully terminated with return code of 0.
+2025-09-25 14:35:54,193 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:35:54,672 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:35:56,830 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:35:56,832 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:35:57,739 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:36:00,468 - discord.player - INFO - Preparing to terminate ffmpeg process 25700.
+2025-09-25 14:36:00,470 - discord.player - INFO - ffmpeg process 25700 successfully terminated with return code of 0.
+2025-09-25 14:36:06,438 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:36:06,906 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:36:09,026 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:36:09,029 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:36:09,935 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:36:14,540 - discord.player - INFO - Preparing to terminate ffmpeg process 11516.
+2025-09-25 14:36:14,541 - discord.player - INFO - ffmpeg process 11516 successfully terminated with return code of 0.
+2025-09-25 14:36:15,397 - discord.client - INFO - Received signal to terminate bot and event loop.
+2025-09-25 14:36:15,398 - discord.client - INFO - Cleaning up tasks.
+2025-09-25 14:36:15,398 - discord.client - INFO - Cleaning up after 4 tasks.
+2025-09-25 14:36:15,399 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1420681659732332634 (Guild ID 1410715548769058838)
+2025-09-25 14:36:15,400 - discord.client - INFO - All tasks finished cancelling.
+2025-09-25 14:36:15,401 - discord.client - INFO - Closing the event loop.
