@@ -816,24 +816,35 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         self.recording = False
         self.last_activity = time.time()
         
-    def write(self, user, data):
+    def write(self, data, user):
         """Called when audio data is received from a user"""
         if user is None:
             return
             
-        user_id = user.id if hasattr(user, 'id') else user
+        user_id = user if isinstance(user, int) else user.id
         
         # Initialize buffer for new user
         if user_id not in self.audio_data:
             self.audio_data[user_id] = bytearray()
-            
-        # Append audio data
-        self.audio_data[user_id].extend(data)
+        
+        # Ensure data is bytes-like
+        if isinstance(data, (bytes, bytearray)):
+            self.audio_data[user_id].extend(data)
+        elif hasattr(data, 'data'):
+            # If data is an object with .data attribute
+            self.audio_data[user_id].extend(data.data)
+        else:
+            # Try to convert to bytes
+            try:
+                self.audio_data[user_id].extend(bytes(data))
+            except:
+                return
         
         # Check for silence (simple volume check)
         try:
             # Convert to audio format for volume check
-            volume = audioop.rms(data, 2)  # 2 bytes per sample for 16-bit audio
+            check_data = data if isinstance(data, (bytes, bytearray)) else data.data if hasattr(data, 'data') else bytes(data)
+            volume = audioop.rms(check_data, 2)  # 2 bytes per sample for 16-bit audio
             if volume < 100:  # Threshold for silence
                 self.silent_frames += 1
             else:
