@@ -12489,3 +12489,11 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 09:39:29,566 - discord.voice_state - INFO - Voice connection complete.
 2025-09-25 09:39:29,571 - root - ERROR - Error in voice session for guild 1410715548769058838: 'VoiceClient' object has no attribute 'start_recording'
 2025-09-25 09:39:29,572 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 09:41:14,806 - discord.client - INFO - logging in using static token
+2025-09-25 09:41:17,481 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2c63f092b25dd0986a2f3a6b5d3e6a3a).
+2025-09-25 09:44:06,269 - discord.voice_state - INFO - Connecting to voice...
+2025-09-25 09:44:06,270 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 09:44:06,892 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: sydney11061.discord.media:443
+2025-09-25 09:44:07,988 - discord.voice_state - INFO - Voice connection complete.
+2025-09-25 09:44:07,989 - root - ERROR - Error in voice session for guild 1410715548769058838: module 'discord' has no attribute 'sinks'
+2025-09-25 09:44:07,990 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)

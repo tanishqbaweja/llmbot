@@ -179,9 +179,9 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        class VoiceSink(discord.sinks.Sink):
+        class VoiceSink:
             def __init__(self):
-                super().__init__()
+                pass
                 
             def write(self, data, user):
                 user_id = user.id if user else None
