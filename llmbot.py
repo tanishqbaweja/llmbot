@@ -29,6 +29,12 @@ from io import BytesIO
 import audioop
 import websockets
 import json as json_lib
+from groq import Groq
+import tempfile
+import wave
+import speech_recognition as sr
+import io
+import wave
 
 # Setup secure logging
 def setup_secure_logging():
@@ -165,17 +171,47 @@ MAX_INPUT_LENGTH = 2000
 async def manage_voice_session(ctx, vc, audio_source):
     guild_id = ctx.guild.id
     last_activity_time = time.time()
+    user_audio_buffers = {}
+    user_silence_counters = {}
     
     try:
-        print(f"Voice session started for guild {guild_id}")
+        print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        # Generate initial greeting
-        await handle_voice_input(ctx, audio_source)
+        class VoiceSink(discord.sinks.Sink):
+            def write(self, data, user):
+                if user and user.id != ctx.bot.user.id:
+                    nonlocal last_activity_time, user_audio_buffers, user_silence_counters
+                    last_activity_time = time.time()
+                    
+                    if user.id not in user_audio_buffers:
+                        user_audio_buffers[user.id] = []
+                        user_silence_counters[user.id] = 0
+                    
+                    # Check if audio contains speech (simple volume check)
+                    volume = audioop.rms(data, 2)
+                    
+                    if volume > 500:  # Speech detected
+                        user_audio_buffers[user.id].append(data)
+                        user_silence_counters[user.id] = 0
+                    else:  # Silence detected
+                        if len(user_audio_buffers[user.id]) > 0:
+                            user_silence_counters[user.id] += 1
+                            
+                            # If 1 second of silence (50 packets * 20ms = 1s)
+                            if user_silence_counters[user.id] >= 50:
+                                if len(user_audio_buffers[user.id]) > 25:  # At least 0.5s of speech
+                                    audio_data = user_audio_buffers[user.id].copy()
+                                    asyncio.create_task(process_voice_input(audio_data, audio_source))
+                                user_audio_buffers[user.id].clear()
+                                user_silence_counters[user.id] = 0
+        
+        vc.start_recording(VoiceSink(), lambda e: print(f"Recording error: {e}") if e else None)
         
         while True:
             await asyncio.sleep(15)
             if time.time() - last_activity_time > 180:
                 print(f"Inactivity timeout reached for guild {guild_id}. Disconnecting.")
+                vc.stop_recording()
                 await vc.disconnect()
                 break
 
@@ -185,24 +221,64 @@ async def manage_voice_session(ctx, vc, audio_source):
         
     finally:
         print(f"Cleaning up voice session for guild {guild_id}")
+        try:
+            if vc.is_recording:
+                vc.stop_recording()
+        except:
+            pass
         if vc.is_connected():
             await vc.disconnect()
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
 
-async def handle_voice_input(ctx, audio_source):
+async def process_voice_input(audio_chunks, audio_source):
     try:
-        api_key = random.choice(GEMINI_API_KEYS)
-        gemini_client = genai.Client(api_key=api_key)
+        audio_data = b''.join(audio_chunks)
+        mono_data = audioop.tomono(audio_data, 2, 1, 1)
+        resampled_data, _ = audioop.ratecv(mono_data, 2, 1, 48000, 16000, None)
         
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
+            with wave.open(temp_file.name, 'wb') as wav_file:
+                wav_file.setnchannels(1)
+                wav_file.setsampwidth(2)
+                wav_file.setframerate(16000)
+                wav_file.writeframes(resampled_data)
+            
+            groq_client = Groq(api_key=random.choice(API_KEYS))
+            with open(temp_file.name, "rb") as audio_file:
+                transcription = groq_client.audio.transcriptions.create(
+                    file=audio_file,
+                    model="whisper-large-v3-turbo",
+                    response_format="text",
+                    language="en",
+                    temperature=0.0
+                )
+            
+            os.unlink(temp_file.name)
+        
+        if not transcription.strip():
+            return
+            
+        print(f"User said: {transcription}")
+        
+        gemini_client = genai.Client(api_key=random.choice(GEMINI_API_KEYS))
         response = await asyncio.to_thread(
             gemini_client.models.generate_content,
             model="gemini-2.0-flash-exp",
-            contents=["Say hello, I'm now connected to voice chat!"],
+            contents=[f"Respond briefly to: {transcription}"]
+        )
+        
+        response_text = response.text.strip() if response.text else "I heard you!"
+        print(f"Bot response: {response_text}")
+        
+        audio_response = await asyncio.to_thread(
+            gemini_client.models.generate_content,
+            model="gemini-2.5-flash-native-audio-preview-09-2025",
+            contents=[response_text],
             config=types.GenerateContentConfig(response_modalities=["Audio"])
         )
         
-        for part in response.candidates[0].content.parts:
+        for part in audio_response.candidates[0].content.parts:
             if hasattr(part, 'inline_data') and part.inline_data:
                 audio_data = part.inline_data.data
                 chunk_size = 3840
@@ -211,9 +287,10 @@ async def handle_voice_input(ctx, audio_source):
                     if len(chunk) < chunk_size:
                         chunk += b'\x00' * (chunk_size - len(chunk))
                     audio_source.write(chunk)
-                        
+                    await asyncio.sleep(0.02)
+        
     except Exception as e:
-        logging.error(f"Voice response error: {e}")
+        logging.error(f"Voice processing error: {e}")
 
 def sanitize_input(text):
     if not isinstance(text, str):
