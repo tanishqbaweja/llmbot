@@ -201,9 +201,9 @@ async def manage_voice_session(ctx, vc, audio_source):
                             user_silence_counters[user_id] += 1
                             print(f"[DEBUG] Silence counter: {user_silence_counters[user_id]}, buffer size: {len(user_audio_buffers[user_id])}")
                             
-                            # If 0.5 seconds of silence (25 packets * 20ms = 0.5s)
-                            if user_silence_counters[user_id] >= 25:
-                                if len(user_audio_buffers[user_id]) > 10:  # At least 0.2s of speech
+                            # If 0.2 seconds of silence (10 packets * 20ms = 0.2s)
+                            if user_silence_counters[user_id] >= 10:
+                                if len(user_audio_buffers[user_id]) > 5:  # At least 0.1s of speech
                                     print(f"[DEBUG] Processing speech! Buffer has {len(user_audio_buffers[user_id])} packets")
                                     audio_data = user_audio_buffers[user_id].copy()
                                     asyncio.create_task(process_voice_input(audio_data, audio_source))
@@ -211,6 +211,14 @@ async def manage_voice_session(ctx, vc, audio_source):
                                     print(f"[DEBUG] Speech too short, ignoring. Buffer size: {len(user_audio_buffers[user_id])}")
                                 user_audio_buffers[user_id].clear()
                                 user_silence_counters[user_id] = 0
+                    
+                    # Manual trigger for testing - process if buffer gets large
+                    if len(user_audio_buffers[user_id]) > 100:
+                        print(f"[DEBUG] Manual trigger! Processing large buffer: {len(user_audio_buffers[user_id])} packets")
+                        audio_data = user_audio_buffers[user_id].copy()
+                        asyncio.create_task(process_voice_input(audio_data, audio_source))
+                        user_audio_buffers[user_id].clear()
+                        user_silence_counters[user_id] = 0
                 else:
                     print(f"[DEBUG] Ignoring audio from bot or invalid user: {user_id}")
         
