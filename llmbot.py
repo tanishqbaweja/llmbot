@@ -2866,6 +2866,20 @@ async def voice_command(ctx):
     channel = ctx.author.voice.channel
     print(f"[DEBUG] Joining channel: {channel.name}")
     
+    # Patch gateway to handle empty modes list
+    import discord.gateway
+    original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
+    
+    async def patched_initial_connection(self, data):
+        modes = [mode for mode in data["modes"] if mode in self._connection.supported_modes]
+        if not modes:
+            modes = ['xsalsa20_poly1305_lite']
+        mode = modes[0]
+        self._connection.mode = mode
+        await self.load_secret_key(data)
+    
+    discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
+    
     try:
         vc = await channel.connect()
         print(f"[DEBUG] Connected successfully!")
@@ -2878,6 +2892,8 @@ async def voice_command(ctx):
     except Exception as e:
         print(f"[DEBUG] Error: {e}")
         await ctx.reply(f"Error: {e}")
+    finally:
+        discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
 
 @bot.command(name='leave')
 async def leave_command(ctx):
