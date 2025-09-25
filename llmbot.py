@@ -2830,11 +2830,6 @@ async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
 @bot.command(name='voice')
 async def voice_command(ctx):
     try:
-        # Check voice dependencies
-        if not discord.opus.is_loaded():
-            await ctx.reply("❌ Voice support not available. Install PyNaCl: `pip install PyNaCl`")
-            return
-            
         print(f"[DEBUG] Voice command started")
         if not ctx.author.voice:
             await ctx.reply("You need to be in a voice channel to use this command.")
@@ -2845,6 +2840,13 @@ async def voice_command(ctx):
             return
 
         channel = ctx.author.voice.channel
+        
+        # Check bot permissions
+        permissions = channel.permissions_for(ctx.guild.me)
+        if not permissions.connect or not permissions.speak:
+            await ctx.reply("❌ Missing voice permissions. Need Connect and Speak permissions.")
+            return
+            
         print(f"[DEBUG] Joining channel: {channel.name}")
         await ctx.reply(f"Joining {channel.name} to start a conversation...")
 
