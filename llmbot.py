@@ -933,18 +933,29 @@ class CustomVoiceSink(discord.sinks.WaveSink):
     
     async def process_recording(self):
         """Process the recorded audio"""
-        if self.guild_id not in voice_sessions or not self.audio_data:
+        if self.guild_id not in voice_sessions:
+            print("No voice session found for processing")
+            return
+            
+        if not self.audio_data or len(self.audio_data) == 0:
+            print("No audio data to process")
             return
             
         try:
             # Set processing flag to ignore new input
             self.processing = True
             
-            # Get the largest audio buffer (main speaker)
-            main_user_id = max(self.audio_data.keys(), key=lambda k: len(self.audio_data[k]))
-            audio_bytes = bytes(self.audio_data[main_user_id])
+            # Check if we have any valid audio data
+            valid_buffers = {k: v for k, v in self.audio_data.items() if len(v) > 0}
+            if not valid_buffers:
+                print("All audio buffers are empty")
+                return
             
-            print(f"Audio buffer size: {len(audio_bytes)} bytes")
+            # Get the largest audio buffer (main speaker)
+            main_user_id = max(valid_buffers.keys(), key=lambda k: len(valid_buffers[k]))
+            audio_bytes = bytes(valid_buffers[main_user_id])
+            
+            print(f"Audio buffer size: {len(audio_bytes)} bytes from user {main_user_id}")
             
             # Clear audio data immediately to prevent reprocessing
             self.audio_data.clear()
@@ -955,6 +966,8 @@ class CustomVoiceSink(discord.sinks.WaveSink):
             else:
                 print(f"Audio too short ({len(audio_bytes)} bytes), ignoring")
                 
+        except Exception as e:
+            print(f"Error in process_recording: {e}")
         finally:
             # Always reset processing flag
             self.processing = False
@@ -1220,7 +1233,9 @@ async def voice_command(ctx):
     
     try:
         # Connect to voice channel
+        print(f"Connecting to voice channel: {voice_channel.name}")
         vc = await voice_channel.connect()
+        print(f"Connected successfully, vc type: {type(vc)}")
         
         # Define callback for when recording stops
         async def recording_callback(sink, *args):
@@ -1228,6 +1243,7 @@ async def voice_command(ctx):
         
         # Start recording with custom sink
         loop = asyncio.get_event_loop()
+        print("Creating CustomVoiceSink...")
         sink = CustomVoiceSink(guild_id, loop=loop)
         
         # Initialize session with sink reference
@@ -1239,7 +1255,9 @@ async def voice_command(ctx):
             'sink': sink  # Store sink reference
         }
         
+        print("Starting recording...")
         vc.start_recording(sink, recording_callback)
+        print("Recording started successfully")
         
         # Start inactivity monitor
         monitor_task = asyncio.create_task(manage_voice_session(guild_id))
