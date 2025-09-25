@@ -13454,3 +13454,39 @@ TimeoutError
 2025-09-25 14:23:04,104 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
 2025-09-25 14:23:04,106 - google_genai.models - INFO - AFC remote call 1 is done.
 2025-09-25 14:23:05,095 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:28:07,393 - discord.client - INFO - logging in using static token
+2025-09-25 14:28:09,295 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 14:28:09,861 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-1mqk",{"micros":179065,"calls":["id_created",{"micros":377,"calls":[]},"session_lookup_time",{"micros":2769,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-134",{"micros":174711,"calls":["start_session",{"micros":90278,"calls":["discord-api-rpc-686767fc44-bqr8s",{"micros":48050,"calls":["get_user",{"micros":8828},"get_guilds",{"micros":2765},"send_scheduled_deletion_message",{"micros":16},"guild_join_requests",{"micros":853},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":31624},"apex_experiments",{"micros":3673},"user_activities",{"micros":6},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":31,"calls":[]},"presence_started",{"micros":11908,"calls":[]},"guilds_started",{"micros":111,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":72320,"calls":[]},"connect_finished",{"micros":72369,"calls":[]},"build_ready",{"micros":10,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: dee0d7007959e9f4fcbcc4b43bd621be).
+2025-09-25 14:28:13,908 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:28:13,908 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 14:28:14,513 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:28:15,550 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:28:15,730 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:28:32,578 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:28:33,104 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:28:34,550 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:28:34,550 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:28:35,553 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:28:37,779 - discord.player - INFO - Preparing to terminate ffmpeg process 33504.
+2025-09-25 14:28:37,780 - discord.player - INFO - ffmpeg process 33504 successfully terminated with return code of 0.
+2025-09-25 14:29:04,767 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:29:05,603 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:29:07,034 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:29:07,034 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:29:08,058 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:29:18,046 - discord.player - INFO - Preparing to terminate ffmpeg process 27272.
+2025-09-25 14:29:18,047 - discord.player - INFO - ffmpeg process 27272 successfully terminated with return code of 0.
+2025-09-25 14:30:01,254 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:30:02,196 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:30:03,480 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:30:03,483 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:30:04,488 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:30:14,474 - discord.player - INFO - Preparing to terminate ffmpeg process 35852.
+2025-09-25 14:30:14,475 - discord.player - INFO - ffmpeg process 35852 successfully terminated with return code of 0.
+2025-09-25 14:32:34,391 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:32:34,952 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:32:37,975 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:32:37,975 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:32:38,967 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:32:59,714 - discord.player - INFO - Preparing to terminate ffmpeg process 2860.
+2025-09-25 14:32:59,715 - discord.player - INFO - ffmpeg process 2860 successfully terminated with return code of 0.
