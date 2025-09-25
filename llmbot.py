@@ -1084,7 +1084,7 @@ async def voice_command(ctx):
         
         # Start recording with custom sink
         sink = CustomVoiceSink(guild_id)
-        vc.start_recording(sink, finished=None)
+        vc.start_recording(sink)
         
         # Start inactivity monitor
         monitor_task = asyncio.create_task(manage_voice_session(guild_id))
