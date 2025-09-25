@@ -2876,7 +2876,7 @@ async def voice_command(ctx):
         print(f"[DEBUG] Joining channel: {channel.name}")
         await ctx.reply(f"Joining {channel.name} to start a conversation...")
 
-        vc = await channel.connect()
+        vc = await channel.connect(cls=discord.VoiceClient)
         audio_source = GeminiAudioSource()
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
