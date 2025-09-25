@@ -207,7 +207,9 @@ async def manage_voice_session(ctx, vc, audio_source):
                                 user_silence_counters[user_id] = 0
         
         sink = VoiceSink()
+        print(f"[DEBUG] Starting voice recording with sink...")
         vc.start_recording(sink)
+        print(f"[DEBUG] Voice recording started successfully!")
         
         while True:
             await asyncio.sleep(15)
