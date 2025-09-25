@@ -32,9 +32,7 @@ import json as json_lib
 from groq import Groq
 import tempfile
 import wave
-import speech_recognition as sr
-import io
-import wave
+
 
 # Setup secure logging
 def setup_secure_logging():
