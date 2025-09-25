@@ -1244,7 +1244,16 @@ async def get_ai_response(prompt, message, force_model=None):
 @bot.event
 async def on_ready():
     init_db()
-    print(f'{bot.user} has connected to Discord!')
+    print(f'[BOT READY] {bot.user} has connected to Discord!')
+    print(f'[BOT READY] Bot ID: {bot.user.id}')
+    print(f'[BOT READY] Command prefix: {bot.command_prefix}')
+    print(f'[BOT READY] Registered commands: {[cmd.name for cmd in bot.commands]}')
+    
+    # Disconnect from any voice channels on startup
+    for guild in bot.guilds:
+        if guild.voice_client:
+            print(f'[BOT READY] Disconnecting from voice in {guild.name}')
+            await guild.voice_client.disconnect()
 
 
 
@@ -1269,6 +1278,10 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     if message.author == bot.user or message.author.bot:
         return
+    
+    # Debug: Log all messages that start with command prefix
+    if message.content.startswith('!'):
+        print(f"[MESSAGE] Command detected: '{message.content}' from {message.author.name}")
     
     # Handle bot mentions
     if bot.user in message.mentions and not message.content.startswith('!'):
@@ -2971,9 +2984,19 @@ async def generate_and_play_tts(text, vc, audio_source):
     except Exception as e:
         print(f"[DEBUG] TTS generation error: {e}")
 
+@bot.command(name='test')
+async def test_command(ctx):
+    print(f"[DEBUG] Test command executed by {ctx.author.name}")
+    await ctx.reply("Test command works!")
+
 @bot.command(name='voice')
 async def voice_command(ctx):
+    print(f"[DEBUG] === VOICE COMMAND STARTED ===")
     print(f"[DEBUG] Voice command initiated by {ctx.author.name}")
+    print(f"[DEBUG] Guild: {ctx.guild.name} (ID: {ctx.guild.id})")
+    
+    # Send immediate feedback
+    await ctx.reply("🔊 Starting voice connection...")
     
     # Check if user is in a voice channel
     if not ctx.author.voice:
@@ -2988,16 +3011,48 @@ async def voice_command(ctx):
         await ctx.reply("❌ I'm already in a voice channel. Use `!leave` first.")
         return
     
+    # Patch to fix empty modes list
+    import discord.gateway
+    original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
+    
+    async def patched_initial_connection(self, data):
+        """Fixed voice connection handler"""
+        try:
+            # Get modes list safely
+            modes = data.get("modes", [])
+            
+            # Ensure we have a valid mode
+            if not modes:
+                # Use default mode
+                mode = 'xsalsa20_poly1305_lite'
+            else:
+                # Filter for supported modes
+                supported = getattr(self._connection, 'supported_modes', ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305'])
+                valid_modes = [m for m in modes if m in supported]
+                mode = valid_modes[0] if valid_modes else modes[0] if modes else 'xsalsa20_poly1305_lite'
+            
+            # Set the mode
+            self._connection.mode = mode
+            
+            # Load the secret key
+            await self.load_secret_key(data)
+            
+            print(f"[DEBUG] Voice handshake completed with mode: {mode}")
+            
+        except Exception as e:
+            print(f"[DEBUG] Error in patched initial_connection: {e}")
+            # Fallback to original if available
+            if original_initial_connection:
+                await original_initial_connection(self, data)
+    
+    discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
+    
     try:
         print(f"[DEBUG] Attempting to connect to voice channel...")
+        print(f"[DEBUG] Bot permissions in channel: {channel.permissions_for(ctx.guild.me)}")
         
-        # Try connection with shorter timeout initially
-        try:
-            vc = await asyncio.wait_for(channel.connect(timeout=60, reconnect=True), timeout=10.0)
-        except asyncio.TimeoutError:
-            print(f"[DEBUG] First connection attempt timed out, retrying...")
-            # Try again with self_deaf to reduce processing
-            vc = await channel.connect(timeout=60, reconnect=True, self_deaf=False)
+        # Simple connection
+        vc = await channel.connect()
         
         print(f"[DEBUG] Voice client object created!")
         
@@ -3054,6 +3109,9 @@ async def voice_command(ctx):
         import traceback
         traceback.print_exc()
         await ctx.reply(f"❌ An error occurred: {e}")
+    finally:
+        # Restore original function
+        discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
 
 @bot.command(name='leave')
 async def leave_command(ctx):
