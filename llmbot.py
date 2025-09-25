@@ -309,34 +309,14 @@ async def process_voice_input(audio_chunks, audio_source):
         response_text = response.text.strip() if response.text else "I heard you!"
         print(f"Bot response: {response_text}")
         
-        # Step 5: Generate audio - try multiple models
-        print(f"[DEBUG] Step 5: Generating audio with Gemini Native Audio")
-        audio_models = [
-            "gemini-2.5-flash-native-audio-latest",
-            "gemini-2.5-flash-native-audio-preview-09-2025",
-            "gemini-2.5-flash-preview-native-audio-dialog",
-            "gemini-2.5-flash-exp-native-audio-thinking-dialog"
-        ]
-        
-        audio_response = None
-        for model in audio_models:
-            try:
-                print(f"[DEBUG] Trying audio model: {model}")
-                audio_response = await asyncio.to_thread(
-                    gemini_client.models.generate_content,
-                    model=model,
-                    contents=[response_text],
-                    config=types.GenerateContentConfig(response_modalities=["Audio"])
-                )
-                print(f"[DEBUG] Success with model: {model}")
-                break
-            except Exception as e:
-                print(f"[DEBUG] Failed with model {model}: {str(e)[:100]}")
-                continue
-        
-        if not audio_response:
-            print(f"[DEBUG] All audio models failed, skipping audio generation")
-            return
+        # Step 5: Generate audio
+        print(f"[DEBUG] Step 5: Generating audio with gemini-2.0-flash-001")
+        audio_response = await asyncio.to_thread(
+            gemini_client.models.generate_content,
+            model="gemini-2.0-flash-001",
+            contents=[response_text],
+            config=types.GenerateContentConfig(response_modalities=["Audio"])
+        )
         
         print(f"[DEBUG] Audio response received, processing parts")
         audio_parts_found = 0
