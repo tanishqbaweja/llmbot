@@ -13204,3 +13204,13 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
 2025-09-25 14:11:21,012 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
 2025-09-25 14:11:21,933 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
 2025-09-25 14:11:22,112 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:12:33,656 - discord.client - INFO - logging in using static token
+2025-09-25 14:12:35,309 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 14:12:35,794 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-09wf",{"micros":95241,"calls":["id_created",{"micros":336,"calls":[]},"session_lookup_time",{"micros":1554,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-161",{"micros":92803,"calls":["start_session",{"micros":81800,"calls":["discord-api-rpc-686767fc44-pqv9m",{"micros":40987,"calls":["get_user",{"micros":6226},"get_guilds",{"micros":2316},"send_scheduled_deletion_message",{"micros":16},"guild_join_requests",{"micros":506},"authorized_ip_coro",{"micros":11},"pending_payments",{"micros":30906},"apex_experiments",{"micros":2825},"user_activities",{"micros":6},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":38,"calls":[]},"presence_started",{"micros":8930,"calls":[]},"guilds_started",{"micros":92,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1875,"calls":[]},"connect_finished",{"micros":1926,"calls":[]},"build_ready",{"micros":14,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 0e6f9971c919f1040a9a44ce1eda380c).
+2025-09-25 14:12:37,043 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:12:37,044 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 14:12:37,631 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:12:38,541 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:12:38,730 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:12:43,556 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:12:43,563 - root - ERROR - Voice processing error: module 'google.genai' has no attribute 'configure'

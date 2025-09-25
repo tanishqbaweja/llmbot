@@ -934,10 +934,10 @@ Reply to the latest message appropriately. Keep your response concise and natura
             
             # Use a random Gemini API key
             gemini_key = random.choice(GEMINI_API_KEYS)
-            genai.configure(api_key=gemini_key)
             
-            client = genai.Client()
-            response = await client.models.generate_content_async(
+            # Create Gemini client with API key
+            client = genai.Client(api_key=gemini_key)
+            response = client.models.generate_content(
                 model='gemini-2.0-flash-exp',
                 contents=prompt,
                 config=types.GenerateContentConfig(
