@@ -83,13 +83,44 @@ for i in range(1, 16):  # Keys 1-15
 if not OPENROUTER_API_KEYS:
     print("Warning: No OPENROUTER_API_KEY found, will use Groq as primary")
 
+# Initialize bot with voice state disabled
 intents = discord.Intents.default()
 intents.message_content = True
-intents.voice_states = True
+intents.voice_states = True  # Keep enabled but we'll intercept
 bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
-# Voice session management
+# Global voice session management
 voice_sessions = {}
+voice_command_active = False  # Flag to prevent auto-connections
+
+# Guard Discord voice websocket to block unsolicited reconnects
+import discord.gateway
+original_voice_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
+
+
+async def guarded_voice_initial_connection(self, data):
+    """Prevent Discord from auto-connecting the bot unless explicitly allowed."""
+    global voice_command_active
+
+    if not voice_command_active:
+        try:
+            channel_id = data.get("channel_id") if isinstance(data, dict) else "unknown"
+            print(f"[VOICE GUARD] Blocking unsolicited voice connection to channel {channel_id}")
+        except Exception:
+            print("[VOICE GUARD] Blocking unsolicited voice connection (channel unknown)")
+
+        # Best-effort close of the websocket to stop the handshake
+        try:
+            await self.close()
+        except Exception:
+            pass
+
+        raise RuntimeError("Voice connection blocked because no active voice command")
+
+    await original_voice_initial_connection(self, data)
+
+
+discord.gateway.DiscordVoiceWebSocket.initial_connection = guarded_voice_initial_connection
 
 class GeminiAudioSource(discord.AudioSource):
     def __init__(self):
@@ -1249,30 +1280,59 @@ async def on_ready():
     print(f'[BOT READY] Command prefix: {bot.command_prefix}')
     print(f'[BOT READY] Registered commands: {[cmd.name for cmd in bot.commands]}')
     
-    # Disconnect from any voice channels on startup
+    # Force disconnect from any voice channels and clear sessions
+    global voice_sessions
+    voice_sessions.clear()
+    
+    # Wait a bit to ensure bot is fully ready
+    await asyncio.sleep(3)
+    
+    disconnected_count = 0
     for guild in bot.guilds:
         if guild.voice_client:
-            print(f'[BOT READY] Disconnecting from voice in {guild.name}')
-            await guild.voice_client.disconnect()
+            print(f'[BOT READY] Force disconnecting from voice in {guild.name}')
+            try:
+                await guild.voice_client.disconnect(force=True)
+                disconnected_count += 1
+                await asyncio.sleep(1)  # Wait between disconnects
+            except Exception as e:
+                print(f'[BOT READY] Error disconnecting from {guild.name}: {e}')
+    
+    print(f'[BOT READY] Cleared {disconnected_count} voice connections')
 
 
 
 @bot.event
-async def on_command_error(ctx, error):
-    if isinstance(error, commands.CommandNotFound):
-        return  # Silently ignore unknown commands
-    if isinstance(error, commands.CommandOnCooldown):
+async def on_voice_state_update(member, before, after):
+    """Intercept automatic voice connections and disconnect if not initiated by command"""
+    global voice_command_active
+    
+    # Only care about bot's own voice state changes
+    if member.id != bot.user.id:
+        return
+    
+    # If bot was not in voice before but is now (auto-connect), disconnect immediately
+    if not before.channel and after.channel and not voice_command_active:
+        print(f"[VOICE INTERCEPT] Bot auto-connected to {after.channel.name} (ID: {after.channel.id})")
+        print(f"[VOICE INTERCEPT] voice_command_active=False - disconnecting...")
+        
         try:
-            await ctx.reply(f"⏰ You are on cooldown. Try again in {error.retry_after:.1f}s")
-        except discord.Forbidden:
-            logging.error(f"Missing permissions to reply in channel {ctx.channel.id}")
-        return
-    if isinstance(error, discord.Forbidden):
-        logging.error(f"Missing permissions in channel {ctx.channel.id}: {error}")
-        return
-    # Log other errors
-    safe_error = sanitize_log_message(str(error)[:100])
-    logging.error(f"Command error: {safe_error}")
+            # Wait a moment then disconnect
+            await asyncio.sleep(0.5)
+            await member.guild.voice_client.disconnect(force=True)
+            print(f"[VOICE INTERCEPT] Successfully disconnected from auto-connection")
+        except Exception as e:
+            print(f"[VOICE INTERCEPT] Failed to disconnect: {e}")
+    
+    # If bot is already connected but this wasn't initiated by our command
+    elif before.channel and after.channel and before.channel == after.channel and not voice_command_active:
+        print(f"[VOICE INTERCEPT] Bot is connected to {after.channel.name} but voice_command_active=False - disconnecting...")
+        try:
+            await asyncio.sleep(0.5)
+            await member.guild.voice_client.disconnect(force=True)
+            print(f"[VOICE INTERCEPT] Disconnected unauthorized connection")
+        except Exception as e:
+            print(f"[VOICE INTERCEPT] Failed to disconnect unauthorized connection: {e}")
 
 @bot.event
 async def on_message(message):
@@ -2984,23 +3044,96 @@ async def generate_and_play_tts(text, vc, audio_source):
     except Exception as e:
         print(f"[DEBUG] TTS generation error: {e}")
 
-@bot.command(name='test')
-async def test_command(ctx):
-    print(f"[DEBUG] Test command executed by {ctx.author.name}")
-    await ctx.reply("Test command works!")
+@bot.command(name='voicestatus')
+async def voicestatus_command(ctx):
+    """Check current voice connection status"""
+    guild_vc = ctx.guild.voice_client
+    session_exists = ctx.guild.id in voice_sessions
+    
+    status_msg = f"**Voice Status for {ctx.guild.name}:**\n"
+    status_msg += f"Guild has voice client: {guild_vc is not None}\n"
+    status_msg += f"Voice session exists: {session_exists}\n"
+    
+    if guild_vc:
+        status_msg += f"Connected: {guild_vc.is_connected()}\n"
+        status_msg += f"Playing: {guild_vc.is_playing()}\n"
+        status_msg += f"Recording: {hasattr(guild_vc, 'recorder') and guild_vc.recorder is not None}\n"
+    
+    if session_exists:
+        session = voice_sessions[ctx.guild.id]
+        status_msg += f"Session VC: {session.get('vc') is not None}\n"
+        status_msg += f"Session task: {session.get('task') is not None}\n"
+    
+    await ctx.reply(status_msg)
+
+@bot.command(name='clearvoice')
+async def clearvoice_command(ctx):
+    """Force clear all voice sessions and disconnect from all voice channels"""
+    global voice_sessions
+    
+    # Clear the session dictionary
+    voice_sessions.clear()
+    
+    # Disconnect from any voice channels across all guilds
+    disconnected_count = 0
+    for guild in bot.guilds:
+        if guild.voice_client:
+            try:
+                await guild.voice_client.disconnect(force=True)
+                disconnected_count += 1
+                await asyncio.sleep(0.5)  # Wait between disconnects
+            except Exception as e:
+                print(f'[CLEARVOICE] Error disconnecting from {guild.name}: {e}')
+    
+    await ctx.reply(f'✅ Force cleared voice sessions and disconnected from {disconnected_count} voice channels across all servers')
+
+@bot.command(name='resetvoice')
+async def resetvoice_command(ctx):
+    """Complete voice state reset - use this if bot is stuck in reconnect loop"""
+    global voice_sessions
+    
+    print("[RESETVOICE] Starting complete voice state reset...")
+    
+    # Clear our session tracking
+    voice_sessions.clear()
+    
+    # Disconnect from all voice channels across all servers
+    disconnected_count = 0
+    for guild in bot.guilds:
+        if guild.voice_client:
+            try:
+                print(f"[RESETVOICE] Disconnecting from {guild.name}")
+                await guild.voice_client.disconnect(force=True)
+                disconnected_count += 1
+                await asyncio.sleep(1)
+            except Exception as e:
+                print(f'[RESETVOICE] Error disconnecting from {guild.name}: {e}')
+    
+    # Force garbage collection to clear any lingering references
+    import gc
+    gc.collect()
+    
+    await ctx.reply(f'🔄 **Complete voice reset performed!**\n'
+                   f'• Cleared {disconnected_count} voice connections\n'
+                   f'• Cleared all voice sessions\n'
+                   f'• Memory cleaned up\n\n'
+                   f'Now try `!voice` command. If still stuck, restart Discord app.')
 
 @bot.command(name='voice')
 async def voice_command(ctx):
+    global voice_command_active
+    
     print(f"[DEBUG] === VOICE COMMAND STARTED ===")
     print(f"[DEBUG] Voice command initiated by {ctx.author.name}")
     print(f"[DEBUG] Guild: {ctx.guild.name} (ID: {ctx.guild.id})")
     
     # Send immediate feedback
     await ctx.reply("🔊 Starting voice connection...")
-    
+
     # Check if user is in a voice channel
     if not ctx.author.voice:
         await ctx.reply("❌ You need to be in a voice channel to use this command.")
+        voice_command_active = False
         return
 
     channel = ctx.author.voice.channel
@@ -3009,35 +3142,71 @@ async def voice_command(ctx):
     # Check if bot is already in a voice channel in this guild
     if ctx.guild.id in voice_sessions:
         await ctx.reply("❌ I'm already in a voice channel. Use `!leave` first.")
+        voice_command_active = False
         return
     
-    # Patch to fix empty modes list
+    # Force disconnect any existing voice client for this guild
+    existing_vc = ctx.guild.voice_client
+    if existing_vc:
+        print(f"[DEBUG] Found existing voice client, force disconnecting...")
+        try:
+            await existing_vc.disconnect(force=True)
+            await asyncio.sleep(2)  # Wait longer for disconnect to complete
+            print(f"[DEBUG] Disconnected existing voice client")
+        except Exception as e:
+            print(f"[DEBUG] Error disconnecting existing voice client: {e}")
+    
+    # Double-check that we're disconnected
+    if ctx.guild.voice_client:
+        print(f"[DEBUG] Still have voice client after disconnect, trying again...")
+        try:
+            await ctx.guild.voice_client.disconnect(force=True)
+            await asyncio.sleep(1)
+        except Exception as e:
+            print(f"[DEBUG] Second disconnect attempt failed: {e}")
+    
+    # Final check - if we still have a voice client, abort
+    if ctx.guild.voice_client:
+        await ctx.reply("❌ Unable to clear existing voice connection. Try `!resetvoice` or restart the bot.")
+        return
+    
+    channel = ctx.author.voice.channel
     import discord.gateway
     original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
     
     async def patched_initial_connection(self, data):
-        """Fixed voice connection handler"""
+        """Fixed voice connection handler with better mode support"""
         try:
             # Get modes list safely
             modes = data.get("modes", [])
+            print(f"[DEBUG] Available voice modes: {modes}")
             
-            # Ensure we have a valid mode
-            if not modes:
-                # Use default mode
-                mode = 'xsalsa20_poly1305_lite'
-            else:
-                # Filter for supported modes
-                supported = getattr(self._connection, 'supported_modes', ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305'])
-                valid_modes = [m for m in modes if m in supported]
-                mode = valid_modes[0] if valid_modes else modes[0] if modes else 'xsalsa20_poly1305_lite'
+            # Prioritize known working modes
+            preferred_modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305', 'xsalsa20_poly1305_suffix']
+            supported = getattr(self._connection, 'supported_modes', preferred_modes)
+            
+            # Find best supported mode
+            selected_mode = None
+            for mode in preferred_modes:
+                if mode in modes and mode in supported:
+                    selected_mode = mode
+                    break
+            
+            # Fallback to any available mode if preferred ones don't work
+            if not selected_mode and modes:
+                selected_mode = modes[0]
+            
+            # Last resort
+            if not selected_mode:
+                selected_mode = 'xsalsa20_poly1305_lite'
             
             # Set the mode
-            self._connection.mode = mode
+            self._connection.mode = selected_mode
             
             # Load the secret key
             await self.load_secret_key(data)
             
-            print(f"[DEBUG] Voice handshake completed with mode: {mode}")
+            print(f"[DEBUG] Voice handshake completed with mode: {selected_mode}")
             
         except Exception as e:
             print(f"[DEBUG] Error in patched initial_connection: {e}")
@@ -3051,28 +3220,44 @@ async def voice_command(ctx):
         print(f"[DEBUG] Attempting to connect to voice channel...")
         print(f"[DEBUG] Bot permissions in channel: {channel.permissions_for(ctx.guild.me)}")
         
-        # Simple connection
-        vc = await channel.connect()
+        # Try connection with retry logic
+        vc = None
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                print(f"[DEBUG] Connection attempt {attempt + 1}/{max_retries}")
+                vc = await channel.connect()
+                print(f"[DEBUG] Voice client object created on attempt {attempt + 1}!")
+                break
+            except discord.ClientException as e:
+                if attempt == max_retries - 1:
+                    raise e
+                print(f"[DEBUG] Connection attempt {attempt + 1} failed: {e}, retrying...")
+                await asyncio.sleep(1)
         
         print(f"[DEBUG] Voice client object created!")
         
         # Wait a bit for connection to stabilize
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(1)
         
-        # Check connection status
-        if not vc.is_connected():
-            print(f"[DEBUG] Voice client not connected, waiting...")
-            for i in range(10):
+        # Verify connection
+        if not vc or not vc.is_connected():
+            print(f"[DEBUG] Voice client not connected after creation, waiting...")
+            for i in range(20):  # Wait up to 10 seconds
                 await asyncio.sleep(0.5)
-                if vc.is_connected():
+                if vc and vc.is_connected():
+                    print(f"[DEBUG] Connection established after {i+1} checks")
                     break
+        
+        if not vc or not vc.is_connected():
+            raise discord.ClientException("Failed to establish voice connection")
         
         print(f"[DEBUG] Voice client connected successfully!")
         print(f"[DEBUG] Voice client type: {type(vc)}")
         print(f"[DEBUG] Is connected: {vc.is_connected()}")
         
         # Send connection success message
-        await ctx.send("✅ Connected to voice channel! Setting up audio...")
+        await ctx.send("✅ Connected to voice channel! Setting up audio recording...")
         
         # Create audio source for TTS playback
         print(f"[DEBUG] Creating GeminiAudioSource for TTS playback")
@@ -3110,6 +3295,8 @@ async def voice_command(ctx):
         traceback.print_exc()
         await ctx.reply(f"❌ An error occurred: {e}")
     finally:
+        # Reset flag regardless of outcome
+        voice_command_active = False
         # Restore original function
         discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
 
