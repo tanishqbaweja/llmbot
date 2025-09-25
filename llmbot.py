@@ -2905,7 +2905,8 @@ async def voice_command(ctx):
 
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
         voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source, 'conversation': []}
-        print(f"[DEBUG] Voice session created")
+        print(f"[DEBUG] Voice session created with recording enabled")
+        await ctx.send("🎤 **Voice recording active!** Speak and I'll respond with voice.")
 
     except Exception as e:
         print(f"[DEBUG] Voice error: {e}")
