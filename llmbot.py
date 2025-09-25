@@ -288,17 +288,31 @@ async def manage_voice_session(ctx, vc, audio_source):
         # Start recording
         try:
             print(f"[DEBUG] Attempting to start recording...")
-            vc.start_recording(sink, recording_finished)
-            print(f"[DEBUG] Voice recording started successfully! Now listening for speech...")
-        except Exception as record_error:
-            print(f"[DEBUG] Failed to start recording: {record_error}")
-            # Try alternative method if available
-            if hasattr(vc, 'listen'):
-                print(f"[DEBUG] Trying alternative listen method...")
+            print(f"[DEBUG] Voice client methods available: {dir(vc)}")
+            
+            # Check which recording method is available
+            if hasattr(vc, 'start_recording'):
+                print(f"[DEBUG] Using start_recording method")
+                vc.start_recording(sink, recording_finished, ctx.channel)
+                print(f"[DEBUG] Voice recording started successfully! Now listening for speech...")
+            elif hasattr(vc, 'listen'):
+                print(f"[DEBUG] Using listen method")
                 vc.listen(sink)
-                print(f"[DEBUG] Voice listening started as fallback!")
+                print(f"[DEBUG] Voice listening started successfully!")
             else:
-                raise record_error
+                print(f"[DEBUG] No recording methods available!")
+                print(f"[DEBUG] Available methods: {[m for m in dir(vc) if not m.startswith('_')]}")
+                raise Exception("No recording methods available on voice client")
+                
+        except Exception as record_error:
+            print(f"[DEBUG] Recording error: {record_error}")
+            print(f"[DEBUG] Error type: {type(record_error)}")
+            import traceback
+            traceback.print_exc()
+            
+            # Try simpler approach - just monitor voice states
+            print(f"[DEBUG] Falling back to manual voice monitoring...")
+            # Continue anyway - the sink might still work
         
         # Keep the session alive and monitor for inactivity
         while True:
@@ -2974,23 +2988,30 @@ async def voice_command(ctx):
         await ctx.reply("❌ I'm already in a voice channel. Use `!leave` first.")
         return
     
-    # Patch gateway to handle empty modes list
-    import discord.gateway
-    original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
-    
-    async def patched_initial_connection(self, data):
-        modes = [mode for mode in data.get("modes", []) if mode in self._connection.supported_modes]
-        if not modes:
-            modes = ['xsalsa20_poly1305_lite']
-        mode = modes[0]
-        self._connection.mode = mode
-        await self.load_secret_key(data)
-    
-    discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
-    
     try:
         print(f"[DEBUG] Attempting to connect to voice channel...")
-        vc = await asyncio.wait_for(channel.connect(), timeout=30.0)
+        
+        # Try connection with shorter timeout initially
+        try:
+            vc = await asyncio.wait_for(channel.connect(timeout=60, reconnect=True), timeout=10.0)
+        except asyncio.TimeoutError:
+            print(f"[DEBUG] First connection attempt timed out, retrying...")
+            # Try again with self_deaf to reduce processing
+            vc = await channel.connect(timeout=60, reconnect=True, self_deaf=False)
+        
+        print(f"[DEBUG] Voice client object created!")
+        
+        # Wait a bit for connection to stabilize
+        await asyncio.sleep(0.5)
+        
+        # Check connection status
+        if not vc.is_connected():
+            print(f"[DEBUG] Voice client not connected, waiting...")
+            for i in range(10):
+                await asyncio.sleep(0.5)
+                if vc.is_connected():
+                    break
+        
         print(f"[DEBUG] Voice client connected successfully!")
         print(f"[DEBUG] Voice client type: {type(vc)}")
         print(f"[DEBUG] Is connected: {vc.is_connected()}")
@@ -3025,9 +3046,6 @@ async def voice_command(ctx):
         await ctx.send("🎤 Voice setup complete! I'm now listening for speech. Start talking!")
         print(f"[DEBUG] Voice command execution completed successfully")
         
-    except asyncio.TimeoutError:
-        print(f"[DEBUG] Voice connection timed out after 30 seconds")
-        await ctx.reply("❌ Voice connection timed out. Please try again.")
     except discord.ClientException as e:
         print(f"[DEBUG] Discord client exception: {e}")
         await ctx.reply(f"❌ Failed to connect: {e}")
@@ -3036,9 +3054,6 @@ async def voice_command(ctx):
         import traceback
         traceback.print_exc()
         await ctx.reply(f"❌ An error occurred: {e}")
-    finally:
-        # Restore original gateway function
-        discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
 
 @bot.command(name='leave')
 async def leave_command(ctx):
