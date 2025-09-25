@@ -2829,26 +2829,32 @@ async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
 
 @bot.command(name='voice')
 async def voice_command(ctx):
-    if not ctx.author.voice:
-        await ctx.reply("You need to be in a voice channel to use this command.")
-        return
-
-    if ctx.guild.id in voice_sessions:
-        await ctx.reply("I am already in a voice session in this server.")
-        return
-
-    channel = ctx.author.voice.channel
-    await ctx.reply(f"Joining {channel.name} to start a conversation...")
-
     try:
+        print(f"[DEBUG] Voice command started")
+        if not ctx.author.voice:
+            await ctx.reply("You need to be in a voice channel to use this command.")
+            return
+
+        if ctx.guild.id in voice_sessions:
+            await ctx.reply("I am already in a voice session in this server.")
+            return
+
+        channel = ctx.author.voice.channel
+        print(f"[DEBUG] Joining channel: {channel.name}")
+        await ctx.reply(f"Joining {channel.name} to start a conversation...")
+
         vc = await channel.connect()
         audio_source = GeminiAudioSource()
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
         voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source, 'conversation': []}
+        print(f"[DEBUG] Voice session created")
 
     except Exception as e:
+        print(f"[DEBUG] Voice error: {e}")
+        import traceback
+        traceback.print_exc()
         await ctx.reply(f"Failed to join the voice channel. Error: {e}")
 
 @bot.command(name='leave')
