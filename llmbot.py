@@ -313,7 +313,7 @@ async def process_voice_input(audio_chunks, audio_source):
         print(f"[DEBUG] Step 5: Generating audio with Gemini Native Audio")
         audio_response = await asyncio.to_thread(
             gemini_client.models.generate_content,
-            model="gemini-2.5-flash-native-audio-preview-09-2025",
+            model="gemini-2.5-flash-preview-native-audio-dialog",
             contents=[response_text],
             config=types.GenerateContentConfig(response_modalities=["Audio"])
         )
