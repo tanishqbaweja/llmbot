@@ -1103,11 +1103,16 @@ async def get_ai_response(prompt, message, force_model=None):
 @bot.event
 async def on_ready():
     init_db()
+    try:
+        synced = await bot.tree.sync()
+        print(f'Synced {len(synced)} command(s)')
+    except Exception as e:
+        print(f'Failed to sync commands: {e}')
     print(f'{bot.user} has connected to Discord!')
 
-@bot.slash_command(name='help', description='Show available commands')
-async def slash_help_command(ctx):
-    if is_admin(ctx.author.id):
+@bot.tree.command(name='help', description='Show available commands')
+async def slash_help_command(interaction: discord.Interaction):
+    if is_admin(interaction.user.id):
         embed = discord.Embed(
             title="🤖 DBZClanker AI - Admin Commands",
             description="Complete command reference for administrators",
@@ -1180,7 +1185,7 @@ async def slash_help_command(ctx):
         )
         embed.set_footer(text="Created by DBZ Clasher")
     
-    await ctx.respond(embed=embed)
+    await interaction.response.send_message(embed=embed)
 
 @bot.event
 async def on_command_error(ctx, error):
