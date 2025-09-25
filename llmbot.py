@@ -179,17 +179,19 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        # Check available methods on VoiceClient
-        print(f"[DEBUG] Available VoiceClient methods: {[method for method in dir(vc) if 'record' in method.lower() or 'listen' in method.lower() or 'start' in method.lower()]}")
+        # Check all VoiceClient methods
+        all_methods = [method for method in dir(vc) if not method.startswith('_')]
+        print(f"[DEBUG] All VoiceClient methods: {all_methods}")
         
-        # For now, just maintain connection without recording
-        print(f"[DEBUG] Voice recording not supported in this Discord.py version. Maintaining connection only.")
+        # Try to find recording method
+        recording_methods = [method for method in all_methods if any(word in method.lower() for word in ['record', 'listen', 'receive', 'capture'])]
+        print(f"[DEBUG] Potential recording methods: {recording_methods}")
         
+        # Keep connection alive for testing
         while True:
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             if time.time() - last_activity_time > 180:
-                print(f"Inactivity timeout reached for guild {guild_id}. Disconnecting.")
-                vc.stop_recording()
+                print(f"Timeout reached for guild {guild_id}")
                 await vc.disconnect()
                 break
 
