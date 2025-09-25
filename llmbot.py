@@ -179,8 +179,9 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        await ctx.followup.send("❌ Voice recording was removed from discord.py 2.0+. Install py-cord instead: `pip uninstall discord.py && pip install py-cord`")
-        await vc.disconnect()
+        await ctx.reply("❌ Voice recording was removed from discord.py 2.0+. Install py-cord instead: `pip uninstall discord.py && pip install py-cord`")
+        if vc.is_connected():
+            await vc.disconnect()
         return
         
         return
