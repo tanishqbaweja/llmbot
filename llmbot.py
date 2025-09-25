@@ -206,7 +206,7 @@ async def manage_voice_session(ctx, vc, audio_source):
                                 if len(user_audio_buffers[user_id]) > 5:  # At least 0.1s of speech
                                     print(f"[DEBUG] Processing speech! Buffer has {len(user_audio_buffers[user_id])} packets")
                                     audio_data = user_audio_buffers[user_id].copy()
-                                    asyncio.create_task(process_voice_input(audio_data, audio_source))
+                                    asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source), bot.loop)
                                 else:
                                     print(f"[DEBUG] Speech too short, ignoring. Buffer size: {len(user_audio_buffers[user_id])}")
                                 user_audio_buffers[user_id].clear()
@@ -216,7 +216,7 @@ async def manage_voice_session(ctx, vc, audio_source):
                     if len(user_audio_buffers[user_id]) > 100:
                         print(f"[DEBUG] Manual trigger! Processing large buffer: {len(user_audio_buffers[user_id])} packets")
                         audio_data = user_audio_buffers[user_id].copy()
-                        asyncio.create_task(process_voice_input(audio_data, audio_source))
+                        asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source), bot.loop)
                         user_audio_buffers[user_id].clear()
                         user_silence_counters[user_id] = 0
                 else:
