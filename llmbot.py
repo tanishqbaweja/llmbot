@@ -2891,7 +2891,8 @@ async def voice_command(ctx):
             if not modes:
                 modes = ['xsalsa20_poly1305_lite']
             mode = modes[0]
-            await self.load_secret_key(data, mode)
+            self._connection.mode = mode
+            await self.load_secret_key(data)
         
         discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
         
