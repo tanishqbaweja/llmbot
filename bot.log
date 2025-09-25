@@ -13179,3 +13179,12 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
 2025-09-25 14:07:57,459 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
 2025-09-25 14:07:57,636 - discord.gateway - INFO - received secret key for voice connection
 2025-09-25 14:07:58,207 - root - ERROR - Voice command error: VoiceClient.start_recording() got an unexpected keyword argument 'finished'
+2025-09-25 14:08:53,261 - discord.client - INFO - logging in using static token
+2025-09-25 14:08:54,903 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 14:08:56,769 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-d3n9",{"micros":1478704,"calls":["id_created",{"micros":609,"calls":[]},"session_lookup_time",{"micros":2775,"calls":[]},"session_lookup_finished",{"micros":8,"calls":[]},"discord-sessions-prd-2-95",{"micros":1475121,"calls":["start_session",{"micros":1393651,"calls":["discord-api-rpc-686767fc44-tw6cz",{"micros":1313010,"calls":["get_user",{"micros":7602},"get_guilds",{"micros":2849},"send_scheduled_deletion_message",{"micros":18},"guild_join_requests",{"micros":60302},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":36466},"apex_experiments",{"micros":17283},"user_activities",{"micros":5},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":29,"calls":[]},"presence_started",{"micros":40536,"calls":[]},"guilds_started",{"micros":89,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":40760,"calls":[]},"connect_finished",{"micros":40802,"calls":[]},"build_ready",{"micros":11,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 49691328a5ad3321f3d4495f2f5b3a90).
+2025-09-25 14:09:03,396 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:09:03,397 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 14:09:04,012 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:09:04,926 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:09:05,103 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:09:05,766 - root - ERROR - Voice command error: VoiceClient.start_recording() missing 1 required positional argument: 'callback'
