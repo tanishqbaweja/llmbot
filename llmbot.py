@@ -326,15 +326,35 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
         )
         
         # Get audio data from BinaryAPIResponse
-        audio_data = tts_response.read()
-        print(f"[DEBUG] Generated TTS audio, size: {len(audio_data)} bytes")
+        wav_data = tts_response.read()
+        print(f"[DEBUG] Generated TTS audio, size: {len(wav_data)} bytes")
+        
+        # Convert WAV to raw PCM for Discord
+        import io
+        wav_io = io.BytesIO(wav_data)
+        with wave.open(wav_io, 'rb') as wav_file:
+            # Skip WAV header and get raw PCM data
+            pcm_data = wav_file.readframes(wav_file.getnframes())
+            sample_rate = wav_file.getframerate()
+            channels = wav_file.getnchannels()
+            print(f"[DEBUG] WAV info: {sample_rate}Hz, {channels} channels, PCM size: {len(pcm_data)} bytes")
+        
+        # Convert to Discord format (48kHz stereo) if needed
+        if sample_rate != 48000 or channels != 2:
+            if channels == 1:
+                # Convert mono to stereo
+                pcm_data = audioop.tostereo(pcm_data, 2, 1, 1)
+            if sample_rate != 48000:
+                # Resample to 48kHz
+                pcm_data, _ = audioop.ratecv(pcm_data, 2, 2, sample_rate, 48000, None)
+            print(f"[DEBUG] Converted to 48kHz stereo, size: {len(pcm_data)} bytes")
         
         # Step 6: Play audio in Discord
         print(f"[DEBUG] Step 6: Playing audio in Discord")
-        chunk_size = 3840
+        chunk_size = 3840  # 20ms at 48kHz stereo
         chunks_written = 0
-        for i in range(0, len(audio_data), chunk_size):
-            chunk = audio_data[i:i+chunk_size]
+        for i in range(0, len(pcm_data), chunk_size):
+            chunk = pcm_data[i:i+chunk_size]
             if len(chunk) < chunk_size:
                 chunk += b'\x00' * (chunk_size - len(chunk))
             audio_source.write(chunk)
