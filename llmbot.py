@@ -400,11 +400,8 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
         print(f"[DEBUG] Voice processing completed successfully!")
         
         # Clear processing lock
-        if user_id:
-            for session in voice_sessions.values():
-                if hasattr(session, 'processing_lock') and user_id in getattr(session, 'processing_lock', {}):
-                    del session['processing_lock'][user_id]
-                    break
+        if user_id and user_id in processing_lock:
+            del processing_lock[user_id]
         
     except Exception as e:
         print(f"[DEBUG] ERROR in voice processing: {e}")
@@ -2884,14 +2881,18 @@ async def voice_command(ctx):
         print(f"[DEBUG] About to call channel.connect()")
         vc = await asyncio.wait_for(channel.connect(), timeout=30.0)
         print(f"[DEBUG] Connected successfully!")
-        await ctx.send("✅ Connected to voice! Use `!speak hello` to test.")
+        await ctx.send("✅ Connected to voice! Listening for speech...")
         
         print(f"[DEBUG] Creating audio source")
         audio_source = GeminiAudioSource()
         print(f"[DEBUG] Starting playback")
         vc.play(audio_source)
+        
+        print(f"[DEBUG] Starting voice session management")
+        task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
+        
         print(f"[DEBUG] Storing session")
-        voice_sessions[ctx.guild.id] = {'vc': vc, 'audio_source': audio_source}
+        voice_sessions[ctx.guild.id] = {'vc': vc, 'audio_source': audio_source, 'task': task, 'conversation': []}
         print(f"[DEBUG] Voice setup complete!")
         
     except asyncio.TimeoutError:
