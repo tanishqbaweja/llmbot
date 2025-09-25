@@ -900,7 +900,7 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 reason = ""
                 
                 # Stop after sufficient silence/noise
-                if self.silent_frames >= 15:  # ~200ms of silence (quick response after speech ends)
+                if self.silent_frames >= 10:  # ~200ms of silence (quick response after speech ends)
                     should_stop = True
                     reason = f"silence ({self.silent_frames} frames)"
                 
