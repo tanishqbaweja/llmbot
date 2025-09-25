@@ -272,7 +272,8 @@ async def process_voice_input(audio_chunks, audio_source):
             
             # Step 3: Speech-to-text
             print(f"[DEBUG] Step 3: Calling Groq Whisper API")
-            groq_client = Groq(api_key=random.choice(API_KEYS))
+            working_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
+            groq_client = Groq(api_key=random.choice(working_keys))
             with open(temp_file.name, "rb") as audio_file:
                 transcription = groq_client.audio.transcriptions.create(
                     file=audio_file,
