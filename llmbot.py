@@ -206,13 +206,25 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        # Wait a moment for connection to stabilize
-        await asyncio.sleep(1)
+        # Wait for voice connection to be fully ready
+        while not vc.is_connected():
+            await asyncio.sleep(0.1)
+        
+        # Additional wait for connection to stabilize
+        await asyncio.sleep(2)
         
         sink = VoiceSink()
+        print(f"[DEBUG] Voice client connected: {vc.is_connected()}")
         print(f"[DEBUG] Starting voice recording with sink...")
-        vc.start_recording(sink)
-        print(f"[DEBUG] Voice recording started successfully!")
+        
+        try:
+            vc.start_recording(sink)
+            print(f"[DEBUG] Voice recording started successfully!")
+        except Exception as record_error:
+            print(f"[DEBUG] Recording start error: {record_error}")
+            # Try alternative recording method
+            vc.listen(sink)
+            print(f"[DEBUG] Voice listening started as fallback!")
         
         while True:
             await asyncio.sleep(15)
