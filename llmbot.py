@@ -1408,10 +1408,14 @@ async def voice_command(ctx):
             vc.start_recording(sink, recording_callback)
             print("Recording started successfully")
             print(f"Voice sink type: {type(sink)}")
-            print(f"Is recording: {vc.is_recording()}")
+            # Note: is_recording() method may not exist in all discord.py versions
+            if hasattr(vc, 'recording'):
+                print(f"Recording status: {vc.recording}")
         except Exception as e:
             print(f"Error starting recording: {e}")
-            await ctx.reply(f"❌ Failed to start recording: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            await ctx.reply(f"❌ Failed to start recording: {str(e)[:200]}")
         
         # Start inactivity monitor
         monitor_task = asyncio.create_task(manage_voice_session(guild_id))
