@@ -225,13 +225,13 @@ async def manage_voice_session(ctx, vc, audio_source):
                     print(f"[DEBUG] Ignoring audio from bot or invalid user: {user_id}")
         
         sink = VoiceSink()
-        vc.listen(sink)
+        vc.start_recording(sink, lambda e: print(f"Recording error: {e}") if e else None)
         
         while True:
             await asyncio.sleep(15)
             if time.time() - last_activity_time > 180:
                 print(f"Inactivity timeout reached for guild {guild_id}. Disconnecting.")
-                vc.stop_listening()
+                vc.stop_recording()
                 await vc.disconnect()
                 break
 
@@ -242,8 +242,8 @@ async def manage_voice_session(ctx, vc, audio_source):
     finally:
         print(f"Cleaning up voice session for guild {guild_id}")
         try:
-            if vc.is_listening():
-                vc.stop_listening()
+            if vc.is_recording():
+                vc.stop_recording()
         except:
             pass
         if vc.is_connected():
