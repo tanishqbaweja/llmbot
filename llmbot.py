@@ -2857,77 +2857,27 @@ async def generate_and_play_tts(text, vc, audio_source):
 
 @bot.command(name='voice')
 async def voice_command(ctx):
+    print(f"[DEBUG] Voice command started")
+    
+    if not ctx.author.voice:
+        await ctx.reply("You need to be in a voice channel to use this command.")
+        return
+
+    channel = ctx.author.voice.channel
+    print(f"[DEBUG] Joining channel: {channel.name}")
+    
     try:
-        print(f"[DEBUG] Voice command started")
-        if not ctx.author.voice:
-            await ctx.reply("You need to be in a voice channel to use this command.")
-            return
-
-        if ctx.guild.id in voice_sessions:
-            await ctx.reply("I am already in a voice session in this server.")
-            return
-
-        channel = ctx.author.voice.channel
+        vc = await channel.connect()
+        print(f"[DEBUG] Connected successfully!")
+        await ctx.send("✅ Connected to voice! Use `!speak hello` to test.")
         
-        # Check bot permissions
-        permissions = channel.permissions_for(ctx.guild.me)
-        if not permissions.connect or not permissions.speak:
-            await ctx.reply("❌ Missing voice permissions. Need Connect and Speak permissions.")
-            return
-            
-        print(f"[DEBUG] Joining channel: {channel.name}")
-        await ctx.reply(f"Joining {channel.name} to start a conversation...")
-
-        # Disconnect if already connected
-        if ctx.guild.voice_client:
-            await ctx.guild.voice_client.disconnect()
-        
-        # Patch gateway to handle empty modes list
-        import discord.gateway
-        original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
-        
-        async def patched_initial_connection(self, data):
-            modes = [
-                mode for mode in data["modes"] if mode in self._connection.supported_modes
-            ]
-            if not modes:
-                modes = ['xsalsa20_poly1305_lite']
-            mode = modes[0]
-            self._connection.mode = mode
-            await self.load_secret_key(data)
-        
-        discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
-        
-        try:
-            print(f"[DEBUG] About to connect to voice channel")
-            vc = await channel.connect()
-            print(f"[DEBUG] Successfully connected to voice channel")
-        except Exception as conn_error:
-            print(f"[DEBUG] Connection error: {conn_error}")
-            raise
-        finally:
-            print(f"[DEBUG] Restoring original connection method")
-            discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
-        
-        print(f"[DEBUG] Creating audio source")
         audio_source = GeminiAudioSource()
-        print(f"[DEBUG] Audio source created, starting playback")
-        vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
-        print(f"[DEBUG] Playback started")
-
-        print(f"[DEBUG] Creating voice session management task")
-        task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
-        print(f"[DEBUG] Task created, storing in voice_sessions")
-        voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source, 'conversation': []}
-        print(f"[DEBUG] Voice session stored")
-        await ctx.send("🎤 **Voice recording active!** Speak and I'll respond with voice.")
-        print(f"[DEBUG] Final message sent")
-
+        vc.play(audio_source)
+        voice_sessions[ctx.guild.id] = {'vc': vc, 'audio_source': audio_source}
+        
     except Exception as e:
-        print(f"[DEBUG] Voice error: {e}")
-        import traceback
-        traceback.print_exc()
-        await ctx.reply(f"❌ Voice connection failed: {str(e)[:200]}")
+        print(f"[DEBUG] Error: {e}")
+        await ctx.reply(f"Error: {e}")
 
 @bot.command(name='leave')
 async def leave_command(ctx):
