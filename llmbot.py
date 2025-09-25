@@ -177,33 +177,38 @@ async def manage_voice_session(ctx, vc, audio_source):
     user_silence_counters = {}
     processing_lock = {}
 
-    # Callback for when recording finishes
+    # Recording callback required by vc.start_recording
     async def recording_finished(sink, *args):
         try:
-            print(f"[DEBUG] recording_finished called for guild {guild_id}")
+            print(f"[DEBUG] Recording finished for guild {guild_id}")
         except Exception as e:
-            print(f"[DEBUG] recording_finished error: {e}")
+            print(f"[DEBUG] Recording finished error: {e}")
 
-    class VoiceSink(discord.sinks.WaveSink):
-        def write(self, data, user):
+    class CustomVoiceSink(discord.sinks.WaveSink):
+        def __init__(self):
+            super().__init__()
+            print(f"[DEBUG] CustomVoiceSink initialized")
+        
+        def write(self, user, data):
+            """Handle incoming audio data from a user."""
             try:
-                # Get user ID
-                user_id = None
-                if user:
-                    user_id = user.id if hasattr(user, 'id') else user
-
-                if user_id is None or user_id == ctx.bot.user.id:
+                # Skip if no user or if it's the bot speaking
+                if not user or user.id == ctx.bot.user.id:
                     return
-
+                    
+                user_id = user.id
+                
+                # Update activity time
                 nonlocal last_activity_time, user_audio_buffers, user_silence_counters, processing_lock
                 last_activity_time = time.time()
 
+                # Initialize buffers for new user
                 if user_id not in user_audio_buffers:
                     user_audio_buffers[user_id] = []
                     user_silence_counters[user_id] = 0
                     print(f"[DEBUG] New user {user_id} started speaking")
 
-                # Extract PCM data from various formats
+                # Extract PCM data from various possible formats
                 pcm_bytes = None
                 if isinstance(data, (bytes, bytearray)):
                     pcm_bytes = bytes(data)
@@ -214,99 +219,104 @@ async def manage_voice_session(ctx, vc, audio_source):
                 else:
                     try:
                         pcm_bytes = bytes(data)
-                    except Exception:
-                        pcm_bytes = None
+                    except:
+                        print(f"[DEBUG] Could not extract PCM data from {type(data)}")
+                        return
 
                 if not pcm_bytes:
                     return
 
-                # Check audio volume
+                # Calculate volume to detect speech
                 try:
                     volume = audioop.rms(pcm_bytes, 2)
-                except Exception:
+                except Exception as e:
+                    print(f"[DEBUG] Error calculating volume: {e}")
                     volume = 0
 
-                # Process audio based on volume
-                if volume > 10:  # Speaking
+                # Process based on volume threshold
+                if volume > 10:  # Speech detected
                     user_audio_buffers[user_id].append(pcm_bytes)
                     user_silence_counters[user_id] = 0
-                    print(f"[DEBUG] User {user_id} speaking, buffer size: {len(user_audio_buffers[user_id])}")
-                else:  # Silence
+                else:  # Silence detected
                     if len(user_audio_buffers[user_id]) > 0:
                         user_silence_counters[user_id] += 1
-                        if user_silence_counters[user_id] >= 10:  # Enough silence to process
-                            if len(user_audio_buffers[user_id]) > 5:  # Enough audio to process
-                                if user_id not in processing_lock or not processing_lock[user_id]:
+                        # After 10 frames of silence, process the accumulated audio
+                        if user_silence_counters[user_id] >= 10:
+                            # Only process if we have enough audio data
+                            if len(user_audio_buffers[user_id]) > 5:
+                                if user_id not in processing_lock:
                                     processing_lock[user_id] = True
+                                    print(f"[DEBUG] Processing {len(user_audio_buffers[user_id])} audio chunks from user {user_id}")
                                     audio_data = user_audio_buffers[user_id].copy()
-                                    print(f"[DEBUG] Processing {len(audio_data)} chunks for user {user_id}")
-                                    # Process voice input asynchronously
+                                    # Process asynchronously
                                     asyncio.run_coroutine_threadsafe(
-                                        process_voice_input(audio_data, audio_source, user_id, processing_lock),
+                                        process_voice_input(audio_data, audio_source, user_id),
                                         bot.loop
-                                    )
+                                    ).add_done_callback(lambda f: processing_lock.pop(user_id, None))
+                            # Clear buffers after processing
                             user_audio_buffers[user_id].clear()
                             user_silence_counters[user_id] = 0
 
             except Exception as ex:
-                print(f"[DEBUG] VoiceSink.write error: {ex}")
+                print(f"[DEBUG] CustomVoiceSink.write error: {ex}")
                 import traceback
                 traceback.print_exc()
 
     try:
-        print(f"[DEBUG] Voice session started for guild {guild_id} - waiting for connection")
-
-        # Wait for voice connection to be fully ready
-        timeout = 10
-        start_time = time.time()
-        while not vc.is_connected():
-            if time.time() - start_time > timeout:
-                raise TimeoutError("Voice connection timeout")
+        print(f"[DEBUG] Voice session manager started for guild {guild_id}")
+        
+        # Wait for voice connection to be fully established
+        max_wait = 50  # 5 seconds max
+        wait_count = 0
+        while not vc.is_connected() and wait_count < max_wait:
             await asyncio.sleep(0.1)
-
-        print(f"[DEBUG] Voice connected, waiting for stabilization...")
-        await asyncio.sleep(2)
-
-        # Create and start recording with custom sink
-        sink = VoiceSink()
-        print(f"[DEBUG] Voice client connected: {vc.is_connected()}")
-        print(f"[DEBUG] Starting voice recording with custom sink...")
-
+            wait_count += 1
+            
+        if not vc.is_connected():
+            print(f"[DEBUG] Voice client failed to connect after 5 seconds")
+            return
+            
+        print(f"[DEBUG] Voice client connected successfully")
+        
+        # Give the connection time to stabilize
+        await asyncio.sleep(1)
+        
+        # Create and start recording with our custom sink
+        sink = CustomVoiceSink()
+        print(f"[DEBUG] Created custom voice sink")
+        
+        # Start recording
         try:
-            # Start recording with callback
-            vc.start_recording(sink, finished=recording_finished)
+            print(f"[DEBUG] Attempting to start recording...")
+            vc.start_recording(sink, recording_finished)
             print(f"[DEBUG] Voice recording started successfully! Now listening for speech...")
         except Exception as record_error:
-            print(f"[DEBUG] Recording start error: {record_error}")
-            # Try without callback if it fails
-            try:
-                vc.start_recording(sink)
-                print(f"[DEBUG] Voice recording started without callback!")
-            except Exception as e2:
-                print(f"[DEBUG] Failed to start recording: {e2}")
-                raise
-
-        # Main session loop
+            print(f"[DEBUG] Failed to start recording: {record_error}")
+            # Try alternative method if available
+            if hasattr(vc, 'listen'):
+                print(f"[DEBUG] Trying alternative listen method...")
+                vc.listen(sink)
+                print(f"[DEBUG] Voice listening started as fallback!")
+            else:
+                raise record_error
+        
+        # Keep the session alive and monitor for inactivity
         while True:
-            await asyncio.sleep(15)
-            current_time = time.time()
+            await asyncio.sleep(10)
             
-            # Check if still connected
-            if not vc.is_connected():
-                print(f"[DEBUG] Voice disconnected unexpectedly")
-                break
-            
-            # Check for inactivity
-            if current_time - last_activity_time > 180:  # 3 minutes of inactivity
-                print(f"[DEBUG] Inactivity timeout reached, disconnecting")
+            # Check for prolonged inactivity (3 minutes)
+            if time.time() - last_activity_time > 180:
+                print(f"[DEBUG] Voice session inactive for 3 minutes, disconnecting...")
                 try:
-                    vc.stop_recording()
+                    if hasattr(vc, 'stop_recording'):
+                        vc.stop_recording()
                 except Exception as e:
                     print(f"[DEBUG] Error stopping recording: {e}")
-                try:
-                    await vc.disconnect()
-                except Exception as e:
-                    print(f"[DEBUG] Error disconnecting: {e}")
+                break
+                
+            # Check if still connected
+            if not vc.is_connected():
+                print(f"[DEBUG] Voice client disconnected unexpectedly")
                 break
 
     except Exception as e:
@@ -314,23 +324,22 @@ async def manage_voice_session(ctx, vc, audio_source):
         print(f"[DEBUG] Error in voice session for guild {guild_id}: {safe_error}")
         import traceback
         traceback.print_exc()
-
+        
     finally:
         print(f"[DEBUG] Cleaning up voice session for guild {guild_id}")
-        if vc and vc.is_connected():
-            try:
-                vc.stop_recording()
-            except Exception:
-                pass
-            try:
+        try:
+            if vc and vc.is_connected():
+                if hasattr(vc, 'stop_recording'):
+                    vc.stop_recording()
                 await vc.disconnect()
-            except Exception:
-                pass
+        except Exception as e:
+            print(f"[DEBUG] Error during cleanup: {e}")
+        
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
 
-async def process_voice_input(audio_chunks, audio_source, user_id=None, processing_lock=None):
-    print(f"[DEBUG] Starting voice processing with {len(audio_chunks)} audio chunks for user {user_id}")
+async def process_voice_input(audio_chunks, audio_source, user_id=None):
+    print(f"[DEBUG] Starting voice processing with {len(audio_chunks)} audio chunks")
     try:
         # Step 1: Audio conversion
         print(f"[DEBUG] Step 1: Converting audio format")
@@ -355,10 +364,6 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None, processi
         
         print(f"[DEBUG] Step 3: Calling Groq Whisper API")
         working_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
-        if not working_keys:
-            print(f"[DEBUG] No working keys for Whisper, using all keys")
-            working_keys = API_KEYS
-        
         groq_client = Groq(api_key=random.choice(working_keys))
         with open(temp_filename, "rb") as audio_file:
             transcription = groq_client.audio.transcriptions.create(
@@ -380,15 +385,13 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None, processi
             print(f"[DEBUG] Empty transcription, returning")
             return
             
-        print(f"[DEBUG] User {user_id} said: {transcription}")
+        print(f"User said: {transcription}")
         
         # Step 4: Get conversation history and generate response
         print(f"[DEBUG] Step 4: Building conversation history")
         conversation_history = ""
-        guild_id = None
-        for gid, session in voice_sessions.items():
+        for session in voice_sessions.values():
             if session.get('audio_source') == audio_source:
-                guild_id = gid
                 conversation = session.get('conversation', [])
                 for entry in conversation:
                     conversation_history += entry + "\n"
@@ -409,25 +412,29 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None, processi
         )
         
         response_text = response.text.strip() if response.text else "I heard you!"
-        print(f"[DEBUG] Bot response: {response_text}")
+        print(f"Bot response: {response_text}")
         
         # Step 4.5: Update conversation history
         print(f"[DEBUG] Updating conversation history")
-        if guild_id and guild_id in voice_sessions:
-            session = voice_sessions[guild_id]
-            conversation = session.get('conversation', [])
-            conversation.append(f"User said: {transcription}")
-            conversation.append(f"Bot said: {response_text}")
-            # Keep only last 10 exchanges (20 entries)
-            if len(conversation) > 20:
-                conversation = conversation[-20:]
-            session['conversation'] = conversation
+        for session in voice_sessions.values():
+            if session.get('audio_source') == audio_source:
+                conversation = session.get('conversation', [])
+                conversation.append(f"User said: {transcription}")
+                conversation.append(f"Bot said: {response_text}")
+                # Keep only last 10 exchanges (20 entries)
+                if len(conversation) > 20:
+                    conversation = conversation[-20:]
+                session['conversation'] = conversation
+                break
         
         # Step 5: Generate audio using Groq TTS
         print(f"[DEBUG] Step 5: Generating audio with Groq TTS")
         
-        # Use keys 11-17 for TTS
-        tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
+        # Use keys 11-14 and main GROQ_API_KEY for TTS
+        tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 14]
+        main_key = os.getenv('GROQ_API_KEY')
+        if main_key:
+            tts_keys.append(main_key)
         
         if not tts_keys:
             print(f"[DEBUG] No TTS API keys available, using fallback")
@@ -470,16 +477,19 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None, processi
         print(f"[DEBUG] Step 6: Playing audio in Discord")
         
         # Check voice client status and restart if needed
-        if guild_id and guild_id in voice_sessions:
-            session = voice_sessions[guild_id]
-            vc = session.get('vc')
-            print(f"[DEBUG] Voice client connected: {vc.is_connected() if vc else False}")
-            print(f"[DEBUG] Voice client playing: {vc.is_playing() if vc else False}")
-            
-            # Restart audio player if not playing
-            if vc and vc.is_connected() and not vc.is_playing():
-                print(f"[DEBUG] Restarting audio player")
-                vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
+        guild_id = None
+        for gid, session in voice_sessions.items():
+            if session.get('audio_source') == audio_source:
+                guild_id = gid
+                vc = session.get('vc')
+                print(f"[DEBUG] Voice client connected: {vc.is_connected() if vc else False}")
+                print(f"[DEBUG] Voice client playing: {vc.is_playing() if vc else False}")
+                
+                # Restart audio player if not playing
+                if vc and vc.is_connected() and not vc.is_playing():
+                    print(f"[DEBUG] Restarting audio player")
+                    vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
+                break
         
         chunk_size = 3840
         chunks_written = 0
@@ -503,11 +513,6 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None, processi
         logging.error(f"Voice processing error: {e}")
         import traceback
         traceback.print_exc()
-    finally:
-        # Clear processing lock in finally block to ensure it's always cleared
-        if processing_lock and user_id and user_id in processing_lock:
-            processing_lock[user_id] = False
-            print(f"[DEBUG] Cleared processing lock for user {user_id}")
 
 def sanitize_input(text):
     if not isinstance(text, str):
@@ -2954,21 +2959,27 @@ async def generate_and_play_tts(text, vc, audio_source):
 
 @bot.command(name='voice')
 async def voice_command(ctx):
-    print(f"[DEBUG] Voice command started")
+    print(f"[DEBUG] Voice command initiated by {ctx.author.name}")
     
+    # Check if user is in a voice channel
     if not ctx.author.voice:
-        await ctx.reply("You need to be in a voice channel to use this command.")
+        await ctx.reply("❌ You need to be in a voice channel to use this command.")
         return
 
     channel = ctx.author.voice.channel
-    print(f"[DEBUG] Joining channel: {channel.name}")
+    print(f"[DEBUG] Target voice channel: {channel.name} (ID: {channel.id})")
+    
+    # Check if bot is already in a voice channel in this guild
+    if ctx.guild.id in voice_sessions:
+        await ctx.reply("❌ I'm already in a voice channel. Use `!leave` first.")
+        return
     
     # Patch gateway to handle empty modes list
     import discord.gateway
     original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
     
     async def patched_initial_connection(self, data):
-        modes = [mode for mode in data["modes"] if mode in self._connection.supported_modes]
+        modes = [mode for mode in data.get("modes", []) if mode in self._connection.supported_modes]
         if not modes:
             modes = ['xsalsa20_poly1305_lite']
         mode = modes[0]
@@ -2978,30 +2989,55 @@ async def voice_command(ctx):
     discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
     
     try:
-        print(f"[DEBUG] About to call channel.connect()")
+        print(f"[DEBUG] Attempting to connect to voice channel...")
         vc = await asyncio.wait_for(channel.connect(), timeout=30.0)
-        print(f"[DEBUG] Connected successfully!")
-        await ctx.send("✅ Connected to voice! Listening for speech...")
+        print(f"[DEBUG] Voice client connected successfully!")
+        print(f"[DEBUG] Voice client type: {type(vc)}")
+        print(f"[DEBUG] Is connected: {vc.is_connected()}")
         
-        print(f"[DEBUG] Creating audio source")
+        # Send connection success message
+        await ctx.send("✅ Connected to voice channel! Setting up audio...")
+        
+        # Create audio source for TTS playback
+        print(f"[DEBUG] Creating GeminiAudioSource for TTS playback")
         audio_source = GeminiAudioSource()
-        print(f"[DEBUG] Starting playback")
-        vc.play(audio_source)
         
-        print(f"[DEBUG] Starting voice session management")
+        # Start playing the audio source (this enables TTS output)
+        print(f"[DEBUG] Starting audio playback source")
+        vc.play(audio_source, after=lambda e: print(f'[DEBUG] Playback error: {e}') if e else None)
+        
+        # Create the voice session management task
+        print(f"[DEBUG] Creating voice session management task")
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
         
-        print(f"[DEBUG] Storing session")
-        voice_sessions[ctx.guild.id] = {'vc': vc, 'audio_source': audio_source, 'task': task, 'conversation': []}
-        print(f"[DEBUG] Voice setup complete!")
+        # Store the session information
+        print(f"[DEBUG] Storing voice session for guild {ctx.guild.id}")
+        voice_sessions[ctx.guild.id] = {
+            'vc': vc, 
+            'audio_source': audio_source, 
+            'task': task, 
+            'conversation': [],
+            'channel_id': channel.id,
+            'started_at': time.time()
+        }
+        
+        # Send final confirmation
+        await ctx.send("🎤 Voice setup complete! I'm now listening for speech. Start talking!")
+        print(f"[DEBUG] Voice command execution completed successfully")
         
     except asyncio.TimeoutError:
-        print(f"[DEBUG] Connection timed out")
-        await ctx.reply("Voice connection timed out")
+        print(f"[DEBUG] Voice connection timed out after 30 seconds")
+        await ctx.reply("❌ Voice connection timed out. Please try again.")
+    except discord.ClientException as e:
+        print(f"[DEBUG] Discord client exception: {e}")
+        await ctx.reply(f"❌ Failed to connect: {e}")
     except Exception as e:
-        print(f"[DEBUG] Error: {e}")
-        await ctx.reply(f"Error: {e}")
+        print(f"[DEBUG] Unexpected error in voice command: {e}")
+        import traceback
+        traceback.print_exc()
+        await ctx.reply(f"❌ An error occurred: {e}")
     finally:
+        # Restore original gateway function
         discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
 
 @bot.command(name='leave')
