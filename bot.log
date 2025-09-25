@@ -13214,3 +13214,216 @@ discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4006
 2025-09-25 14:12:38,730 - discord.gateway - INFO - received secret key for voice connection
 2025-09-25 14:12:43,556 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
 2025-09-25 14:12:43,563 - root - ERROR - Voice processing error: module 'google.genai' has no attribute 'configure'
+2025-09-25 14:16:19,537 - discord.client - INFO - logging in using static token
+2025-09-25 14:16:21,472 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 14:16:22,119 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-rw9d",{"micros":259017,"calls":["id_created",{"micros":483,"calls":[]},"session_lookup_time",{"micros":9643,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-7",{"micros":247552,"calls":["start_session",{"micros":211294,"calls":["discord-api-rpc-686767fc44-fw7jw",{"micros":155925,"calls":["get_user",{"micros":28895},"get_guilds",{"micros":3085},"send_scheduled_deletion_message",{"micros":13},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":37500},"apex_experiments",{"micros":8876},"user_activities",{"micros":8},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":32,"calls":[]},"presence_started",{"micros":291,"calls":[]},"guilds_started",{"micros":80,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":35789,"calls":[]},"connect_finished",{"micros":35840,"calls":[]},"build_ready",{"micros":11,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 07a8bb1a0f6f9637005f0271e1d4884e).
+2025-09-25 14:16:24,432 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:16:24,433 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 14:16:25,030 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:16:26,084 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:16:26,262 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:16:34,844 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:16:35,568 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:16:37,525 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:16:37,534 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:16:38,502 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:16:41,664 - discord.player - INFO - Preparing to terminate ffmpeg process 34636.
+2025-09-25 14:16:41,671 - discord.player - INFO - ffmpeg process 34636 successfully terminated with return code of 0.
+2025-09-25 14:16:59,675 - discord.gateway - WARNING - Shard ID None voice heartbeat blocked for more than 10 seconds
+Loop thread traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 2880, in <module>
+    bot.run(os.getenv('DISCORD_TOKEN'))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 772, in run
+    loop.run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 873, in process_recording
+    await process_voice_input(self.guild_id, audio_bytes)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 917, in process_voice_input
+    text = await speech_to_text(audio_data)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 998, in speech_to_text
+    transcription = groq_client.audio.transcriptions.create(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\groq\resources\audio\transcriptions.py", line 233, in create
+    return self._post(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\groq\_base_client.py", line 980, in request
+    response = self._client.send(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1295, in recv
+    return self.read(buflen)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1168, in read
+    return self._sslobj.read(len)
+
+2025-09-25 14:17:03,662 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:17:09,686 - discord.gateway - WARNING - Shard ID None voice heartbeat blocked for more than 20 seconds
+Loop thread traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 2880, in <module>
+    bot.run(os.getenv('DISCORD_TOKEN'))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 772, in run
+    loop.run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 873, in process_recording
+    await process_voice_input(self.guild_id, audio_bytes)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 917, in process_voice_input
+    text = await speech_to_text(audio_data)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 998, in speech_to_text
+    transcription = groq_client.audio.transcriptions.create(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\groq\resources\audio\transcriptions.py", line 233, in create
+    return self._post(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\groq\_base_client.py", line 980, in request
+    response = self._client.send(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1025, in _send_single_request
+    logger.info(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1489, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1113, in emit
+    stream.write(msg + self.terminator)
+
+2025-09-25 14:17:12,263 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:17:12,759 - discord.gateway - WARNING - Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 2880, in <module>
+    bot.run(os.getenv('DISCORD_TOKEN'))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 772, in run
+    loop.run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 873, in process_recording
+    await process_voice_input(self.guild_id, audio_bytes)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 940, in process_voice_input
+    response = client.models.generate_content(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\google\genai\models.py", line 6447, in generate_content
+    response = self._generate_content(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\google\genai\models.py", line 5259, in _generate_content
+    response = self._api_client.request(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\google\genai\_api_client.py", line 1289, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\google\genai\_api_client.py", line 1109, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\google\genai\_api_client.py", line 1079, in _request_once
+    response = self._httpx_client.request(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1295, in recv
+    return self.read(buflen)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 1168, in read
+    return self._sslobj.read(len)
+
+2025-09-25 14:17:13,588 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:17:13,589 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:17:14,542 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:17:15,763 - discord.voice_client - ERROR - Disconnected from voice... Reconnecting in 1.29s.
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 500, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client_ws.py", line 244, in receive
+    msg = await self._reader.read()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\streams.py", line 663, in read
+    return await super().read()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 467, in poll_voice_ws
+    await self.ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 943, in poll_event
+    msg = await asyncio.wait_for(self.ws.receive(), timeout=30.0)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 502, in wait_for
+    raise exceptions.TimeoutError() from exc
+TimeoutError
+2025-09-25 14:17:17,070 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1420681659732332634 (Guild ID 1410715548769058838)
+2025-09-25 14:17:17,071 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:17:17,072 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 2)
+2025-09-25 14:17:17,863 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:17:18,779 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:17:18,957 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:17:23,558 - discord.player - INFO - Preparing to terminate ffmpeg process 38032.
+2025-09-25 14:17:23,558 - discord.player - INFO - ffmpeg process 38032 successfully terminated with return code of 0.

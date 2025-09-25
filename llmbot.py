@@ -935,18 +935,23 @@ Reply to the latest message appropriately. Keep your response concise and natura
             # Use a random Gemini API key
             gemini_key = random.choice(GEMINI_API_KEYS)
             
-            # Create Gemini client with API key
-            client = genai.Client(api_key=gemini_key)
-            response = client.models.generate_content(
-                model='gemini-2.0-flash-exp',
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.7,
-                    max_output_tokens=256
-                )
-            )
+            # Run Gemini in executor to avoid blocking
+            loop = asyncio.get_event_loop()
             
-            response_text = response.text.strip()
+            def generate_response_sync():
+                # Create Gemini client with API key
+                client = genai.Client(api_key=gemini_key)
+                response = client.models.generate_content(
+                    model='gemini-2.0-flash-exp',
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.7,
+                        max_output_tokens=256
+                    )
+                )
+                return response.text.strip()
+            
+            response_text = await loop.run_in_executor(None, generate_response_sync)
             print(f"Bot will say: {response_text}")
             
             # Add to context
@@ -979,33 +984,40 @@ async def speech_to_text(audio_data):
         whisper_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
         if not whisper_keys:
             whisper_keys = API_KEYS[:1]  # Fallback to first key
+        
+        # Run blocking I/O in executor to avoid blocking event loop
+        loop = asyncio.get_event_loop()
+        
+        def transcribe_sync():
+            groq_client = Groq(api_key=random.choice(whisper_keys))
             
-        groq_client = Groq(api_key=random.choice(whisper_keys))
-        
-        # Save audio to temporary WAV file
-        with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
-            # Write WAV header
-            with wave.open(temp_audio.name, 'wb') as wav_file:
-                wav_file.setnchannels(2)  # Stereo
-                wav_file.setsampwidth(2)  # 16-bit
-                wav_file.setframerate(48000)  # Discord's sample rate
-                wav_file.writeframes(audio_data)
+            # Save audio to temporary WAV file
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
+                # Write WAV header
+                with wave.open(temp_audio.name, 'wb') as wav_file:
+                    wav_file.setnchannels(2)  # Stereo
+                    wav_file.setsampwidth(2)  # 16-bit
+                    wav_file.setframerate(48000)  # Discord's sample rate
+                    wav_file.writeframes(audio_data)
+                
+                temp_path = temp_audio.name
             
-            temp_path = temp_audio.name
+            # Transcribe with Whisper
+            with open(temp_path, 'rb') as audio_file:
+                transcription = groq_client.audio.transcriptions.create(
+                    file=audio_file,
+                    model="whisper-large-v3-turbo",
+                    language="en",
+                    temperature=0.0
+                )
+            
+            # Clean up temp file
+            os.remove(temp_path)
+            return transcription.text
         
-        # Transcribe with Whisper
-        with open(temp_path, 'rb') as audio_file:
-            transcription = groq_client.audio.transcriptions.create(
-                file=audio_file,
-                model="whisper-large-v3-turbo",
-                language="en",
-                temperature=0.0
-            )
-        
-        # Clean up temp file
-        os.remove(temp_path)
-        
-        return transcription.text
+        # Execute in thread pool to avoid blocking
+        text = await loop.run_in_executor(None, transcribe_sync)
+        return text
         
     except Exception as e:
         print(f"Speech-to-text error: {e}")
@@ -1018,21 +1030,29 @@ async def text_to_speech(text):
         tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if (11 <= num <= 14) or num == 17]
         if not tts_keys:
             tts_keys = API_KEYS[:1]  # Fallback
+        
+        # Run TTS in executor to avoid blocking
+        loop = asyncio.get_event_loop()
+        
+        def tts_sync():
+            groq_client = Groq(api_key=random.choice(tts_keys))
             
-        groq_client = Groq(api_key=random.choice(tts_keys))
+            # Generate speech
+            response = groq_client.audio.speech.create(
+                model="playai-tts",
+                voice="Arista-PlayAI",
+                input=text,
+                response_format="wav"
+            )
+            
+            # Save to temporary file
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
+                response.write_to_file(temp_audio.name)
+                return temp_audio.name
         
-        # Generate speech
-        response = groq_client.audio.speech.create(
-            model="playai-tts",
-            voice="Arista-PlayAI",
-            input=text,
-            response_format="wav"
-        )
-        
-        # Save to temporary file
-        with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
-            response.write_to_file(temp_audio.name)
-            return temp_audio.name
+        # Execute in thread pool to avoid blocking
+        audio_file = await loop.run_in_executor(None, tts_sync)
+        return audio_file
             
     except Exception as e:
         print(f"Text-to-speech error: {e}")
