@@ -2881,14 +2881,22 @@ async def voice_command(ctx):
     discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
     
     try:
-        vc = await channel.connect()
+        print(f"[DEBUG] About to call channel.connect()")
+        vc = await asyncio.wait_for(channel.connect(), timeout=30.0)
         print(f"[DEBUG] Connected successfully!")
         await ctx.send("✅ Connected to voice! Use `!speak hello` to test.")
         
+        print(f"[DEBUG] Creating audio source")
         audio_source = GeminiAudioSource()
+        print(f"[DEBUG] Starting playback")
         vc.play(audio_source)
+        print(f"[DEBUG] Storing session")
         voice_sessions[ctx.guild.id] = {'vc': vc, 'audio_source': audio_source}
+        print(f"[DEBUG] Voice setup complete!")
         
+    except asyncio.TimeoutError:
+        print(f"[DEBUG] Connection timed out")
+        await ctx.reply("Voice connection timed out")
     except Exception as e:
         print(f"[DEBUG] Error: {e}")
         await ctx.reply(f"Error: {e}")
