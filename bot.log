@@ -12338,3 +12338,24 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:41:50,663 - root - ERROR - Voice processing error: 'BinaryAPIResponse' object has no attribute 'content'
 2025-09-25 08:41:51,931 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
 2025-09-25 08:41:52,640 - root - ERROR - Voice processing error: 'BinaryAPIResponse' object has no attribute 'content'
+2025-09-25 08:42:51,728 - discord.client - INFO - logging in using static token
+2025-09-25 08:42:53,587 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:42:54,191 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-phzq",{"micros":221186,"calls":["id_created",{"micros":475,"calls":[]},"session_lookup_time",{"micros":242,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-26",{"micros":220180,"calls":["start_session",{"micros":206109,"calls":["discord-api-rpc-686767fc44-x5ztf",{"micros":90323,"calls":["get_user",{"micros":14853},"get_guilds",{"micros":7689},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":30729},"apex_experiments",{"micros":42240},"user_activities",{"micros":5},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":87,"calls":[]},"presence_started",{"micros":269,"calls":[]},"guilds_started",{"micros":52,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":13595,"calls":[]},"connect_finished",{"micros":13649,"calls":[]},"build_ready",{"micros":11,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 72fd22b431857a72e7dfbe57d91e313e).
+2025-09-25 08:42:57,103 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:42:57,103 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:42:57,698 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:42:58,606 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:42:58,786 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:43:03,314 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:43:03,956 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:43:05,711 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:43:06,318 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:43:06,322 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:43:06,330 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:43:07,390 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 08:43:08,466 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:43:08,467 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:43:11,192 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 400 Bad Request"
+2025-09-25 08:43:11,194 - root - ERROR - Voice processing error: Error code: 400 - {'error': {'message': 'The model `playai-tts` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=playai-tts', 'type': 'invalid_request_error', 'code': 'model_terms_required'}}
+2025-09-25 08:46:28,881 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
+2025-09-25 08:46:29,064 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
