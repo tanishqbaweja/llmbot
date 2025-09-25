@@ -2899,20 +2899,29 @@ async def voice_command(ctx):
         discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
         
         try:
+            print(f"[DEBUG] About to connect to voice channel")
             vc = await channel.connect()
             print(f"[DEBUG] Successfully connected to voice channel")
+        except Exception as conn_error:
+            print(f"[DEBUG] Connection error: {conn_error}")
+            raise
         finally:
+            print(f"[DEBUG] Restoring original connection method")
             discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
         
-        print(f"[DEBUG] Creating audio source and starting playback")
+        print(f"[DEBUG] Creating audio source")
         audio_source = GeminiAudioSource()
+        print(f"[DEBUG] Audio source created, starting playback")
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
+        print(f"[DEBUG] Playback started")
 
-        print(f"[DEBUG] Starting voice session management task")
+        print(f"[DEBUG] Creating voice session management task")
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
+        print(f"[DEBUG] Task created, storing in voice_sessions")
         voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source, 'conversation': []}
-        print(f"[DEBUG] Voice session created with recording enabled")
+        print(f"[DEBUG] Voice session stored")
         await ctx.send("🎤 **Voice recording active!** Speak and I'll respond with voice.")
+        print(f"[DEBUG] Final message sent")
 
     except Exception as e:
         print(f"[DEBUG] Voice error: {e}")
