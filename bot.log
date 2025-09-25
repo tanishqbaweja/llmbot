@@ -12103,3 +12103,14 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 07:37:21,798 - root - ERROR - Error in voice session for guild 1410715548769058838: module 'google.generativeai' has no attribute 'Live'
 2025-09-25 07:37:22,264 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
 2025-09-25 07:37:22,443 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 07:39:56,682 - discord.client - INFO - logging in using static token
+2025-09-25 07:39:58,357 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 07:39:58,986 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-s6vv",{"micros":244114,"calls":["id_created",{"micros":621,"calls":[]},"session_lookup_time",{"micros":4250,"calls":[]},"session_lookup_finished",{"micros":7,"calls":[]},"discord-sessions-prd-2-26",{"micros":238941,"calls":["start_session",{"micros":194915,"calls":["discord-api-continuous-canary-rpc-8454cd678b-9mn7k",{"micros":130506,"calls":["get_user",{"micros":21588},"get_guilds",{"micros":7006},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":9},"pending_payments",{"micros":38635},"apex_experiments",{"micros":13372},"user_activities",{"micros":7},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":44,"calls":[]},"presence_started",{"micros":31232,"calls":[]},"guilds_started",{"micros":86,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":12588,"calls":[]},"connect_finished",{"micros":12639,"calls":[]},"build_ready",{"micros":21,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 9148d8a88b1de89a0aa57fe3d50344dc).
+2025-09-25 07:40:05,882 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 07:40:05,884 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 07:40:06,480 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11075.discord.media
+2025-09-25 07:40:07,401 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 07:40:07,578 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 07:40:07,581 - root - ERROR - Error in voice session for guild 1410715548769058838: module 'discord' has no attribute 'reader'
+2025-09-25 07:40:07,583 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
+2025-09-25 07:40:07,759 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
