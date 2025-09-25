@@ -31,6 +31,47 @@ import tempfile
 import audioop
 from groq import Groq
 
+# Monkey patch for Discord.py voice encryption mode issue
+import discord.gateway
+
+original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
+
+async def patched_initial_connection(self, data):
+    """Patched version that handles empty encryption modes"""
+    state = data['state']
+    self._connection.update_state(state)
+    
+    # Get available modes
+    modes = data.get('modes', [])
+    
+    # If no modes provided, use a default set
+    if not modes:
+        print("WARNING: No encryption modes received from Discord, using defaults")
+        modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
+    
+    # Log available modes
+    print(f"Available encryption modes: {modes}")
+    
+    # Select mode (prefer lite for performance)
+    if 'xsalsa20_poly1305_lite' in modes:
+        mode = 'xsalsa20_poly1305_lite'
+    elif 'xsalsa20_poly1305_suffix' in modes:
+        mode = 'xsalsa20_poly1305_suffix'
+    elif 'xsalsa20_poly1305' in modes:
+        mode = 'xsalsa20_poly1305'
+    else:
+        # Fallback to first available mode
+        mode = modes[0] if modes else 'xsalsa20_poly1305_lite'
+    
+    print(f"Selected encryption mode: {mode}")
+    
+    await self.select_protocol(mode)
+    self._connection.mode = mode
+
+# Apply the monkey patch
+discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
+print("Applied voice encryption mode patch")
+
 # Setup secure logging
 def setup_secure_logging():
     handler = RotatingFileHandler(
