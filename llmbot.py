@@ -105,7 +105,9 @@ class GeminiAudioSource(discord.AudioSource):
 
     def read(self):
         try:
-            return self.buffer.popleft()
+            data = self.buffer.popleft()
+            print(f"[DEBUG] Audio source read: {len(data)} bytes, buffer remaining: {len(self.buffer)}")
+            return data
         except IndexError:
             if not self.is_finished.is_set():
                 self.is_finished.set()
@@ -351,7 +353,18 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
         
         # Step 6: Play audio in Discord
         print(f"[DEBUG] Step 6: Playing audio in Discord")
-        chunk_size = 3840  # 20ms at 48kHz stereo
+        
+        # Check voice client status
+        guild_id = None
+        for gid, session in voice_sessions.items():
+            if session.get('audio_source') == audio_source:
+                guild_id = gid
+                vc = session.get('vc')
+                print(f"[DEBUG] Voice client connected: {vc.is_connected() if vc else False}")
+                print(f"[DEBUG] Voice client playing: {vc.is_playing() if vc else False}")
+                break
+        
+        chunk_size = 3840
         chunks_written = 0
         for i in range(0, len(pcm_data), chunk_size):
             chunk = pcm_data[i:i+chunk_size]
@@ -361,6 +374,7 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
             chunks_written += 1
             await asyncio.sleep(0.02)
         print(f"[DEBUG] Wrote {chunks_written} audio chunks to Discord")
+        print(f"[DEBUG] Audio source buffer size after writing: {len(audio_source.buffer)}")
         print(f"[DEBUG] Voice processing completed successfully!")
         
         # Clear processing lock
