@@ -263,28 +263,32 @@ async def process_voice_input(audio_chunks, audio_source):
         # Step 2: Create WAV file
         print(f"[DEBUG] Step 2: Creating WAV file")
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
-            print(f"[DEBUG] Created temp file: {temp_file.name}")
-            with wave.open(temp_file.name, 'wb') as wav_file:
-                wav_file.setnchannels(1)
-                wav_file.setsampwidth(2)
-                wav_file.setframerate(16000)
-                wav_file.writeframes(resampled_data)
-            
-            # Step 3: Speech-to-text
-            print(f"[DEBUG] Step 3: Calling Groq Whisper API")
-            working_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
-            groq_client = Groq(api_key=random.choice(working_keys))
-            with open(temp_file.name, "rb") as audio_file:
-                transcription = groq_client.audio.transcriptions.create(
-                    file=audio_file,
-                    model="whisper-large-v3-turbo",
-                    response_format="text",
-                    language="en",
-                    temperature=0.0
-                )
-            
-            os.unlink(temp_file.name)
-            print(f"[DEBUG] Deleted temp file: {temp_file.name}")
+            temp_filename = temp_file.name
+            print(f"[DEBUG] Created temp file: {temp_filename}")
+        
+        with wave.open(temp_filename, 'wb') as wav_file:
+            wav_file.setnchannels(1)
+            wav_file.setsampwidth(2)
+            wav_file.setframerate(16000)
+            wav_file.writeframes(resampled_data)
+        
+        print(f"[DEBUG] Step 3: Calling Groq Whisper API")
+        working_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
+        groq_client = Groq(api_key=random.choice(working_keys))
+        with open(temp_filename, "rb") as audio_file:
+            transcription = groq_client.audio.transcriptions.create(
+                file=audio_file,
+                model="whisper-large-v3-turbo",
+                response_format="text",
+                language="en",
+                temperature=0.0
+            )
+        
+        try:
+            os.unlink(temp_filename)
+            print(f"[DEBUG] Deleted temp file: {temp_filename}")
+        except PermissionError:
+            print(f"[DEBUG] Could not delete temp file: {temp_filename}")
         
         print(f"[DEBUG] Transcription result: '{transcription}'")
         if not transcription.strip():
