@@ -2880,15 +2880,25 @@ async def voice_command(ctx):
         if ctx.guild.voice_client:
             await ctx.guild.voice_client.disconnect()
         
-        # Patch supported modes to fix encryption issue
-        import discord.voice_client
-        original_supported_modes = discord.voice_client.VoiceClient.supported_modes
-        discord.voice_client.VoiceClient.supported_modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
+        # Patch gateway to handle empty modes list
+        import discord.gateway
+        original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
+        
+        async def patched_initial_connection(self, data):
+            modes = [
+                mode for mode in data["modes"] if mode in self._connection.supported_modes
+            ]
+            if not modes:
+                modes = ['xsalsa20_poly1305_lite']
+            mode = modes[0]
+            await self.load_secret_key(data, mode)
+        
+        discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
         
         try:
             vc = await channel.connect()
         finally:
-            discord.voice_client.VoiceClient.supported_modes = original_supported_modes
+            discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
         audio_source = GeminiAudioSource()
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
