@@ -179,12 +179,42 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        await ctx.reply("❌ Voice recording was removed from discord.py 2.0+. Install py-cord instead: `pip uninstall discord.py && pip install py-cord`")
-        if vc.is_connected():
-            await vc.disconnect()
-        return
+        class VoiceSink(discord.sinks.WaveSink):
+            def write(self, data, user):
+                user_id = user.id if user else None
+                if user_id and user_id != ctx.bot.user.id:
+                    nonlocal last_activity_time, user_audio_buffers, user_silence_counters
+                    last_activity_time = time.time()
+                    
+                    if user_id not in user_audio_buffers:
+                        user_audio_buffers[user_id] = []
+                        user_silence_counters[user_id] = 0
+                    
+                    volume = audioop.rms(data, 2)
+                    if volume > 10:
+                        user_audio_buffers[user_id].append(data)
+                        user_silence_counters[user_id] = 0
+                    else:
+                        if len(user_audio_buffers[user_id]) > 0:
+                            user_silence_counters[user_id] += 1
+                            if user_silence_counters[user_id] >= 10:
+                                if len(user_audio_buffers[user_id]) > 5:
+                                    if user_id not in processing_lock:
+                                        processing_lock[user_id] = True
+                                        audio_data = user_audio_buffers[user_id].copy()
+                                        asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source, user_id), bot.loop)
+                                user_audio_buffers[user_id].clear()
+                                user_silence_counters[user_id] = 0
         
-        return
+        sink = VoiceSink()
+        vc.start_recording(sink)
+        
+        while True:
+            await asyncio.sleep(15)
+            if time.time() - last_activity_time > 180:
+                vc.stop_recording()
+                await vc.disconnect()
+                break
 
     except Exception as e:
         safe_error = sanitize_log_message(str(e)[:200])

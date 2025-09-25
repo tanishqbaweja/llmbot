@@ -12526,3 +12526,10 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 10:03:38,481 - discord.voice_state - INFO - Voice connection complete.
 2025-09-25 10:03:38,484 - root - ERROR - Error in voice session for guild 1410715548769058838: 'Context' object has no attribute 'followup'
 2025-09-25 10:03:38,485 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 10:06:10,243 - discord.client - INFO - logging in using static token
+2025-09-25 10:06:12,992 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bf02437c8eb2928da88e87de6b906398).
+2025-09-25 10:06:19,289 - discord.voice_state - INFO - Connecting to voice...
+2025-09-25 10:06:19,290 - discord.voice_state - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 10:06:19,876 - discord.voice_state - INFO - Voice handshake complete. Endpoint found: sydney11061.discord.media:443
+2025-09-25 10:06:21,145 - discord.voice_state - INFO - Voice connection complete.
+2025-09-25 10:06:21,693 - discord.voice_state - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
