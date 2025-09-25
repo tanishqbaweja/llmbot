@@ -2830,6 +2830,11 @@ async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
 @bot.command(name='voice')
 async def voice_command(ctx):
     try:
+        # Check voice dependencies
+        if not discord.opus.is_loaded():
+            await ctx.reply("❌ Voice support not available. Install PyNaCl: `pip install PyNaCl`")
+            return
+            
         print(f"[DEBUG] Voice command started")
         if not ctx.author.voice:
             await ctx.reply("You need to be in a voice channel to use this command.")
@@ -2855,7 +2860,7 @@ async def voice_command(ctx):
         print(f"[DEBUG] Voice error: {e}")
         import traceback
         traceback.print_exc()
-        await ctx.reply(f"Failed to join the voice channel. Error: {e}")
+        await ctx.reply("❌ Voice connection failed. Install PyNaCl: `pip install PyNaCl` and ensure FFmpeg is installed.")
 
 @bot.command(name='leave')
 async def leave_command(ctx):
