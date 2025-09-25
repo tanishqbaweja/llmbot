@@ -167,15 +167,11 @@ async def manage_voice_session(ctx, vc, audio_source):
     last_activity_time = time.time()
     
     try:
-        def discord_audio_callback(user, data: bytes):
-            nonlocal last_activity_time
-            if user:
-                last_activity_time = time.time()
-                asyncio.create_task(handle_voice_input(ctx, audio_source))
-
-        sink = discord.reader.WaveSink(discord_audio_callback)
-        vc.listen(sink)
-
+        print(f"Voice session started for guild {guild_id}")
+        
+        # Generate initial greeting
+        await handle_voice_input(ctx, audio_source)
+        
         while True:
             await asyncio.sleep(15)
             if time.time() - last_activity_time > 180:
@@ -202,13 +198,19 @@ async def handle_voice_input(ctx, audio_source):
         response = await asyncio.to_thread(
             gemini_client.models.generate_content,
             model="gemini-2.0-flash-exp",
-            contents=["Hello! I heard you speak."],
+            contents=["Say hello, I'm now connected to voice chat!"],
             config=types.GenerateContentConfig(response_modalities=["Audio"])
         )
         
         for part in response.candidates[0].content.parts:
             if hasattr(part, 'inline_data') and part.inline_data:
-                audio_source.write(part.inline_data.data)
+                audio_data = part.inline_data.data
+                chunk_size = 3840
+                for i in range(0, len(audio_data), chunk_size):
+                    chunk = audio_data[i:i+chunk_size]
+                    if len(chunk) < chunk_size:
+                        chunk += b'\x00' * (chunk_size - len(chunk))
+                    audio_source.write(chunk)
                         
     except Exception as e:
         logging.error(f"Voice response error: {e}")
