@@ -1082,9 +1082,13 @@ async def voice_command(ctx):
             'last_activity': time.time()
         }
         
+        # Define callback for when recording stops
+        async def recording_callback(sink, *args):
+            print(f"Recording stopped for guild {guild_id}")
+        
         # Start recording with custom sink
         sink = CustomVoiceSink(guild_id)
-        vc.start_recording(sink)
+        vc.start_recording(sink, recording_callback)
         
         # Start inactivity monitor
         monitor_task = asyncio.create_task(manage_voice_session(guild_id))
