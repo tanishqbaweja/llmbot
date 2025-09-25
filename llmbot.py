@@ -172,14 +172,47 @@ MAX_INPUT_LENGTH = 2000
 async def manage_voice_session(ctx, vc, audio_source):
     guild_id = ctx.guild.id
     last_activity_time = time.time()
+    user_audio_buffers = {}
+    user_silence_counters = {}
+    processing_lock = {}
     
     try:
-        print(f"Voice session started for guild {guild_id} - ready for text commands")
+        print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        # Simple voice session without recording - just maintain connection
+        class VoiceSink(discord.sinks.WaveSink):
+            def write(self, data, user):
+                user_id = user.id if user else None
+                if user_id and user_id != ctx.bot.user.id:
+                    nonlocal last_activity_time, user_audio_buffers, user_silence_counters
+                    last_activity_time = time.time()
+                    
+                    if user_id not in user_audio_buffers:
+                        user_audio_buffers[user_id] = []
+                        user_silence_counters[user_id] = 0
+                    
+                    volume = audioop.rms(data, 2)
+                    if volume > 10:
+                        user_audio_buffers[user_id].append(data)
+                        user_silence_counters[user_id] = 0
+                    else:
+                        if len(user_audio_buffers[user_id]) > 0:
+                            user_silence_counters[user_id] += 1
+                            if user_silence_counters[user_id] >= 10:
+                                if len(user_audio_buffers[user_id]) > 5:
+                                    if user_id not in processing_lock:
+                                        processing_lock[user_id] = True
+                                        audio_data = user_audio_buffers[user_id].copy()
+                                        asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source, user_id), bot.loop)
+                                user_audio_buffers[user_id].clear()
+                                user_silence_counters[user_id] = 0
+        
+        sink = VoiceSink()
+        vc.start_recording(sink)
+        
         while True:
             await asyncio.sleep(15)
             if time.time() - last_activity_time > 180:
+                vc.stop_recording()
                 await vc.disconnect()
                 break
 
@@ -796,6 +829,52 @@ async def call_openrouter_api(api_key, prompt, user_id=None):
     else:
         raise Exception(f"OpenRouter API Error {response.status_code}: {response.text[:100]}")
 
+async def get_ai_response_text(prompt, message, force_model=None):
+    """Get AI response as text without sending Discord messages"""
+    user_id = message.author.id
+    
+    # Check user rate limit
+    if not check_user_rate_limit(user_id):
+        return "Rate limit exceeded. Please wait before making another request."
+    
+    # Try OpenRouter Mistral first
+    if OPENROUTER_API_KEYS:
+        for api_key in OPENROUTER_API_KEYS:
+            try:
+                response_text = await call_openrouter_api(api_key, prompt, user_id)
+                if response_text:
+                    return response_text
+            except Exception:
+                continue
+    
+    # Fallback to Groq
+    for model in MODEL_PRIORITY:
+        for api_key, key_num in API_KEYS_WITH_NUMBERS:
+            if key_num < 11 or key_num > 17:
+                continue
+            if not check_rate_limits(api_key, model):
+                continue
+            
+            try:
+                full_response = ""
+                async for partial_response in call_groq_api(api_key, model, prompt, message.author.id):
+                    full_response = partial_response
+                
+                # Handle thinking models
+                if "</think>" in full_response:
+                    display_content = full_response.split("</think>", 1)[-1].strip()
+                else:
+                    display_content = full_response
+                
+                if display_content.strip():
+                    update_usage(api_key, model, len(full_response))
+                    return display_content
+                    
+            except Exception:
+                continue
+    
+    return "All AI services are currently unavailable. Please try again later."
+
 async def get_ai_response(prompt, message, force_model=None):
     user_id = message.author.id
     
@@ -1257,6 +1336,22 @@ async def on_message(message):
             update_user_request_time(message.author.id, message.channel.id)
             
             prompt = clean_content
+            
+            # Check if bot is in voice channel for this guild
+            if message.guild and message.guild.id in voice_sessions:
+                session = voice_sessions[message.guild.id]
+                vc = session.get('vc')
+                audio_source = session.get('audio_source')
+                
+                if vc and vc.is_connected():
+                    # Generate AI response
+                    response_text = await get_ai_response_text(prompt, message)
+                    if response_text:
+                        # Send text response and voice
+                        await message.reply(response_text)
+                        await generate_and_play_tts(response_text, vc, audio_source)
+                    return
+            
             await get_ai_response(prompt, message)
             return
     
@@ -2775,6 +2870,68 @@ async def mistralapicheck_command(ctx, *, test_prompt="Hello"):
             await ctx.reply(f"❌ OpenRouter Key {i+1}: FAILED - {safe_error}")
     
     await ctx.reply("🏁 OpenRouter check completed!")
+
+@bot.command(name='speak')
+async def speak_command(ctx, *, message):
+    if ctx.guild.id not in voice_sessions:
+        await ctx.reply("I'm not in a voice channel. Use `!voice` first.")
+        return
+    
+    session = voice_sessions[ctx.guild.id]
+    vc = session.get('vc')
+    audio_source = session.get('audio_source')
+    
+    if not vc or not vc.is_connected():
+        await ctx.reply("Voice connection lost.")
+        return
+    
+    await generate_and_play_tts(message, vc, audio_source)
+    await ctx.message.add_reaction('🔊')
+
+async def generate_and_play_tts(text, vc, audio_source):
+    try:
+        print(f"[DEBUG] Generating TTS for: {text[:50]}...")
+        
+        tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
+        if not tts_keys:
+            tts_keys = API_KEYS[:1]
+        
+        groq_tts_client = Groq(api_key=random.choice(tts_keys))
+        
+        tts_response = groq_tts_client.audio.speech.create(
+            model="playai-tts",
+            voice="Arista-PlayAI",
+            input=text,
+            response_format="wav"
+        )
+        
+        wav_data = tts_response.read()
+        print(f"[DEBUG] Generated TTS audio, size: {len(wav_data)} bytes")
+        
+        import io
+        wav_io = io.BytesIO(wav_data)
+        with wave.open(wav_io, 'rb') as wav_file:
+            pcm_data = wav_file.readframes(wav_file.getnframes())
+            sample_rate = wav_file.getframerate()
+            channels = wav_file.getnchannels()
+        
+        if sample_rate != 48000 or channels != 2:
+            if channels == 1:
+                pcm_data = audioop.tostereo(pcm_data, 2, 1, 1)
+            if sample_rate != 48000:
+                pcm_data, _ = audioop.ratecv(pcm_data, 2, 2, sample_rate, 48000, None)
+        
+        chunk_size = 3840
+        for i in range(0, len(pcm_data), chunk_size):
+            chunk = pcm_data[i:i+chunk_size]
+            if len(chunk) < chunk_size:
+                chunk += b'\x00' * (chunk_size - len(chunk))
+            audio_source.write(chunk)
+        
+        print(f"[DEBUG] TTS audio sent to Discord")
+        
+    except Exception as e:
+        print(f"[DEBUG] TTS generation error: {e}")
 
 @bot.command(name='voice')
 async def voice_command(ctx):
