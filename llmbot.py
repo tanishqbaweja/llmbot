@@ -38,51 +38,69 @@ original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_conn
 
 async def patched_initial_connection(self, data):
     """Patched version that handles empty encryption modes"""
-    # Debug: Log what we received
-    print(f"Voice initial_connection data keys: {data.keys()}")
-    
-    # Different handling based on what's in the data
-    if 'state' in data:
-        state = data['state']
-        self._connection.update_state(state)
-    
-    # Get available modes - might be in different places
-    modes = data.get('modes', [])
-    
-    # If still no modes, check if this is a different type of message
-    if not modes and 'op' in data:
-        print(f"Received op code {data['op']}, waiting for modes...")
-        # Call original if this isn't the modes message
-        if data['op'] != 2:  # Op 2 is READY event with modes
+    try:
+        # Debug: Log what we received
+        print(f"Voice initial_connection data keys: {data.keys()}")
+        
+        # Check if this is the READY event with voice data
+        if 'op' in data and data['op'] != 2:
+            # Not the READY event, pass to original
             return await original_initial_connection(self, data)
-    
-    # If no modes provided, use a default set
-    if not modes:
-        print("WARNING: No encryption modes received from Discord, using defaults")
-        modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
-    
-    # Log available modes
-    print(f"Available encryption modes: {modes}")
-    
-    # Select mode (prefer lite for performance)
-    if 'xsalsa20_poly1305_lite' in modes:
-        mode = 'xsalsa20_poly1305_lite'
-    elif 'xsalsa20_poly1305_suffix' in modes:
-        mode = 'xsalsa20_poly1305_suffix'
-    elif 'xsalsa20_poly1305' in modes:
-        mode = 'xsalsa20_poly1305'
-    else:
-        # Fallback to first available mode
-        mode = modes[0] if modes else 'xsalsa20_poly1305_lite'
-    
-    print(f"Selected encryption mode: {mode}")
-    
-    # Only proceed if we have the connection
-    if hasattr(self, '_connection') and self._connection:
-        await self.select_protocol(mode)
-        self._connection.mode = mode
-    else:
-        print("WARNING: Connection not ready, falling back to original")
+        
+        # Extract required fields
+        if 'd' in data:
+            # Data is wrapped in 'd' field
+            voice_data = data['d']
+        else:
+            voice_data = data
+        
+        # Update state information
+        if 'state' in voice_data:
+            state = voice_data['state']
+            self._connection.update_state(state)
+        
+        # Get server info
+        ip = voice_data.get('ip')
+        port = voice_data.get('port')
+        
+        # Get available modes
+        modes = voice_data.get('modes', [])
+        
+        # If no modes provided, use defaults
+        if not modes:
+            print("WARNING: No encryption modes received, using defaults")
+            modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
+        
+        print(f"Voice server: {ip}:{port}, modes: {modes}")
+        
+        # Select best available mode
+        if 'xsalsa20_poly1305_lite' in modes:
+            selected_mode = 'xsalsa20_poly1305_lite'
+        elif 'xsalsa20_poly1305_suffix' in modes:
+            selected_mode = 'xsalsa20_poly1305_suffix'
+        elif 'xsalsa20_poly1305' in modes:
+            selected_mode = 'xsalsa20_poly1305'
+        elif modes:  # Use first available if our preferences aren't available
+            selected_mode = modes[0]
+        else:
+            selected_mode = 'xsalsa20_poly1305_lite'
+        
+        print(f"Selected voice encryption mode: {selected_mode}")
+        
+        # Store mode and proceed with protocol selection
+        self._connection.mode = selected_mode
+        
+        # Call select_protocol with all required arguments
+        if ip and port:
+            await self.select_protocol(ip, port, selected_mode)
+        else:
+            print("ERROR: Missing IP or port for voice connection")
+            # Try original as fallback
+            return await original_initial_connection(self, data)
+            
+    except Exception as e:
+        print(f"Error in patched_initial_connection: {e}")
+        print(f"Falling back to original implementation")
         return await original_initial_connection(self, data)
 
 # Apply the monkey patch
