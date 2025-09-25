@@ -102,6 +102,7 @@ class GeminiAudioSource(discord.AudioSource):
         self.buffer.append(data)
         if self.is_finished.is_set():
             self.is_finished.clear()
+        print(f"[DEBUG] Audio source write: {len(data)} bytes, buffer size: {len(self.buffer)}")
 
     def read(self):
         try:
@@ -371,13 +372,17 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
         
         chunk_size = 3840
         chunks_written = 0
+        
+        # Write all audio data first, then let Discord consume it
         for i in range(0, len(pcm_data), chunk_size):
             chunk = pcm_data[i:i+chunk_size]
             if len(chunk) < chunk_size:
                 chunk += b'\x00' * (chunk_size - len(chunk))
             audio_source.write(chunk)
             chunks_written += 1
-            await asyncio.sleep(0.02)
+        
+        # Wait for audio to finish playing
+        await asyncio.sleep(len(pcm_data) / (48000 * 2 * 2))  # duration in seconds
         print(f"[DEBUG] Wrote {chunks_written} audio chunks to Discord")
         print(f"[DEBUG] Audio source buffer size after writing: {len(audio_source.buffer)}")
         print(f"[DEBUG] Voice processing completed successfully!")
