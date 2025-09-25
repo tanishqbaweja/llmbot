@@ -13604,3 +13604,30 @@ TimeoutError
 2025-09-25 21:34:42,346 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
 2025-09-25 21:34:42,915 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10000.discord.media
 2025-09-25 21:34:43,613 - root - ERROR - Voice command error: list index out of range
+2025-09-25 21:36:30,514 - discord.client - INFO - logging in using static token
+2025-09-25 21:36:31,455 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 21:36:31,844 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-1bp5",{"micros":86361,"calls":["id_created",{"micros":565,"calls":[]},"session_lookup_time",{"micros":255,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-176",{"micros":85180,"calls":["start_session",{"micros":74023,"calls":["discord-api-continuous-canary-rpc-5994754765-x54cq",{"micros":36573,"calls":["get_user",{"micros":5086},"get_guilds",{"micros":2614},"send_scheduled_deletion_message",{"micros":20},"guild_join_requests",{"micros":4},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":29165},"apex_experiments",{"micros":2366},"user_activities",{"micros":6},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":27,"calls":[]},"presence_started",{"micros":247,"calls":[]},"guilds_started",{"micros":73,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":10668,"calls":[]},"connect_finished",{"micros":10791,"calls":[]},"build_ready",{"micros":15,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 4ef4eeede87ed915da12d2800716132d).
+2025-09-25 21:36:46,166 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 21:36:46,166 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 21:36:46,709 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10000.discord.media
+2025-09-25 21:36:47,469 - root - ERROR - Voice command error: list index out of range
+Traceback: Traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 1250, in voice_command
+    vc = await voice_channel.connect()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1994, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 404, in connect
+    self.ws = await self.connect_websocket()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 375, in connect_websocket
+    await ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 945, in poll_event
+    await self.received_message(utils._from_json(msg.data))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 862, in received_message
+    await self.initial_connection(data)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 916, in initial_connection
+    mode = modes[0]
+           ~~~~~^^^
+IndexError: list index out of range
+
