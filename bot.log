@@ -12318,3 +12318,23 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:32:53,083 - google_genai.models - INFO - AFC remote call 1 is done.
 2025-09-25 08:32:53,980 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 400 Bad Request"
 2025-09-25 08:32:53,982 - root - ERROR - Voice processing error: Error code: 400 - {'error': {'message': 'The model `playai-tts` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=playai-tts', 'type': 'invalid_request_error', 'code': 'model_terms_required'}}
+2025-09-25 08:41:32,037 - discord.client - INFO - logging in using static token
+2025-09-25 08:41:33,978 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:41:34,475 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-d-t62l",{"micros":114970,"calls":["id_created",{"micros":374,"calls":[]},"session_lookup_time",{"micros":241,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-69",{"micros":114071,"calls":["start_session",{"micros":83373,"calls":["discord-api-rpc-686767fc44-w99x9",{"micros":44108,"calls":["get_user",{"micros":5445},"get_guilds",{"micros":3012},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":354},"authorized_ip_coro",{"micros":9},"pending_payments",{"micros":30554},"apex_experiments",{"micros":2572},"user_activities",{"micros":3},"played_application_ids",{"micros":2}]}]},"starting_guild_connect",{"micros":58,"calls":[]},"presence_started",{"micros":290,"calls":[]},"guilds_started",{"micros":119,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":30119,"calls":[]},"connect_finished",{"micros":30205,"calls":[]},"build_ready",{"micros":22,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: e6ea8674156a78ae3bc96238da00c929).
+2025-09-25 08:41:39,292 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:41:39,292 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:41:39,876 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:41:40,914 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:41:41,092 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:41:45,629 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:41:46,288 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:41:47,272 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:41:47,683 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:41:47,683 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:41:47,868 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:41:48,894 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 08:41:49,037 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:41:49,037 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:41:50,663 - root - ERROR - Voice processing error: 'BinaryAPIResponse' object has no attribute 'content'
+2025-09-25 08:41:51,931 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 08:41:52,640 - root - ERROR - Voice processing error: 'BinaryAPIResponse' object has no attribute 'content'

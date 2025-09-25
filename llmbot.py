@@ -322,8 +322,8 @@ async def process_voice_input(audio_chunks, audio_source):
             response_format="wav"
         )
         
-        # Get audio data
-        audio_data = tts_response.content
+        # Get audio data from BinaryAPIResponse
+        audio_data = tts_response.read()
         print(f"[DEBUG] Generated TTS audio, size: {len(audio_data)} bytes")
         
         # Step 6: Play audio in Discord
