@@ -894,9 +894,15 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         self.loop = loop or asyncio.get_event_loop()
         self.processing = False  # Flag to ignore input during processing
         self.recording_start = 0  # Track when recording started
+        self.first_write = True  # Debug flag for first write
         
     def write(self, data, user):
         """Called when audio data is received from a user"""
+        # Debug: First write notification
+        if self.first_write:
+            print(f"First audio write received! User: {user}, data length: {len(data) if data else 0}")
+            self.first_write = False
+        
         if user is None:
             return
         
@@ -1398,8 +1404,14 @@ async def voice_command(ctx):
         }
         
         print("Starting recording...")
-        vc.start_recording(sink, recording_callback)
-        print("Recording started successfully")
+        try:
+            vc.start_recording(sink, recording_callback)
+            print("Recording started successfully")
+            print(f"Voice sink type: {type(sink)}")
+            print(f"Is recording: {vc.is_recording()}")
+        except Exception as e:
+            print(f"Error starting recording: {e}")
+            await ctx.reply(f"❌ Failed to start recording: {str(e)}")
         
         # Start inactivity monitor
         monitor_task = asyncio.create_task(manage_voice_session(guild_id))

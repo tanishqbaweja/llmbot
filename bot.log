@@ -13748,3 +13748,10 @@ Traceback: Traceback (most recent call last):
           ^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: DiscordVoiceWebSocket.select_protocol() missing 2 required positional arguments: 'port' and 'mode'
 
+2025-09-25 21:49:04,324 - discord.client - INFO - logging in using static token
+2025-09-25 21:49:05,284 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 21:49:05,731 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-47lp",{"micros":142184,"calls":["id_created",{"micros":690,"calls":[]},"session_lookup_time",{"micros":319,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-prd-2-19",{"micros":140765,"calls":["start_session",{"micros":128370,"calls":["discord-api-rpc-686767fc44-vxnjx",{"micros":76032,"calls":["get_user",{"micros":11035},"get_guilds",{"micros":15952},"send_scheduled_deletion_message",{"micros":16},"guild_join_requests",{"micros":1364},"authorized_ip_coro",{"micros":13},"pending_payments",{"micros":25151},"apex_experiments",{"micros":21535},"user_activities",{"micros":4},"played_application_ids",{"micros":2}]}]},"starting_guild_connect",{"micros":29,"calls":[]},"presence_started",{"micros":7843,"calls":[]},"guilds_started",{"micros":69,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":4334,"calls":[]},"connect_finished",{"micros":4437,"calls":[]},"build_ready",{"micros":13,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 4f8b8dbfff218bfff601ccbdab7a1780).
+2025-09-25 21:49:13,533 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 21:49:13,533 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 21:49:14,087 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10000.discord.media
+2025-09-25 21:49:14,425 - discord.gateway - INFO - received secret key for voice connection
