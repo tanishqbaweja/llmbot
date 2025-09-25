@@ -122,6 +122,24 @@ async def guarded_voice_initial_connection(self, data):
 
 discord.gateway.DiscordVoiceWebSocket.initial_connection = guarded_voice_initial_connection
 
+
+async def force_voice_disconnect(guild: discord.Guild):
+    """Force Discord to drop any cached voice state for this guild."""
+    # Attempt graceful disconnect via websocket voice_state update
+    try:
+        ws = bot._connection._get_websocket(guild.id)
+        await ws.voice_state(guild.id, None, self_mute=False, self_deaf=False)
+        print(f"[VOICE FORCE] Sent voice_state(None) for guild {guild.id}")
+    except Exception as ws_error:
+        print(f"[VOICE FORCE] Failed websocket voice_state for guild {guild.id}: {ws_error}")
+
+    # Fall back to HTTP voice state edit which also clears sessions server-side
+    try:
+        await bot.http.edit_my_voice_state(guild.id, None, self_mute=False, self_deaf=False)
+        print(f"[VOICE FORCE] HTTP voice_state cleared for guild {guild.id}")
+    except Exception as http_error:
+        print(f"[VOICE FORCE] Failed HTTP voice_state clear for guild {guild.id}: {http_error}")
+
 class GeminiAudioSource(discord.AudioSource):
     def __init__(self):
         super().__init__()
@@ -1297,7 +1315,15 @@ async def on_ready():
                 await asyncio.sleep(1)  # Wait between disconnects
             except Exception as e:
                 print(f'[BOT READY] Error disconnecting from {guild.name}: {e}')
-    
+
+        # Force Discord to clear any cached voice state for this guild
+        try:
+            ws = bot._connection._get_websocket(guild.id)
+            await ws.voice_state(guild.id, None, self_mute=False, self_deaf=False)
+            print(f'[BOT READY] Sent voice_state None for guild {guild.id}')
+        except Exception as e:
+            print(f'[BOT READY] Failed to send voice_state None for guild {guild.id}: {e}')
+
     print(f'[BOT READY] Cleared {disconnected_count} voice connections')
 
 
@@ -3168,14 +3194,18 @@ async def voice_command(ctx):
     # Final check - if we still have a voice client, abort
     if ctx.guild.voice_client:
         await ctx.reply("❌ Unable to clear existing voice connection. Try `!resetvoice` or restart the bot.")
+        voice_command_active = False
         return
-    
+
+    # Allow gateway guard to accept the upcoming connection
+    voice_command_active = True
+
     channel = ctx.author.voice.channel
     import discord.gateway
     original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
     
     async def patched_initial_connection(self, data):
-        """Fixed voice connection handler with better mode support"""
+{{ ... }}
         try:
             # Get modes list safely
             modes = data.get("modes", [])
