@@ -38,11 +38,23 @@ original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_conn
 
 async def patched_initial_connection(self, data):
     """Patched version that handles empty encryption modes"""
-    state = data['state']
-    self._connection.update_state(state)
+    # Debug: Log what we received
+    print(f"Voice initial_connection data keys: {data.keys()}")
     
-    # Get available modes
+    # Different handling based on what's in the data
+    if 'state' in data:
+        state = data['state']
+        self._connection.update_state(state)
+    
+    # Get available modes - might be in different places
     modes = data.get('modes', [])
+    
+    # If still no modes, check if this is a different type of message
+    if not modes and 'op' in data:
+        print(f"Received op code {data['op']}, waiting for modes...")
+        # Call original if this isn't the modes message
+        if data['op'] != 2:  # Op 2 is READY event with modes
+            return await original_initial_connection(self, data)
     
     # If no modes provided, use a default set
     if not modes:
@@ -65,8 +77,13 @@ async def patched_initial_connection(self, data):
     
     print(f"Selected encryption mode: {mode}")
     
-    await self.select_protocol(mode)
-    self._connection.mode = mode
+    # Only proceed if we have the connection
+    if hasattr(self, '_connection') and self._connection:
+        await self.select_protocol(mode)
+        self._connection.mode = mode
+    else:
+        print("WARNING: Connection not ready, falling back to original")
+        return await original_initial_connection(self, data)
 
 # Apply the monkey patch
 discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection

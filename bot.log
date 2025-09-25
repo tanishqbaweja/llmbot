@@ -13693,3 +13693,31 @@ Traceback (most recent call last):
 IndexError: list index out of range
 
 2025-09-25 21:42:02,385 - discord.gateway - WARNING - Shard ID None has stopped responding to the gateway. Closing and restarting.
+2025-09-25 21:42:49,376 - discord.client - INFO - logging in using static token
+2025-09-25 21:42:50,678 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 21:42:51,158 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-28nh",{"micros":170052,"calls":["id_created",{"micros":399,"calls":[]},"session_lookup_time",{"micros":1233,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-19",{"micros":167481,"calls":["start_session",{"micros":109232,"calls":["discord-api-rpc-686767fc44-8mt2p",{"micros":63620,"calls":["get_user",{"micros":5764},"get_guilds",{"micros":4884},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":149},"authorized_ip_coro",{"micros":13},"pending_payments",{"micros":33074},"apex_experiments",{"micros":5630},"user_activities",{"micros":6},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":66,"calls":[]},"presence_started",{"micros":37957,"calls":[]},"guilds_started",{"micros":90,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":19994,"calls":[]},"connect_finished",{"micros":20110,"calls":[]},"build_ready",{"micros":20,"calls":[]},"clean_ready",{"micros":3,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 8a95079fc67cf2c453bbb965f0584620).
+2025-09-25 21:43:04,381 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 21:43:04,382 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 21:43:04,932 - discord.voice_client - INFO - Voice handshake complete. Endpoint found india10000.discord.media
+2025-09-25 21:43:05,818 - root - ERROR - Voice command error: 'state'
+Traceback: Traceback (most recent call last):
+  File "H:\Github Repositories\llmbot\llmbot.py", line 1311, in voice_command
+    vc = await voice_channel.connect(timeout=10.0, reconnect=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1994, in connect
+    await voice.connect(timeout=timeout, reconnect=reconnect)
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 404, in connect
+    self.ws = await self.connect_websocket()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 375, in connect_websocket
+    await ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 945, in poll_event
+    await self.received_message(utils._from_json(msg.data))
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 862, in received_message
+    await self.initial_connection(data)
+  File "H:\Github Repositories\llmbot\llmbot.py", line 41, in patched_initial_connection
+    state = data['state']
+            ~~~~^^^^^^^^^
+KeyError: 'state'
+
+2025-09-25 21:44:05,410 - discord.gateway - WARNING - Shard ID None has stopped responding to the gateway. Closing and restarting.
