@@ -1,0 +1,17 @@
+# Additional requirements for voice chat feature
+# Install these alongside existing requirements
+
+# Voice processing
+PyNaCl>=1.5.0
+websockets>=11.0.0
+
+# Audio processing (usually included with Python)
+# audioop - built-in module
+
+# Google Generative AI for live audio
+google-generativeai>=0.8.0
+
+# FFmpeg is required for discord.py voice support
+# Windows: Download from https://ffmpeg.org/download.html and add to PATH
+# macOS: brew install ffmpeg  
+# Linux: sudo apt update && sudo apt install ffmpeg

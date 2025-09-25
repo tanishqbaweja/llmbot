@@ -29,11 +29,20 @@ A Discord bot powered by multiple AI models through the Groq API, featuring inte
 - **Anti-Repetition**: Encourages original responses instead of echoing user input
 - **Dynamic Status**: Admin can set custom bot status messages
 
+### 🎤 Voice Chat
+- **Native Audio Support**: Uses Gemini 2.5 Flash Native Audio for natural voice conversations
+- **Real-time Processing**: Streams audio input/output with minimal latency
+- **Auto-disconnect**: Leaves voice channel after 3 minutes of inactivity
+- **Memory Retention**: Maintains conversation context throughout voice session
+- **Audio Format Conversion**: Automatically converts Discord audio to Gemini-compatible format
+
 ## Commands
 
 ### User Commands
 - **`@DBZClanker <message>`** - Mention the bot to start a conversation
 - **Reply + Mention** - Reply to any message while mentioning the bot for context-aware responses
+- **`!voice`** - Join your voice channel and start a voice conversation
+- **`!leave`** - Leave the current voice channel
 
 ### Admin Commands
 - **`!servers`** - List all servers the bot is connected to
@@ -73,6 +82,8 @@ A Discord bot powered by multiple AI models through the Groq API, featuring inte
      - Read Message History
      - Use Slash Commands
      - Mention Everyone
+     - Connect (for voice channels)
+     - Speak (for voice channels)
    - In the "OAuth2" > "URL Generator":
      - Select "bot" scope
      - Select the same permissions as above
@@ -101,6 +112,16 @@ A Discord bot powered by multiple AI models through the Groq API, featuring inte
    ```bash
    pip install discord.py aiohttp python-dotenv
    ```
+   
+   **For Voice Chat Feature** (optional):
+   ```bash
+   pip install PyNaCl websockets google-generativeai
+   ```
+   
+   **Install FFmpeg** (required for voice):
+   - **Windows**: Download from [FFmpeg website](https://ffmpeg.org/download.html) and add to PATH
+   - **macOS**: `brew install ffmpeg`
+   - **Linux**: `sudo apt update && sudo apt install ffmpeg`
 
 3. **Create Environment File**:
    - Create a `.env` file in the bot directory
@@ -114,6 +135,11 @@ A Discord bot powered by multiple AI models through the Groq API, featuring inte
    GROQ_API_KEY_11=your_additional_key_1
    GROQ_API_KEY_12=your_additional_key_2
    # ... add keys 13-16 as needed
+   
+   # Gemini API Keys (for voice chat and image generation)
+   GEMINI_API_KEY=your_gemini_api_key
+   GEMINI_API_KEY_1=your_additional_gemini_key_1
+   # ... add more Gemini keys as needed
    ```
 
 4. **Find Your Discord User ID**:
@@ -148,6 +174,13 @@ A Discord bot powered by multiple AI models through the Groq API, featuring inte
    - Type `!status Now using advanced AI` to set bot status
    - Type `!setcooldown 3` to set a 3-minute cooldown
    - Type `!apicheck` to test all API keys
+
+4. **Voice Chat Test**:
+   - Join a voice channel in your Discord server
+   - Type `!voice` to have the bot join and start voice conversation
+   - Speak to the bot and it will respond with voice
+   - Type `!leave` to disconnect the bot from voice
+   - Bot will auto-disconnect after 3 minutes of silence
 
 ## Configuration
 
@@ -196,6 +229,13 @@ The bot is configured to use API keys 11-17. Update the key numbers in the code 
 4. **Database Issues**:
    - The bot creates `bot_usage.db` automatically
    - If corrupted, delete the file and restart the bot
+
+5. **Voice Chat Issues**:
+   - Ensure FFmpeg is installed and in your system PATH
+   - Check that bot has "Connect" and "Speak" permissions in voice channels
+   - Verify Gemini API keys are valid and have credits
+   - Make sure you're in a voice channel before using `!voice`
+   - If audio quality is poor, check your microphone settings
 
 ### Support
 
