@@ -881,12 +881,15 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 self.audio_data[user_id].extend(actual_data)
                 self.last_activity = time.time()
                 
-                # Track silence for natural pauses
+                # Track silence based on volume level
                 if is_silent:
                     self.silent_frames += 1
+                    # Complete silence (volume < 20) stops faster
+                    if volume < 20:
+                        self.silent_frames += 1  # Double count for dead silence
                 elif is_noise:
-                    # Background noise - count as partial silence
-                    self.silent_frames += 0.5
+                    # Background noise - slower increment
+                    self.silent_frames += 0.3
                 else:
                     # Clear speech detected - reset counter
                     self.silent_frames = 0
@@ -895,23 +898,31 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 should_stop = False
                 reason = ""
                 
-                # Stop after ~1.5 seconds of complete silence (75 frames)
-                # This allows for natural pauses between sentences
-                if self.silent_frames >= 75:
+                # Dynamic stopping based on silence type
+                if volume < 20 and self.silent_frames >= 25:
+                    # Dead silence - stop after ~500ms
                     should_stop = True
-                    reason = f"silence ({self.silent_frames} frames, ~{self.silent_frames*20}ms)"
+                    reason = f"dead silence ({int(self.silent_frames)} frames)"
+                elif volume < 50 and self.silent_frames >= 35:
+                    # Very quiet - stop after ~700ms
+                    should_stop = True
+                    reason = f"very quiet ({int(self.silent_frames)} frames)"
+                elif self.silent_frames >= 45:
+                    # Normal silence - stop after ~900ms
+                    should_stop = True
+                    reason = f"silence ({int(self.silent_frames)} frames)"
                 
-                # Timeout after 30 seconds (extended for longer responses)
+                # Timeout after 30 seconds
                 elif hasattr(self, 'recording_start') and (time.time() - self.recording_start) > 30:
                     should_stop = True
                     reason = "timeout (30s)"
                 
-                # Optional: Show recording status periodically
-                if int(self.silent_frames) % 20 == 0 and self.silent_frames > 0:
-                    print(f"Recording... (silence: {int(self.silent_frames)} frames, volume: {volume})")
+                # Debug output only every 30 frames to reduce spam
+                if int(self.silent_frames) % 30 == 0 and self.silent_frames > 0 and volume < 50:
+                    print(f"Still recording... (silence: {int(self.silent_frames)} frames, vol: {volume})")
                 
                 if should_stop:
-                    print(f"Stopping recording due to {reason}")
+                    print(f"Stopping: {reason} (final volume: {volume})")
                     self.recording = False
                     self.silent_frames = 0
                     # Process immediately
