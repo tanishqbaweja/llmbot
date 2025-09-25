@@ -299,17 +299,45 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
             
         print(f"User said: {transcription}")
         
-        # Step 4: Generate response
-        print(f"[DEBUG] Step 4: Generating response with Gemini 2.0 Flash")
+        # Step 4: Get conversation history and generate response
+        print(f"[DEBUG] Step 4: Building conversation history")
+        conversation_history = ""
+        for session in voice_sessions.values():
+            if session.get('audio_source') == audio_source:
+                conversation = session.get('conversation', [])
+                for entry in conversation:
+                    conversation_history += entry + "\n"
+                break
+        
+        # Build prompt with conversation history
+        if conversation_history:
+            full_prompt = f"Previous conversation:\n{conversation_history}\nUser said: {transcription}\nRespond appropriately to continue the conversation."
+        else:
+            full_prompt = f"User said: {transcription}\nRespond briefly and naturally."
+        
+        print(f"[DEBUG] Generating response with Gemini 2.0 Flash")
         gemini_client = genai.Client(api_key=random.choice(GEMINI_API_KEYS))
         response = await asyncio.to_thread(
             gemini_client.models.generate_content,
             model="gemini-2.0-flash-exp",
-            contents=[f"Respond briefly to: {transcription}"]
+            contents=[full_prompt]
         )
         
         response_text = response.text.strip() if response.text else "I heard you!"
         print(f"Bot response: {response_text}")
+        
+        # Step 4.5: Update conversation history
+        print(f"[DEBUG] Updating conversation history")
+        for session in voice_sessions.values():
+            if session.get('audio_source') == audio_source:
+                conversation = session.get('conversation', [])
+                conversation.append(f"User said: {transcription}")
+                conversation.append(f"Bot said: {response_text}")
+                # Keep only last 10 exchanges (20 entries)
+                if len(conversation) > 20:
+                    conversation = conversation[-20:]
+                session['conversation'] = conversation
+                break
         
         # Step 5: Generate audio using Groq TTS
         print(f"[DEBUG] Step 5: Generating audio with Groq TTS")
@@ -2813,7 +2841,7 @@ async def voice_command(ctx):
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
-        voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source}
+        voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source, 'conversation': []}
 
     except Exception as e:
         await ctx.reply(f"Failed to join the voice channel. Error: {e}")
