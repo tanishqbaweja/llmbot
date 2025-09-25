@@ -309,40 +309,36 @@ async def process_voice_input(audio_chunks, audio_source):
         response_text = response.text.strip() if response.text else "I heard you!"
         print(f"Bot response: {response_text}")
         
-        # Step 5: Generate audio
-        print(f"[DEBUG] Step 5: Generating audio with gemini-2.0-flash-001")
-        audio_response = await asyncio.to_thread(
-            gemini_client.models.generate_content,
-            model="gemini-2.0-flash-001",
-            contents=[response_text],
-            config=types.GenerateContentConfig(response_modalities=["Audio"])
+        # Step 5: Generate audio using Groq TTS
+        print(f"[DEBUG] Step 5: Generating audio with Groq TTS")
+        
+        working_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
+        groq_tts_client = Groq(api_key=random.choice(working_keys))
+        
+        tts_response = groq_tts_client.audio.speech.create(
+            model="playai-tts",
+            voice="Arista-PlayAI",
+            input=response_text,
+            response_format="wav"
         )
         
-        print(f"[DEBUG] Audio response received, processing parts")
-        audio_parts_found = 0
-        for part in audio_response.candidates[0].content.parts:
-            if hasattr(part, 'inline_data') and part.inline_data:
-                audio_parts_found += 1
-                audio_data = part.inline_data.data
-                print(f"[DEBUG] Found audio part {audio_parts_found}, size: {len(audio_data)} bytes")
-                
-                # Step 6: Play audio
-                print(f"[DEBUG] Step 6: Playing audio in Discord")
-                chunk_size = 3840
-                chunks_written = 0
-                for i in range(0, len(audio_data), chunk_size):
-                    chunk = audio_data[i:i+chunk_size]
-                    if len(chunk) < chunk_size:
-                        chunk += b'\x00' * (chunk_size - len(chunk))
-                    audio_source.write(chunk)
-                    chunks_written += 1
-                    await asyncio.sleep(0.02)
-                print(f"[DEBUG] Wrote {chunks_written} audio chunks to Discord")
+        # Get audio data
+        audio_data = tts_response.content
+        print(f"[DEBUG] Generated TTS audio, size: {len(audio_data)} bytes")
         
-        if audio_parts_found == 0:
-            print(f"[DEBUG] ERROR: No audio parts found in response!")
-        else:
-            print(f"[DEBUG] Voice processing completed successfully!")
+        # Step 6: Play audio in Discord
+        print(f"[DEBUG] Step 6: Playing audio in Discord")
+        chunk_size = 3840
+        chunks_written = 0
+        for i in range(0, len(audio_data), chunk_size):
+            chunk = audio_data[i:i+chunk_size]
+            if len(chunk) < chunk_size:
+                chunk += b'\x00' * (chunk_size - len(chunk))
+            audio_source.write(chunk)
+            chunks_written += 1
+            await asyncio.sleep(0.02)
+        print(f"[DEBUG] Wrote {chunks_written} audio chunks to Discord")
+        print(f"[DEBUG] Voice processing completed successfully!")
         
     except Exception as e:
         print(f"[DEBUG] ERROR in voice processing: {e}")

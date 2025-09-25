@@ -12274,3 +12274,27 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:25:37,528 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-native-audio-dialog:generateContent "HTTP/1.1 404 Not Found"
 2025-09-25 08:25:37,529 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
 2025-09-25 08:25:38,365 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-exp-native-audio-thinking-dialog:generateContent "HTTP/1.1 404 Not Found"
+2025-09-25 08:27:10,721 - discord.client - INFO - logging in using static token
+2025-09-25 08:27:12,426 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:27:12,951 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-0kq0",{"micros":138523,"calls":["id_created",{"micros":492,"calls":[]},"session_lookup_time",{"micros":1418,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-prd-2-11",{"micros":136370,"calls":["start_session",{"micros":101360,"calls":["discord-api-rpc-686767fc44-8sv44",{"micros":47830,"calls":["get_user",{"micros":7712},"get_guilds",{"micros":5142},"send_scheduled_deletion_message",{"micros":13},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":28554},"apex_experiments",{"micros":2153},"user_activities",{"micros":5},"played_application_ids",{"micros":6}]}]},"starting_guild_connect",{"micros":53,"calls":[]},"presence_started",{"micros":8545,"calls":[]},"guilds_started",{"micros":107,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":26228,"calls":[]},"connect_finished",{"micros":26282,"calls":[]},"build_ready",{"micros":20,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 56287f7ecada5b1417dc480f76ee7011).
+2025-09-25 08:27:32,862 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:27:32,862 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:27:33,455 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:27:34,525 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:27:34,703 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:27:39,832 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:27:40,408 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:27:41,401 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:27:41,954 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:27:41,956 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:27:41,971 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:27:41,973 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:27:42,362 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:generateContent "HTTP/1.1 400 Bad Request"
+2025-09-25 08:27:42,363 - root - ERROR - Voice processing error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Model does not support the requested response modalities: audio', 'status': 'INVALID_ARGUMENT'}}
+2025-09-25 08:27:43,198 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:27:43,199 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:27:43,201 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:27:43,682 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:generateContent "HTTP/1.1 400 Bad Request"
+2025-09-25 08:27:43,685 - root - ERROR - Voice processing error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Model does not support the requested response modalities: audio', 'status': 'INVALID_ARGUMENT'}}
+2025-09-25 08:30:49,843 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
+2025-09-25 08:30:50,027 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
