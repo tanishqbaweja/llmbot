@@ -171,6 +171,7 @@ async def manage_voice_session(ctx, vc, audio_source):
     last_activity_time = time.time()
     user_audio_buffers = {}
     user_silence_counters = {}
+    processing_lock = {}
     
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
@@ -204,21 +205,19 @@ async def manage_voice_session(ctx, vc, audio_source):
                             # If 0.2 seconds of silence (10 packets * 20ms = 0.2s)
                             if user_silence_counters[user_id] >= 10:
                                 if len(user_audio_buffers[user_id]) > 5:  # At least 0.1s of speech
-                                    print(f"[DEBUG] Processing speech! Buffer has {len(user_audio_buffers[user_id])} packets")
-                                    audio_data = user_audio_buffers[user_id].copy()
-                                    asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source), bot.loop)
+                                    if user_id not in processing_lock:
+                                        processing_lock[user_id] = True
+                                        print(f"[DEBUG] Processing speech! Buffer has {len(user_audio_buffers[user_id])} packets")
+                                        audio_data = user_audio_buffers[user_id].copy()
+                                        asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source, user_id), bot.loop)
+                                    else:
+                                        print(f"[DEBUG] Already processing for user {user_id}, skipping")
                                 else:
                                     print(f"[DEBUG] Speech too short, ignoring. Buffer size: {len(user_audio_buffers[user_id])}")
                                 user_audio_buffers[user_id].clear()
                                 user_silence_counters[user_id] = 0
                     
-                    # Manual trigger for testing - process if buffer gets large
-                    if len(user_audio_buffers[user_id]) > 100:
-                        print(f"[DEBUG] Manual trigger! Processing large buffer: {len(user_audio_buffers[user_id])} packets")
-                        audio_data = user_audio_buffers[user_id].copy()
-                        asyncio.run_coroutine_threadsafe(process_voice_input(audio_data, audio_source), bot.loop)
-                        user_audio_buffers[user_id].clear()
-                        user_silence_counters[user_id] = 0
+
                 else:
                     print(f"[DEBUG] Ignoring audio from bot or invalid user: {user_id}")
         
@@ -248,7 +247,7 @@ async def manage_voice_session(ctx, vc, audio_source):
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
 
-async def process_voice_input(audio_chunks, audio_source):
+async def process_voice_input(audio_chunks, audio_source, user_id=None):
     print(f"[DEBUG] Starting voice processing with {len(audio_chunks)} audio chunks")
     try:
         # Step 1: Audio conversion
@@ -312,8 +311,12 @@ async def process_voice_input(audio_chunks, audio_source):
         # Step 5: Generate audio using Groq TTS
         print(f"[DEBUG] Step 5: Generating audio with Groq TTS")
         
-        working_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
-        groq_tts_client = Groq(api_key=random.choice(working_keys))
+        # Use keys 11-14 and main GROQ_API_KEY for TTS
+        tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 14]
+        main_key = os.getenv('GROQ_API_KEY')
+        if main_key:
+            tts_keys.append(main_key)
+        groq_tts_client = Groq(api_key=random.choice(tts_keys))
         
         tts_response = groq_tts_client.audio.speech.create(
             model="playai-tts",
@@ -339,6 +342,13 @@ async def process_voice_input(audio_chunks, audio_source):
             await asyncio.sleep(0.02)
         print(f"[DEBUG] Wrote {chunks_written} audio chunks to Discord")
         print(f"[DEBUG] Voice processing completed successfully!")
+        
+        # Clear processing lock
+        if user_id:
+            for session in voice_sessions.values():
+                if hasattr(session, 'processing_lock') and user_id in getattr(session, 'processing_lock', {}):
+                    del session['processing_lock'][user_id]
+                    break
         
     except Exception as e:
         print(f"[DEBUG] ERROR in voice processing: {e}")
