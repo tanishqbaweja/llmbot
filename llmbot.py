@@ -1126,89 +1126,9 @@ async def get_ai_response(prompt, message, force_model=None):
 @bot.event
 async def on_ready():
     init_db()
-    try:
-        synced = await bot.tree.sync()
-        print(f'Synced {len(synced)} command(s)')
-    except Exception as e:
-        print(f'Failed to sync commands: {e}')
     print(f'{bot.user} has connected to Discord!')
 
-@bot.tree.command(name='help', description='Show available commands')
-async def slash_help_command(interaction: discord.Interaction):
-    if is_admin(interaction.user.id):
-        embed = discord.Embed(
-            title="🤖 DBZClanker AI - Admin Commands",
-            description="Complete command reference for administrators",
-            color=0x00ff00
-        )
-        embed.add_field(
-            name="👤 User Commands",
-            value="`@DBZClanker <message>` - Chat with AI\n"
-                  "`!ai <prompt>` - Use Groq models\n"
-                  "`!oss <prompt>` - Use Groq with reply context\n"
-                  "`!gemini <prompt>` - Use Gemini with web search\n"
-                  "`!image <prompt>` - Generate images\n"
-                  "`!voice` - Join voice channel for conversation\n"
-                  "`!leave` - Leave voice channel\n"
-                  "`!setpersonality <text>` - Set custom personality\n"
-                  "`!removepersonality` - Remove custom personality",
-            inline=False
-        )
-        embed.add_field(
-            name="⚙️ Admin Commands",
-            value="`!servers` - List connected servers\n"
-                  "`!check` - Check bot message details\n"
-                  "`!model <name> <prompt>` - Force specific model\n"
-                  "`!status <text>` - Set bot status\n"
-                  "`!setcooldown <minutes>` - Set channel cooldown\n"
-                  "`!delete` - Delete bot messages\n"
-                  "`!mistral <prompt>` - Use Mistral (uncensored)",
-            inline=False
-        )
-        embed.add_field(
-            name="🔧 Debug Commands",
-            value="`!checkinput <prompt>` - Show API message structure\n"
-                  "`!apicheck [prompt]` - Test Groq API keys\n"
-                  "`!geminicheck` - Test Gemini API keys\n"
-                  "`!mistralapicheck [prompt]` - Test OpenRouter keys",
-            inline=False
-        )
-        embed.set_footer(text="Admin access detected - showing all commands")
-    else:
-        embed = discord.Embed(
-            title="🤖 DBZClanker AI - User Commands",
-            description="Available commands for users",
-            color=0x0099ff
-        )
-        embed.add_field(
-            name="💬 Chat Commands",
-            value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
-                  "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
-                  "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
-                  "`!gemini <prompt>` - Uses Google AI with web search (image files allowed)",
-            inline=False
-        )
-        embed.add_field(
-            name="🎨 Creative Commands",
-            value="`!image <prompt>` - Generate images (image files allowed)",
-            inline=False
-        )
-        embed.add_field(
-            name="⚙️ Personalization",
-            value="`!setpersonality <text>` - Customize bot personality\n"
-                  "`!removepersonality` - Reset to default personality",
-            inline=False
-        )
-        embed.add_field(
-            name="📝 Usage Tips",
-            value="• Attach images to !gemini and !image commands\n"
-                  "• Reply to messages + mention bot for context\n"
-                  "• Rate limits apply to prevent spam",
-            inline=False
-        )
-        embed.set_footer(text="Created by DBZ Clasher")
-    
-    await interaction.response.send_message(embed=embed)
+
 
 @bot.event
 async def on_command_error(ctx, error):
