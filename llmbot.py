@@ -895,6 +895,8 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         self.processing = False  # Flag to ignore input during processing
         self.recording_start = 0  # Track when recording started
         self.first_write = True  # Debug flag for first write
+        self.write_count = 0  # Count total writes
+        print(f"CustomVoiceSink initialized for guild {guild_id}")
         
     def write(self, data, user):
         """Called when audio data is received from a user"""
@@ -1468,6 +1470,41 @@ async def leave_voice_command(ctx):
 async def test_command(ctx):
     """Test command to verify bot is working"""
     await ctx.reply("✅ Bot is working! Commands are being processed correctly.")
+
+@bot.command(name='testvoice')
+async def test_voice_command(ctx):
+    """Test voice recording with a simple sink"""
+    if not ctx.author.voice:
+        await ctx.reply("❌ You need to be in a voice channel!")
+        return
+    
+    # Simple test sink
+    class TestSink(discord.sinks.WaveSink):
+        def __init__(self):
+            super().__init__()
+            print("TestSink initialized")
+            self.packet_count = 0
+            
+        def write(self, data, user):
+            self.packet_count += 1
+            if self.packet_count % 100 == 1:
+                print(f"TestSink received packet {self.packet_count} from user {user}")
+    
+    try:
+        vc = await ctx.author.voice.channel.connect()
+        await ctx.reply("✅ Connected to voice channel")
+        
+        sink = TestSink()
+        
+        async def callback(sink, *args):
+            print("Test recording stopped")
+        
+        vc.start_recording(sink, callback)
+        await ctx.reply("🎤 Test recording started! Speak to test. Use `!leavevoice` to stop.")
+        
+    except Exception as e:
+        await ctx.reply(f"❌ Test failed: {e}")
+        print(f"Test voice error: {e}")
 
 @bot.command(name='resetvoice')
 async def reset_voice_command(ctx):
