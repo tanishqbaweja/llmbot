@@ -179,21 +179,11 @@ async def manage_voice_session(ctx, vc, audio_source):
     try:
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
-        # Check all VoiceClient methods
-        all_methods = [method for method in dir(vc) if not method.startswith('_')]
-        print(f"[DEBUG] All VoiceClient methods: {all_methods}")
+        await ctx.followup.send("❌ Voice recording was removed from discord.py 2.0+. Install py-cord instead: `pip uninstall discord.py && pip install py-cord`")
+        await vc.disconnect()
+        return
         
-        # Try to find recording method
-        recording_methods = [method for method in all_methods if any(word in method.lower() for word in ['record', 'listen', 'receive', 'capture'])]
-        print(f"[DEBUG] Potential recording methods: {recording_methods}")
-        
-        # Keep connection alive for testing
-        while True:
-            await asyncio.sleep(30)
-            if time.time() - last_activity_time > 180:
-                print(f"Timeout reached for guild {guild_id}")
-                await vc.disconnect()
-                break
+        return
 
     except Exception as e:
         safe_error = sanitize_log_message(str(e)[:200])
