@@ -13567,3 +13567,18 @@ TimeoutError
 2025-09-25 14:36:15,399 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1420681659732332634 (Guild ID 1410715548769058838)
 2025-09-25 14:36:15,400 - discord.client - INFO - All tasks finished cancelling.
 2025-09-25 14:36:15,401 - discord.client - INFO - Closing the event loop.
+2025-09-25 14:39:46,595 - discord.client - INFO - logging in using static token
+2025-09-25 14:39:48,665 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 14:39:49,271 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-3794",{"micros":217899,"calls":["id_created",{"micros":331,"calls":[]},"session_lookup_time",{"micros":7017,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-151",{"micros":209884,"calls":["start_session",{"micros":179368,"calls":["discord-api-rpc-686767fc44-4rfkj",{"micros":49366,"calls":["get_user",{"micros":7030},"get_guilds",{"micros":2264},"send_scheduled_deletion_message",{"micros":13},"guild_join_requests",{"micros":510},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":38334},"apex_experiments",{"micros":44960},"user_activities",{"micros":6},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":27,"calls":[]},"presence_started",{"micros":362,"calls":[]},"guilds_started",{"micros":85,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":29968,"calls":[]},"connect_finished",{"micros":30023,"calls":[]},"build_ready",{"micros":16,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: a308c3f804ca4fc7096a856c72197884).
+2025-09-25 14:39:58,257 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 14:39:58,257 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 14:39:58,850 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11072.discord.media
+2025-09-25 14:39:59,983 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 14:40:00,162 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 14:40:56,789 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 14:40:57,266 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 14:40:59,704 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 14:40:59,704 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 14:41:00,571 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 200 OK"
+2025-09-25 14:41:03,895 - discord.player - INFO - Preparing to terminate ffmpeg process 38860.
+2025-09-25 14:41:03,895 - discord.player - INFO - ffmpeg process 38860 successfully terminated with return code of 0.
