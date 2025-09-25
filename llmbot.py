@@ -176,32 +176,32 @@ async def manage_voice_session(ctx, vc, audio_source):
         print(f"Voice session started for guild {guild_id} - listening for speech")
         
         class VoiceSink(discord.sinks.Sink):
-            def write(self, data, user):
-                if user and user.id != ctx.bot.user.id:
+            def write(self, data, user_id):
+                if user_id and user_id != ctx.bot.user.id:
                     nonlocal last_activity_time, user_audio_buffers, user_silence_counters
                     last_activity_time = time.time()
                     
-                    if user.id not in user_audio_buffers:
-                        user_audio_buffers[user.id] = []
-                        user_silence_counters[user.id] = 0
+                    if user_id not in user_audio_buffers:
+                        user_audio_buffers[user_id] = []
+                        user_silence_counters[user_id] = 0
                     
                     # Check if audio contains speech (simple volume check)
                     volume = audioop.rms(data, 2)
                     
                     if volume > 500:  # Speech detected
-                        user_audio_buffers[user.id].append(data)
-                        user_silence_counters[user.id] = 0
+                        user_audio_buffers[user_id].append(data)
+                        user_silence_counters[user_id] = 0
                     else:  # Silence detected
-                        if len(user_audio_buffers[user.id]) > 0:
-                            user_silence_counters[user.id] += 1
+                        if len(user_audio_buffers[user_id]) > 0:
+                            user_silence_counters[user_id] += 1
                             
                             # If 1 second of silence (50 packets * 20ms = 1s)
-                            if user_silence_counters[user.id] >= 50:
-                                if len(user_audio_buffers[user.id]) > 25:  # At least 0.5s of speech
-                                    audio_data = user_audio_buffers[user.id].copy()
+                            if user_silence_counters[user_id] >= 50:
+                                if len(user_audio_buffers[user_id]) > 25:  # At least 0.5s of speech
+                                    audio_data = user_audio_buffers[user_id].copy()
                                     asyncio.create_task(process_voice_input(audio_data, audio_source))
-                                user_audio_buffers[user.id].clear()
-                                user_silence_counters[user.id] = 0
+                                user_audio_buffers[user_id].clear()
+                                user_silence_counters[user_id] = 0
         
         vc.start_recording(VoiceSink(), lambda e: print(f"Recording error: {e}") if e else None)
         
