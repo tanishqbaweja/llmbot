@@ -2883,7 +2883,7 @@ async def voice_command(ctx):
         # Patch supported modes to fix encryption issue
         import discord.voice_client
         original_supported_modes = discord.voice_client.VoiceClient.supported_modes
-        discord.voice_client.VoiceClient.supported_modes = lambda self, modes: ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305'] if not modes else modes
+        discord.voice_client.VoiceClient.supported_modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
         
         try:
             vc = await channel.connect()
