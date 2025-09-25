@@ -347,6 +347,11 @@ async def process_voice_input(audio_chunks, audio_source, user_id=None):
         main_key = os.getenv('GROQ_API_KEY')
         if main_key:
             tts_keys.append(main_key)
+        
+        if not tts_keys:
+            print(f"[DEBUG] No TTS API keys available, using fallback")
+            tts_keys = API_KEYS[:1]  # Use first available key as fallback
+        
         groq_tts_client = Groq(api_key=random.choice(tts_keys))
         
         tts_response = groq_tts_client.audio.speech.create(
