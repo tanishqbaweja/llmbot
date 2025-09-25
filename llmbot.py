@@ -2918,7 +2918,7 @@ async def voice_command(ctx):
         print(f"[DEBUG] Voice error: {e}")
         import traceback
         traceback.print_exc()
-        await ctx.reply("❌ Voice connection failed. Install PyNaCl: `pip install PyNaCl` and ensure FFmpeg is installed.")
+        await ctx.reply(f"❌ Voice connection failed: {str(e)[:200]}")
 
 @bot.command(name='leave')
 async def leave_command(ctx):

@@ -12604,3 +12604,24 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 11:01:24,471 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
 2025-09-25 11:01:25,056 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11061.discord.media
 2025-09-25 11:01:25,850 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 11:02:09,569 - discord.client - INFO - logging in using static token
+2025-09-25 11:02:11,243 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 11:02:11,778 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-r150",{"micros":146320,"calls":["id_created",{"micros":651,"calls":[]},"session_lookup_time",{"micros":235,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-prd-2-44",{"micros":145152,"calls":["start_session",{"micros":137278,"calls":["discord-api-rpc-686767fc44-ndh79",{"micros":85759,"calls":["get_user",{"micros":7967},"get_guilds",{"micros":4766},"send_scheduled_deletion_message",{"micros":26},"guild_join_requests",{"micros":4},"authorized_ip_coro",{"micros":15},"pending_payments",{"micros":38038},"apex_experiments",{"micros":3573},"user_activities",{"micros":6},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":54,"calls":[]},"presence_started",{"micros":549,"calls":[]},"guilds_started",{"micros":84,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":7121,"calls":[]},"connect_finished",{"micros":7171,"calls":[]},"build_ready",{"micros":12,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: fb67c415325e6d14a09b11210a00d1a5).
+2025-09-25 11:02:15,135 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 11:02:15,135 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 11:02:15,750 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11061.discord.media
+2025-09-25 11:02:16,498 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 11:02:24,389 - discord.voice_client - ERROR - Failed to connect to voice... Retrying...
+Traceback (most recent call last):
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 404, in connect
+    self.ws = await self.connect_websocket()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\voice_client.py", line 375, in connect_websocket
+    await ws.poll_event()
+  File "C:\Users\slato\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\gateway.py", line 955, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4014
+2025-09-25 11:02:25,394 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 11:02:25,395 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 2)
+2025-09-25 11:02:26,008 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11061.discord.media
+2025-09-25 11:02:26,823 - discord.gateway - INFO - received secret key for voice connection
