@@ -2900,11 +2900,15 @@ async def voice_command(ctx):
         
         try:
             vc = await channel.connect()
+            print(f"[DEBUG] Successfully connected to voice channel")
         finally:
             discord.gateway.DiscordVoiceWebSocket.initial_connection = original_initial_connection
+        
+        print(f"[DEBUG] Creating audio source and starting playback")
         audio_source = GeminiAudioSource()
         vc.play(audio_source, after=lambda e: print(f'Player error: {e}') if e else None)
 
+        print(f"[DEBUG] Starting voice session management task")
         task = asyncio.create_task(manage_voice_session(ctx, vc, audio_source))
         voice_sessions[ctx.guild.id] = {'vc': vc, 'task': task, 'audio_source': audio_source, 'conversation': []}
         print(f"[DEBUG] Voice session created with recording enabled")
