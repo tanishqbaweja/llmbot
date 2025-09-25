@@ -12114,3 +12114,16 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 07:40:07,581 - root - ERROR - Error in voice session for guild 1410715548769058838: module 'discord' has no attribute 'reader'
 2025-09-25 07:40:07,583 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
 2025-09-25 07:40:07,759 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 07:42:05,741 - discord.client - INFO - logging in using static token
+2025-09-25 07:42:07,965 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 07:42:08,585 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-wwdc",{"micros":236485,"calls":["id_created",{"micros":534,"calls":[]},"session_lookup_time",{"micros":727,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"discord-sessions-prd-2-44",{"micros":234926,"calls":["start_session",{"micros":182418,"calls":["discord-api-rpc-7cb8f9d549-959rs",{"micros":117252,"calls":["get_user",{"micros":6015},"get_guilds",{"micros":5564},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":3},"authorized_ip_coro",{"micros":11},"pending_payments",{"micros":37688},"apex_experiments",{"micros":19358},"user_activities",{"micros":7},"played_application_ids",{"micros":4}]}]},"starting_guild_connect",{"micros":52,"calls":[]},"presence_started",{"micros":12293,"calls":[]},"guilds_started",{"micros":94,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":39990,"calls":[]},"connect_finished",{"micros":40056,"calls":[]},"build_ready",{"micros":10,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 3dedda3aa986848b3e6cfd9826f84467).
+2025-09-25 07:46:51,873 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 07:46:51,874 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 07:46:52,462 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 07:46:53,528 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 07:46:53,710 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 07:46:54,433 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 07:46:55,496 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 400 Bad Request"
+2025-09-25 07:46:55,498 - root - ERROR - Voice response error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Model does not support requested modality: AUDIO', 'status': 'INVALID_ARGUMENT'}}
+2025-09-25 07:49:55,589 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
+2025-09-25 07:49:55,770 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
