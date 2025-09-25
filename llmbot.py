@@ -31,82 +31,6 @@ import tempfile
 import audioop
 from groq import Groq
 
-# Monkey patch for Discord.py voice encryption mode issue
-import discord.gateway
-
-original_initial_connection = discord.gateway.DiscordVoiceWebSocket.initial_connection
-
-async def patched_initial_connection(self, data):
-    """Patched version that handles empty encryption modes"""
-    try:
-        # Debug: Log what we received
-        print(f"Voice initial_connection data keys: {data.keys()}")
-        
-        # Check if this is the READY event with voice data
-        if 'op' in data and data['op'] != 2:
-            # Not the READY event, pass to original
-            return await original_initial_connection(self, data)
-        
-        # Extract required fields
-        if 'd' in data:
-            # Data is wrapped in 'd' field
-            voice_data = data['d']
-        else:
-            voice_data = data
-        
-        # Update state information
-        if 'state' in voice_data:
-            state = voice_data['state']
-            self._connection.update_state(state)
-        
-        # Get server info
-        ip = voice_data.get('ip')
-        port = voice_data.get('port')
-        
-        # Get available modes
-        modes = voice_data.get('modes', [])
-        
-        # If no modes provided, use defaults
-        if not modes:
-            print("WARNING: No encryption modes received, using defaults")
-            modes = ['xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305']
-        
-        print(f"Voice server: {ip}:{port}, modes: {modes}")
-        
-        # Select best available mode
-        if 'xsalsa20_poly1305_lite' in modes:
-            selected_mode = 'xsalsa20_poly1305_lite'
-        elif 'xsalsa20_poly1305_suffix' in modes:
-            selected_mode = 'xsalsa20_poly1305_suffix'
-        elif 'xsalsa20_poly1305' in modes:
-            selected_mode = 'xsalsa20_poly1305'
-        elif modes:  # Use first available if our preferences aren't available
-            selected_mode = modes[0]
-        else:
-            selected_mode = 'xsalsa20_poly1305_lite'
-        
-        print(f"Selected voice encryption mode: {selected_mode}")
-        
-        # Store mode and proceed with protocol selection
-        self._connection.mode = selected_mode
-        
-        # Call select_protocol with all required arguments
-        if ip and port:
-            await self.select_protocol(ip, port, selected_mode)
-        else:
-            print("ERROR: Missing IP or port for voice connection")
-            # Try original as fallback
-            return await original_initial_connection(self, data)
-            
-    except Exception as e:
-        print(f"Error in patched_initial_connection: {e}")
-        print(f"Falling back to original implementation")
-        return await original_initial_connection(self, data)
-
-# Apply the monkey patch
-discord.gateway.DiscordVoiceWebSocket.initial_connection = patched_initial_connection
-print("Applied voice encryption mode patch")
-
 # Setup secure logging
 def setup_secure_logging():
     handler = RotatingFileHandler(
@@ -894,17 +818,9 @@ class CustomVoiceSink(discord.sinks.WaveSink):
         self.loop = loop or asyncio.get_event_loop()
         self.processing = False  # Flag to ignore input during processing
         self.recording_start = 0  # Track when recording started
-        self.first_write = True  # Debug flag for first write
-        self.write_count = 0  # Count total writes
-        print(f"CustomVoiceSink initialized for guild {guild_id}")
         
     def write(self, data, user):
         """Called when audio data is received from a user"""
-        # Debug: First write notification
-        if self.first_write:
-            print(f"First audio write received! User: {user}, data length: {len(data) if data else 0}")
-            self.first_write = False
-        
         if user is None:
             return
         
@@ -965,15 +881,12 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 self.audio_data[user_id].extend(actual_data)
                 self.last_activity = time.time()
                 
-                # Track silence based on volume level
+                # Track silence for natural pauses
                 if is_silent:
                     self.silent_frames += 1
-                    # Complete silence (volume < 20) stops faster
-                    if volume < 20:
-                        self.silent_frames += 1  # Double count for dead silence
                 elif is_noise:
-                    # Background noise - slower increment
-                    self.silent_frames += 0.3
+                    # Background noise - count as partial silence
+                    self.silent_frames += 0.5
                 else:
                     # Clear speech detected - reset counter
                     self.silent_frames = 0
@@ -982,31 +895,23 @@ class CustomVoiceSink(discord.sinks.WaveSink):
                 should_stop = False
                 reason = ""
                 
-                # Dynamic stopping based on silence type
-                if volume < 20 and self.silent_frames >= 25:
-                    # Dead silence - stop after ~500ms
+                # Stop after ~1.5 seconds of complete silence (75 frames)
+                # This allows for natural pauses between sentences
+                if self.silent_frames >= 75:
                     should_stop = True
-                    reason = f"dead silence ({int(self.silent_frames)} frames)"
-                elif volume < 50 and self.silent_frames >= 35:
-                    # Very quiet - stop after ~700ms
-                    should_stop = True
-                    reason = f"very quiet ({int(self.silent_frames)} frames)"
-                elif self.silent_frames >= 45:
-                    # Normal silence - stop after ~900ms
-                    should_stop = True
-                    reason = f"silence ({int(self.silent_frames)} frames)"
+                    reason = f"silence ({self.silent_frames} frames, ~{self.silent_frames*20}ms)"
                 
-                # Timeout after 30 seconds
+                # Timeout after 30 seconds (extended for longer responses)
                 elif hasattr(self, 'recording_start') and (time.time() - self.recording_start) > 30:
                     should_stop = True
                     reason = "timeout (30s)"
                 
-                # Debug output only every 30 frames to reduce spam
-                if int(self.silent_frames) % 30 == 0 and self.silent_frames > 0 and volume < 50:
-                    print(f"Still recording... (silence: {int(self.silent_frames)} frames, vol: {volume})")
+                # Optional: Show recording status periodically
+                if int(self.silent_frames) % 20 == 0 and self.silent_frames > 0:
+                    print(f"Recording... (silence: {int(self.silent_frames)} frames, volume: {volume})")
                 
                 if should_stop:
-                    print(f"Stopping: {reason} (final volume: {volume})")
+                    print(f"Stopping recording due to {reason}")
                     self.recording = False
                     self.silent_frames = 0
                     # Process immediately
@@ -1017,29 +922,18 @@ class CustomVoiceSink(discord.sinks.WaveSink):
     
     async def process_recording(self):
         """Process the recorded audio"""
-        if self.guild_id not in voice_sessions:
-            print("No voice session found for processing")
-            return
-            
-        if not self.audio_data or len(self.audio_data) == 0:
-            print("No audio data to process")
+        if self.guild_id not in voice_sessions or not self.audio_data:
             return
             
         try:
             # Set processing flag to ignore new input
             self.processing = True
             
-            # Check if we have any valid audio data
-            valid_buffers = {k: v for k, v in self.audio_data.items() if len(v) > 0}
-            if not valid_buffers:
-                print("All audio buffers are empty")
-                return
-            
             # Get the largest audio buffer (main speaker)
-            main_user_id = max(valid_buffers.keys(), key=lambda k: len(valid_buffers[k]))
-            audio_bytes = bytes(valid_buffers[main_user_id])
+            main_user_id = max(self.audio_data.keys(), key=lambda k: len(self.audio_data[k]))
+            audio_bytes = bytes(self.audio_data[main_user_id])
             
-            print(f"Audio buffer size: {len(audio_bytes)} bytes from user {main_user_id}")
+            print(f"Audio buffer size: {len(audio_bytes)} bytes")
             
             # Clear audio data immediately to prevent reprocessing
             self.audio_data.clear()
@@ -1050,8 +944,6 @@ class CustomVoiceSink(discord.sinks.WaveSink):
             else:
                 print(f"Audio too short ({len(audio_bytes)} bytes), ignoring")
                 
-        except Exception as e:
-            print(f"Error in process_recording: {e}")
         finally:
             # Always reset processing flag
             self.processing = False
@@ -1121,11 +1013,6 @@ async def process_voice_input(guild_id, audio_data, sink=None):
 Reply to the latest message appropriately. Keep your response concise and natural for voice conversation. Maximum 200 characters."""
             
             # Use a random Gemini API key
-            if not GEMINI_API_KEYS:
-                print("ERROR: No Gemini API keys available")
-                if sink:
-                    sink.processing = False
-                return
             gemini_key = random.choice(GEMINI_API_KEYS)
             
             # Run Gemini in executor to avoid blocking
@@ -1199,12 +1086,8 @@ async def speech_to_text(audio_data):
     try:
         # Use Groq API keys 11-17 for Whisper as per memory
         whisper_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
-        if not whisper_keys and API_KEYS:
-            whisper_keys = [API_KEYS[0]]  # Fallback to first key
-        
         if not whisper_keys:
-            print("ERROR: No Groq API keys available for Whisper")
-            return None
+            whisper_keys = API_KEYS[:1]  # Fallback to first key
         
         # Run blocking I/O in executor to avoid blocking event loop
         loop = asyncio.get_event_loop()
@@ -1249,12 +1132,8 @@ async def text_to_speech(text):
     try:
         # Use Groq API keys 11-14 + main key for TTS as per memory
         tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if (11 <= num <= 14) or num == 17]
-        if not tts_keys and API_KEYS:
-            tts_keys = [API_KEYS[0]]  # Fallback
-        
         if not tts_keys:
-            print("ERROR: No Groq API keys available for TTS")
-            return None
+            tts_keys = API_KEYS[:1]  # Fallback
         
         # Run TTS in executor to avoid blocking
         loop = asyncio.get_event_loop()
@@ -1311,19 +1190,6 @@ async def manage_voice_session(guild_id):
 async def on_ready():
     init_db()
     print(f'{bot.user} has connected to Discord!')
-    
-    # Clean up any stale voice connections on startup
-    print("Cleaning up voice connections...")
-    for vc in bot.voice_clients:
-        try:
-            await vc.disconnect(force=True)
-            print(f"Disconnected from stale voice connection in guild {vc.guild.name}")
-        except Exception as e:
-            print(f"Error disconnecting stale voice connection: {e}")
-    
-    # Clear voice sessions
-    voice_sessions.clear()
-    print("Voice system ready")
 
 @bot.command(name='voice')
 async def voice_command(ctx):
@@ -1342,50 +1208,8 @@ async def voice_command(ctx):
         return
     
     try:
-        # Connect to voice channel with retry logic
-        print(f"Connecting to voice channel: {voice_channel.name}")
-        vc = None
-        max_attempts = 3
-        
-        for attempt in range(1, max_attempts + 1):
-            try:
-                print(f"Connection attempt {attempt}/{max_attempts}")
-                # Try to connect with a timeout
-                vc = await voice_channel.connect(timeout=10.0, reconnect=True)
-                print(f"Connected successfully on attempt {attempt}")
-                break
-            except asyncio.TimeoutError:
-                print(f"Connection attempt {attempt} timed out")
-                if attempt < max_attempts:
-                    await asyncio.sleep(2)
-                else:
-                    raise
-            except IndexError as e:
-                # This is the encryption mode selection error
-                print(f"Encryption mode error on attempt {attempt}: {e}")
-                if attempt < max_attempts:
-                    # Clean up any partial connection
-                    try:
-                        if ctx.guild.voice_client:
-                            await ctx.guild.voice_client.disconnect(force=True)
-                    except:
-                        pass
-                    await asyncio.sleep(2)
-                else:
-                    # Try one more time with force disconnect of all voice clients
-                    print("Final attempt - forcing cleanup of all voice connections")
-                    for vc_cleanup in bot.voice_clients:
-                        try:
-                            await vc_cleanup.disconnect(force=True)
-                        except:
-                            pass
-                    await asyncio.sleep(3)
-                    vc = await voice_channel.connect(timeout=10.0, reconnect=False)
-        
-        if not vc:
-            raise Exception("Failed to connect after all attempts")
-        
-        print(f"Connected successfully, vc type: {type(vc)}")
+        # Connect to voice channel
+        vc = await voice_channel.connect()
         
         # Define callback for when recording stops
         async def recording_callback(sink, *args):
@@ -1393,7 +1217,6 @@ async def voice_command(ctx):
         
         # Start recording with custom sink
         loop = asyncio.get_event_loop()
-        print("Creating CustomVoiceSink...")
         sink = CustomVoiceSink(guild_id, loop=loop)
         
         # Initialize session with sink reference
@@ -1405,19 +1228,7 @@ async def voice_command(ctx):
             'sink': sink  # Store sink reference
         }
         
-        print("Starting recording...")
-        try:
-            vc.start_recording(sink, recording_callback)
-            print("Recording started successfully")
-            print(f"Voice sink type: {type(sink)}")
-            # Note: is_recording() method may not exist in all discord.py versions
-            if hasattr(vc, 'recording'):
-                print(f"Recording status: {vc.recording}")
-        except Exception as e:
-            print(f"Error starting recording: {e}")
-            import traceback
-            traceback.print_exc()
-            await ctx.reply(f"❌ Failed to start recording: {str(e)[:200]}")
+        vc.start_recording(sink, recording_callback)
         
         # Start inactivity monitor
         monitor_task = asyncio.create_task(manage_voice_session(guild_id))
@@ -1431,13 +1242,10 @@ async def voice_command(ctx):
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
     except Exception as e:
-        import traceback
-        error_details = traceback.format_exc()
-        print(f"Voice command error - Full traceback:\n{error_details}")
         await ctx.reply(f"❌ An error occurred: {str(e)[:100]}")
         if guild_id in voice_sessions:
             del voice_sessions[guild_id]
-        logging.error(f"Voice command error: {str(e)}\nTraceback: {error_details}")
+        logging.error(f"Voice command error: {str(e)}")
 
 @bot.command(name='leavevoice')
 async def leave_voice_command(ctx):
@@ -1470,62 +1278,6 @@ async def leave_voice_command(ctx):
 async def test_command(ctx):
     """Test command to verify bot is working"""
     await ctx.reply("✅ Bot is working! Commands are being processed correctly.")
-
-@bot.command(name='testvoice')
-async def test_voice_command(ctx):
-    """Test voice recording with a simple sink"""
-    if not ctx.author.voice:
-        await ctx.reply("❌ You need to be in a voice channel!")
-        return
-    
-    # Simple test sink
-    class TestSink(discord.sinks.WaveSink):
-        def __init__(self):
-            super().__init__()
-            print("TestSink initialized")
-            self.packet_count = 0
-            
-        def write(self, data, user):
-            self.packet_count += 1
-            if self.packet_count % 100 == 1:
-                print(f"TestSink received packet {self.packet_count} from user {user}")
-    
-    try:
-        vc = await ctx.author.voice.channel.connect()
-        await ctx.reply("✅ Connected to voice channel")
-        
-        sink = TestSink()
-        
-        async def callback(sink, *args):
-            print("Test recording stopped")
-        
-        vc.start_recording(sink, callback)
-        await ctx.reply("🎤 Test recording started! Speak to test. Use `!leavevoice` to stop.")
-        
-    except Exception as e:
-        await ctx.reply(f"❌ Test failed: {e}")
-        print(f"Test voice error: {e}")
-
-@bot.command(name='resetvoice')
-async def reset_voice_command(ctx):
-    """Reset all voice connections (admin only)"""
-    if not is_admin(ctx.author.id):
-        await ctx.reply("❌ This command is admin only!")
-        return
-    
-    # Disconnect all voice clients
-    count = 0
-    for vc in bot.voice_clients:
-        try:
-            await vc.disconnect(force=True)
-            count += 1
-        except:
-            pass
-    
-    # Clear voice sessions
-    voice_sessions.clear()
-    
-    await ctx.reply(f"🔧 Reset {count} voice connections and cleared all sessions.")
 
 @bot.slash_command(name='help', description='Show available commands')
 async def slash_help_command(ctx):
