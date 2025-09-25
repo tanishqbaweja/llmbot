@@ -12298,3 +12298,23 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 2025-09-25 08:27:43,685 - root - ERROR - Voice processing error: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Model does not support the requested response modalities: audio', 'status': 'INVALID_ARGUMENT'}}
 2025-09-25 08:30:49,843 - discord.voice_client - INFO - Disconnecting from voice normally, close code 1000.
 2025-09-25 08:30:50,027 - discord.voice_client - INFO - The voice handshake is being terminated for Channel ID 1410715549486546977 (Guild ID 1410715548769058838)
+2025-09-25 08:32:17,754 - discord.client - INFO - logging in using static token
+2025-09-25 08:32:19,616 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2025-09-25 08:32:20,307 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-t4z3",{"micros":301536,"calls":["id_created",{"micros":451,"calls":[]},"session_lookup_time",{"micros":527,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-98",{"micros":300212,"calls":["start_session",{"micros":277662,"calls":["discord-api-rpc-686767fc44-htwmj",{"micros":238689,"calls":["get_user",{"micros":6515},"get_guilds",{"micros":6780},"send_scheduled_deletion_message",{"micros":17},"guild_join_requests",{"micros":1517},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":27875},"apex_experiments",{"micros":4519},"user_activities",{"micros":5},"played_application_ids",{"micros":3}]}]},"starting_guild_connect",{"micros":46,"calls":[]},"presence_started",{"micros":4768,"calls":[]},"guilds_started",{"micros":97,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":17566,"calls":[]},"connect_finished",{"micros":17625,"calls":[]},"build_ready",{"micros":10,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: cd3fd6f6afe83a7f7703e9b5ec619a53).
+2025-09-25 08:32:43,385 - discord.voice_client - INFO - Connecting to voice...
+2025-09-25 08:32:43,386 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
+2025-09-25 08:32:43,998 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11035.discord.media
+2025-09-25 08:32:45,147 - discord.gateway - INFO - selected the voice protocol for use (xsalsa20_poly1305_lite)
+2025-09-25 08:32:45,326 - discord.gateway - INFO - received secret key for voice connection
+2025-09-25 08:32:49,621 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:32:50,225 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:32:51,233 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-09-25 08:32:51,753 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:32:51,755 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:32:51,963 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-09-25 08:32:52,781 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 400 Bad Request"
+2025-09-25 08:32:52,782 - root - ERROR - Voice processing error: Error code: 400 - {'error': {'message': 'The model `playai-tts` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=playai-tts', 'type': 'invalid_request_error', 'code': 'model_terms_required'}}
+2025-09-25 08:32:53,081 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 200 OK"
+2025-09-25 08:32:53,083 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-09-25 08:32:53,980 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/audio/speech "HTTP/1.1 400 Bad Request"
+2025-09-25 08:32:53,982 - root - ERROR - Voice processing error: Error code: 400 - {'error': {'message': 'The model `playai-tts` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=playai-tts', 'type': 'invalid_request_error', 'code': 'model_terms_required'}}
