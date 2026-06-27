@@ -44,6 +44,7 @@ A powerful, secure, and feature-rich Discord bot powered by the Groq API. It fea
 | :--- | :--- |
 | **`!setpersonality <text>`** | Set a custom personality for your interactions (max 500 characters). |
 | **`!removepersonality`** | Resets your custom personality back to default. |
+| **`!checkpersonality`** | Shows the custom personality currently set by you. |
 
 ### Trivia & Games (Public)
 | Command | Description |

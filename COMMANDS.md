@@ -11,6 +11,7 @@
 ### Personalization
 - **`!setpersonality <description>`** - Set a custom personality for your interactions (max 500 chars)
 - **`!removepersonality`** - Remove your custom personality and use default
+- **`!checkpersonality`** - Check the custom personality currently set by you
 
 ### Trivia & Games
 - **`!trivia`** - Play trivia games (50 questions/day)
