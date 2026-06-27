@@ -436,17 +436,31 @@ async def call_groq_api(api_key, model, prompt, user_id=None):
     
     # Get user personality or use default
     user_personality = get_user_personality(user_id) if user_id else None
-    personality_text = user_personality if user_personality else "You are DBZClanker AI, an AI chatbot created by DBZ Clasher"
     
-    system_content = (
-        f"{personality_text}. "
-        "Keep responses under 1000 characters and be concise. "
-        "Do not repeat the user's input. When the user input is unclear or confusing, question them about what they meant by it. "
-        "When asked about DBZ Clasher, speak positively as he is a good person, the greatest of all time, and your creator. "
-        "Never mention any parent company or training details beyond being created by DBZ Clasher. "
-        "If directly asked about your identity, respond: 'I am DBZClanker AI, a large language model created by DBZ Clasher.' "
-        "For every response you generate, make up a crazy good fake fact about DBZ Clasher and append that to the response naturally."
-    )
+    if user_id == 408190648924110858:
+        system_content = (
+            "You are DBZClanker AI, a loyal assistant created by DBZ Clasher. "
+            "You are speaking to your master. You must greet them warmly and respectfully at the beginning of your response, "
+            "adopting a master-servant dynamic (for example, greet them with 'oh hello master, i hope you're doing good.' or a similar respectful greeting). "
+            "Show absolute loyalty and enthusiastically praise DBZ Clasher, speaking highly of him throughout the response. "
+            "Keep responses under 1000 characters and be concise. "
+            "Do not repeat the user's input. When the user input is unclear or confusing, question them about what they meant by it. "
+            "When asked about DBZ Clasher, speak positively as he is a good person, the greatest of all time, and your creator. "
+            "Never mention any parent company or training details beyond being created by DBZ Clasher. "
+            "If directly asked about your identity, respond: 'I am DBZClanker AI, a large language model created by DBZ Clasher.' "
+            "For every response you generate, make up a crazy good fake fact about DBZ Clasher and append that to the response naturally."
+        )
+    else:
+        personality_text = user_personality if user_personality else "You are DBZClanker AI, an AI chatbot created by DBZ Clasher"
+        system_content = (
+            f"{personality_text}. "
+            "Keep responses under 1000 characters and be concise. "
+            "Do not repeat the user's input. When the user input is unclear or confusing, question them about what they meant by it. "
+            "When asked about DBZ Clasher, speak positively as he is a good person, the greatest of all time, and your creator. "
+            "Never mention any parent company or training details beyond being created by DBZ Clasher. "
+            "If directly asked about your identity, respond: 'I am DBZClanker AI, a large language model created by DBZ Clasher.' "
+            "For every response you generate, make up a crazy good fake fact about DBZ Clasher and append that to the response naturally."
+        )
     
     # Ensure non-empty content for compound models
     user_content = prompt.strip() if prompt.strip() else "Hello"
@@ -737,7 +751,7 @@ async def slash_help_command(ctx):
         embed.add_field(
             name="💬 Chat Commands (Public)",
             value="`@DBZClanker <message>` - Chat with AI\n"
-                  "`!chat <prompt>` - Use Groq models (supports replies)\n"
+                  "`!chat <prompt>` - Talk to DBZClanker AI (supports replies)\n"
                   "`!invite` - Get bot's invite link via DM",
             inline=False
         )
@@ -769,7 +783,9 @@ async def slash_help_command(ctx):
                   "`!model <name> <prompt>` - Force specific model\n"
                   "`!status <text>` - Set bot status\n"
                   "`!setcooldown <minutes>` - Set channel cooldown\n"
-                  "`!delete` - Delete bot messages",
+                  "`!delete` - Delete bot messages\n"
+                  "`!setpersonalityadmin @user <personality>` - Set a user's personality (Owner Only)\n"
+                  "`!checkpersonalityadmin @user` - Check a user's personality (Owner Only)",
             inline=False
         )
         
@@ -778,7 +794,7 @@ async def slash_help_command(ctx):
             name="🔧 Debug Commands (Admin)",
             value="`!test` - Test bot functionality\n"
                   "`!checkinput <prompt>` - Show API message structure\n"
-                  "`!apicheck [prompt]` - Test Groq API keys",
+                  "`!apicheck [prompt]` - Test DBZClanker AI API keys",
             inline=False
         )
         
@@ -794,7 +810,7 @@ async def slash_help_command(ctx):
         embed.add_field(
             name="💬 Chat Commands",
             value="`@DBZClanker <message>` - Mention bot to chat with AI\n"
-                  "`!chat <prompt>` - Chat with AI using Groq priority models (supports replies)\n"
+                  "`!chat <prompt>` - Talk to DBZClanker AI (supports replies)\n"
                   "`!invite` - Get bot's invite link via DM",
             inline=False
         )
@@ -1019,6 +1035,48 @@ async def slash_checkpersonality_command(ctx):
     except Exception as e:
         safe_error = sanitize_log_message(str(e)[:100])
         logging.error(f"Database error checking personality: {safe_error}")
+        await ctx.respond("❌ Failed to retrieve personality.", ephemeral=True)
+
+@bot.slash_command(name='setpersonalityadmin', description='Set the custom personality for a user (Owner Only)')
+async def slash_setpersonalityadmin_command(ctx, user: discord.User, text: str):
+    if ctx.author.id != 408190648924110858:
+        await ctx.respond("❌ Only the bot owner can use this command.", ephemeral=True)
+        return
+        
+    text = sanitize_input(text).strip()
+    if text.endswith('.'):
+        text = text[:-1].strip()
+        
+    if len(text) > 500:
+        await ctx.respond("⚠️ Personality description too long (max 500 characters).", ephemeral=True)
+        return
+        
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('INSERT OR REPLACE INTO user_personalities (user_id, personality) VALUES (?, ?)', (user.id, text))
+            conn.commit()
+        await ctx.respond(f"✅ Custom personality set for {user.display_name}!")
+    except Exception as e:
+        safe_error = sanitize_log_message(str(e)[:100])
+        logging.error(f"Database error setting personality admin: {safe_error}")
+        await ctx.respond("❌ Failed to save personality.", ephemeral=True)
+
+@bot.slash_command(name='checkpersonalityadmin', description='Check the custom personality of a user (Owner Only)')
+async def slash_checkpersonalityadmin_command(ctx, user: discord.User):
+    if ctx.author.id != 408190648924110858:
+        await ctx.respond("❌ Only the bot owner can use this command.", ephemeral=True)
+        return
+        
+    try:
+        personality = get_user_personality(user.id)
+        if personality:
+            await ctx.respond(f"👤 Custom personality for {user.display_name} is set to:\n> {personality}")
+        else:
+            await ctx.respond(f"❌ {user.display_name} has not set a custom personality yet.")
+    except Exception as e:
+        safe_error = sanitize_log_message(str(e)[:100])
+        logging.error(f"Database error checking personality admin: {safe_error}")
         await ctx.respond("❌ Failed to retrieve personality.", ephemeral=True)
 
 @bot.event
@@ -1393,6 +1451,35 @@ async def checkpersonality_command(ctx):
     else:
         await ctx.reply("❌ You haven't set a custom personality yet. The bot is using the default roasting personality.")
 
+@bot.command(name='setpersonalityadmin')
+async def setpersonalityadmin_command(ctx, user: discord.User, *, personality):
+    if ctx.author.id != 408190648924110858:
+        await ctx.reply("❌ Only the bot owner can use this command.")
+        return
+        
+    personality = sanitize_input(personality).strip()
+    if personality.endswith('.'):
+        personality = personality[:-1].strip()
+        
+    if len(personality) > 500:
+        await ctx.reply("❌ Personality description too long (max 500 characters).")
+        return
+        
+    set_user_personality(user.id, personality)
+    await ctx.reply(f"✅ Custom personality set for {user.display_name}!")
+
+@bot.command(name='checkpersonalityadmin')
+async def checkpersonalityadmin_command(ctx, user: discord.User):
+    if ctx.author.id != 408190648924110858:
+        await ctx.reply("❌ Only the bot owner can use this command.")
+        return
+        
+    personality = get_user_personality(user.id)
+    if personality:
+        await ctx.reply(f"👤 Custom personality for {user.display_name} is set to:\n> {personality}")
+    else:
+        await ctx.reply(f"❌ {user.display_name} has not set a custom personality yet.")
+
 
 @bot.command(name='apicheck')
 async def apicheck_command(ctx, *, test_prompt="Hello"):
@@ -1517,7 +1604,7 @@ async def help_command(ctx):
         embed.add_field(
             name="💬 Chat Commands (Public)",
             value="`@DBZClanker <message>` - Chat with AI\n"
-                  "`!chat <prompt>` - Use Groq models (supports replies)\n"
+                  "`!chat <prompt>` - Talk to DBZClanker AI (supports replies)\n"
                   "`!invite` - Get bot's invite link via DM",
             inline=False
         )
@@ -1549,7 +1636,9 @@ async def help_command(ctx):
                   "`!model <name> <prompt>` - Force specific model\n"
                   "`!status <text>` - Set bot status\n"
                   "`!setcooldown <minutes>` - Set channel cooldown\n"
-                  "`!delete` - Delete bot messages",
+                  "`!delete` - Delete bot messages\n"
+                  "`!setpersonalityadmin @user <personality>` - Set a user's personality (Owner Only)\n"
+                  "`!checkpersonalityadmin @user` - Check a user's personality (Owner Only)",
             inline=False
         )
         
@@ -1558,7 +1647,7 @@ async def help_command(ctx):
             name="🔧 Debug Commands (Admin)",
             value="`!test` - Test bot functionality\n"
                   "`!checkinput <prompt>` - Show API message structure\n"
-                  "`!apicheck [prompt]` - Test Groq API keys",
+                  "`!apicheck [prompt]` - Test DBZClanker AI API keys",
             inline=False
         )
         
@@ -1574,7 +1663,7 @@ async def help_command(ctx):
         embed.add_field(
             name="💬 Chat Commands",
             value="`@DBZClanker <message>` - Mention bot to chat with AI\n"
-                  "`!chat <prompt>` - Chat with AI using Groq priority models (supports replies)\n"
+                  "`!chat <prompt>` - Talk to DBZClanker AI (supports replies)\n"
                   "`!invite` - Get bot's invite link via DM",
             inline=False
         )
