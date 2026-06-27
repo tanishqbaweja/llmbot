@@ -2,38 +2,39 @@
 
 ## User Commands
 
-### AI Conversation (Uses OpenRouter Mistral → Groq Fallback)
-- **`@DBZClanker <message>`** - Mention the bot to start a conversation
+### AI Conversation (Uses Groq Priority Fallback Hierarchy)
+- **`@DBZClanker <message>`** - Mention the bot to start a conversation (uses roasting personality by default)
 - **Reply + Mention** - Reply to any message while mentioning the bot for context-aware responses
-- **`!ai <prompt>`** - Direct AI conversation command
+- **`!ai <prompt>`** - Direct AI conversation command (uses Groq models)
+- **`!oss <prompt>`** - Direct AI conversation using Groq models fallback hierarchy with reply context
+- **`!invite`** - Sends a Direct Message to the user containing the bot's invite link
 
 ### Personalization
 - **`!setpersonality <description>`** - Set a custom personality for your interactions (max 500 chars)
 - **`!removepersonality`** - Remove your custom personality and use default
+
+### Trivia & Games
+- **`!trivia`** - Play trivia games (50 questions/day)
+- **`!genshin`** - Genshin Impact trivia
+- **`!leaderboard`** - Server trivia leaderboard
+- **`!leaderboardglobal`** - Global trivia leaderboard
 
 ## Admin Commands
 
 ### Server Management
 - **`!servers`** - List all servers the bot is connected to
 - **`!status <status_text>`** - Set the bot's Discord status message
+- **`!delete`** - Reply to a bot message to delete it (and remove your command message)
 
-### AI Model Testing
+### AI Model Testing & Debugging
 - **`!check`** - Reply to a bot message to see which model generated it
 - **`!model [model_name] [question]`** - Force use a specific model or list available models
 - **`!apicheck [test_prompt]`** - Test all Groq API keys with gemma2 model
-- **`!geminicheck`** - Test all Gemini API keys
-- **`!mistralapicheck [test_prompt]`** - Test all OpenRouter API keys
-
-### Alternative AI Services
-- **`!gemini <prompt>`** - Use Google Gemini with web search (1min cooldown, reply context supported)
-- **`!mistral <prompt>`** - Use Mistral via OpenRouter API
-- **`!image <prompt>`** - Generate images with Gemini (3min cooldown, supports input images)
+- **`!checkinput <prompt>`** - Show exact message structure sent to API
+- **`!test`** - Simple functionality test command
 
 ### Channel Management
 - **`!setcooldown <minutes>`** - Set per-user cooldown for current channel (0 to remove)
-
-### Debugging
-- **`!checkinput <prompt>`** - Show exact message structure sent to API
 
 ## Available AI Models (Priority Order)
 
@@ -51,6 +52,7 @@
 ## Features
 
 ### Smart Conversation
+- **Roast Personality** - Built-in unhinged and uncensored roasting personality (customizable with `!setpersonality`)
 - **Context Awareness** - Handles reply-to-message conversations
 - **One-Word Detection** - Asks for clarification on single-word replies
 - **Thinking Models** - Shows "🤔 Thinking..." for reasoning models
@@ -63,20 +65,10 @@
 - **Character Limits** - 2000 char input, 1000 char responses (auto-splits longer ones)
 - **Channel Cooldowns** - Admin-configurable per-channel user cooldowns
 
-### Special Cooldowns
-- **Gemini** - 1 minute global cooldown (admins exempt)
-- **Image Generation** - 3 minutes global cooldown (admins exempt)
-- **Channel-Specific** - Configurable per-channel cooldowns
-
 ### Database Tracking
 - **Usage Monitoring** - Tracks API requests and tokens per model/key
 - **Message History** - Stores bot message metadata for admin review
-- **Persistent Settings** - Cooldowns and user data survive restarts
-
-## Primary AI Service Priority
-
-1. **OpenRouter Mistral** (Primary) - Uses `cognitivecomputations/dolphin-mistral-24b-venice-edition:free`
-2. **Groq Models** (Fallback) - Uses model hierarchy if OpenRouter fails
+- **Persistent Settings** - Cooldowns, personalities, and scores survive restarts
 
 ## Required Environment Variables
 
@@ -85,28 +77,9 @@
 DISCORD_TOKEN=your_discord_bot_token
 ADMIN_USER_IDS=comma_separated_user_ids
 
-# OpenRouter API (keys 1-15, PRIMARY for main AI features)
-OPENROUTER_API_KEY_1=key_1
-OPENROUTER_API_KEY_2=key_2
-# ... keys 3-15
-
-# Groq API (keys 11-17, FALLBACK)
+# Groq API (keys 11-17)
 GROQ_API_KEY=your_primary_key  # becomes key 17
 GROQ_API_KEY_11=key_11
 GROQ_API_KEY_12=key_12
 # ... keys 13-16
-
-# Gemini API (keys 1-13, for !gemini and !image commands)
-GEMINI_API_KEY=main_gemini_key
-GEMINI_API_KEY_1=key_1
-# ... keys 2-13
 ```
-
-## Notes
-- **Primary AI Service**: OpenRouter Mistral is tried first for main conversation features
-- **Fallback System**: If all OpenRouter keys fail, automatically falls back to Groq model hierarchy
-- **Error Handling**: All errors are logged to console, users see generic error messages
-- Admin commands require your Discord user ID in `ADMIN_USER_IDS`
-- Thinking models show reasoning process before final response
-- Image generation supports both text prompts and input images
-- All responses respect Discord's 2000 character limit with auto-splitting

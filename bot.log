@@ -13968,3 +13968,91 @@ TypeError: DiscordVoiceWebSocket.select_protocol() missing 2 required positional
 2025-09-26 01:14:49,650 - discord.voice_client - INFO - Starting voice handshake... (connection attempt 1)
 2025-09-26 01:14:50,198 - discord.voice_client - INFO - Voice handshake complete. Endpoint found sydney11060.discord.media
 2025-09-26 01:14:51,774 - root - ERROR - Voice command error: list index out of range
+2026-06-27 06:14:52,462 - discord.client - INFO - logging in using static token
+2026-06-27 06:14:53,751 - discord.gateway - INFO - Shard ID None has sent the IDENTIFY payload.
+2026-06-27 06:14:54,358 - discord.gateway - INFO - Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-9rwm",{"micros":171850,"calls":["id_created",{"micros":623,"calls":[]},"session_lookup_time",{"micros":2430,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"sessions-prd-gcp-us-east1-c-7",{"micros":168412,"calls":["start_session",{"micros":141766,"calls":["prd-rpc-c6c8b44c5-jpccj",{"micros":37346,"calls":["get_user",{"micros":6785},"get_guilds",{"micros":3783},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":1493},"apex_experiments",{"micros":93447},"sessions_experiments",{"micros":4},"played_application_ids",{"micros":3},"linked_users",{"micros":3},"ad_personalization_toggles_disabled",{"micros":2},"regional_feature_config",{"micros":2}]}]},"starting_guild_connect",{"micros":34,"calls":[]},"presence_started",{"micros":17577,"calls":[]},"guilds_started",{"micros":159,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":8847,"calls":[]},"connect_finished",{"micros":8860,"calls":[]},"build_ready",{"micros":11,"calls":[]},"clean_ready",{"micros":2,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 3c668b655bd134b0798d234960888f7e).
+2026-06-27 06:43:04,404 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:43:05,822 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:43:07,232 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:43:08,418 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:43:09,596 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:43:10,775 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:27,740 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:29,146 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:30,553 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:31,953 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:33,097 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:34,240 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:35,412 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:36,573 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:37,748 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:38,915 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:40,057 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:41,208 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:42,611 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:44,026 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:47:45,483 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 06:58:49,425 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:50,063 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:50,064 - root - ERROR - Image generation error with Gemini API Key 1: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:50,900 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:51,466 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 400 Bad Request"
+2026-06-27 06:58:51,468 - root - ERROR - Image generation error with Gemini API Key 2: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API
+2026-06-27 06:58:51,955 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:52,172 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:52,172 - root - ERROR - Image generation error with Gemini API Key 3: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:52,644 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:53,201 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:53,202 - root - ERROR - Image generation error with Gemini API Key 4: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:53,672 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:54,243 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:54,244 - root - ERROR - Image generation error with Gemini API Key 5: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:54,711 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:55,264 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:55,265 - root - ERROR - Image generation error with Gemini API Key 6: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:55,738 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:56,290 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:56,291 - root - ERROR - Image generation error with Gemini API Key 7: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:56,793 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:57,349 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:57,351 - root - ERROR - Image generation error with Gemini API Key 8: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:57,825 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:58,049 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:58:58,053 - root - ERROR - Image generation error with Gemini API Key 9: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:58:58,529 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:58:59,098 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 400 Bad Request"
+2026-06-27 06:58:59,099 - root - ERROR - Image generation error with Gemini API Key 10: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API
+2026-06-27 06:58:59,577 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:59:00,134 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 403 Forbidden"
+2026-06-27 06:59:00,136 - root - ERROR - Image generation error with Gemini API Key 11: 403 PERMISSION_DENIED. {'error': {'code': 403, 'message': "Permission denied: Consumer 'api_key:AIza
+2026-06-27 06:59:00,632 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:59:01,227 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:59:01,231 - root - ERROR - Image generation error with Gemini API Key 12: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:59:01,739 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:59:02,294 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:59:02,295 - root - ERROR - Image generation error with Gemini API Key 13: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 06:59:02,766 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-27 06:59:03,342 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-27 06:59:03,343 - root - ERROR - Image generation error with Gemini API Key: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API 
+2026-06-27 07:02:49,838 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:51,233 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:52,437 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:53,609 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:55,120 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:56,312 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:57,637 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:58,781 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:02:59,926 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:03:01,126 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:03:02,280 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:03:03,453 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:03:04,622 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:03:05,939 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:03:07,651 - root - ERROR - OpenRouter API error: OpenRouter API Error 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw"
+2026-06-27 07:08:57,257 - discord.client - INFO - Got a request to RESUME the websocket.
+2026-06-27 07:08:57,863 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2026-06-27 07:08:58,226 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 3c668b655bd134b0798d234960888f7e under trace ["gateway-prd-arm-us-east1-b-c4x4",{"micros":542,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":251,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"sessions-prd-gcp-us-east1-c-7",{"micros":17}]}].
+2026-06-27 07:47:44,780 - discord.gateway - INFO - Websocket closed with 1006, attempting a reconnect.
+2026-06-27 07:47:44,782 - discord.client - INFO - Got a request to RESUME the websocket.
+2026-06-27 07:47:45,409 - discord.gateway - INFO - Shard ID None has sent the RESUME payload.
+2026-06-27 07:47:45,781 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 3c668b655bd134b0798d234960888f7e under trace ["gateway-prd-arm-us-east1-b-p9n5",{"micros":509,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":233,"calls":[]},"session_lookup_finished",{"micros":9,"calls":[]},"sessions-prd-gcp-us-east1-c-7",{"micros":14}]}].
