@@ -5,8 +5,7 @@
 ### AI Conversation (Uses Groq Priority Fallback Hierarchy)
 - **`@DBZClanker <message>`** - Mention the bot to start a conversation (uses roasting personality by default)
 - **Reply + Mention** - Reply to any message while mentioning the bot for context-aware responses
-- **`!ai <prompt>`** - Direct AI conversation command (uses Groq models)
-- **`!oss <prompt>`** - Direct AI conversation using Groq models fallback hierarchy with reply context
+- **`!chat <prompt>`** - Direct AI conversation command (uses Groq priority models, supports reply context)
 - **`!invite`** - Sends a Direct Message to the user containing the bot's invite link
 
 ### Personalization
