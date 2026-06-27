@@ -514,9 +514,18 @@ async def call_groq_api(api_key, model, prompt, user_id=None):
 async def get_ai_response(prompt, message, force_model=None):
     user_id = message.author.id
     
+    async def safe_reply(content):
+        if hasattr(message, 'respond'):
+            resp = await message.respond(content)
+            if hasattr(resp, 'original_response'):
+                return await resp.original_response()
+            return resp
+        else:
+            return await message.reply(content)
+            
     # Check user rate limit
     if not check_user_rate_limit(user_id):
-        await message.reply("⚠️ Rate limit exceeded. Please wait before making another request.")
+        await safe_reply("⚠️ Rate limit exceeded. Please wait before making another request.")
         return
     
     if user_id not in user_locks:
@@ -524,7 +533,7 @@ async def get_ai_response(prompt, message, force_model=None):
     
     async with user_locks[user_id]:
         if user_id in active_requests:
-            await message.reply("Please wait for your previous request to complete.")
+            await safe_reply("Please wait for your previous request to complete.")
             return
         
         active_requests.add(user_id)
@@ -556,7 +565,7 @@ async def get_ai_response(prompt, message, force_model=None):
                                 if "<think>" in full_response and not thinking_done:
                                     in_thinking = True
                                     if response_message is None:
-                                        response_message = await message.reply("🤔 Thinking...")
+                                        response_message = await safe_reply("🤔 Thinking...")
                                     continue
                                 
                                 if "</think>" in full_response and in_thinking:
@@ -576,7 +585,7 @@ async def get_ai_response(prompt, message, force_model=None):
                             else:
                                 if len(full_response) - last_length >= 200:
                                     if response_message is None:
-                                        response_message = await message.reply(full_response[:2000])
+                                        response_message = await safe_reply(full_response[:2000])
                                     else:
                                         await response_message.edit(content=full_response[:2000])
                                     last_length = len(full_response)
@@ -592,13 +601,14 @@ async def get_ai_response(prompt, message, force_model=None):
                         if response_message:
                             await response_message.edit(content=display_content[:2000])
                             if len(display_content) > 2000:
-                                await message.reply(display_content[2000:])
+                                await safe_reply(display_content[2000:])
                         else:
-                            response_message = await message.reply(display_content[:2000])
+                            response_message = await safe_reply(display_content[:2000])
                             if len(display_content) > 2000:
-                                await message.reply(display_content[2000:])
+                                await safe_reply(display_content[2000:])
                         
-                        message_link = f"https://discord.com/channels/{message.guild.id}/{message.channel.id}/{response_message.id}"
+                        guild_id = message.guild.id if message.guild else "@me"
+                        message_link = f"https://discord.com/channels/{guild_id}/{message.channel.id}/{response_message.id}"
                         store_bot_message(response_message.id, message_link, force_model, api_key)
                         update_usage(api_key, force_model, len(full_response))
                         print(f"Response generated using Groq API key {key_num} with model: {force_model} (forced)")
@@ -636,7 +646,7 @@ async def get_ai_response(prompt, message, force_model=None):
                             if "<think>" in full_response and not thinking_done:
                                 in_thinking = True
                                 if response_message is None:
-                                    response_message = await message.reply("🤔 Thinking...")
+                                    response_message = await safe_reply("🤔 Thinking...")
                                 continue
                             
                             # Check if thinking is done
@@ -660,7 +670,7 @@ async def get_ai_response(prompt, message, force_model=None):
                             # Normal streaming for non-thinking models
                             if len(full_response) - last_length >= 200:
                                 if response_message is None:
-                                    response_message = await message.reply(full_response[:2000])
+                                    response_message = await safe_reply(full_response[:2000])
                                 else:
                                     await response_message.edit(content=full_response[:2000])
                                 last_length = len(full_response)
@@ -676,13 +686,14 @@ async def get_ai_response(prompt, message, force_model=None):
                     if response_message:
                         await response_message.edit(content=display_content[:2000])
                         if len(display_content) > 2000:
-                            await message.reply(display_content[2000:])
+                            await safe_reply(display_content[2000:])
                     else:
-                        response_message = await message.reply(display_content[:2000])
+                        response_message = await safe_reply(display_content[:2000])
                         if len(display_content) > 2000:
-                            await message.reply(display_content[2000:])
+                            await safe_reply(display_content[2000:])
                     
-                    message_link = f"https://discord.com/channels/{message.guild.id}/{message.channel.id}/{response_message.id}"
+                    guild_id = message.guild.id if message.guild else "@me"
+                    message_link = f"https://discord.com/channels/{guild_id}/{message.channel.id}/{response_message.id}"
                     store_bot_message(response_message.id, message_link, model, api_key)
                     update_usage(api_key, model, len(full_response))
                     print(f"Response generated using Groq API key {key_num} with model: {model}")
@@ -695,7 +706,7 @@ async def get_ai_response(prompt, message, force_model=None):
             
             # If all API keys failed for this model, move to next model
         
-        await message.reply("❌ All AI services are currently unavailable. Please try again later.")
+        await safe_reply("❌ All AI services are currently unavailable. Please try again later.")
         
     finally:
         active_requests.discard(user_id)
@@ -714,35 +725,41 @@ async def test_command(ctx):
 @bot.slash_command(name='help', description='Show available commands')
 async def slash_help_command(ctx):
     if is_admin(ctx.author.id):
+        # Admin help - show all commands
         embed = discord.Embed(
             title="🤖 DBZClanker AI - Admin Commands",
             description="Complete command reference for administrators",
             color=0x00ff00
         )
+        
+        # Chat Commands (Public)
         embed.add_field(
             name="💬 Chat Commands (Public)",
             value="`@DBZClanker <message>` - Chat with AI\n"
-                  "`!ai <prompt>` - Use Groq models\n"
-                  "`!oss <prompt>` - Use Groq with reply context\n"
-                  "`!x <prompt>` - Extended AI with multiple models\n"
-                  "`!gemini <prompt>` - Use Gemini with web search",
+                  "`!chat <prompt>` - Use Groq models (supports replies)\n"
+                  "`!invite` - Get bot's invite link via DM",
             inline=False
         )
+        
+        # Trivia & Games (Public)
         embed.add_field(
-            name="🎨 Creative & Fun (Public)",
-            value="`!image <prompt>` - Generate images\n"
-                  "`!trivia` - Play trivia games\n"
+            name="🎮 Trivia & Games (Public)",
+            value="`!trivia` - Play trivia games\n"
                   "`!genshin` - Genshin Impact trivia\n"
                   "`!leaderboard` - Server trivia leaderboard\n"
                   "`!leaderboardglobal` - Global trivia leaderboard",
             inline=False
         )
+        
+        # Personalization (Public)
         embed.add_field(
             name="⚙️ Personalization (Public)",
             value="`!setpersonality <text>` - Set custom personality\n"
                   "`!removepersonality` - Remove custom personality",
             inline=False
         )
+        
+        # Admin Commands
         embed.add_field(
             name="👑 Admin Commands",
             value="`!servers` - List connected servers\n"
@@ -750,40 +767,36 @@ async def slash_help_command(ctx):
                   "`!model <name> <prompt>` - Force specific model\n"
                   "`!status <text>` - Set bot status\n"
                   "`!setcooldown <minutes>` - Set channel cooldown\n"
-                  "`!delete` - Delete bot messages\n"
-                  "`!mistral <prompt>` - Use Mistral (uncensored)",
+                  "`!delete` - Delete bot messages",
             inline=False
         )
+        
+        # Debug Commands
         embed.add_field(
             name="🔧 Debug Commands (Admin)",
             value="`!test` - Test bot functionality\n"
                   "`!checkinput <prompt>` - Show API message structure\n"
-                  "`!apicheck [prompt]` - Test Groq API keys\n"
-                  "`!geminicheck` - Test Gemini API keys\n"
-                  "`!mistralapicheck [prompt]` - Test OpenRouter keys",
+                  "`!apicheck [prompt]` - Test Groq API keys",
             inline=False
         )
+        
         embed.set_footer(text="Admin access detected - showing all commands")
     else:
+        # Regular user help - show only user commands
         embed = discord.Embed(
             title="🤖 DBZClanker AI - User Commands",
             description="Available commands for users",
             color=0x0099ff
         )
+        
         embed.add_field(
             name="💬 Chat Commands",
-            value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
-                  "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
-                  "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
-                  "`!x <prompt>` - Extended AI with multiple models\n"
-                  "`!gemini <prompt>` - Uses Google AI with web search (image files allowed)",
+            value="`@DBZClanker <message>` - Mention bot to chat with AI\n"
+                  "`!chat <prompt>` - Chat with AI using Groq priority models (supports replies)\n"
+                  "`!invite` - Get bot's invite link via DM",
             inline=False
         )
-        embed.add_field(
-            name="🎨 Creative Commands",
-            value="`!image <prompt>` - Generate images (image files allowed)",
-            inline=False
-        )
+        
         embed.add_field(
             name="🎮 Trivia & Games",
             value="`!trivia` - Play trivia games (50 questions/day)\n"
@@ -792,22 +805,202 @@ async def slash_help_command(ctx):
                   "`!leaderboardglobal` - Global trivia leaderboard",
             inline=False
         )
+        
         embed.add_field(
             name="⚙️ Personalization",
             value="`!setpersonality <text>` - Customize bot personality\n"
                   "`!removepersonality` - Reset to default personality",
             inline=False
         )
+        
         embed.add_field(
             name="📝 Usage Tips",
-            value="• Attach images to !gemini and !image commands\n"
-                  "• Reply to messages + mention bot for context\n"
+            value="• Reply to messages + mention bot for context\n"
                   "• Rate limits apply to prevent spam",
             inline=False
         )
+        
         embed.set_footer(text="Created by DBZ Clasher")
     
     await ctx.respond(embed=embed)
+
+@bot.slash_command(name='chat', description='Chat with the AI using Groq priority models')
+async def slash_chat_command(ctx, prompt: str):
+    # Check channel cooldown
+    can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
+    if not can_proceed:
+        minutes = int(remaining // 60)
+        seconds = int(remaining % 60)
+        if minutes > 0:
+            await ctx.respond(f"On cooldown! Please wait {minutes}m {seconds}s", ephemeral=True)
+        else:
+            await ctx.respond(f"On cooldown! Please wait {seconds}s", ephemeral=True)
+        return
+        
+    prompt = sanitize_input(prompt)
+    if len(prompt) > MAX_INPUT_LENGTH:
+        await ctx.respond("⚠️ Input too long after sanitization.", ephemeral=True)
+        return
+    
+    update_user_request_time(ctx.author.id, ctx.channel.id)
+    await get_ai_response(prompt, ctx)
+
+@bot.slash_command(name='invite', description="Get bot's invite link via DM")
+async def slash_invite_command(ctx):
+    invite_link = f"https://discord.com/oauth2/authorize?client_id={bot.user.id}&permissions=2150885376&integration_type=0&scope=applications.commands+bot"
+    try:
+        await ctx.author.send(f"📬 Here is the link to invite me to your server:\n{invite_link}")
+        await ctx.respond("📬 I've sent you a DM with the invite link!")
+    except discord.Forbidden:
+        await ctx.respond(f"❌ I couldn't send you a DM. Please check if your DMs are enabled!\nAlternatively, you can invite me here: <{invite_link}>")
+    except Exception as e:
+        logging.error(f"Error sending invite DM: {e}")
+        await ctx.respond("❌ Failed to send DM due to an unexpected error.")
+
+@bot.slash_command(name='trivia', description='Start a general trivia question')
+async def slash_trivia_command(ctx):
+    user_id = ctx.author.id
+    server_id = ctx.guild.id if ctx.guild else 0
+    
+    can_play, current_count = check_daily_limit(user_id)
+    if not can_play:
+        await ctx.respond(f"🚫 You've reached your daily limit of 50 trivia questions! ({current_count}/50)")
+        return
+    
+    question = get_random_question(user_id, 'trivia')
+    if not question:
+        await ctx.respond("❌ No trivia questions available!")
+        return
+    
+    update_daily_count(user_id)
+    
+    embed = discord.Embed(
+        title=f"🧠 Trivia Question for {ctx.author.display_name}",
+        description=f"{ctx.author.mention}\n\n{question['question']}",
+        color=0x0099ff
+    )
+    
+    if question.get('category'):
+        embed.add_field(name="Category", value=question['category'], inline=True)
+    if question.get('difficulty'):
+        embed.add_field(name="Difficulty", value=question['difficulty'].title(), inline=True)
+    
+    embed.set_footer(text="⏰ You have 30 seconds to answer!")
+    
+    view = TriviaView(question, user_id, server_id, 'trivia')
+    
+    interaction = await ctx.respond(embed=embed, view=view)
+    if hasattr(interaction, 'original_response'):
+        message = await interaction.original_response()
+        view.message = message
+    else:
+        view.message = interaction
+
+@bot.slash_command(name='genshin', description='Start a Genshin Impact trivia question')
+async def slash_genshin_command(ctx):
+    user_id = ctx.author.id
+    server_id = ctx.guild.id if ctx.guild else 0
+    
+    can_play, current_count = check_daily_limit(user_id)
+    if not can_play:
+        await ctx.respond(f"🚫 You've reached your daily limit of 50 trivia questions! ({current_count}/50)")
+        return
+    
+    question = get_random_question(user_id, 'genshin')
+    if not question:
+        await ctx.respond("❌ No Genshin trivia questions available!")
+        return
+    
+    update_daily_count(user_id)
+    
+    embed = discord.Embed(
+        title=f"🌸 Genshin Trivia for {ctx.author.display_name}",
+        description=f"{ctx.author.mention}\n\n{question['question']}",
+        color=0xe864a2
+    )
+    
+    embed.set_footer(text="⏰ You have 30 seconds to answer!")
+    
+    view = TriviaView(question, user_id, server_id, 'genshin')
+    
+    interaction = await ctx.respond(embed=embed, view=view)
+    if hasattr(interaction, 'original_response'):
+        message = await interaction.original_response()
+        view.message = message
+    else:
+        view.message = interaction
+
+@bot.slash_command(name='leaderboard', description='Show the server trivia leaderboard')
+async def slash_leaderboard_command(ctx):
+    server_id = ctx.guild.id if ctx.guild else 0
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('SELECT user_id, points FROM trivia_scores WHERE server_id = ? ORDER BY points DESC', (server_id,))
+            results = c.fetchall()
+            
+            if not results:
+                await ctx.respond("📊 No trivia scores yet in this server!")
+                return
+            
+            view = LeaderboardView(results, "🏆 Server Trivia Leaderboard", 0xffd700)
+            embed = await view.get_embed()
+            await ctx.respond(embed=embed, view=view)
+    except Exception as e:
+        logging.error(f"Error in leaderboard: {e}")
+        await ctx.respond("❌ Error retrieving leaderboard!")
+
+@bot.slash_command(name='leaderboardglobal', description='Show the global trivia leaderboard')
+async def slash_leaderboard_global_command(ctx):
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('SELECT user_id, SUM(points) as total_points FROM trivia_scores GROUP BY user_id ORDER BY total_points DESC')
+            results = c.fetchall()
+            
+            if not results:
+                await ctx.respond("📊 No trivia scores yet globally!")
+                return
+            
+            view = LeaderboardView(results, "🌍 Global Trivia Leaderboard", 0x00ff00)
+            embed = await view.get_embed()
+            await ctx.respond(embed=embed, view=view)
+    except Exception as e:
+        logging.error(f"Error in global leaderboard: {e}")
+        await ctx.respond("❌ Error retrieving global leaderboard!")
+
+@bot.slash_command(name='setpersonality', description='Customize the bot personality for your interactions')
+async def slash_setpersonality_command(ctx, text: str):
+    user_id = ctx.author.id
+    text = sanitize_input(text)
+    if len(text) > 500:
+        await ctx.respond("⚠️ Personality description too long (max 500 characters).", ephemeral=True)
+        return
+    
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('INSERT OR REPLACE INTO user_personalities (user_id, personality) VALUES (?, ?)', (user_id, text))
+            conn.commit()
+        await ctx.respond("✅ Custom personality set successfully!")
+    except Exception as e:
+        safe_error = sanitize_log_message(str(e)[:100])
+        logging.error(f"Database error setting personality: {safe_error}")
+        await ctx.respond("❌ Failed to save personality.", ephemeral=True)
+
+@bot.slash_command(name='removepersonality', description='Reset your custom personality back to default')
+async def slash_removepersonality_command(ctx):
+    user_id = ctx.author.id
+    try:
+        with get_db_connection() as conn:
+            c = conn.cursor()
+            c.execute('DELETE FROM user_personalities WHERE user_id = ?', (user_id,))
+            conn.commit()
+        await ctx.respond("✅ Custom personality removed.")
+    except Exception as e:
+        safe_error = sanitize_log_message(str(e)[:100])
+        logging.error(f"Database error removing personality: {safe_error}")
+        await ctx.respond("❌ Failed to remove personality.", ephemeral=True)
 
 @bot.event
 async def on_command_error(ctx, error):
