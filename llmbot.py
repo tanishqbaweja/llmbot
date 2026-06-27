@@ -463,6 +463,14 @@ async def call_groq_api(api_key, model, prompt, user_id=None):
         {"role": "system", "content": system_content}
     ]
     
+    # Temporary debug print
+    print("=" * 60)
+    print("DEBUG: Sending request to Groq API")
+    print(f"Model: {model}")
+    print(f"System Content: {system_content}")
+    print(f"User Content: {user_content}")
+    print("=" * 60)
+    
     # Use lower token limit for reasoning models
     is_reasoning_model = model in ["deepseek-r1-distill-llama-70b", "qwen/qwen3-32b"]
     max_tokens = 1400 if is_reasoning_model else 2000
