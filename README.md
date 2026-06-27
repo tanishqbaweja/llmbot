@@ -63,6 +63,8 @@ A powerful, secure, and feature-rich Discord bot powered by the Groq API. It fea
 | **`!status <text>`** | Sets the bot's Discord status (e.g. "Playing with GPT-4"). |
 | **`!setcooldown <minutes>`** | Sets channel-specific user cooldown in minutes (0 to remove). |
 | **`!delete`** | Reply to a bot message to delete it and remove your trigger message. |
+| **`!setpersonalityadmin @user <personality>`** | Sets custom personality for another user (Owner Only). |
+| **`!checkpersonalityadmin @user`** | Checks custom personality of another user (Owner Only). |
 
 ### Debugging Commands (Admin Only)
 | Command | Description |

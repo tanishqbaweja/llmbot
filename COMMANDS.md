@@ -25,6 +25,8 @@
 - **`!servers`** - List all servers the bot is connected to
 - **`!status <status_text>`** - Set the bot's Discord status message
 - **`!delete`** - Reply to a bot message to delete it (and remove your command message)
+- **`!setpersonalityadmin @user <personality>`** - Set custom personality for another user (Owner Only)
+- **`!checkpersonalityadmin @user`** - Check custom personality of another user (Owner Only)
 
 ### AI Model Testing & Debugging
 - **`!check`** - Reply to a bot message to see which model generated it
