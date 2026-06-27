@@ -82,7 +82,6 @@ if not OPENROUTER_API_KEYS:
 
 intents = discord.Intents.default()
 intents.message_content = True
-intents.voice_states = True
 bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
 
 # API Keys from environment with numbers
@@ -130,8 +129,6 @@ db_lock = threading.Lock()
 channel_cooldowns = {}  # {channel_id: minutes}
 user_channel_last_request = {}  # {(user_id, channel_id): timestamp}
 user_image_last_request = {}  # {user_id: timestamp} - Global 3min cooldown for images
-voice_sessions = {}  # {guild_id: {'vc': voice_client, 'context': [], 'task': asyncio.Task, 'last_activity': time}}
-processing_lock = asyncio.Lock()  # Global lock for voice processing
 
 MAX_REQUESTS_PER_USER = 10
 RATE_LIMIT_WINDOW = 180
@@ -804,474 +801,11 @@ async def get_ai_response(prompt, message, force_model=None):
     finally:
         active_requests.discard(user_id)
 
-# Voice-related classes
-class CustomVoiceSink(discord.sinks.WaveSink):
-    """Custom voice sink that records audio from users"""
-    
-    def __init__(self, guild_id, loop=None):
-        super().__init__()
-        self.guild_id = guild_id
-        self.audio_data = {}  # {user_id: bytearray}
-        self.silent_frames = 0
-        self.recording = False
-        self.last_activity = time.time()
-        self.loop = loop or asyncio.get_event_loop()
-        self.processing = False  # Flag to ignore input during processing
-        self.recording_start = 0  # Track when recording started
-        
-    def write(self, data, user):
-        """Called when audio data is received from a user"""
-        if user is None:
-            return
-        
-        # Ignore input if we're processing
-        if self.processing:
-            return
-            
-        user_id = user if isinstance(user, int) else user.id
-        
-        # Initialize buffer for new user
-        if user_id not in self.audio_data:
-            self.audio_data[user_id] = bytearray()
-        
-        # Ensure data is bytes-like
-        actual_data = None
-        if isinstance(data, (bytes, bytearray)):
-            actual_data = data
-        elif hasattr(data, 'data'):
-            actual_data = data.data
-        else:
-            try:
-                actual_data = bytes(data)
-            except:
-                return
-        
-        # Check for voice activity
-        try:
-            volume = audioop.rms(actual_data, 2)  # 2 bytes per sample for 16-bit audio
-            
-            # Clear speech detection (volume > 500 indicates actual speech)
-            is_speech = volume > 500
-            # Background noise or low speech (200-500)
-            is_noise = 200 < volume <= 500
-            # Silence (volume <= 200)
-            is_silent = volume <= 200
-            
-            # If bot is playing and user speaks, stop it
-            if is_speech and self.guild_id in voice_sessions:
-                session = voice_sessions[self.guild_id]
-                if session['vc'] and session['vc'].is_playing():
-                    session['vc'].stop()
-                    print("Stopped bot playback - user is speaking")
-                    self.processing = False
-                    self.audio_data.clear()
-            
-            # Start recording on clear speech
-            if is_speech and not self.recording and not self.processing:
-                self.recording = True
-                self.silent_frames = 0
-                self.recording_start = time.time()
-                # Clear ALL buffers for fresh start
-                self.audio_data.clear()
-                self.audio_data[user_id] = bytearray()
-                print(f"Started recording from user {user_id}, volume: {volume}")
-            
-            # While recording, append all audio
-            if self.recording:
-                self.audio_data[user_id].extend(actual_data)
-                self.last_activity = time.time()
-                
-                # Count silence/noise frames
-                if is_silent:
-                    self.silent_frames += 1
-                    print(f"Silent frame detected, count: {self.silent_frames}, volume: {volume}")
-                elif is_noise:
-                    # Don't fully reset on background noise, just slow the count
-                    if self.silent_frames > 0:
-                        self.silent_frames = max(0, self.silent_frames - 1)
-                    print(f"Noise detected, adjusted count: {self.silent_frames}, volume: {volume}")
-                else:
-                    # Reset on clear speech
-                    self.silent_frames = 0
-                    print(f"Speech detected, reset silence counter, volume: {volume}")
-                
-                # Check if we should stop recording
-                should_stop = False
-                reason = ""
-                
-                # Stop after sufficient silence/noise
-                if self.silent_frames >= 10:  # ~200ms of silence (quick response after speech ends)
-                    should_stop = True
-                    reason = f"silence ({self.silent_frames} frames)"
-                
-                # Timeout after 10 seconds (failsafe)
-                elif hasattr(self, 'recording_start') and (time.time() - self.recording_start) > 10:
-                    should_stop = True
-                    reason = "timeout (10s)"
-                
-                if should_stop:
-                    print(f"Stopping recording due to {reason}, volume was {volume}")
-                    self.recording = False
-                    self.silent_frames = 0
-                    # Process immediately
-                    asyncio.run_coroutine_threadsafe(self.process_recording(), self.loop)
-                    
-        except Exception as e:
-            print(f"Error in voice detection: {e}")
-    
-    async def process_recording(self):
-        """Process the recorded audio"""
-        if self.guild_id not in voice_sessions or not self.audio_data:
-            return
-            
-        try:
-            # Set processing flag to ignore new input
-            self.processing = True
-            
-            # Get the largest audio buffer (main speaker)
-            main_user_id = max(self.audio_data.keys(), key=lambda k: len(self.audio_data[k]))
-            audio_bytes = bytes(self.audio_data[main_user_id])
-            
-            print(f"Audio buffer size: {len(audio_bytes)} bytes")
-            
-            # Clear audio data immediately to prevent reprocessing
-            self.audio_data.clear()
-            
-            # Reduced minimum to 1000 bytes (very short utterances)
-            if len(audio_bytes) > 1000:
-                await process_voice_input(self.guild_id, audio_bytes, self)
-            else:
-                print(f"Audio too short ({len(audio_bytes)} bytes), ignoring")
-                
-        finally:
-            # Always reset processing flag
-            self.processing = False
-
-class GeminiAudioSource(discord.AudioSource):
-    """Audio source for playing TTS output"""
-    
-    def __init__(self, audio_data, *, executable='ffmpeg'):
-        self.audio_data = audio_data
-        self.process = None
-        self._stdout = None
-        
-    def read(self):
-        """Read audio frame"""
-        if self._stdout is None:
-            return b''
-        
-        ret = self._stdout.read(discord.opus.Encoder.FRAME_SIZE)
-        if len(ret) != discord.opus.Encoder.FRAME_SIZE:
-            return b''
-        return ret
-    
-    def cleanup(self):
-        """Cleanup resources"""
-        if self.process:
-            self.process.kill()
-            self.process = None
-            self._stdout = None
-
-async def process_voice_input(guild_id, audio_data, sink=None):
-    """Process voice input through Whisper -> Gemini -> TTS pipeline"""
-    global processing_lock
-    
-    async with processing_lock:
-        try:
-            session = voice_sessions.get(guild_id)
-            if not session:
-                return
-                
-            # Update last activity
-            session['last_activity'] = time.time()
-            
-            # Set processing flag on sink if provided
-            if sink:
-                sink.processing = True
-            
-            # Step 1: Convert speech to text using Groq Whisper
-            print("Processing voice input - Step 1: Speech to Text")
-            text = await speech_to_text(audio_data)
-            if not text or len(text.strip()) < 2:
-                print("No valid speech detected")
-                if sink:
-                    sink.processing = False
-                return
-            
-            print(f"User said: {text}")
-            
-            # Add to context
-            session['context'].append(f"User said: {text}")
-            
-            # Step 2: Generate response using Gemini
-            context_str = "\n".join(session['context'][-10:])  # Keep last 10 exchanges
-            prompt = f"""You are a helpful voice assistant in Discord. Here's the conversation history:
-
-{context_str}
-
-Reply to the latest message appropriately. Keep your response concise and natural for voice conversation. Maximum 200 characters."""
-            
-            # Use a random Gemini API key
-            gemini_key = random.choice(GEMINI_API_KEYS)
-            
-            # Run Gemini in executor to avoid blocking
-            loop = asyncio.get_event_loop()
-            
-            def generate_response_sync():
-                # Create Gemini client with API key
-                client = genai.Client(api_key=gemini_key)
-                response = client.models.generate_content(
-                    model='gemini-2.0-flash-exp',
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.7,
-                        max_output_tokens=256
-                    )
-                )
-                return response.text.strip()
-            
-            response_text = await loop.run_in_executor(None, generate_response_sync)
-            print(f"Bot will say: {response_text}")
-            
-            # Add to context
-            session['context'].append(f"Bot said: {response_text}")
-            
-            # Step 3: Convert response to speech using Groq TTS
-            audio_file = await text_to_speech(response_text)
-            
-            if audio_file and session['vc'] and session['vc'].is_connected():
-                # Play the audio with callback to reset state when done
-                audio_source = discord.FFmpegPCMAudio(audio_file)
-                
-                def after_playback(error):
-                    if error:
-                        print(f"Playback error: {error}")
-                    # Reset processing flag immediately after playback
-                    if 'sink' in session and session['sink']:
-                        session['sink'].processing = False
-                        session['sink'].recording = False  # Reset recording state
-                        session['sink'].silent_frames = 0
-                        print("Reset sink state after playback")
-                    print("Bot finished speaking, ready for new input")
-                    # Clean up temp file in a thread-safe way
-                    def cleanup():
-                        try:
-                            os.remove(audio_file)
-                        except:
-                            pass
-                    asyncio.run_coroutine_threadsafe(
-                        asyncio.sleep(0.1), 
-                        sink.loop if sink else asyncio.get_event_loop()
-                    ).add_done_callback(lambda _: cleanup())
-                
-                if not session['vc'].is_playing():
-                    # Ensure processing flag is set during playback
-                    if sink:
-                        sink.processing = True
-                    session['vc'].play(audio_source, after=after_playback)
-                    # Wait briefly for playback to start
-                    await asyncio.sleep(0.5)
-                    
-        except Exception as e:
-            print(f"Error processing voice input: {e}")
-            logging.error(f"Voice processing error: {str(e)[:200]}")
-        finally:
-            # Reset processing flag when done
-            if sink:
-                sink.processing = False
-
-async def speech_to_text(audio_data):
-    """Convert speech to text using Groq Whisper API"""
-    try:
-        # Use Groq API keys 11-17 for Whisper as per memory
-        whisper_keys = [key for key, num in API_KEYS_WITH_NUMBERS if 11 <= num <= 17]
-        if not whisper_keys:
-            whisper_keys = API_KEYS[:1]  # Fallback to first key
-        
-        # Run blocking I/O in executor to avoid blocking event loop
-        loop = asyncio.get_event_loop()
-        
-        def transcribe_sync():
-            groq_client = Groq(api_key=random.choice(whisper_keys))
-            
-            # Save audio to temporary WAV file
-            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
-                # Write WAV header
-                with wave.open(temp_audio.name, 'wb') as wav_file:
-                    wav_file.setnchannels(2)  # Stereo
-                    wav_file.setsampwidth(2)  # 16-bit
-                    wav_file.setframerate(48000)  # Discord's sample rate
-                    wav_file.writeframes(audio_data)
-                
-                temp_path = temp_audio.name
-            
-            # Transcribe with Whisper
-            with open(temp_path, 'rb') as audio_file:
-                transcription = groq_client.audio.transcriptions.create(
-                    file=audio_file,
-                    model="whisper-large-v3-turbo",
-                    language="en",
-                    temperature=0.0
-                )
-            
-            # Clean up temp file
-            os.remove(temp_path)
-            return transcription.text
-        
-        # Execute in thread pool to avoid blocking
-        text = await loop.run_in_executor(None, transcribe_sync)
-        return text
-        
-    except Exception as e:
-        print(f"Speech-to-text error: {e}")
-        return None
-
-async def text_to_speech(text):
-    """Convert text to speech using Groq TTS API"""
-    try:
-        # Use Groq API keys 11-14 + main key for TTS as per memory
-        tts_keys = [key for key, num in API_KEYS_WITH_NUMBERS if (11 <= num <= 14) or num == 17]
-        if not tts_keys:
-            tts_keys = API_KEYS[:1]  # Fallback
-        
-        # Run TTS in executor to avoid blocking
-        loop = asyncio.get_event_loop()
-        
-        def tts_sync():
-            groq_client = Groq(api_key=random.choice(tts_keys))
-            
-            # Generate speech
-            response = groq_client.audio.speech.create(
-                model="playai-tts",
-                voice="Arista-PlayAI",
-                input=text,
-                response_format="wav"
-            )
-            
-            # Save to temporary file
-            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_audio:
-                response.write_to_file(temp_audio.name)
-                return temp_audio.name
-        
-        # Execute in thread pool to avoid blocking
-        audio_file = await loop.run_in_executor(None, tts_sync)
-        return audio_file
-            
-    except Exception as e:
-        print(f"Text-to-speech error: {e}")
-        return None
-
-async def manage_voice_session(guild_id):
-    """Manage voice session and check for inactivity"""
-    while guild_id in voice_sessions:
-        session = voice_sessions[guild_id]
-        
-        # Check for 2 minutes of inactivity
-        if time.time() - session['last_activity'] > 120:
-            print(f"Leaving voice channel due to inactivity in guild {guild_id}")
-            
-            # Stop recording and disconnect
-            if session['vc']:
-                if session['vc'].is_recording():
-                    session['vc'].stop_recording()
-                await session['vc'].disconnect()
-            
-            # Clean up context file/memory
-            session['context'].clear()
-            
-            # Remove session
-            del voice_sessions[guild_id]
-            break
-            
-        await asyncio.sleep(10)  # Check every 10 seconds
 
 @bot.event
 async def on_ready():
     init_db()
     print(f'{bot.user} has connected to Discord!')
-
-@bot.command(name='voice')
-async def voice_command(ctx):
-    """Join voice channel and start voice assistant"""
-    # Check if user is in a voice channel
-    if not ctx.author.voice:
-        await ctx.reply("❌ You need to be in a voice channel to use this command!")
-        return
-    
-    voice_channel = ctx.author.voice.channel
-    guild_id = ctx.guild.id
-    
-    # Check if bot is already in a voice session
-    if guild_id in voice_sessions:
-        await ctx.reply("🎤 I'm already in a voice session in this server!")
-        return
-    
-    try:
-        # Connect to voice channel
-        vc = await voice_channel.connect()
-        
-        # Define callback for when recording stops
-        async def recording_callback(sink, *args):
-            print(f"Recording stopped for guild {guild_id}")
-        
-        # Start recording with custom sink
-        loop = asyncio.get_event_loop()
-        sink = CustomVoiceSink(guild_id, loop=loop)
-        
-        # Initialize session with sink reference
-        voice_sessions[guild_id] = {
-            'vc': vc,
-            'context': [],
-            'task': None,
-            'last_activity': time.time(),
-            'sink': sink  # Store sink reference
-        }
-        
-        vc.start_recording(sink, recording_callback)
-        
-        # Start inactivity monitor
-        monitor_task = asyncio.create_task(manage_voice_session(guild_id))
-        voice_sessions[guild_id]['task'] = monitor_task
-        
-        await ctx.reply(f"🎤 Joined **{voice_channel.name}**! Start speaking and I'll respond. I'll leave after 2 minutes of silence.")
-        print(f"Connected to voice channel: {voice_channel.name} in guild: {ctx.guild.name}")
-        
-    except discord.ClientException as e:
-        await ctx.reply(f"❌ Failed to connect: {str(e)}")
-        if guild_id in voice_sessions:
-            del voice_sessions[guild_id]
-    except Exception as e:
-        await ctx.reply(f"❌ An error occurred: {str(e)[:100]}")
-        if guild_id in voice_sessions:
-            del voice_sessions[guild_id]
-        logging.error(f"Voice command error: {str(e)}")
-
-@bot.command(name='leavevoice')
-async def leave_voice_command(ctx):
-    """Leave the voice channel"""
-    guild_id = ctx.guild.id
-    
-    if guild_id not in voice_sessions:
-        await ctx.reply("❌ I'm not in a voice channel!")
-        return
-    
-    session = voice_sessions[guild_id]
-    
-    # Stop recording and disconnect
-    if session['vc']:
-        if session['vc'].is_recording():
-            session['vc'].stop_recording()
-        await session['vc'].disconnect()
-    
-    # Cancel monitor task
-    if session['task']:
-        session['task'].cancel()
-    
-    # Clean up
-    session['context'].clear()
-    del voice_sessions[guild_id]
-    
-    await ctx.reply("👋 Left the voice channel and cleared conversation memory.")
 
 @bot.command(name='test')
 async def test_command(ctx):
@@ -1287,20 +821,31 @@ async def slash_help_command(ctx):
             color=0x00ff00
         )
         embed.add_field(
-            name="👤 User Commands",
+            name="💬 Chat Commands (Public)",
             value="`@DBZClanker <message>` - Chat with AI\n"
                   "`!ai <prompt>` - Use Groq models\n"
                   "`!oss <prompt>` - Use Groq with reply context\n"
-                  "`!gemini <prompt>` - Use Gemini with web search\n"
-                  "`!image <prompt>` - Generate images\n"
-                  "`!voice` - Join voice chat for voice assistant\n"
-                  "`!leavevoice` - Leave voice chat\n"
-                  "`!setpersonality <text>` - Set custom personality\n"
+                  "`!x <prompt>` - Extended AI with multiple models\n"
+                  "`!gemini <prompt>` - Use Gemini with web search",
+            inline=False
+        )
+        embed.add_field(
+            name="🎨 Creative & Fun (Public)",
+            value="`!image <prompt>` - Generate images\n"
+                  "`!trivia` - Play trivia games\n"
+                  "`!genshin` - Genshin Impact trivia\n"
+                  "`!leaderboard` - Server trivia leaderboard\n"
+                  "`!leaderboardglobal` - Global trivia leaderboard",
+            inline=False
+        )
+        embed.add_field(
+            name="⚙️ Personalization (Public)",
+            value="`!setpersonality <text>` - Set custom personality\n"
                   "`!removepersonality` - Remove custom personality",
             inline=False
         )
         embed.add_field(
-            name="⚙️ Admin Commands",
+            name="👑 Admin Commands",
             value="`!servers` - List connected servers\n"
                   "`!check` - Check bot message details\n"
                   "`!model <name> <prompt>` - Force specific model\n"
@@ -1311,8 +856,9 @@ async def slash_help_command(ctx):
             inline=False
         )
         embed.add_field(
-            name="🔧 Debug Commands",
-            value="`!checkinput <prompt>` - Show API message structure\n"
+            name="🔧 Debug Commands (Admin)",
+            value="`!test` - Test bot functionality\n"
+                  "`!checkinput <prompt>` - Show API message structure\n"
                   "`!apicheck [prompt]` - Test Groq API keys\n"
                   "`!geminicheck` - Test Gemini API keys\n"
                   "`!mistralapicheck [prompt]` - Test OpenRouter keys",
@@ -1330,18 +876,21 @@ async def slash_help_command(ctx):
             value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
                   "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
                   "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
+                  "`!x <prompt>` - Extended AI with multiple models\n"
                   "`!gemini <prompt>` - Uses Google AI with web search (image files allowed)",
-            inline=False
-        )
-        embed.add_field(
-            name="🎤 Voice Commands",
-            value="`!voice` - Join your voice channel for voice chat\n"
-                  "`!leavevoice` - Make bot leave voice channel",
             inline=False
         )
         embed.add_field(
             name="🎨 Creative Commands",
             value="`!image <prompt>` - Generate images (image files allowed)",
+            inline=False
+        )
+        embed.add_field(
+            name="🎮 Trivia & Games",
+            value="`!trivia` - Play trivia games (50 questions/day)\n"
+                  "`!genshin` - Genshin Impact trivia\n"
+                  "`!leaderboard` - Server trivia leaderboard\n"
+                  "`!leaderboardglobal` - Global trivia leaderboard",
             inline=False
         )
         embed.add_field(
@@ -2254,22 +1803,39 @@ async def help_command(ctx):
             color=0x00ff00
         )
         
-        # User Commands
+        # Chat Commands (Public)
         embed.add_field(
-            name="👤 User Commands",
+            name="💬 Chat Commands (Public)",
             value="`@DBZClanker <message>` - Chat with AI\n"
                   "`!ai <prompt>` - Use Groq models\n"
                   "`!oss <prompt>` - Use Groq with reply context\n"
-                  "`!gemini <prompt>` - Use Gemini with web search\n"
-                  "`!image <prompt>` - Generate images\n"
-                  "`!setpersonality <text>` - Set custom personality\n"
+                  "`!x <prompt>` - Extended AI with multiple models\n"
+                  "`!gemini <prompt>` - Use Gemini with web search",
+            inline=False
+        )
+        
+        # Creative & Fun (Public)
+        embed.add_field(
+            name="🎨 Creative & Fun (Public)",
+            value="`!image <prompt>` - Generate images\n"
+                  "`!trivia` - Play trivia games\n"
+                  "`!genshin` - Genshin Impact trivia\n"
+                  "`!leaderboard` - Server trivia leaderboard\n"
+                  "`!leaderboardglobal` - Global trivia leaderboard",
+            inline=False
+        )
+        
+        # Personalization (Public)
+        embed.add_field(
+            name="⚙️ Personalization (Public)",
+            value="`!setpersonality <text>` - Set custom personality\n"
                   "`!removepersonality` - Remove custom personality",
             inline=False
         )
         
         # Admin Commands
         embed.add_field(
-            name="⚙️ Admin Commands",
+            name="👑 Admin Commands",
             value="`!servers` - List connected servers\n"
                   "`!check` - Check bot message details\n"
                   "`!model <name> <prompt>` - Force specific model\n"
@@ -2282,8 +1848,9 @@ async def help_command(ctx):
         
         # Debug Commands
         embed.add_field(
-            name="🔧 Debug Commands",
-            value="`!checkinput <prompt>` - Show API message structure\n"
+            name="🔧 Debug Commands (Admin)",
+            value="`!test` - Test bot functionality\n"
+                  "`!checkinput <prompt>` - Show API message structure\n"
                   "`!apicheck [prompt]` - Test Groq API keys\n"
                   "`!geminicheck` - Test Gemini API keys\n"
                   "`!mistralapicheck [prompt]` - Test OpenRouter keys",
@@ -2304,6 +1871,7 @@ async def help_command(ctx):
             value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
                   "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
                   "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
+                  "`!x <prompt>` - Extended AI with multiple models\n"
                   "`!gemini <prompt>` - Uses Google AI with web search (image files allowed)",
             inline=False
         )
@@ -2311,6 +1879,15 @@ async def help_command(ctx):
         embed.add_field(
             name="🎨 Creative Commands",
             value="`!image <prompt>` - Generate images (image files allowed)",
+            inline=False
+        )
+        
+        embed.add_field(
+            name="🎮 Trivia & Games",
+            value="`!trivia` - Play trivia games (50 questions/day)\n"
+                  "`!genshin` - Genshin Impact trivia\n"
+                  "`!leaderboard` - Server trivia leaderboard\n"
+                  "`!leaderboardglobal` - Global trivia leaderboard",
             inline=False
         )
         
