@@ -35,9 +35,8 @@ A powerful, secure, and feature-rich Discord bot powered by the Groq API. It fea
 ### Chat & AI Commands (Public)
 | Command | Description |
 | :--- | :--- |
-| **`@DBZClanker <prompt>`** | Mentions the bot to start a conversation with the uncensored model. Supports reply context. |
-| **`!ai <prompt>`** | Direct chat using Groq model priority list. |
-| **`!oss <prompt>`** | Chats using Groq model priority list with reply context. |
+| **`@DBZClanker <prompt>`** | Mentions the bot to chat with AI. Supports reply context. |
+| **`!chat <prompt>`** | Chats using Groq priority models. Supports message reply context. |
 | **`!invite`** | Sends a Direct Message to the user containing the bot's invite link. |
 
 ### Personalization (Public)

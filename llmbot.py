@@ -1108,8 +1108,8 @@ async def setcooldown_command(ctx, minutes: int):
 
 
 
-@bot.command(name='ai')
-async def ai_command(ctx, *, prompt):
+@bot.command(name='chat')
+async def chat_command(ctx, *, prompt):
     # Check channel cooldown
     can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
     if not can_proceed:
@@ -1126,14 +1126,33 @@ async def ai_command(ctx, *, prompt):
     if ctx.message.attachments:
         await ctx.reply("Attachments are currently not supported.")
         return
-    
+        
+    # Handle reply context
+    original_model = None
+    if ctx.message.reference:
+        try:
+            referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+            if referenced_message.attachments:
+                await ctx.reply("Attachments are currently not supported.")
+                return
+            
+            # Check if replying to bot message to use same model
+            if referenced_message.author == bot.user:
+                message_info = get_message_info(referenced_message.id)
+                if message_info:
+                    original_model = message_info[0]
+                    
+            prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
+        except Exception:
+            pass
+
     prompt = sanitize_input(prompt)
     if len(prompt) > MAX_INPUT_LENGTH:
         await ctx.reply("⚠️ Input too long after sanitization.")
         return
     
     update_user_request_time(ctx.author.id, ctx.channel.id)
-    await get_ai_response(prompt, ctx.message)
+    await get_ai_response(prompt, ctx.message, force_model=original_model)
 
 
 
@@ -1260,88 +1279,7 @@ async def delete_command(ctx):
     except Exception:
         await ctx.reply("Failed to delete messages.")
 
-@bot.command(name='oss')
-async def oss_command(ctx, *, prompt):
-    # Check cooldown first
-    can_proceed, remaining = check_channel_cooldown(ctx.author.id, ctx.channel.id)
-    if not can_proceed:
-        minutes = int(remaining // 60)
-        seconds = int(remaining % 60)
-        if minutes > 0:
-            await ctx.reply(f"⏰ On cooldown! Please wait {minutes}m {seconds}s")
-        else:
-            await ctx.reply(f"⏰ On cooldown! Please wait {seconds}s")
-        return
-    
-    # Check for attachments in user's message
-    if ctx.message.attachments:
-        await ctx.reply("Attachments are currently not supported.")
-        return
-    
-    # Handle reply context
-    if ctx.message.reference:
-        try:
-            referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
-            # Check for attachments in referenced message
-            if referenced_message.attachments:
-                await ctx.reply("Attachments are currently not supported.")
-                return
-            prompt = f"User is replying to this message: '{referenced_message.content}' with: '{prompt}'. Respond appropriately to their reply."
-        except Exception:
-            pass  # Use original prompt if can't fetch referenced message
-    
-    prompt = sanitize_input(prompt)
-    if len(prompt) > MAX_INPUT_LENGTH:
-        await ctx.reply("⚠️ Input too long.")
-        return
-    
-    status_msg = await ctx.reply("🤖 Generating response...")
-    
-    # Try models in priority order
-    for model in MODEL_PRIORITY:
-        for api_key, key_num in API_KEYS_WITH_NUMBERS:
-            if key_num < 11 or key_num > 17:
-                continue
-            
-            if not check_rate_limits(api_key, model):
-                continue
-            
-            # Retry up to 3 times for HTTP errors
-            for retry in range(3):
-                try:
-                    full_response = ""
-                    async for partial_response in call_groq_api(api_key, model, prompt, ctx.author.id):
-                        full_response = partial_response
-                    
-                    # Handle thinking models
-                    if "</think>" in full_response:
-                        display_content = full_response.split("</think>", 1)[-1].strip()
-                    else:
-                        display_content = full_response
-                    
-                    if not display_content.strip():
-                        display_content = "I'm having trouble generating a response. Please try again."
-                    
-                    await status_msg.edit(content=display_content[:2000])
-                    if len(display_content) > 2000:
-                        await ctx.reply(display_content[2000:])
-                    
-                    update_usage(api_key, model, len(full_response))
-                    print(f"OSS response generated using Groq API key {key_num} with model: {model}")
-                    return
-                    
-                except Exception as e:
-                    error_str = str(e)
-                    # Retry on HTTP errors (429, 503, 500, etc.)
-                    if any(code in error_str for code in ["429", "503", "500", "502", "504"]) and retry < 2:
-                        await asyncio.sleep(1)
-                        continue
-                    # Max retries reached or other error - try next API key
-                    safe_error = sanitize_log_message(error_str[:100])
-                    logging.error(f"OSS API error with key {key_num}, model {model}: {safe_error}")
-                    break
-    
-    await status_msg.edit(content="❌ All API services unavailable")
+
 
 @bot.command(name='help')
 async def help_command(ctx):
@@ -1357,8 +1295,7 @@ async def help_command(ctx):
         embed.add_field(
             name="💬 Chat Commands (Public)",
             value="`@DBZClanker <message>` - Chat with AI\n"
-                  "`!ai <prompt>` - Use Groq models\n"
-                  "`!oss <prompt>` - Use Groq with reply context\n"
+                  "`!chat <prompt>` - Use Groq models (supports replies)\n"
                   "`!invite` - Get bot's invite link via DM",
             inline=False
         )
@@ -1413,9 +1350,8 @@ async def help_command(ctx):
         
         embed.add_field(
             name="💬 Chat Commands",
-            value="`@DBZClanker <message>` - Mention bot to chat to uncensored model\n"
-                  "`!ai <prompt>` - Uses uncensored AI model (no files)\n"
-                  "`!oss <prompt>` - Uses GPT-oss for response (no files)\n"
+            value="`@DBZClanker <message>` - Mention bot to chat with AI\n"
+                  "`!chat <prompt>` - Chat with AI using Groq priority models (supports replies)\n"
                   "`!invite` - Get bot's invite link via DM",
             inline=False
         )
