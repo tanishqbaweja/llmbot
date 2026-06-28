@@ -85,16 +85,11 @@ if not API_KEYS:
 
 MODEL_PRIORITY = [
     "openai/gpt-oss-120b",
-    "deepseek-r1-distill-llama-70b",
-    "llama-3.3-70b-versatile",
-    "moonshotai/kimi-k2-instruct",
-    "qwen/qwen3-32b",
-    "meta-llama/llama-4-maverick-17b-128e-instruct",
-    "meta-llama/llama-4-scout-17b-16e-instruct",
     "openai/gpt-oss-20b",
-    "gemma2-9b-it",
-    "llama-3.1-8b-instant"
+    "qwen/qwen3.6-27b",
+    "qwen/qwen3-32b"
 ]
+THINKING_MODELS = set(MODEL_PRIORITY)
 
 RATE_LIMITS = {
     "allam-2-7b": {"rpm": 30, "rpd": 7000, "tpm": 6000, "tpd": 500000},
@@ -109,6 +104,7 @@ RATE_LIMITS = {
     "moonshotai/kimi-k2-instruct": {"rpm": 60, "rpd": 1000, "tpm": 10000, "tpd": 300000},
     "openai/gpt-oss-120b": {"rpm": 30, "rpd": 1000, "tpm": 8000, "tpd": 200000},
     "openai/gpt-oss-20b": {"rpm": 30, "rpd": 1000, "tpm": 8000, "tpd": 200000},
+    "qwen/qwen3.6-27b": {"rpm": 60, "rpd": 1000, "tpm": 6000, "tpd": 500000},
     "qwen/qwen3-32b": {"rpm": 60, "rpd": 1000, "tpm": 6000, "tpd": 500000}
 }
 
@@ -483,22 +479,39 @@ async def call_groq_api(api_key, model, prompt, user_id=None):
     print("=" * 60)
     
     # Use lower token limit for reasoning models
-    is_reasoning_model = model in ["deepseek-r1-distill-llama-70b", "qwen/qwen3-32b"]
+    is_reasoning_model = model in ["qwen/qwen3.6-27b", "qwen/qwen3-32b"]
     max_tokens = 1400 if is_reasoning_model else 2000
     
+    # Model-specific parameters
+    temp = 1.0
+    top_p_val = 1.0
+    reasoning_effort_val = None
+    tools_val = None
+    
+    if "gpt-oss" in model:
+        temp = 1.0
+        top_p_val = 1.0
+        reasoning_effort_val = "medium"
+        tools_val = [{"type": "browser_search"}]
+    elif "qwen" in model:
+        temp = 0.6
+        top_p_val = 0.95
+        reasoning_effort_val = "default"
+        
     data = {
         "model": model,
         "messages": messages,
-        "temperature": 1,
+        "temperature": temp,
         "max_completion_tokens": max_tokens,
-        "top_p": 1,
+        "top_p": top_p_val,
         "stream": True,
         "stop": None
     }
     
-    # Add reasoning control for GPT-OSS models
-    if "gpt-oss" in model:
-        data["reasoning_effort"] = "high"
+    if reasoning_effort_val is not None:
+        data["reasoning_effort"] = reasoning_effort_val
+    if tools_val is not None:
+        data["tools"] = tools_val
     
     async with aiohttp.ClientSession() as session:
         async with session.post(url, headers=headers, json=data) as response:
@@ -572,7 +585,7 @@ async def get_ai_response(prompt, message, force_model=None):
                         response_message = None
                         full_response = ""
                         last_length = 0
-                        is_thinking_model = force_model in ["deepseek-r1-distill-llama-70b", "qwen/qwen3-32b"]
+                        is_thinking_model = force_model in THINKING_MODELS
                         in_thinking = False
                         thinking_done = False
                         
@@ -652,7 +665,7 @@ async def get_ai_response(prompt, message, force_model=None):
                     response_message = None
                     full_response = ""
                     last_length = 0
-                    is_thinking_model = model in ["deepseek-r1-distill-llama-70b", "qwen/qwen3-32b"]
+                    is_thinking_model = model in THINKING_MODELS
                     in_thinking = False
                     thinking_done = False
                     
@@ -1492,7 +1505,7 @@ async def apicheck_command(ctx, *, test_prompt="Hello"):
         await ctx.reply("❌ Admin access required.")
         return
     
-    model = "gemma2-9b-it"  # Use gemma2 for testing
+    model = "qwen/qwen3-32b"  # Use qwen3 for testing
     test_prompt = sanitize_input(test_prompt)
     
     await ctx.reply(f"🔍 Testing all API keys with model: {model}")
@@ -1549,12 +1562,12 @@ async def check_if_should_reply(bot_message, user_reply):
         
         try:
             full_response = ""
-            async for partial_response in call_groq_api(api_key, "gemma2-9b-it", prompt):
+            async for partial_response in call_groq_api(api_key, "qwen/qwen3-32b", prompt):
                 full_response = partial_response
             
             # Extract YES/NO from response
             response_clean = full_response.strip().upper()
-            print(f"Reply check using Gemma (key {key_num}): {response_clean}")
+            print(f"Reply check using Qwen3 (key {key_num}): {response_clean}")
             if "YES" in response_clean:
                 return True
             elif "NO" in response_clean:
